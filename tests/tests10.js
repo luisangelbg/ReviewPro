@@ -74,14 +74,14 @@
   section('Estudios incluidos en BibTeX y RIS (ida y vuelta con los importadores del Bloque 3)');
   const recs = [
     Object.assign(Records.blank(), { type: 'article', title: 'Respuesta del maíz a 50 % de P & micorrizas', authors: ['Gómez, Rosa', 'Salas, Emilio'], year: '2019', journal: 'Revista de Ciencias_Agrícolas', volume: '12', issue: '3', pages: '101–115', doi: '10.5555/x.1', keywords: ['maíz', 'AMF'] }),
-    Object.assign(Records.blank(), { type: 'thesis', title: 'Inoculantes nativos', authors: ['Pérez Núñez, Ana'], year: '2012', journal: 'Universidad Autónoma Chapingo' }),
+    Object.assign(Records.blank(), { type: 'thesis', title: 'Inoculantes nativos', authors: ['Pérez Núñez, Ana'], year: '2012', journal: 'Universidad Autónoma del Ejemplo' }),
   ];
   const bib = Records.toBib(recs, ['Gomez2019', 'PerezNunez2012']);
   const back = Records.parseBib(bib);
   check('dos entradas con las claves del manuscrito y el tipo correcto', /@article\{Gomez2019,/.test(bib) && /@phdthesis\{PerezNunez2012,/.test(bib) && back.length === 2);
   check('título con %, & y acentos intacto al releer', back[0].title === recs[0].title, back[0].title);
   check('autores, año, revista con guion bajo, volumen, número, páginas y DOI', back[0].authors.join('|') === 'Gómez, Rosa|Salas, Emilio' && String(back[0].year) === '2019' && back[0].journal === 'Revista de Ciencias_Agrícolas' && back[0].volume === '12' && back[0].issue === '3' && /101/.test(back[0].pages) && back[0].doi === '10.5555/x.1');
-  check('la tesis guarda la institución y el tipo', back[1].type === 'thesis' && /Chapingo/.test(Records.toBib([back[1]])));
+  check('la tesis guarda la institución y el tipo', back[1].type === 'thesis' && /del Ejemplo/.test(Records.toBib([back[1]])));
   const ris = Records.parseRIS(Records.toRIS(recs));
   check('RIS de ida y vuelta: título, autores, DOI y tipo', ris.length === 2 && ris[0].title === recs[0].title && ris[0].authors.length === 2 && ris[0].doi === '10.5555/x.1' && ris[1].type === 'thesis');
 })();

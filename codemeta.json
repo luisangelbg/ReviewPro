@@ -1,0 +1,29 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "ReviewPro",
+  "description": "A browser-based platform for narrative, scoping and systematic review articles and meta-analysis: question and protocol (PICO and related frameworks, PRISMA-P, PROSPERO and OSF registration templates), search strings for five database syntaxes, record import and de-duplication, prioritised screening with a stopping rule and inter-rater agreement, full-text eligibility and the PRISMA 2020 or PRISMA-ScR flow diagram, double data extraction with an effect-size calculator, quality and risk of bias (agronomic-experiment checklist, RoB 2, ROBINS-I, Newcastle-Ottawa) with GRADE, three-level meta-analysis by REML with meta-regression, subgroups, sensitivity analyses and publication bias, guided writing that ties claims to evidence, figure studio, self-contained report and a reproducible package. No installation, no third-party libraries, Spanish and English.",
+  "version": "1.0.0",
+  "dateCreated": "2026-09-27",
+  "datePublished": "2026-10-01",
+  "codeRepository": "https://github.com/luisangelbg/ReviewPro",
+  "url": "https://luisangelbg.github.io/ReviewPro/",
+  "license": "https://spdx.org/licenses/GPL-3.0-or-later",
+  "programmingLanguage": ["JavaScript", "HTML", "CSS"],
+  "runtimePlatform": "Web browser",
+  "operatingSystem": "Any",
+  "applicationCategory": "Evidence synthesis",
+  "keywords": ["systematic review", "scoping review", "narrative review", "meta-analysis", "evidence synthesis", "PRISMA 2020", "search strategy", "title and abstract screening", "inter-rater agreement", "risk of bias", "GRADE", "multilevel meta-analysis", "agronomic experiments"],
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Luis Ángel",
+      "familyName": "Barrera-Guzmán",
+      "email": "lbarrerag@chapingo.mx",
+      "@id": "https://orcid.org/0000-0001-8057-2583"
+    }
+  ],
+  "softwareRequirements": ["A modern web browser (Chrome, Edge, Firefox or Safari)"],
+  "readme": "README.md",
+  "developmentStatus": "active"
+}

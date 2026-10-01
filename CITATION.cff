@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "ReviewPro: a browser-based platform for narrative, scoping and systematic review articles and meta-analysis"
+abstract: >-
+  ReviewPro is a self-contained web application that carries a review article from start to finish, for narrative,
+  scoping and systematic reviews and meta-analyses, with no installation and no server-side computation. It writes
+  the question and the protocol (PICO and related frameworks, PRISMA-P, and the PROSPERO and OSF registration
+  templates filled from the protocol), turns concept blocks into search strings for five database syntaxes, imports
+  RIS, BibTeX, MEDLINE and delimited records and flags safe and probable duplicates, and runs prioritised screening
+  with an incremental naive Bayes ranking, a stopping rule with a verification sample, blind double reading and
+  Cohen's and Fleiss' kappa. It tracks full-text retrieval and eligibility and draws the PRISMA 2020 or PRISMA-ScR
+  flow diagram, supports double data extraction with an effect-size calculator that recovers means, standard
+  deviations and effects from what papers report, and appraises quality and risk of bias with a checklist for
+  agronomic experiments of its own, RoB 2, ROBINS-I and Newcastle-Ottawa, with GRADE and a summary-of-findings
+  table. Its synthesis fits a three-level meta-analytic model by REML, with meta-regression, subgroups, prediction
+  intervals, sensitivity analyses and publication-bias tests, or a synthesis without meta-analysis. Guided writing
+  ties every claim to its evidence and checks the PRISMA 2020, PRISMA-ScR and SANRA items, and the report and a
+  reproducible package let anyone redo the review. Every method is cited to its source.
+type: software
+authors:
+  - given-names: "Luis Ángel"
+    family-names: "Barrera-Guzmán"
+    email: lbarrerag@chapingo.mx
+    orcid: "https://orcid.org/0000-0001-8057-2583"
+version: "1.0.0"
+date-released: "2026-10-01"
+repository-code: "https://github.com/luisangelbg/ReviewPro"
+url: "https://luisangelbg.github.io/ReviewPro/"
+license: GPL-3.0-or-later
+keywords:
+  - systematic review
+  - scoping review
+  - narrative review
+  - meta-analysis
+  - evidence synthesis
+  - PRISMA 2020
+  - search strategy
+  - title and abstract screening
+  - inter-rater agreement
+  - risk of bias
+  - GRADE
+  - multilevel meta-analysis
+  - agronomic experiments
