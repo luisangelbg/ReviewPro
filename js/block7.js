@@ -120,6 +120,8 @@
     const rowH = 22, left = 170, colW = 44, top = 40;
     const W = left + cols.length * colW + 20, H = top + st.length * rowH + 60;
     Plot.clear(svg); svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    /* the grid of judgements is the plot area, for the figure studio */
+    svg.setAttribute('data-plot', `${left} ${top} ${cols.length * colW} ${st.length * rowH}`);
     cols.forEach((c, i) => svg.appendChild(svgEl('text', { x: left + i * colW + colW / 2, y: top - 12, 'font-size': 10, 'font-weight': 700, 'text-anchor': 'middle', class: 'art-txt' }, c === 'overall' ? T('Global', 'Overall') : c)));
     st.forEach((s, r) => {
       const f = finalOf(s.id), y = top + r * rowH + rowH / 2;
@@ -135,8 +137,10 @@
     const legY = top + st.length * rowH + 18;
     const used = (t.scale || ['low', 'some', 'high']).concat(['ni']);
     let lx = 10;
-    used.forEach(j => { svg.appendChild(svgEl('circle', { cx: lx + 7, cy: legY, r: 6, fill: Appraisal.J[j].c })); const txt = T(Appraisal.J[j].t[0], Appraisal.J[j].t[1]); svg.appendChild(svgEl('text', { x: lx + 17, y: legY + 3.5, 'font-size': 9.5, class: 'art-txt' }, txt)); lx += 30 + txt.length * 5.6; });
-    if (doms.length) svg.appendChild(svgEl('text', { x: 10, y: legY + 20, 'font-size': 8.5, class: 'art-mut' }, t.domains.map(d => `${d.id}: ${T(d.t[0], d.t[1])}`).join(' · ').slice(0, 220)));
+    /* the legend in one group (data-role="legend"), each entry (dot and label) with its data-li */
+    const lg = svg.appendChild(svgEl('g', { 'data-role': 'legend' }));
+    used.forEach((j, k) => { lg.appendChild(svgEl('circle', { cx: lx + 7, cy: legY, r: 6, fill: Appraisal.J[j].c, 'data-li': k })); const txt = T(Appraisal.J[j].t[0], Appraisal.J[j].t[1]); lg.appendChild(svgEl('text', { x: lx + 17, y: legY + 3.5, 'font-size': 9.5, class: 'art-txt', 'data-li': k }, txt)); lx += 30 + txt.length * 5.6; });
+    if (doms.length) lg.appendChild(svgEl('text', { x: 10, y: legY + 20, 'font-size': 8.5, class: 'art-mut' }, t.domains.map(d => `${d.id}: ${T(d.t[0], d.t[1])}`).join(' · ').slice(0, 220)));
   }
   function drawSummary() {
     const svg = el('b7Summary'); if (!svg) return;
