@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · Manual de usuario · Capítulo 6</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+<style>
+  .formula { font-family: var(--mono); font-size: 8.8pt; background: var(--marino-suave); border-radius: 5px; padding: 0.07in 0.12in; margin: 0.08in 0; }
+</style>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b6" data-pestana="B6" data-orden="6" style="--acento: var(--b6)">
+  <div class="cap-apertura">
+    <div class="cap-num">6</div>
+    <div class="cap-etiqueta">Bloque 6 · Extracción</div>
+    <h1>Extracción de datos y tamaños de efecto</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">Un formulario que diseñas tú, llenado por estudio y por revisor; una calculadora que convierte lo que el artículo reporta —medias con DE, EE, IC o CV; la DMS, el EED o el CV del ANOVA; medianas; t, F, p o conteos— en el tamaño de efecto con su varianza; la comparación de la extracción doble; y las tablas finales que usarán la síntesis y el manuscrito.</p>
+    <ul class="cap-contenido">
+      <li><b>6.1</b>El formulario de extracción</li>
+      <li><b>6.2</b>Extraer un estudio</li>
+      <li><b>6.3</b>La calculadora de tamaños de efecto</li>
+      <li><b>6.4</b>Cuando falta la desviación estándar</li>
+      <li><b>6.5</b>La extracción doble</li>
+      <li><b>6.6</b>Las tablas finales</li>
+    </ul>
+  </div>
+
+  <!-- 6.1 -->
+  <h2 id="s6-1"><span class="num">6.1</span>El formulario de extracción</h2>
+  <p class="lead">La primera tarjeta está plegada: <span class="ui">1 · Formulario de extracción (clic para editarlo)</span>. El formulario parte de una plantilla del tipo de revisión y agrega como campos los <b>moderadores</b> que declaraste en el protocolo, para que se extraigan desde el principio.</p>
+  <figure>
+    <div class="marco"><img src="../img/b6-formulario.png" alt="La tarjeta 1 del Bloque 6 abierta: la tabla de campos del formulario con su sección, su nombre, su tipo, sus opciones, si es obligatorio y los botones para subirlo o quitarlo"></div>
+    <figcaption><b>Figura 6.1.</b> El formulario del ejemplo, agrupado en secciones: datos generales, diseño, contexto, calidad de los datos y moderadores.</figcaption>
+  </figure>
+  <table class="compacta">
+    <thead><tr><th style="width:1.7in">Tipo de campo</th><th>Para qué</th></tr></thead>
+    <tbody>
+      <tr><td>Texto corto · Texto largo</td><td>País, cultivar; descripción del tratamiento y del testigo.</td></tr>
+      <tr><td>Número</td><td>Repeticiones, años, fósforo del suelo, dosis. Los numéricos pueden ser moderadores de una meta-regresión.</td></tr>
+      <tr><td>Lista (una opción) · Lista (varias opciones)</td><td>Diseño experimental, tipo de publicación, origen de los datos; las opciones se separan con punto y coma. Las listas pueden ser moderadores de subgrupos.</td></tr>
+      <tr><td>Sí / no</td><td>Una condición que se cumple o no.</td></tr>
+      <tr><td>Coordenadas (lat, lon)</td><td>El sitio del experimento, en grados decimales.</td></tr>
+    </tbody>
+  </table>
+  <p>Cada campo lleva su <b>sección</b>, puede ser <b>obligatorio</b> (se marca con * al extraer) y se reordena con ↑. <span class="ui">+ campo</span> agrega uno; <span class="ui">Volver a la plantilla</span> descarta los cambios. Prueba el formulario con dos o tres estudios antes de extraer todos: es el piloto que pide PRISMA-P, y cambiar un campo después obliga a volver a todos los artículos.</p>
+
+  <!-- 6.2 -->
+  <h2 id="s6-2"><span class="num">6.2</span>Extraer un estudio</h2>
+  <figure>
+    <div class="marco"><img src="../img/b6-extraer.png" alt="La tarjeta 2 del Bloque 6: a la izquierda, la lista de estudios incluidos con dos puntos de avance cada uno; a la derecha, el estudio Kaur 2014 con sus datos generales, su diseño, su contexto, la calidad de los datos y los moderadores llenos"></div>
+    <figcaption><b>Figura 6.2.</b> La extracción de un estudio. En la lista, cada estudio lleva un punto por revisor: naranja mientras falta algo, verde cuando su extracción está completa.</figcaption>
+  </figure>
+  <p>A la izquierda están los estudios incluidos del Bloque 5, cada uno con autor y año; los informes ligados aparecen juntos como un solo estudio. Al elegir uno, el formulario se llena para el <span class="ui">Revisor</span> activo, arriba a la derecha. Todo se guarda al escribir.</p>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>Anota de dónde sale cada número</div>
+    <p>El campo de nota de cada efecto pide <i>de dónde salió cada número: tabla, figura, página</i>. Cuando otro revisor, un árbitro o tú misma dentro de seis meses quieran comprobar un dato, esa nota ahorra releer el artículo completo. Si el número se digitalizó de una figura, dilo: es menos preciso que uno de una tabla.</p>
+  </div>
+
+  <!-- 6.3 -->
+  <h2 id="s6-3"><span class="num">6.3</span>La calculadora de tamaños de efecto</h2>
+  <p>Al pie del estudio está la tabla de <b>tamaños de efecto</b>: una fila por comparación —un sitio, un ciclo, una dosis—, con su desenlace, su resultado y los botones para editarla, duplicarla o quitarla. <span class="ui">+ efecto</span> abre el editor.</p>
+  <figure class="media">
+    <div class="marco"><img src="../img/b6-efecto.png" alt="El editor de un efecto: desenlace rendimiento de grano, comparación sitio 1, qué reporta el artículo medias con dispersión por grupo, medida razón de respuesta; los datos del tratamiento y del testigo con media, n, tipo de dispersión y valor; el resultado con el efecto, su error estándar, su intervalo y el cambio porcentual, y los pasos del cálculo"></div>
+    <figcaption><b>Figura 6.3.</b> El primer sitio de Kaur 2014: medias de 5.683 y 6.39 t/ha con sus desviaciones estándar y tres repeticiones. La razón de respuesta es −0.1173 (EE 0.1531), es decir, −11.1 %; debajo, los pasos del cálculo.</figcaption>
+  </figure>
+  <p>Cada fila lleva el <b>desenlace</b> (los del protocolo), la <b>comparación</b> (sitio, ciclo o dosis), un subgrupo o nota de moderador opcional, <b>qué reporta el artículo</b> y la <b>medida del efecto</b>. Según lo que reporta, la calculadora pide unos datos u otros:</p>
+  <table class="compacta">
+    <thead><tr><th style="width:2.3in">Qué reporta el artículo</th><th>Qué pide y cómo convierte</th></tr></thead>
+    <tbody>
+      <tr><td><b>Medias con dispersión por grupo</b></td><td>Media y n de cada grupo, con la dispersión como desviación estándar, varianza, error estándar (DE = EE·√n), intervalo de confianza de la media (DE = √n·(U − L)/(2·t), con t si n &lt; 60) o coeficiente de variación (DE = CV·media/100).</td></tr>
+      <tr><td><b>Medias con la DMS, EED, EEM o CV del ANOVA</b></td><td>La DE común del experimento: desde la DMS (con los grados de libertad del error, o deducidos del diseño —completamente al azar, bloques o cuadrado latino— y su α), desde el EED (DE = EED·√(r/2)), el EEM (DE = EEM·√r), el CV del experimento o el cuadrado medio del error (DE = √CME).</td></tr>
+      <tr><td><b>Medianas con cuartiles o rango</b></td><td>Estima media y DE (Wan et al. 2014).</td></tr>
+      <tr><td><b>Estadístico t</b>, <b>F con 1 gl</b>, <b>valor p bilateral</b>, <b>IC de la diferencia</b></td><td>La diferencia de medias estandarizada (g de Hedges), con los n de cada grupo; para F y p, el signo lo pones tú.</td></tr>
+      <tr><td><b>Conteos (tabla 2×2)</b></td><td>Razón de riesgos, razón de momios o diferencia de riesgos.</td></tr>
+      <tr><td><b>Correlación</b></td><td>La z de Fisher, con el n.</td></tr>
+      <tr><td><b>Efecto ya calculado</b></td><td>El efecto con su error estándar o su varianza, tal como lo da el artículo.</td></tr>
+    </tbody>
+  </table>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Teoría en breve · la razón de respuesta</div>
+    <div class="formula">lnRR = ln(x̄<sub>T</sub> / x̄<sub>C</sub>) &nbsp;&nbsp;·&nbsp;&nbsp; v = DE<sub>T</sub>² / (n<sub>T</sub> x̄<sub>T</sub>²) + DE<sub>C</sub>² / (n<sub>C</sub> x̄<sub>C</sub>²) &nbsp;&nbsp;·&nbsp;&nbsp; cambio % = 100·(e<sup>lnRR</sup> − 1)</div>
+    <p>La razón de respuesta (Hedges et al. 1999) mide el cambio proporcional del tratamiento frente al testigo, así que se compara bien entre sitios con rendimientos muy distintos. Necesita medias positivas de una variable con cero natural. Su varianza crece cuando las repeticiones son pocas o el experimento es variable: por eso los ensayos pequeños pesan menos en el Bloque 8.</p>
+  </div>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Regla de decisión · qué efecto extraer de un estudio</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>Si</b> el estudio reporta varios sitios, ciclos o dosis por separado</td><td><b>entonces</b> una fila por cada uno: el modelo multinivel del Bloque 8 sabe que vienen del mismo estudio.</td></tr>
+      <tr><td><b>Si</b> reporta además el promedio de todos</td><td><b>entonces</b> no lo extraigas como otra fila: contaría dos veces los mismos datos.</td></tr>
+      <tr><td><b>Si</b> tiene varios tratamientos contra un solo testigo</td><td><b>entonces</b> una fila por tratamiento y anótalo: comparten el testigo, y sus efectos no son independientes.</td></tr>
+      <tr><td><b>Si</b> solo hay figura</td><td><b>entonces</b> digitaliza las medias y las barras, y marca el origen como «figura digitalizada».</td></tr>
+      <tr><td><b>Si</b> no hay ninguna medida de dispersión</td><td><b>entonces</b> escribe a los autores; si no responden, la imputación de la sección 6.4.</td></tr>
+    </tbody></table>
+  </div>
+
+  <!-- 6.4 -->
+  <h2 id="s6-4"><span class="num">6.4</span>Cuando falta la desviación estándar</h2>
+  <p>Muchos experimentos agronómicos publican las medias sin su dispersión. La casilla de la tarjeta de tablas finales <span class="ui">Imputar las DE faltantes con el coeficiente de variación medio de los demás grupos</span> las estima con el CV medio de los estudios que sí la reportan (Lajeunesse 2013) y muestra ese CV —en el ejemplo, 12.9 %—. Las filas imputadas se marcan como tales, y el Bloque 8 hace siempre un análisis de sensibilidad sin ellas.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Imputar es una decisión del protocolo</div>
+    <p>Declárala en el protocolo (sensibilidad «excluir estudios con dispersión imputada»), repórtala en los métodos y mira si el resultado cambia sin las filas imputadas. Si cambia mucho, el resultado depende de datos que no existen: dilo.</p>
+  </div>
+
+  <!-- 6.5 -->
+  <h2 id="s6-5"><span class="num">6.5</span>La extracción doble</h2>
+  <figure>
+    <div class="marco"><img src="../img/b6-doble.png" alt="La tarjeta 3 del Bloque 6: el estudio Rossi 2013 con una discrepancia en el diseño experimental, parcelas divididas según una revisora y bloques completos al azar según el otro, cada valor como botón"></div>
+    <figcaption><b>Figura 6.4.</b> Una discrepancia de la extracción doble: cada revisor leyó un diseño distinto. Se vuelve al artículo y se elige el valor correcto con un clic.</figcaption>
+  </figure>
+  <p>Cuando el protocolo pide extracción por duplicado, cada revisor llena su propio formulario sin ver el del otro. Esta tarjeta muestra <b>solo los campos en que difieren</b>, estudio por estudio, con el valor de cada revisor como botón: se vuelve al artículo y se elige el correcto. Los tamaños de efecto se comparan por desenlace, comparación y valor. Mientras un campo tenga diferencias, la tabla de características lo marca como pendiente.</p>
+  <div class="caja ejemplo">
+    <div class="caja-t"><span class="ico">▸</span>Ejemplo · tres discrepancias</div>
+    <p>Los dos revisores del ejemplo difirieron en tres datos de 20 estudios: las repeticiones de Kaur 2014 (3 o 4), el origen de los datos de Oliveira 2018 (tabla o texto) y el diseño de Rossi 2013 (parcelas divididas o bloques). Las tres se conciliaron volviendo a los artículos.</p>
+  </div>
+
+  <!-- 6.6 -->
+  <h2 id="s6-6"><span class="num">6.6</span>Las tablas finales</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/b6-tablas.png" alt="La tarjeta 4 del Bloque 6: 20 estudios incluidos, 20 con extracción completa, 41 tamaños de efecto y 0 por conciliar; la casilla de imputación con CV = 12.9 %; y el inicio de la tabla de características de los estudios, con país, coordenadas, tipo de publicación, diseño, repeticiones, ciclos, tratamientos y cultivo"></div>
+    <figcaption><b>Figura 6.5.</b> Las tablas finales del ejemplo: 20 estudios con extracción completa, 41 tamaños de efecto y nada por conciliar.</figcaption>
+  </figure>
+  <p>Arriba, cuatro cifras: estudios incluidos, estudios con extracción completa, tamaños de efecto (y cuántos incompletos) y estudios por conciliar. Debajo, dos tablas con los valores finales —los acordados o los conciliados—:</p>
+  <ul>
+    <li><b>Características de los estudios</b>: una fila por estudio y una columna por campo. Es la base de la tabla de características del manuscrito (<code>{{table:characteristics}}</code> en el Bloque 9).</li>
+    <li><b>Tamaños de efecto</b>: una fila por comparación, con el efecto, su varianza, su error estándar, su intervalo, el cambio porcentual, los datos de entrada, si la DE fue imputada, la nota y los moderadores. Es lo que combina el Bloque 8.</li>
+  </ul>
+  <p><span class="ui">⤓ Tabla de efectos (.csv)</span> y <span class="ui">⤓ Características (.csv)</span> descargan ambas: son el material suplementario de datos que piden cada vez más revistas, y la entrada para quien quiera repetir el análisis con otro programa.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Los avisos de este bloque</div>
+    <p>La calculadora dice qué falta para cada tipo de entrada: <i>«La razón de respuesta necesita medias positivas y n de ambos grupos»</i>, <i>«Faltan datos para calcular el efecto»</i>. Las tarjetas avisan si aún no hay estudios incluidos (Bloque 5), si hay campos por conciliar y cuántas filas de efecto están incompletas.</p>
+  </div>
+</section>
+
+</body>
+</html>

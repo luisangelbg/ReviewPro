@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · Manual de usuario · Capítulo 9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b9" data-pestana="B9" data-orden="9" style="--acento: var(--b9)">
+  <div class="cap-apertura">
+    <div class="cap-num">9</div>
+    <div class="cap-etiqueta">Bloque 9 · Escritura</div>
+    <h1>Escritura orientada</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">El manuscrito se escribe aquí, sección por sección, sobre el esqueleto del tipo de revisión. La app no redacta: dice qué necesita cada sección, ofrece las citas de los estudios incluidos y los números del análisis como datos vivos que siguen al proyecto, revisa que cada afirmación tenga respaldo, lleva la lista de verificación de la guía de reporte y exporta a Word, HTML o Markdown con las citas y las referencias resueltas.</p>
+    <ul class="cap-contenido">
+      <li><b>9.1</b>El esqueleto del manuscrito</li>
+      <li><b>9.2</b>Citas y datos vivos</li>
+      <li><b>9.3</b>Frases con datos para empezar</li>
+      <li><b>9.4</b>El verificador de afirmaciones</li>
+      <li><b>9.5</b>La lista de verificación del reporte</li>
+      <li><b>9.6</b>Exportar el manuscrito</li>
+    </ul>
+  </div>
+
+  <!-- 9.1 -->
+  <h2 id="s9-1"><span class="num">9.1</span>El esqueleto del manuscrito</h2>
+  <figure>
+    <div class="marco"><img src="../img/b9-editor.png" alt="La tarjeta 1 del Bloque 9: a la izquierda las secciones del manuscrito agrupadas en métodos y resultados, cada una con sus palabras, su meta y una barra de avance; a la derecha la sección de resultados de las síntesis con su guía, los menús para citar y para insertar un dato vivo, una frase sugerida, el texto con datos vivos y la vista previa con los números resueltos"></div>
+    <figcaption><b>Figura 9.1.</b> El editor. A la izquierda, las secciones del meta-análisis con su avance; a la derecha, los resultados de la síntesis escritos con datos vivos y, debajo, cómo se leen con los números del Bloque 8.</figcaption>
+  </figure>
+  <p class="lead">Las secciones dependen del tipo de revisión. Una sistemática y un meta-análisis siguen el formato de introducción, métodos, resultados y discusión con las subsecciones que pide PRISMA 2020 —el meta-análisis agrega el sesgo de publicación—; la exploratoria cambia la extracción por la <i>caracterización de los datos</i> y no lleva riesgo de sesgo ni GRADE; la narrativa trae <b>temas</b> libres, que se renombran escribiendo en su título y se multiplican con <span class="ui">＋ Otro tema</span>.</p>
+  <p>Cada sección muestra una <b>guía</b> de lo que debe contener —la de los resultados de la síntesis dice <i>«Por desenlace: efecto con IC, intervalo de predicción, heterogeneidad, moderadores y sensibilidad»</i>— y una <b>meta de palabras</b> orientativa. La barra de la izquierda se pone ámbar mientras la sección está debajo de la meta, verde dentro de ella y roja si la pasa por mucho. El texto se guarda al escribir.</p>
+
+  <!-- 9.2 -->
+  <h2 id="s9-2"><span class="num">9.2</span>Citas y datos vivos</h2>
+  <p>Dos marcas convierten un texto en uno que no se desfasa del análisis:</p>
+  <table class="compacta">
+    <thead><tr><th style="width:2.2in">Se escribe</th><th>Sale como</th></tr></thead>
+    <tbody>
+      <tr><td><code>[@Cruz2021]</code></td><td>(Cruz &amp; Mendoza 2021), y la ficha completa en la lista de referencias.</td></tr>
+      <tr><td><code>[@Rossi2013; @Oliveira2018]</code></td><td>Varias citas en un solo paréntesis, separadas por punto y coma.</td></tr>
+      <tr><td><code>{{n.included}}</code></td><td>20: un número del diagrama PRISMA.</td></tr>
+      <tr><td><code>{{effect:Rendimiento de grano}}</code></td><td>+16.9 % (IC 95 % +9.7 % a +24.6 %).</td></tr>
+      <tr><td><code>{{table:characteristics}}</code></td><td>La tabla de características completa.</td></tr>
+    </tbody>
+  </table>
+  <p>No hace falta recordarlas: el menú <span class="ui">Citar</span> lista los estudios incluidos con autor, año y título, y el menú <span class="ui">Dato vivo</span> lista cada dato con su valor actual; al elegir uno se inserta donde está el cursor. La clave de cada estudio es el apellido del primer autor y el año, con a, b… cuando se repiten; <span class="ui">⤓ Claves de cita (.csv)</span> las descarga. En la vista previa, una clave que no corresponde a ningún estudio o un dato sin valor aparecen resaltados en rojo.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:2.4in">Datos vivos</th><th>Qué dan</th></tr></thead>
+    <tbody>
+      <tr><td><code>n.identified</code>, <code>n.duplicates</code>, <code>n.screened</code>, <code>n.excludedTA</code>, <code>n.fulltext</code>, <code>n.excludedFT</code>, <code>n.notRetrieved</code>, <code>n.included</code>, <code>n.reports</code></td><td>Los conteos del diagrama de flujo.</td></tr>
+      <tr><td><code>search.sources</code>, <code>search.date</code></td><td>Las fuentes buscadas y la fecha de la última búsqueda (Bloque 3).</td></tr>
+      <tr><td><code>reg</code>, <code>funding</code>, <code>coi</code></td><td>El registro, el financiamiento y los conflictos de interés (Bloque 2).</td></tr>
+      <tr><td><code>effect</code>, <code>k</code>, <code>m</code>, <code>i2</code>, <code>pi</code>, <code>p</code>, <code>grade</code> seguidos de <code>:desenlace</code></td><td>El efecto con su IC, los estudios, los efectos, I², el intervalo de predicción, el valor p y la certeza GRADE de ese desenlace.</td></tr>
+      <tr><td><code>table:characteristics</code>, <code>table:prisma</code>, <code>table:sof</code></td><td>Las tablas de características, del flujo PRISMA y del resumen de hallazgos.</td></tr>
+    </tbody>
+  </table>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Teoría en breve · por qué datos vivos</div>
+    <p>Una revisión se reanaliza muchas veces: se agrega un estudio tardío, se corrige un dato, un árbitro pide otro modelo. Cada número copiado a mano es una oportunidad de que el resumen diga una cosa y la tabla otra. Con los datos vivos, el texto toma sus números del mismo cálculo que las figuras y las tablas, y todo cambia a la vez.</p>
+  </div>
+
+  <!-- 9.3 -->
+  <h2 id="s9-3"><span class="num">9.3</span>Frases con datos para empezar</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/b9-datos.png" alt="La sección de selección de estudios: los menús para citar e insertar datos, dos frases sugeridas, el texto con los datos vivos del diagrama y la tabla del flujo, y la vista previa con los números y la tabla resueltos"></div>
+    <figcaption><b>Figura 9.2.</b> La selección de estudios escrita con una frase sugerida y la tabla del flujo PRISMA: todos los números vienen de los Bloques 3 a 5.</figcaption>
+  </figure>
+  <p>En las secciones que reportan hechos, la app ofrece <b>frases con datos para empezar</b>: el flujo de la selección, el efecto de cada desenlace, la certeza, las fuentes y el registro; y en la síntesis de los métodos, el párrafo del Bloque 8. Un clic las inserta. Son hechos, no interpretación: dicen qué se encontró, nunca qué significa. La introducción, la discusión y la conclusión no tienen frases sugeridas.</p>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>La app orienta, no redacta</div>
+    <p>ReviewPro no genera la interpretación. Qué significa un efecto de +16.9 % con un intervalo de predicción que incluye pérdidas, cómo se compara con la literatura previa y qué debe hacer un productor son juicios del autor. Las frases sugeridas solo ahorran el trabajo de copiar números.</p>
+  </div>
+
+  <!-- 9.4 -->
+  <h2 id="s9-4"><span class="num">9.4</span>El verificador de afirmaciones</h2>
+  <figure>
+    <div class="marco"><img src="../img/b9-verificador.png" alt="La tarjeta 2 del Bloque 9: 946 palabras en 19 de 20 secciones, 8 de 20 estudios citados, 1 afirmación por revisar y 0 referencias rotas; la afirmación de la discusión sin cita ni dato sobre la rentabilidad de los inoculantes; y las claves de los 12 estudios que el texto aún no cita"></div>
+    <figcaption><b>Figura 9.3.</b> El verificador del ejemplo: una afirmación de la discusión sin respaldo —«son una inversión rentable para cualquier productor»— y doce estudios incluidos que el texto todavía no cita.</figcaption>
+  </figure>
+  <p>El verificador lee cada oración de la introducción, los resultados, la discusión y la conclusión, y señala:</p>
+  <ul>
+    <li>las oraciones con <b>cifras</b> o con verbos de <b>conclusión</b> —aumenta, reduce, mejora, se asocia, sugiere, es rentable, se recomienda— que no llevan una cita, un dato vivo ni una referencia a una figura o tabla propia;</li>
+    <li>los <b>valores p sin el tamaño del efecto</b> ni su intervalo;</li>
+    <li>las <b>claves que no existen</b> y los <b>datos sin valor</b>;</li>
+    <li>los <b>estudios incluidos que el texto no cita</b>: en una revisión, cada estudio incluido debería aparecer al menos en la tabla de características o en el texto.</li>
+  </ul>
+  <p>Los años no cuentan como cifras, y los métodos no se revisan así: ahí se citan métodos, no estudios. Un clic en el nombre de la sección lleva a ella. El verificador es deliberadamente estricto: una oración señalada puede estar bien —una generalización del propio autor, por ejemplo—, pero conviene leerla de nuevo.</p>
+
+  <!-- 9.5 -->
+  <h2 id="s9-5"><span class="num">9.5</span>La lista de verificación del reporte</h2>
+  <figure>
+    <div class="marco"><img src="../img/b9-lista.png" alt="La tarjeta 3 del Bloque 9: el menú de la lista PRISMA 2020, el número de puntos cubiertos y la tabla de puntos con su número, lo que pide, la sección donde va, su estado y la casilla de reportado"></div>
+    <figcaption><b>Figura 9.4.</b> PRISMA 2020 para el ejemplo: cada punto, dónde va en el manuscrito y su estado.</figcaption>
+  </figure>
+  <p>La lista que corresponde al tipo aparece sola, y se puede cambiar: <b>PRISMA 2020</b> (Page et al. 2021) para sistemáticas y meta-análisis, con sus 27 puntos (42 con incisos); <b>PRISMA-ScR</b> (Tricco et al. 2018), con 22, para exploratorias; y <b>SANRA</b> (Baethge et al. 2019), con 6, para narrativas. Cada punto dice qué pide y en qué sección va —un clic lleva a ella— y combina dos comprobaciones:</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.8in">Estado</th><th>Qué significa</th></tr></thead>
+    <tbody>
+      <tr><td><b>✓ texto y datos</b></td><td>La sección tiene texto y los bloques tienen los datos que el punto pide (por ejemplo, la fecha de búsqueda para el punto 6).</td></tr>
+      <tr><td><b>datos listos; falta el texto</b></td><td>El dato existe en el proyecto, pero la sección no lo cuenta todavía.</td></tr>
+      <tr><td><b>texto; revisar</b></td><td>Hay texto, pero el punto no se puede comprobar con datos o los datos faltan: revísalo a mano.</td></tr>
+      <tr><td><b>falta</b></td><td>Ni texto ni datos.</td></tr>
+      <tr><td><b>✓ marcado</b></td><td>Lo marcaste como reportado en la casilla de la derecha, después de revisarlo.</td></tr>
+    </tbody>
+  </table>
+  <p>En <b>SANRA</b>, cada punto se califica de 0 a 2, y la app suma el puntaje sobre 12. Lo asignas tú, o mejor un colega que lea el borrador.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>La lista es para el envío</div>
+    <p>La mayoría de las revistas pide la lista de verificación de PRISMA llena, con la página donde se reporta cada punto. La columna de la app dice en qué sección; las páginas solo existen en el documento final.</p>
+  </div>
+
+  <!-- 9.6 -->
+  <h2 id="s9-6"><span class="num">9.6</span>Exportar el manuscrito</h2>
+  <figure>
+    <div class="marco"><img src="../img/b9-exportar.png" alt="La tarjeta 4 del Bloque 9: el campo de autores, la explicación de cómo salen las citas y las referencias, y los botones de Word, HTML, Markdown y claves de cita"></div>
+    <figcaption><b>Figura 9.5.</b> La exportación: los autores tal como irán en el manuscrito y los cuatro formatos.</figcaption>
+  </figure>
+  <p>Los <b>autores</b> se escriben como irán en el manuscrito (si se deja vacío, se usan los del protocolo). Tres formatos:</p>
+  <ul>
+    <li><span class="ui">⤓ Word (.docx)</span>: un documento con estilos de título, encabezados de dos niveles, tablas con su leyenda y lista de referencias con sangría francesa, listo para darle el formato de la revista.</li>
+    <li><span class="ui">⤓ HTML</span>: para leer en el navegador o imprimir.</li>
+    <li><span class="ui">⤓ Markdown</span>: texto plano con marcas, para quien escribe con herramientas de texto.</li>
+  </ul>
+  <p>En los tres, las citas salen como autor y año, los datos vivos como sus valores y las tablas completas. La <b>lista de referencias</b> incluye solo los estudios citados y, además, las referencias de los métodos que el texto menciona por autor y año —«Page et al. 2021», «Konstantopoulos 2011», «Duval y Tweedie 2000»…—: la app reconoce las obras de los métodos que implementa y agrega su ficha. Se exporta en el idioma de la interfaz.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Los avisos de este bloque</div>
+    <p>En el editor, bajo la vista previa, los mismos avisos del verificador para la sección abierta: afirmaciones sin cita ni dato vivo, valores p sin efecto, claves inexistentes y datos sin valor. Un dato del menú aparece como <i>(sin datos)</i> cuando su bloque todavía no lo calcula.</p>
+  </div>
+</section>
+
+</body>
+</html>

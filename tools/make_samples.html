@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<!-- ReviewPro — writes the sample export files as base64 so a script can save them byte for byte.
+     Used by tools/escribir_ejemplos.ps1; it needs no server. -->
+<html><head><meta charset="utf-8"><title>samples</title></head><body>
+<script src="../js/core.js"></script>
+<script src="../js/samples.js"></script>
+<script>
+  const b64 = s => { const bytes = new TextEncoder().encode(s); let bin = ''; bytes.forEach(b => { bin += String.fromCharCode(b); }); return btoa(bin); };
+  Samples.files().forEach(f => { const p = document.createElement('pre'); p.dataset.name = f.name; p.textContent = b64(f.text); document.body.appendChild(p); });
+</script>
+</body></html>

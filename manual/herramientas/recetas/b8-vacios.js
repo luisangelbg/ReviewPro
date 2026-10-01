@@ -1,0 +1,3 @@
+await ejemplo(); goStep(8); await W(3200);
+const s = q("#b8MatField"); if (s) { s.value = [...s.options].map(o=>o.value).find(v => /Tipo de inoculante/.test(v)) || s.value; s.dispatchEvent(new Event("change", {bubbles:true})); } const a = q("#b8GapA"), b = q("#b8GapB"); if (a && b) { a.value = [...a.options].map(o=>o.value).find(v=>/País/.test(v)) || a.value; a.dispatchEvent(new Event("change",{bubbles:true})); await W(300); b.value = [...b.options].map(o=>o.value).find(v=>/Tipo de inoculante/.test(v)) || b.value; b.dispatchEvent(new Event("change",{bubbles:true})); } await W(800);
+return foto(q("#b8Gap").closest(".pg-pane"), 6, 150);

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · Manual de usuario</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../manual.css">
+<style>
+  .cover { background: #ffffff; }
+  .cover text { font-kerning: normal; }
+</style>
+</head>
+<body>
+
+<section class="page cover" aria-label="Portada">
+  <svg id="cover" viewBox="0 0 850 1100" xmlns="http://www.w3.org/2000/svg" role="img"
+       aria-label="Portada del manual de ReviewPro: al centro, una nube de registros bibliográficos que se estrecha por las cuatro etapas del diagrama PRISMA —identificados, cribados, evaluados a texto completo e incluidos— hasta veinte estudios que forman un diagrama de bosque con su rombo del efecto combinado; a los lados, los cuatro tipos de revisión; abajo, cuatro viñetas: los bloques de una búsqueda booleana, la curva del cribado priorizado, el semáforo del riesgo de sesgo y el gráfico de embudo."></svg>
+</section>
+
+<script>
+/* The cover is drawn once, deterministically (fixed seed), as vector graphics:
+   it prints sharp at any size and every illustration is original. */
+(function () {
+  const NS = 'http://www.w3.org/2000/svg';
+  const svg = document.getElementById('cover');
+  const el = (tag, attrs, parent, text) => {
+    const n = document.createElementNS(NS, tag);
+    for (const k in attrs) if (attrs[k] != null) n.setAttribute(k, attrs[k]);
+    if (text != null) n.textContent = text;
+    (parent || svg).appendChild(n);
+    return n;
+  };
+  const rng = (seed => () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; })(20260927);
+  const randn = () => { let u = 0, v = 0; while (!u) u = rng(); while (!v) v = rng(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); };
+
+  const W = 850, H = 1100;
+  const INK = '#22386e', GRIS = '#5a6b7a', BLANCO = '#ffffff';
+  const INDIGO = '#33539e', VIOLETA = '#5b4ea3', AZUL = '#2f7ea8', AMBAR = '#d97a2b', TIERRA = '#8a6a4a', HOJA = '#3a8c5c', ROSA = '#c2415e', TURQ = '#1f7a7a', PIZARRA = '#4a5c78', SIENA = '#a0522d';
+  const f1 = v => (+v).toFixed(2);
+  const poly = pts => 'M' + pts.map(([x, y]) => f1(x) + ' ' + f1(y)).join('L');
+  const hex = c => [1, 3, 5].map(i => parseInt(c.slice(i, i + 2), 16));
+  const mix = (a, b, t) => { const A = hex(a), B = hex(b); return '#' + A.map((v, i) => Math.round(v + (B[i] - v) * t).toString(16).padStart(2, '0')).join(''); };
+
+  const defs = el('defs');
+  const grad = (id, stops, attrs, linear) => { const g = el(linear ? 'linearGradient' : 'radialGradient', Object.assign({ id }, attrs || {}), defs); stops.forEach(([o, c, a]) => el('stop', { offset: o, 'stop-color': c, 'stop-opacity': a == null ? 1 : a }, g)); return `url(#${id})`; };
+  const HALO = grad('halo', [[0, '#edf0f8', 1], [0.62, '#f5f6fb', 1], [1, '#ffffff', 0]]);
+  const EMBUDO = grad('embudo', [[0, INDIGO, 0.10], [1, HOJA, 0.16]], { x1: 0, y1: 0, x2: 0, y2: 1 }, true);
+
+  el('rect', { x: 0, y: 0, width: W, height: H, fill: BLANCO });
+
+  /* ---------------------------------------------------------------- the colours of the ten blocks (plus preliminaries and appendices) */
+  const BLOQUES = ['#22386e', INDIGO, VIOLETA, AZUL, AMBAR, TIERRA, HOJA, ROSA, TURQ, PIZARRA, SIENA, '#111111'];
+  BLOQUES.forEach((c, i) => {
+    el('rect', { x: f1(i * W / BLOQUES.length), y: 0, width: f1(W / BLOQUES.length + 0.5), height: 9, fill: c });
+    el('rect', { x: f1(i * W / BLOQUES.length), y: H - 5, width: f1(W / BLOQUES.length + 0.5), height: 5, fill: c });
+  });
+
+  /* ---------------------------------------------------------------- title */
+  const tb = el('g', { 'text-anchor': 'middle' });
+  const t1 = el('text', { x: W / 2, y: 132, fill: INK, 'font-family': 'Cormorant, serif', 'font-size': 104, 'font-weight': 700, 'letter-spacing': 0.4 }, tb);
+  el('tspan', {}, t1, 'Review');
+  el('tspan', { fill: INDIGO, 'font-style': 'italic', 'font-weight': 600 }, t1, 'Pro');
+  el('text', { x: W / 2, y: 210, fill: INK, 'font-family': 'Cormorant, serif', 'font-size': 50, 'font-weight': 600, 'letter-spacing': 0.8 }, tb, 'Manual de usuario');
+  el('text', { x: W / 2, y: 254, fill: INDIGO, 'font-family': 'Cormorant, serif', 'font-size': 46, 'font-style': 'italic', 'font-weight': 500, 'letter-spacing': 0.6 }, tb, 'User Manual');
+  el('path', { d: 'M288 280 L 390 280 M 460 280 L 562 280', stroke: GRIS, 'stroke-width': 0.9 }, tb);
+  [INDIGO, AMBAR, HOJA, ROSA, TURQ].forEach((c, i) => el('circle', { cx: 405 + i * 10, cy: 280, r: 3.2, fill: c }, tb));
+  el('text', { x: W / 2, y: 305, fill: GRIS, 'font-family': 'Jost, sans-serif', 'font-size': 11.5, 'font-weight': 400, 'letter-spacing': 3.2 }, tb,
+    'ARTÍCULOS DE REVISIÓN Y META-ANÁLISIS · REVIEW ARTICLES AND META-ANALYSIS');
+
+  /* ================================================================= the funnel of a review
+     What the whole app is about: a large, unordered literature that is identified, screened,
+     read in full and reduced to the studies that answer the question — which then become a
+     forest plot with one pooled effect. The counts are those of a typical agronomic review. */
+  const CX = 425;
+  el('ellipse', { cx: CX, cy: 600, rx: 300, ry: 250, fill: HALO });
+
+  /* four stages, each a band narrower than the one above */
+  const ST = [
+    { y: 352, w: 440, n: 'identificados', c: INDIGO, k: 1480 },
+    { y: 452, w: 300, n: 'cribados', c: AMBAR, k: 920 },
+    { y: 540, w: 170, n: 'a texto completo', c: TIERRA, k: 64 },
+    { y: 612, w: 96, n: 'incluidos', c: HOJA, k: 20 },
+  ];
+  /* the funnel outline */
+  const L = ST.map(s => [CX - s.w / 2, s.y]), R = ST.map(s => [CX + s.w / 2, s.y]);
+  el('path', { d: poly(L.concat(R.slice().reverse())) + 'Z', fill: EMBUDO, stroke: 'none' });
+  el('path', { d: poly(L), fill: 'none', stroke: '#b9c3db', 'stroke-width': 1.1 });
+  el('path', { d: poly(R), fill: 'none', stroke: '#b9c3db', 'stroke-width': 1.1 });
+  /* the records: many at the mouth, fewer below, a few that fall out at each stage */
+  for (let i = 0; i < ST.length - 1; i++) {
+    const a = ST[i], b = ST[i + 1], n = [260, 150, 46][i];
+    for (let j = 0; j < n; j++) {
+      const t = rng(), y = a.y + 6 + t * (b.y - a.y - 12), w = a.w + (b.w - a.w) * t;
+      const x = CX + (rng() - 0.5) * (w - 14);
+      el('circle', { cx: f1(x), cy: f1(y), r: f1(1.3 + rng() * 1.1), fill: mix(a.c, BLANCO, 0.25 + rng() * 0.35) });
+    }
+    /* those excluded at this stage drift outwards */
+    for (let j = 0; j < [16, 11, 7][i]; j++) {
+      const y = a.y + 12 + rng() * (b.y - a.y - 20), side = j % 2 ? 1 : -1;
+      const x = CX + side * (a.w / 2 + 12 + rng() * 60);
+      el('circle', { cx: f1(x), cy: f1(y), r: 1.6, fill: 'none', stroke: mix(GRIS, BLANCO, 0.35), 'stroke-width': 0.8 });
+    }
+  }
+  /* stage labels with their counts */
+  ST.forEach((s, i) => {
+    el('line', { x1: CX + s.w / 2 + 4, y1: s.y, x2: 700, y2: s.y, stroke: mix(s.c, BLANCO, 0.4), 'stroke-width': 0.8, 'stroke-dasharray': '2 3' });
+    el('circle', { cx: CX + s.w / 2, cy: s.y, r: 3.4, fill: s.c });
+    el('text', { x: 704, y: s.y - 2, 'font-family': 'Cormorant, serif', 'font-size': 21, 'font-weight': 700, fill: s.c }, null, s.k.toLocaleString('es-MX'));
+    el('text', { x: 704, y: s.y + 12, 'font-family': 'Jost, sans-serif', 'font-size': 9, fill: GRIS, 'letter-spacing': 1.2 }, null, s.n.toUpperCase());
+  });
+
+  /* the twenty included studies become a forest plot */
+  const FX0 = 300, FX1 = 550, FY = 640, rowH = 8.4;
+  const sx = v => FX0 + (v + 0.35) / 1.05 * (FX1 - FX0);
+  const mu = 0.16;
+  el('line', { x1: sx(0), y1: FY - 4, x2: sx(0), y2: FY + 20 * rowH + 30, stroke: GRIS, 'stroke-width': 0.9 });
+  el('line', { x1: sx(mu), y1: FY - 4, x2: sx(mu), y2: FY + 20 * rowH + 30, stroke: HOJA, 'stroke-width': 0.8, 'stroke-dasharray': '3 3' });
+  for (let i = 0; i < 20; i++) {
+    const y = FY + i * rowH, se = 0.05 + rng() * 0.11, e = mu + 0.1 * randn() * 0.9;
+    el('line', { x1: f1(sx(e - 1.96 * se)), y1: f1(y), x2: f1(sx(e + 1.96 * se)), y2: f1(y), stroke: INK, 'stroke-width': 1 });
+    const s = 5.4 - se * 22;
+    el('rect', { x: f1(sx(e) - s / 2), y: f1(y - s / 2), width: f1(s), height: f1(s), fill: INDIGO });
+  }
+  const dy = FY + 20 * rowH + 16;
+  el('path', { d: poly([[sx(0.10), dy], [sx(mu), dy - 6], [sx(0.22), dy], [sx(mu), dy + 6]]) + 'Z', fill: HOJA });
+  el('path', { d: `M${f1(sx(-0.12))} ${dy}L${f1(sx(0.10))} ${dy}M${f1(sx(0.22))} ${dy}L${f1(sx(0.46))} ${dy}`, stroke: HOJA, 'stroke-width': 1.1, 'stroke-dasharray': '4 2' });
+  el('text', { x: sx(mu), y: dy + 22, 'text-anchor': 'middle', 'font-family': 'Jost, sans-serif', 'font-size': 9, fill: GRIS, 'letter-spacing': 1.2 }, null, 'UN EFECTO, CON SU INCERTIDUMBRE');
+
+  /* the four kinds of review, on both sides of the funnel */
+  const TIPOS = [
+    { x: 118, y: 400, t: 'Narrativa', s: 'SANRA', c: VIOLETA },
+    { x: 118, y: 540, t: 'Exploratoria', s: 'PRISMA-ScR', c: AZUL },
+    { x: 118, y: 680, t: 'Sistemática', s: 'PRISMA 2020', c: AMBAR },
+    { x: 118, y: 820, t: 'Meta-análisis', s: 'PRISMA 2020 · GRADE', c: HOJA },
+  ];
+  TIPOS.forEach(k => {
+    el('circle', { cx: k.x, cy: k.y - 28, r: 14, fill: mix(k.c, BLANCO, 0.82), stroke: k.c, 'stroke-width': 1.3 });
+    el('text', { x: k.x, y: k.y - 23.5, 'text-anchor': 'middle', 'font-family': 'Cormorant, serif', 'font-size': 15, 'font-weight': 700, fill: k.c }, null, String(TIPOS.indexOf(k) + 1));
+    el('text', { x: k.x, y: k.y, 'text-anchor': 'middle', 'font-family': 'Cormorant, serif', 'font-size': 20, 'font-weight': 600, 'font-style': 'italic', fill: INK }, null, k.t);
+    el('text', { x: k.x, y: k.y + 14, 'text-anchor': 'middle', 'font-family': 'Jost, sans-serif', 'font-size': 8.5, fill: GRIS, 'letter-spacing': 1.3 }, null, k.s);
+  });
+
+  /* ================================================================= four vignettes */
+  const vignette = (i, title) => {
+    const g = el('g', { transform: `translate(${58 + i * 190} 905)` });
+    el('rect', { x: 0, y: 0, width: 150, height: 96, rx: 8, fill: '#f7f8fc', stroke: '#dde2ee', 'stroke-width': 0.9 }, g);
+    el('text', { x: 75, y: 112, 'text-anchor': 'middle', 'font-family': 'Jost, sans-serif', 'font-size': 8.2, fill: GRIS, 'letter-spacing': 1.4 }, g, title.toUpperCase());
+    return g;
+  };
+  /* 1 · a Boolean search: concept blocks joined by AND, synonyms by OR */
+  (function () {
+    const g = vignette(0, 'búsqueda por bloques');
+    const cols = [[INDIGO, ['maíz', 'Zea mays', 'corn']], [AMBAR, ['micorriz*', 'AMF', 'Glomus']], [HOJA, ['rendimiento', 'yield']]];
+    cols.forEach(([c, ts], j) => {
+      const x = 8 + j * 50;
+      ts.forEach((t, k) => {
+        el('rect', { x, y: 14 + k * 20, width: 34, height: 14, rx: 3, fill: mix(c, BLANCO, 0.8), stroke: c, 'stroke-width': 0.7 }, g);
+        el('text', { x: x + 17, y: 24 + k * 20, 'text-anchor': 'middle', 'font-family': 'Jost, sans-serif', 'font-size': 6.6, fill: INK }, g, t);
+        if (k) el('text', { x: x + 17, y: 12 + k * 20, 'text-anchor': 'middle', 'font-family': 'Jost, sans-serif', 'font-size': 5, fill: GRIS }, g, 'OR');
+      });
+      if (j) el('text', { x: x - 8, y: 43, 'text-anchor': 'middle', 'font-family': 'Jost, sans-serif', 'font-size': 6.5, 'font-weight': 600, fill: ROSA }, g, 'AND');
+    });
+    el('text', { x: 75, y: 86, 'text-anchor': 'middle', 'font-family': 'Jost, sans-serif', 'font-size': 6.8, fill: GRIS }, g, '(A1 OR A2) AND (B1 OR B2) AND C');
+  })();
+  /* 2 · prioritized screening: relevant found vs records read, against random order */
+  (function () {
+    const g = vignette(1, 'cribado priorizado');
+    const x = t => 16 + t * 120, y = f => 82 - f * 62;
+    el('path', { d: `M${x(0)} ${y(0)}L${x(1)} ${y(1)}`, stroke: GRIS, 'stroke-width': 0.9, 'stroke-dasharray': '3 2' }, g);
+    const pts = []; for (let t = 0; t <= 1.0001; t += 0.05) pts.push([x(t), y(1 - Math.pow(1 - t, 5.5))]);
+    el('path', { d: poly(pts), fill: 'none', stroke: AMBAR, 'stroke-width': 2 }, g);
+    el('line', { x1: x(0.42), y1: 20, x2: x(0.42), y2: 82, stroke: ROSA, 'stroke-width': 0.8, 'stroke-dasharray': '2 2' }, g);
+    el('text', { x: x(0.42) + 3, y: 30, 'font-family': 'Jost, sans-serif', 'font-size': 6.5, fill: ROSA }, g, 'regla de paro');
+    el('path', { d: `M${x(0)} ${y(0)}L${x(1)} ${y(0)}M${x(0)} ${y(0)}L${x(0)} ${y(1)}`, stroke: INK, 'stroke-width': 0.9 }, g);
+  })();
+  /* 3 · risk of bias: studies by domains, a traffic light */
+  (function () {
+    const g = vignette(2, 'riesgo de sesgo');
+    const C = [HOJA, HOJA, HOJA, AMBAR, HOJA, ROSA];
+    for (let r = 0; r < 6; r++) for (let d = 0; d < 7; d++) {
+      const c = C[Math.floor(rng() * (r === 2 ? 6 : 5))];
+      el('circle', { cx: 22 + d * 17, cy: 18 + r * 12, r: 4.2, fill: c }, g);
+    }
+  })();
+  /* 4 · a funnel plot: effects against their precision */
+  (function () {
+    const g = vignette(3, 'gráfico de embudo');
+    const x = e => 75 + (e - 0.16) * 150, y = s => 16 + s * 520;
+    el('path', { d: `M${f1(x(0.16 - 1.96 * 0.13))} ${f1(y(0.13))}L${x(0.16)} ${y(0)}L${f1(x(0.16 + 1.96 * 0.13))} ${f1(y(0.13))}`, fill: '#eef1f8', stroke: GRIS, 'stroke-width': 0.8, 'stroke-dasharray': '2 2' }, g);
+    el('line', { x1: x(0.16), y1: y(0), x2: x(0.16), y2: y(0.13), stroke: HOJA, 'stroke-width': 0.9 }, g);
+    for (let i = 0; i < 26; i++) { const s = 0.02 + rng() * 0.1, e = 0.16 + s * randn() * 0.9; el('circle', { cx: f1(x(e)), cy: f1(y(s)), r: 2.2, fill: INDIGO, 'fill-opacity': 0.85 }, g); }
+  })();
+
+  /* ---------------------------------------------------------------- author and edition */
+  const foot = el('g', { 'text-anchor': 'middle', 'font-family': 'Cormorant, serif' });
+  el('text', { x: W / 2, y: 1052, 'font-size': 19, 'font-weight': 600, fill: INK, 'letter-spacing': 0.5 }, foot, 'Luis Ángel Barrera-Guzmán');
+  el('text', { x: W / 2, y: 1074, 'font-family': 'Jost, sans-serif', 'font-size': 9.5, fill: GRIS, 'letter-spacing': 2.4 }, foot, 'PRIMERA EDICIÓN · 2026 · VERSIÓN 1.0');
+})();
+</script>
+</body>
+</html>

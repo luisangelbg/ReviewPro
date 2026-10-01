@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · Manual de usuario · Capítulo 7</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b7" data-pestana="B7" data-orden="7" style="--acento: var(--b7)">
+  <div class="cap-apertura">
+    <div class="cap-num">7</div>
+    <div class="cap-etiqueta">Bloque 7 · Calidad y sesgo</div>
+    <h1>Riesgo de sesgo y certeza de la evidencia</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">Cada estudio incluido se evalúa por dominios con preguntas guía; la app propone el juicio de cada dominio y tú lo confirmas o lo ajustas con una justificación. Los juicios de dos revisores se concilian, alimentan los gráficos de semáforo y de resumen, y entran —junto con la heterogeneidad, la precisión y el sesgo de publicación— en la certeza de la evidencia de cada desenlace con GRADE, que termina en la tabla de resumen de hallazgos.</p>
+    <ul class="cap-contenido">
+      <li><b>7.1</b>Las herramientas</li>
+      <li><b>7.2</b>Evaluar cada estudio</li>
+      <li><b>7.3</b>Conciliar los juicios</li>
+      <li><b>7.4</b>Los gráficos de riesgo de sesgo</li>
+      <li><b>7.5</b>La certeza de la evidencia con GRADE</li>
+      <li><b>7.6</b>El resumen de hallazgos</li>
+    </ul>
+  </div>
+
+  <!-- 7.1 -->
+  <h2 id="s7-1"><span class="num">7.1</span>Las herramientas</h2>
+  <p class="lead">La herramienta se elige en el protocolo (sección 2.6) y se puede cambiar en el menú <span class="ui">Herramienta</span> de la primera tarjeta. Una sola herramienta para toda la revisión: mezclar herramientas vuelve incomparables los juicios.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:2.5in">Herramienta</th><th>Para qué estudios</th></tr></thead>
+    <tbody>
+      <tr><td><b>Lista de calidad para experimentos agronómicos</b> (recomendada)</td><td>Experimentos de campo, invernadero o laboratorio con tratamientos asignados. Siete dominios pensados para el diseño agrícola.</td></tr>
+      <tr><td><b>RoB 2</b> (Sterne et al. 2019)</td><td>Ensayos aleatorizados en el sentido clínico, con participantes asignados.</td></tr>
+      <tr><td><b>ROBINS-I</b> (Sterne et al. 2016)</td><td>Estudios no aleatorizados de intervenciones.</td></tr>
+      <tr><td><b>Newcastle–Ottawa</b></td><td>Estudios observacionales de cohorte o de casos y controles.</td></tr>
+      <tr><td><b>Lista para estudios cualitativos</b></td><td>Evidencia cualitativa.</td></tr>
+    </tbody>
+  </table>
+  <table class="compacta">
+    <thead><tr><th style="width:2.3in">Dominio de la lista agronómica</th><th>Qué pregunta</th></tr></thead>
+    <tbody>
+      <tr><td><b>D1</b> Aleatorización y control local</td><td>¿Se asignaron los tratamientos al azar? ¿El diseño controla la heterogeneidad del terreno (bloques, covariables)?</td></tr>
+      <tr><td><b>D2</b> Replicación verdadera</td><td>¿Hay al menos tres repeticiones independientes? ¿La unidad del análisis es la parcela, no la planta o la submuestra?</td></tr>
+      <tr><td><b>D3</b> Testigo adecuado</td><td>¿El testigo recibe el mismo manejo y difiere solo en el factor evaluado, en el mismo sitio y ciclo?</td></tr>
+      <tr><td><b>D4</b> Datos completos</td><td>¿Se reportan todas las parcelas o se explican las pérdidas? ¿Las pérdidas son parecidas entre tratamientos?</td></tr>
+      <tr><td><b>D5</b> Medición del desenlace</td><td>¿Se midió igual en todos los tratamientos, con un método comparable?</td></tr>
+      <tr><td><b>D6</b> Reporte selectivo</td><td>¿Se reportan todos los desenlaces, sitios y ciclos medidos? ¿El análisis parece fijado de antemano?</td></tr>
+      <tr><td><b>D7</b> Conflicto de interés</td><td>¿El estudio lo financió o lo hizo el fabricante del producto evaluado?</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 7.2 -->
+  <h2 id="s7-2"><span class="num">7.2</span>Evaluar cada estudio</h2>
+  <figure>
+    <div class="marco"><img src="../img/b7-evaluar.png" alt="La tarjeta 1 del Bloque 7: la herramienta y el revisor arriba; a la izquierda la lista de estudios con el juicio global de la revisora; a la derecha el estudio Banda 2023 con sus dominios D1 a D3, cada pregunta con sus respuestas —sí, probablemente sí, probablemente no, no, sin información, no aplica—, el juicio automático de cada dominio y los campos para ajustarlo y citar la evidencia"></div>
+    <figcaption><b>Figura 7.1.</b> La evaluación de Banda 2023. En D2, la unidad del análisis no es la parcela (respuesta «No» a una pregunta clave): el dominio queda en riesgo alto, y con él el juicio global.</figcaption>
+  </figure>
+  <p>A la izquierda, los estudios con el juicio global del revisor activo (<i>tu juicio: Alto</i>, <i>Algunas dudas</i>…). A la derecha, cada dominio con sus preguntas guía, que se responden con <i>Sí</i>, <i>Probablemente sí</i>, <i>Probablemente no</i>, <i>No</i>, <i>Sin información</i> o <i>No aplica</i>. Con las respuestas, la app propone el juicio del dominio —<b>Bajo</b>, <b>Algunas dudas</b> o <b>Alto</b>— y lo muestra en la etiqueta de color.</p>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Teoría en breve · cómo se llega al juicio</div>
+    <p>Las preguntas marcadas con ● son <b>clave</b>: un «No» en una de ellas lleva el dominio a riesgo alto. «Probablemente no» y «Sin información», o un «No» en una pregunta que no es clave, lo dejan con algunas dudas. En la pregunta del conflicto de interés —¿lo financió quien vende el insumo?— lo que preocupa es el «Sí». El juicio <b>global</b> es el peor de los dominios, y también «alto» cuando tres o más dominios tienen algunas dudas: muchos problemas pequeños suman uno grande.</p>
+  </div>
+  <p>El juicio propuesto no es obligatorio: <span class="ui">Ajustar el juicio</span> lo cambia, pero pide una <b>justificación</b>. Y cada dominio tiene un campo para la <b>cita o evidencia del artículo</b> que respalda el juicio —«Materiales y métodos: “se muestrearon cinco plantas por parcela y se analizaron como repeticiones”»—: con ella, otro revisor puede comprobarlo sin releer el artículo.</p>
+
+  <!-- 7.3 -->
+  <h2 id="s7-3"><span class="num">7.3</span>Conciliar los juicios</h2>
+  <figure>
+    <div class="marco"><img src="../img/b7-conciliar.png" alt="La tarjeta 2 del Bloque 7: el acuerdo por dominio entre los dos revisores, 98 % y kappa 0.95 sobre 140 juicios; y tres estudios con juicios distintos en el dominio D2 o en el global, cada uno con el juicio de cada revisor y el menú de la decisión final"></div>
+    <figcaption><b>Figura 7.2.</b> Los juicios por conciliar del ejemplo: tres estudios en los que los revisores leyeron distinto la replicación (D2).</figcaption>
+  </figure>
+  <p>Con dos revisores, la tarjeta da el acuerdo por dominio —porcentaje y kappa sobre todos los juicios— y lista solo los dominios en que difieren, con el juicio de cada revisor y un menú de <span class="ui">decisión final…</span>. La decisión final es la que usan los gráficos y GRADE.</p>
+  <div class="caja ejemplo">
+    <div class="caja-t"><span class="ico">▸</span>Ejemplo · tres estudios sin conciliar</div>
+    <p>En el ejemplo, los revisores coinciden en el 98 % de 140 juicios (κ = 0.95, casi perfecto), pero Hassan 2020, Novak 2015 y Rossi 2013 siguen sin conciliar: por eso el Bloque 10 marca este bloque <i>en curso</i> (85 %) y el informe sale como borrador. Aparecen como círculos vacíos en el semáforo.</p>
+  </div>
+
+  <!-- 7.4 -->
+  <h2 id="s7-4"><span class="num">7.4</span>Los gráficos de riesgo de sesgo</h2>
+  <figure style="width:56%;margin-left:auto;margin-right:auto">
+    <div class="marco"><img src="../img/b7-graficos.png" alt="El semáforo de riesgo de sesgo: una fila por estudio y una columna por dominio más la global, con círculos verdes con más, naranjas con menos, rojos con cruz, y círculos vacíos donde el juicio está sin conciliar"></div>
+    <figcaption><b>Figura 7.3.</b> El semáforo: verde (+) riesgo bajo, naranja (−) algunas dudas, rojo (×) alto; el círculo vacío, sin juicio final.</figcaption>
+  </figure>
+  <figure>
+    <div class="marco"><img src="../img/b7-resumen.png" alt="El resumen por dominio: una barra por dominio y una global con los porcentajes de riesgo bajo, algunas dudas y alto, ponderados por el peso de cada estudio; la global tiene 8 % bajo, 65 % algunas dudas y 27 % alto"></div>
+    <figcaption><b>Figura 7.4.</b> El resumen por dominio, ponderado por el peso de cada estudio en el desenlace primario: el 27 % del peso tiene riesgo alto en el juicio global.</figcaption>
+  </figure>
+  <p>El <b>semáforo</b> muestra cada estudio en cada dominio; el <b>resumen</b>, qué fracción de la evidencia está en cada nivel. Con la casilla <span class="ui">Ponderar el resumen por el peso de cada estudio en el desenlace primario</span>, cada estudio cuenta según su peso (la inversa de la varianza de sus efectos) en vez de contar uno; así se ve si el riesgo alto está en los estudios que mandan en el resultado o en los marginales. Los dos gráficos se exportan con el botón ⤓ de su esquina, y <span class="ui">⤓ Juicios por estudio (.csv)</span> descarga la tabla completa.</p>
+
+  <!-- 7.5 -->
+  <h2 id="s7-5"><span class="num">7.5</span>La certeza de la evidencia con GRADE</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/b7-grade.png" alt="La tarjeta 4 del Bloque 7: para el rendimiento de grano, 20 estudios, 338 unidades y +16.9 %, certeza muy baja; el punto de partida en experimentos aleatorizados, las cinco razones para bajar con su sugerencia marcada con asterisco y su explicación, las notas; los otros dos desenlaces sin estudios; y la tabla de resumen de hallazgos con su botón de descarga"></div>
+    <figcaption><b>Figura 7.5.</b> GRADE para el rendimiento de grano. Tres razones bajan un nivel cada una —riesgo de sesgo, inconsistencia e imprecisión— y la certeza queda muy baja. Cada sugerencia (✱) explica de dónde sale.</figcaption>
+  </figure>
+  <p>GRADE (Guyatt et al. 2008) califica la certeza por <b>desenlace</b>, no por estudio. Los experimentos aleatorizados parten de certeza alta y los observacionales de baja; cinco razones pueden bajarla uno o dos niveles y tres pueden subirla, solo en observacionales. El resultado es <b>alta</b> (⊕⊕⊕⊕), <b>moderada</b> (⊕⊕⊕◯), <b>baja</b> (⊕⊕◯◯) o <b>muy baja</b> (⊕◯◯◯). La app sugiere cada juicio con los datos, lo marca con ✱ y dice por qué:</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.45in">Razón</th><th>Cómo sugiere la app</th></tr></thead>
+    <tbody>
+      <tr><td><b>Riesgo de sesgo</b></td><td>−2 si más del 75 % del peso tiene riesgo alto; −1 si lo tiene la mitad o más, o si alto y algunas dudas suman más del 80 %. Se calcula sobre los estudios ya juzgados, y avisa cuánto peso falta por juzgar.</td></tr>
+      <tr><td><b>Inconsistencia</b></td><td>−1 si I² supera 75 %, o si supera 50 % y el intervalo de predicción cruza el valor nulo cuando el de confianza no lo hace.</td></tr>
+      <tr><td><b>Evidencia indirecta</b></td><td>No se sugiere: depende de si la población, la intervención o el desenlace de los estudios son los de tu pregunta. Lo decides tú.</td></tr>
+      <tr><td><b>Imprecisión</b></td><td>−1 si el IC 95 % incluye el valor nulo, o si el total de unidades experimentales es menor que el tamaño óptimo de información de referencia (400); −2 si pasan las dos cosas.</td></tr>
+      <tr><td><b>Sesgo de publicación</b></td><td>−1 si la prueba de Egger da p &lt; 0.10 con al menos 10 estudios; con menos, no se evalúa y se anota.</td></tr>
+      <tr><td><b>Efecto grande</b>, <b>dosis–respuesta</b>, <b>confusión que reduce el efecto</b></td><td>Solo en observacionales; los decides tú.</td></tr>
+    </tbody>
+  </table>
+  <p>El efecto que acompaña cada desenlace es el del modelo elegido en el Bloque 8 —multinivel, salvo que elijas el promedio por estudio—, el mismo que citará el manuscrito. Un desenlace del protocolo sin datos aparece como <i>sin estudios</i>: eso también se reporta.</p>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>Las sugerencias no son el juicio</div>
+    <p>Cada ✱ es un punto de partida calculado; el juicio es tuyo. Si lo cambias, explica por qué en <span class="ui">Notas y explicación de los juicios</span>: la nota aparece en la tabla de resumen de hallazgos, y los árbitros la leen.</p>
+  </div>
+
+  <!-- 7.6 -->
+  <h2 id="s7-6"><span class="num">7.6</span>El resumen de hallazgos</h2>
+  <p>Debajo, la tabla de <b>resumen de hallazgos</b>: una fila por desenlace, con el número de estudios, las unidades experimentales, el efecto con su IC 95 %, I², la certeza y las razones. Es la tabla que las guías recomiendan poner en el cuerpo del artículo; <span class="ui">⤓ Tabla de resumen de hallazgos (.html)</span> la descarga lista para imprimir o copiar, y en el Bloque 9 entra al manuscrito con <code>{{table:sof}}</code>.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Los avisos de este bloque</div>
+    <p><i>«Todavía no hay estudios incluidos (Bloque 5)»</i>; <i>«Declara desenlaces en el protocolo o extrae efectos en el Bloque 6»</i>; el aviso de una justificación faltante al ajustar un juicio; y, en GRADE, <i>«Con menos de 10 estudios la asimetría del embudo no se puede evaluar; se deja sin bajar y se anota»</i>.</p>
+  </div>
+</section>
+
+</body>
+</html>

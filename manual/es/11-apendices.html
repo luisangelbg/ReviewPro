@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · Manual de usuario · Apéndices</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+<style>
+  .refs { list-style: none; padding: 0; margin: 0.06in 0 0; }
+  .refs li { margin: 0 0 0.09in 0.24in; text-indent: -0.24in; }
+</style>
+</head>
+<body>
+
+<section class="capitulo" id="cap-ap" data-pestana="Ap" data-orden="11" style="--acento: var(--bx)">
+  <div class="cap-apertura">
+    <div class="cap-num">A</div>
+    <div class="cap-etiqueta">Apéndices</div>
+    <h1>Apéndices</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">Lo que hace falta tener a la mano y no cabía en ningún capítulo: qué archivos lee y escribe la app, las reglas de decisión de los diez bloques reunidas, un glosario, qué hacer cuando algo no sale, las referencias de todos los métodos y la licencia con la forma de citar el programa.</p>
+    <ul class="cap-contenido">
+      <li><b>A</b>Los archivos que la app lee y escribe</li>
+      <li><b>B</b>Las reglas de decisión, reunidas</li>
+      <li><b>C</b>Glosario</li>
+      <li><b>D</b>Cuando algo no sale</li>
+      <li><b>E</b>Referencias</li>
+      <li><b>F</b>La herramienta: licencia y cómo citarla</li>
+    </ul>
+  </div>
+
+  <!-- A -->
+  <h2 id="ap-a"><span class="num">A</span>Los archivos que la app lee y escribe</h2>
+  <p class="lead">ReviewPro corre en el navegador y no envía nada a ningún servidor: todos los archivos entran y salen de la computadora. Este apéndice los reúne.</p>
+  <h3>A.1 · Lo que la app lee</h3>
+  <table class="compacta">
+    <thead><tr><th style="width:2.1in">Archivo</th><th style="width:0.9in">Bloque</th><th>Contenido</th></tr></thead>
+    <tbody>
+      <tr><td><code>.reviewpro.json</code></td><td>2</td><td>Un proyecto completo, propio o de un coautor.</td></tr>
+      <tr><td><code>.ris</code>, <code>.bib</code>, <code>.txt</code> (etiquetado), <code>.nbib</code> (MEDLINE), <code>.enw</code>, <code>.csv</code> / <code>.tsv</code></td><td>3</td><td>Exportaciones de bases de datos bibliográficas y de repositorios. El formato se reconoce por el contenido, no por la extensión.</td></tr>
+      <tr><td>Archivo de decisiones</td><td>4</td><td>Las decisiones de cribado de otro revisor (o su proyecto completo).</td></tr>
+      <tr><td>PDF de los estudios</td><td>5</td><td>No se leen: solo se anota su ruta y se abren con el visor del sistema.</td></tr>
+    </tbody>
+  </table>
+  <h3>A.2 · Lo que la app escribe</h3>
+  <table class="compacta">
+    <thead><tr><th style="width:2.4in">Archivo</th><th style="width:0.6in">Bloque</th><th>Contenido</th></tr></thead>
+    <tbody>
+      <tr><td><code>….reviewpro.json</code></td><td>2</td><td>El proyecto completo.</td></tr>
+      <tr><td><code>…_protocol.html</code>, campos del registro <code>.md</code></td><td>2</td><td>El protocolo con PRISMA-P; los campos de PROSPERO u OSF.</td></tr>
+      <tr><td>Registros únicos <code>.ris</code> y <code>.csv</code>; informe de la búsqueda <code>.md</code></td><td>3</td><td>La búsqueda depurada y documentada.</td></tr>
+      <tr><td>Decisiones <code>.csv</code>; registros a texto completo <code>.ris</code>; archivo de intercambio</td><td>4</td><td>El cribado.</td></tr>
+      <tr><td>Lista de faltantes <code>.csv</code>; conteos del diagrama <code>.md</code></td><td>5</td><td>Los textos por conseguir y el flujo PRISMA.</td></tr>
+      <tr><td>Características <code>.csv</code>; efectos <code>.csv</code></td><td>6</td><td>Las tablas finales de extracción.</td></tr>
+      <tr><td>Juicios por estudio <code>.csv</code>; resumen de hallazgos <code>.html</code></td><td>7</td><td>Riesgo de sesgo y GRADE.</td></tr>
+      <tr><td>Resultados por desenlace <code>.csv</code></td><td>8</td><td>El meta-análisis de cada desenlace.</td></tr>
+      <tr><td>Manuscrito <code>.docx</code>, <code>.html</code>, <code>.md</code>; claves de cita <code>.csv</code></td><td>9</td><td>El texto con citas y referencias resueltas.</td></tr>
+      <tr><td>Informe <code>.html</code>; paquete <code>.zip</code>; estudios incluidos <code>.ris</code> y <code>.bib</code></td><td>10</td><td>La entrega.</td></tr>
+      <tr><td>Figuras <code>.png</code>, <code>.jpg</code>, <code>.svg</code></td><td>todos</td><td>Con el botón ⤓ de cada figura o desde el Bloque 10.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- B -->
+  <h2 id="ap-b"><span class="num">B</span>Las reglas de decisión, reunidas</h2>
+  <p>Las escalas y umbrales que la app usa o sugiere, en una sola lista. Son guías para decidir, no leyes: lo que sabes del tema y de tus estudios siempre manda.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:0.5in">Bloque</th><th style="width:2in">Magnitud</th><th>Escala</th></tr></thead>
+    <tbody>
+      <tr><td><span class="chip k1">1</span></td><td>WSS@95 del cribado priorizado</td><td>Trabajo ahorrado frente al azar para llegar al 95 % de los relevantes; más alto, mejor.</td></tr>
+      <tr><td><span class="chip k4">4</span></td><td>Recall al parar</td><td>≥ 95 % bueno · 90–95 % aceptable con verificación · &lt; 90 % se perdieron demasiados</td></tr>
+      <tr><td><span class="chip k4">4</span></td><td>Kappa de Cohen (Landis y Koch 1977)</td><td>≤ 0 pobre · 0.01–0.20 leve · 0.21–0.40 aceptable · 0.41–0.60 moderado · 0.61–0.80 sustancial · 0.81–1 casi perfecto</td></tr>
+      <tr><td><span class="chip k4">4</span></td><td>Kappa del piloto</td><td>Por debajo del objetivo del protocolo (0.6 por omisión): afinar los criterios antes de seguir.</td></tr>
+      <tr><td><span class="chip k7">7</span></td><td>Juicio global de sesgo</td><td>El peor de los dominios; «alto» también con tres o más dominios con algunas dudas.</td></tr>
+      <tr><td><span class="chip k7">7</span></td><td>GRADE · riesgo de sesgo</td><td>−2 si &gt; 75 % del peso tiene riesgo alto · −1 si ≥ 50 %, o alto + dudas &gt; 80 %</td></tr>
+      <tr><td><span class="chip k7">7</span></td><td>GRADE · inconsistencia</td><td>−1 si I² &gt; 75 %, o &gt; 50 % con el intervalo de predicción cruzando el nulo</td></tr>
+      <tr><td><span class="chip k7">7</span></td><td>GRADE · imprecisión</td><td>−1 si el IC cruza el nulo o hay &lt; 400 unidades experimentales · −2 si ambas</td></tr>
+      <tr><td><span class="chip k7">7</span></td><td>GRADE · sesgo de publicación</td><td>−1 si Egger p &lt; 0.10 con ≥ 10 estudios; con menos, no se evalúa</td></tr>
+      <tr><td><span class="chip k8">8</span></td><td>I² (Higgins y Thompson 2002)</td><td>≈ 25 % baja · ≈ 50 % moderada · ≈ 75 % alta (convención; lee también τ² y el intervalo de predicción)</td></tr>
+      <tr><td><span class="chip k8">8</span></td><td>Intervalo de predicción</td><td>Fuera del nulo: efecto consistente · cruza el nulo: funciona en promedio, no en todas partes</td></tr>
+      <tr><td><span class="chip k8">8</span></td><td>Pruebas de asimetría</td><td>Con &lt; 10 estudios o errores estándar parecidos, solo como referencia</td></tr>
+      <tr><td><span class="chip k8">8</span></td><td>Sensibilidad</td><td>se sostiene · cambia la significancia · cambia de signo</td></tr>
+      <tr><td><span class="chip k10">10</span></td><td>Resolución de exportación</td><td>150 ppp pantalla · 300 impresión y la mayoría de las revistas · 600 revistas exigentes · 900 carteles</td></tr>
+    </tbody>
+  </table>
+
+  <!-- C -->
+  <h2 id="ap-c"><span class="num">C</span>Glosario</h2>
+  <table class="compacta glosario">
+    <thead><tr><th style="width:2.1in">Término</th><th>Qué es</th></tr></thead>
+    <tbody>
+      <tr><td><b>Cadena de búsqueda</b></td><td>La combinación de términos con operadores booleanos (AND, OR, NOT) que se corre en una base de datos.</td></tr>
+      <tr><td><b>Certeza de la evidencia</b></td><td>Qué tan confiado se puede estar en que el efecto verdadero está cerca del estimado; con GRADE, alta, moderada, baja o muy baja.</td></tr>
+      <tr><td><b>Cribado</b></td><td>La selección de registros por título y resumen, antes de leer el texto completo.</td></tr>
+      <tr><td><b>Dato vivo</b></td><td>Una marca <code>{{…}}</code> del Bloque 9 que se reemplaza por un número o una tabla del proyecto al mostrar o exportar.</td></tr>
+      <tr><td><b>Duplicado</b></td><td>El mismo registro obtenido de dos o más fuentes.</td></tr>
+      <tr><td><b>Efecto combinado</b></td><td>El promedio ponderado de los efectos de los estudios, con su intervalo de confianza.</td></tr>
+      <tr><td><b>Efectos aleatorios</b></td><td>El modelo que supone que cada estudio tiene su propio efecto verdadero, tomado de una distribución.</td></tr>
+      <tr><td><b>Estudio · informe · registro</b></td><td>Una investigación; un documento que la reporta; una ficha bibliográfica. Un estudio puede tener varios informes y un informe varios registros.</td></tr>
+      <tr><td><b>GRADE</b></td><td>El sistema para calificar la certeza de la evidencia por desenlace.</td></tr>
+      <tr><td><b>Heterogeneidad</b></td><td>La variación entre los efectos verdaderos de los estudios; se mide con τ², I² y el intervalo de predicción.</td></tr>
+      <tr><td><b>I²</b></td><td>La fracción de la variación observada que no se debe al azar del muestreo.</td></tr>
+      <tr><td><b>Intervalo de predicción</b></td><td>El rango donde caería el efecto verdadero de un estudio o sitio nuevo.</td></tr>
+      <tr><td><b>Kappa</b></td><td>El acuerdo entre revisores corregido por el que se esperaría por azar.</td></tr>
+      <tr><td><b>Literatura gris</b></td><td>Tesis, informes técnicos, resúmenes de congreso y otros documentos fuera de las revistas arbitradas.</td></tr>
+      <tr><td><b>lnRR</b></td><td>El logaritmo de la razón de respuesta: ln(media tratada / media testigo).</td></tr>
+      <tr><td><b>Meta-regresión</b></td><td>La regresión de los efectos sobre características de los estudios (moderadores).</td></tr>
+      <tr><td><b>Modelo multinivel</b></td><td>El modelo de efectos aleatorios con un nivel entre estudios y otro entre efectos del mismo estudio.</td></tr>
+      <tr><td><b>Moderador</b></td><td>Una característica de los estudios que puede explicar la heterogeneidad.</td></tr>
+      <tr><td><b>PICO, PECO, PCC, SPIDER</b></td><td>Marcos para formular la pregunta de una revisión.</td></tr>
+      <tr><td><b>PRISMA 2020, PRISMA-ScR, PRISMA-P</b></td><td>Las guías de reporte de revisiones sistemáticas, exploratorias y de protocolos.</td></tr>
+      <tr><td><b>Protocolo</b></td><td>El plan de la revisión, escrito y registrado antes de buscar.</td></tr>
+      <tr><td><b>Recorte y relleno</b></td><td>El método que estima cuántos estudios faltarían para que el embudo fuera simétrico.</td></tr>
+      <tr><td><b>Regla de paro</b></td><td>El criterio, declarado de antemano, para dejar de cribar antes de leer todos los registros.</td></tr>
+      <tr><td><b>Resumen de hallazgos</b></td><td>La tabla con el efecto y la certeza de cada desenlace.</td></tr>
+      <tr><td><b>Riesgo de sesgo</b></td><td>La posibilidad de que el diseño o la conducción de un estudio desvíen su resultado de la verdad.</td></tr>
+      <tr><td><b>Sesgo de publicación</b></td><td>La publicación preferente de los estudios con resultados favorables o significativos.</td></tr>
+      <tr><td><b>SANRA</b></td><td>La escala de calidad de las revisiones narrativas.</td></tr>
+      <tr><td><b>SWiM</b></td><td>La guía para reportar síntesis sin meta-análisis.</td></tr>
+      <tr><td><b>τ²</b></td><td>La varianza de los efectos verdaderos entre estudios.</td></tr>
+      <tr><td><b>Tamaño de efecto</b></td><td>El número que resume el resultado de una comparación en una escala común.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- D -->
+  <h2 id="ap-d"><span class="num">D</span>Cuando algo no sale</h2>
+  <table class="compacta">
+    <thead><tr><th style="width:2.4in">Lo que pasa</th><th>Qué hacer</th></tr></thead>
+    <tbody>
+      <tr><td>Al abrir la app, mi proyecto no está</td><td>El proyecto vive en el navegador donde se trabajó. Ábrelo con <span class="ui">Abrir archivo…</span> desde tu último <code>.reviewpro.json</code>. Guarda el archivo al final de cada sesión.</td></tr>
+      <tr><td>Un archivo de la base no se importa o salen menos registros</td><td>Revisa que la exportación incluya todos los resultados y los campos completos; si es una tabla, que tenga encabezados. Compara con la columna <b>Importados</b> de la bitácora.</td></tr>
+      <tr><td>Un duplicado se escapó</td><td>Exclúyelo en el cribado con el criterio de publicación duplicada.</td></tr>
+      <tr><td>El enlace «abrir» del PDF no funciona</td><td>Abre la app con doble clic en <code>index.html</code>, no desde el servidor; o copia la ruta.</td></tr>
+      <tr><td>Las decisiones de otro revisor no coinciden con mis registros</td><td>Ambos deben haber importado los mismos archivos: comparte el proyecto y que el otro revisor lo abra antes de cribar.</td></tr>
+      <tr><td>El Bloque 8 dice que no hay datos suficientes</td><td>Se necesitan al menos dos estudios con efecto completo en el desenlace; revisa las filas incompletas del Bloque 6.</td></tr>
+      <tr><td>La razón de respuesta no se calcula</td><td>Necesita medias positivas y el n de ambos grupos. Si la variable puede ser cero o negativa, usa la diferencia de medias estandarizada.</td></tr>
+      <tr><td>El verificador señala una oración que está bien</td><td>Léela de nuevo; si es una generalización tuya y no un resultado, déjala. El verificador es estricto a propósito.</td></tr>
+      <tr><td>Un dato vivo aparece en rojo</td><td>Su bloque no lo calcula todavía, o el nombre del desenlace no coincide: elígelo del menú <span class="ui">Dato vivo</span>.</td></tr>
+      <tr><td>Una figura no aparece en el Bloque 10</td><td>Su bloque no la ha dibujado: visítalo (o usa <span class="ui">↻ Actualizar desde los bloques</span>).</td></tr>
+      <tr><td>Quiero comprobar que la app calcula bien</td><td>Con el servidor local (<code>Open ReviewPro.bat</code>), abre <code>http://localhost:9550/tests/</code>: más de 550 comprobaciones contra resultados publicados e implementaciones independientes.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- E -->
+  <h2 id="ap-e"><span class="num">E</span>Referencias</h2>
+  <p>Las obras de las que sale cada método de la app, las mismas de la sección <span class="ui">Referencias detrás de los cálculos</span> de la portada.</p>
+  <h3>Tipos de revisión, guías de reporte y evaluación</h3>
+  <ul class="refs">
+    <li>Arksey, H. &amp; O'Malley, L. (2005). Scoping studies: towards a methodological framework. International Journal of Social Research Methodology 8: 19–32.</li>
+    <li>Baethge, C., Goldbeck-Wood, S. &amp; Mertens, S. (2019). SANRA — a scale for the quality assessment of narrative review articles. Research Integrity and Peer Review 4: 5.</li>
+    <li>Campbell, M., McKenzie, J.E., Sowden, A. et al. (2020). Synthesis without meta-analysis (SWiM) in systematic reviews: reporting guideline. BMJ 368: l6890.</li>
+    <li>Grant, M.J. &amp; Booth, A. (2009). A typology of reviews: an analysis of 14 review types and associated methodologies. Health Information and Libraries Journal 26: 91–108.</li>
+    <li>Guyatt, G.H., Oxman, A.D., Vist, G.E. et al. (2008). GRADE: an emerging consensus on rating quality of evidence and strength of recommendations. BMJ 336: 924–926.</li>
+    <li>Moher, D., Shamseer, L., Clarke, M. et al. (2015). Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015 statement. Systematic Reviews 4: 1.</li>
+    <li>Page, M.J., McKenzie, J.E., Bossuyt, P.M. et al. (2021). The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. BMJ 372: n71.</li>
+    <li>Peters, M.D.J., Marnie, C., Tricco, A.C. et al. (2020). Updated methodological guidance for the conduct of scoping reviews. JBI Evidence Synthesis 18: 2119–2126.</li>
+    <li>Shamseer, L., Moher, D., Clarke, M. et al. (2015). Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015: elaboration and explanation. BMJ 349: g7647.</li>
+    <li>Sterne, J.A.C., Hernán, M.A., Reeves, B.C. et al. (2016). ROBINS-I: a tool for assessing risk of bias in non-randomised studies of interventions. BMJ 355: i4919.</li>
+    <li>Sterne, J.A.C., Savović, J., Page, M.J. et al. (2019). RoB 2: a revised tool for assessing risk of bias in randomised trials. BMJ 366: l4898.</li>
+    <li>Tricco, A.C., Lillie, E., Zarin, W. et al. (2018). PRISMA extension for scoping reviews (PRISMA-ScR): checklist and explanation. Annals of Internal Medicine 169: 467–473.</li>
+  </ul>
+  <h3>Cribado, acuerdo y paro</h3>
+  <ul class="refs">
+    <li>Clopper, C.J. &amp; Pearson, E.S. (1934). The use of confidence or fiducial limits illustrated in the case of the binomial. Biometrika 26: 404–413.</li>
+    <li>Cohen, A.M., Hersh, W.R., Peterson, K. &amp; Yen, P.-Y. (2006). Reducing workload in systematic review preparation using automated citation classification. Journal of the American Medical Informatics Association 13: 206–219.</li>
+    <li>Cohen, J. (1960). A coefficient of agreement for nominal scales. Educational and Psychological Measurement 20: 37–46.</li>
+    <li>Cormack, G.V. &amp; Grossman, M.R. (2016). Engineering quality and reliability in technology-assisted review. Proceedings of the 39th International ACM SIGIR Conference: 75–84.</li>
+    <li>Fleiss, J.L. (1971). Measuring nominal scale agreement among many raters. Psychological Bulletin 76: 378–382.</li>
+    <li>Fleiss, J.L., Cohen, J. &amp; Everitt, B.S. (1969). Large sample standard errors of kappa and weighted kappa. Psychological Bulletin 72: 323–327.</li>
+    <li>Landis, J.R. &amp; Koch, G.G. (1977). The measurement of observer agreement for categorical data. Biometrics 33: 159–174.</li>
+    <li>Rennie, J.D.M., Shih, L., Teevan, J. &amp; Karger, D.R. (2003). Tackling the poor assumptions of naive Bayes text classifiers. Proceedings of the 20th International Conference on Machine Learning: 616–623.</li>
+    <li>Salton, G. &amp; Buckley, C. (1988). Term-weighting approaches in automatic text retrieval. Information Processing &amp; Management 24: 513–523.</li>
+    <li>van de Schoot, R., de Bruin, J., Schram, R. et al. (2021). An open source machine learning framework for efficient and transparent systematic reviews. Nature Machine Intelligence 3: 125–133.</li>
+    <li>Yu, Z., Kraft, N.A. &amp; Menzies, T. (2018). Finding better active learners for faster literature reviews. Empirical Software Engineering 23: 3161–3186.</li>
+  </ul>
+  <h3>Meta-análisis</h3>
+  <ul class="refs">
+    <li>Begg, C.B. &amp; Mazumdar, M. (1994). Operating characteristics of a rank correlation test for publication bias. Biometrics 50: 1088–1101.</li>
+    <li>Borenstein, M., Hedges, L.V., Higgins, J.P.T. &amp; Rothstein, H.R. (2009). Introduction to meta-analysis. Wiley, Chichester.</li>
+    <li>Cheung, M.W.-L. (2014). Modeling dependent effect sizes with three-level meta-analyses: a structural equation modeling approach. Psychological Methods 19: 211–229.</li>
+    <li>Colditz, G.A., Brewer, T.F., Berkey, C.S. et al. (1994). Efficacy of BCG vaccine in the prevention of tuberculosis: meta-analysis of the published literature. JAMA 271: 698–702.</li>
+    <li>DerSimonian, R. &amp; Laird, N. (1986). Meta-analysis in clinical trials. Controlled Clinical Trials 7: 177–188.</li>
+    <li>Duval, S. &amp; Tweedie, R. (2000). Trim and fill: a simple funnel-plot-based method of testing and adjusting for publication bias in meta-analysis. Biometrics 56: 455–463.</li>
+    <li>Egger, M., Davey Smith, G., Schneider, M. &amp; Minder, C. (1997). Bias in meta-analysis detected by a simple, graphical test. BMJ 315: 629–634.</li>
+    <li>Hedges, L.V. (1981). Distribution theory for Glass's estimator of effect size and related estimators. Journal of Educational Statistics 6: 107–128.</li>
+    <li>Hedges, L.V. &amp; Olkin, I. (1985). Statistical methods for meta-analysis. Academic Press, Orlando.</li>
+    <li>Hedges, L.V., Gurevitch, J. &amp; Curtis, P.S. (1999). The meta-analysis of response ratios in experimental ecology. Ecology 80: 1150–1156.</li>
+    <li>Higgins, J.P.T. &amp; Thompson, S.G. (2002). Quantifying heterogeneity in a meta-analysis. Statistics in Medicine 21: 1539–1558.</li>
+    <li>Higgins, J.P.T., Thompson, S.G. &amp; Spiegelhalter, D.J. (2009). A re-evaluation of random-effects meta-analysis. Journal of the Royal Statistical Society A 172: 137–159.</li>
+    <li>Knapp, G. &amp; Hartung, J. (2003). Improved tests for a random effects meta-regression with a single covariate. Statistics in Medicine 22: 2693–2710.</li>
+    <li>Konstantopoulos, S. (2011). Fixed effects and variance components estimation in three-level meta-analysis. Research Synthesis Methods 2: 61–76.</li>
+    <li>Koricheva, J., Gurevitch, J. &amp; Mengersen, K. (eds.) (2013). Handbook of meta-analysis in ecology and evolution. Princeton University Press, Princeton.</li>
+    <li>Lajeunesse, M.J. (2013). Recovering missing or partial data from studies: a survey of conversions and imputations for meta-analysis. In: Koricheva, J., Gurevitch, J. &amp; Mengersen, K. (eds.), Handbook of meta-analysis in ecology and evolution: 195–206. Princeton University Press, Princeton.</li>
+    <li>Nakagawa, S., Lagisz, M., Jennions, M.D. et al. (2022). Methods for testing publication bias in ecological and evolutionary meta-analyses. Methods in Ecology and Evolution 13: 4–21.</li>
+    <li>Paule, R.C. &amp; Mandel, J. (1982). Consensus values and weighting factors. Journal of Research of the National Bureau of Standards 87: 377–385.</li>
+    <li>Viechtbauer, W. (2005). Bias and efficiency of meta-analytic variance estimators in the random-effects model. Journal of Educational and Behavioral Statistics 30: 261–293.</li>
+    <li>Wan, X., Wang, W., Liu, J. &amp; Tong, T. (2014). Estimating the sample mean and standard deviation from the sample size, median, range and/or interquartile range. BMC Medical Research Methodology 14: 135.</li>
+  </ul>
+  <h3>Cálculo numérico</h3>
+  <ul class="refs">
+    <li>Lanczos, C. (1964). A precision approximation of the gamma function. SIAM Journal on Numerical Analysis B 1: 86–96.</li>
+    <li>Press, W.H., Teukolsky, S.A., Vetterling, W.T. &amp; Flannery, B.P. (2007). Numerical recipes: the art of scientific computing, 3rd ed. Cambridge University Press, Cambridge.</li>
+    <li>Wichura, M.J. (1988). Algorithm AS 241: the percentage points of the normal distribution. Applied Statistics 37: 477–484.</li>
+  </ul>
+
+  <!-- F -->
+  <h2 id="ap-f"><span class="num">F</span>La herramienta: licencia y cómo citarla</h2>
+  <h3>F.1 · Qué lleva la app por dentro</h3>
+  <p>ReviewPro está escrita en HTML, CSS y JavaScript sin ninguna biblioteca de terceros: ni para las gráficas, ni para leer los formatos bibliográficos, ni para el modelo del cribado, ni para el meta-análisis, ni para escribir el documento de Word o el .zip. Los métodos son los de las obras del apéndice E, y los motores de cálculo se verificaron contra resultados publicados —el conjunto BCG (Colditz et al. 1994), los ejemplos de Borenstein et al. (2009) y de Fleiss (1971)— y contra implementaciones independientes. El proyecto de ejemplo, los archivos de prueba y los laboratorios son ficticios.</p>
+  <h3>F.2 · Licencia</h3>
+  <p>El programa se distribuye bajo la <b>Licencia Pública General de GNU, versión 3 o posterior</b> (GPL-3.0-or-later): se puede usar, copiar, estudiar y modificar libremente, con la condición de que las versiones modificadas se distribuyan bajo la misma licencia y conserven la atribución. El texto completo está en el archivo <span class="ruta">LICENSE</span>. Este manual es © 2026 Luis Ángel Barrera-Guzmán; todos los derechos reservados.</p>
+  <h3>F.3 · Cómo citarla</h3>
+  <div class="cita">Barrera-Guzmán, L. Á. (2026). <i>ReviewPro: plataforma en el navegador para artículos de revisión narrativos, exploratorios y sistemáticos y meta-análisis</i> (versión 1.0) [Programa de cómputo].</div>
+  <div class="cita">Barrera-Guzmán, L. Á. (2026). <i>ReviewPro. Manual de usuario</i> (1.ª ed.). Distribuido con ReviewPro, versión 1.0.</div>
+  <p class="small">El identificador de objeto digital (DOI) se añadirá a ambas citas cuando la versión 1.0 se archive. Cita también las obras originales de los métodos que usaste: el párrafo de métodos del Bloque 8 y el manuscrito del Bloque 9 las nombran por autor y año.</p>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · Manual de usuario · Capítulo 5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b5" data-pestana="B5" data-orden="5" style="--acento: var(--b5)">
+  <div class="cap-apertura">
+    <div class="cap-num">5</div>
+    <div class="cap-etiqueta">Bloque 5 · Texto completo</div>
+    <h1>Texto completo y diagrama PRISMA</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">Lo que pasó el cribado se lee completo. Aquí se consigue cada informe y se anota dónde quedó su PDF, se agregan los estudios encontrados por otras vías, se decide la elegibilidad de cada informe con el motivo de cada exclusión, se juntan los informes que describen el mismo estudio, y sale el diagrama de flujo PRISMA 2020 con los conteos reales de toda la revisión.</p>
+    <ul class="cap-contenido">
+      <li><b>5.1</b>Obtener los textos completos</li>
+      <li><b>5.2</b>Estudios encontrados por otros métodos</li>
+      <li><b>5.3</b>La elegibilidad a texto completo</li>
+      <li><b>5.4</b>Informes y estudios</li>
+      <li><b>5.5</b>El diagrama de flujo PRISMA 2020</li>
+    </ul>
+  </div>
+
+  <!-- 5.1 -->
+  <h2 id="s5-1"><span class="num">5.1</span>Obtener los textos completos</h2>
+  <p class="lead">Los PDF se quedan en tu computadora: la app no los guarda ni los lee, solo anota su <b>ruta</b>. Así el proyecto sigue siendo un archivo pequeño que se puede compartir, y cada PDF sigue donde tú lo organizas.</p>
+  <figure>
+    <div class="marco"><img src="../img/b5-obtener.png" alt="La tarjeta 1 del Bloque 5: la carpeta base de los PDF, cuatro cifras —24 a texto completo, 23 obtenidos, 0 por conseguir, 1 que no se consiguió—, los filtros, los botones para marcar obtenidos y descargar la lista de faltantes, y la tabla de informes con el nombre sugerido de su PDF, la ruta, el estado y la nota"></div>
+    <figcaption><b>Figura 5.1.</b> Los 24 informes que llegaron a texto completo en el ejemplo: 23 obtenidos y uno que no se consiguió. Bajo cada informe, el nombre sugerido de su PDF.</figcaption>
+  </figure>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:2in"><b>Carpeta base de los PDF</b></td><td>Opcional. Si la fijas (por ejemplo, <code>C:\Revision\PDF</code>), en cada informe basta escribir el nombre del archivo.</td></tr>
+      <tr><td><b>Nombre sugerido</b></td><td><code>Autor_Año_Título.pdf</code>, con <span class="ui">copiar nombre</span>: guardar cada PDF con ese nombre mantiene la carpeta ordenada y hace que las rutas se escriban solas.</td></tr>
+      <tr><td><b>Estado</b></td><td><i>por conseguir</i>, <i>obtenido</i> o <i>no se consiguió</i>. Los que no se consiguieron se reportan en PRISMA como «informes no recuperados».</td></tr>
+      <tr><td><b>Nota o solicitud</b></td><td>Para seguir las gestiones: «pedido a los autores el 03/03/2027; sin respuesta».</td></tr>
+      <tr><td><span class="ui">Marcar como obtenidos los que tienen ruta</span></td><td>Cambia a <i>obtenido</i> todos los que ya tienen una ruta escrita.</td></tr>
+      <tr><td><span class="ui">⤓ Lista de los que faltan (.csv)</span></td><td>Título, autores, año, revista, DOI, nombre de archivo y nota de los que faltan: la lista para la biblioteca o para escribir a los autores.</td></tr>
+    </tbody>
+  </table>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Abrir el PDF desde la app</div>
+    <p>El enlace <span class="ui">abrir</span> funciona cuando la app se abre con doble clic en <code>index.html</code>. Si la abres desde el servidor local, el navegador bloquea por seguridad los enlaces a archivos del disco; en ese caso copia la ruta y ábrela desde el explorador de archivos.</p>
+  </div>
+
+  <!-- 5.2 -->
+  <h2 id="s5-2"><span class="num">5.2</span>Estudios encontrados por otros métodos</h2>
+  <figure>
+    <div class="marco"><img src="../img/b5-otros.png" alt="La tarjeta 2 del Bloque 5: el formulario con título, autores, año, DOI y cómo se encontró, el botón para añadir a texto completo y un estudio de Zambia agregado por búsqueda de citas hacia atrás"></div>
+    <figcaption><b>Figura 5.2.</b> Un informe técnico sobre Zambia, encontrado en la lista de referencias de un estudio incluido.</figcaption>
+  </figure>
+  <p>Lo que aparece al revisar las referencias de los incluidos, al buscar quién los cita, al preguntar a expertos o en sitios de organizaciones entra por aquí, con su título, autores, año, DOI y la vía: <i>búsqueda de citas hacia atrás</i>, <i>hacia adelante</i>, <i>contacto con expertos</i>, <i>sitio web u organización</i> u <i>otra vía</i>. Estos informes pasan directo a texto completo —no se criban por título y resumen— y el diagrama los cuenta en la columna de otros métodos, con su vía.</p>
+
+  <!-- 5.3 -->
+  <h2 id="s5-3"><span class="num">5.3</span>La elegibilidad a texto completo</h2>
+  <figure>
+    <div class="marco"><img src="../img/b5-elegibilidad.png" alt="La tarjeta 3 del Bloque 5 con un informe por evaluar: su título y autor institucional, el aviso de que no tiene ruta de PDF, las casillas de los cinco criterios de inclusión, el botón incluir, el menú obligatorio de motivo de exclusión, el botón excluir, la nota, el menú para ligarlo a otro estudio, el acuerdo entre revisores y los conflictos"></div>
+    <figcaption><b>Figura 5.3.</b> Un informe técnico por evaluar. Las casillas de los criterios de inclusión guían la lectura; para excluir hay que elegir el motivo.</figcaption>
+  </figure>
+  <p>Los revisores son los mismos del cribado, y el menú <span class="ui">Revisor</span> dice quién evalúa. Para cada informe obtenido, la tarjeta muestra el enlace a su PDF y la lista de <b>criterios de inclusión</b> con casillas: marcarlas mientras se lee deja claro cuál falla. Luego se decide:</p>
+  <ul>
+    <li><span class="ui">Incluir</span> (tecla <kbd>I</kbd>).</li>
+    <li><span class="ui">Excluir</span>, con el motivo <b>obligatorio</b>: un criterio de exclusión (teclas <kbd>1</kbd>–<kbd>9</kbd>) u «otro motivo» escrito en la nota. PRISMA 2020 pide reportar por qué se excluyó cada informe de texto completo, y el diagrama los cuenta.</li>
+  </ul>
+  <p>Debajo, el acuerdo entre revisores en texto completo (informes en común, porcentaje y kappa) y los <b>conflictos</b>, que se resuelven como en el cribado.</p>
+
+  <!-- 5.4 -->
+  <h2 id="s5-4"><span class="num">5.4</span>Informes y estudios</h2>
+  <p>Un mismo experimento puede publicarse en una tesis y luego en un artículo, o en dos artículos que reportan variables distintas. PRISMA 2020 cuenta <b>estudios</b> incluidos y, aparte, sus <b>informes</b>. El menú <span class="ui">Es otro informe del estudio de…</span> liga un informe a otro ya incluido; lo normal es <i>— es un estudio propio —</i>. Los informes ligados forman un solo estudio en la extracción (Bloque 6), el sesgo (Bloque 7) y la síntesis (Bloque 8): así un experimento no pesa dos veces en el meta-análisis.</p>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>Liga los informes del mismo experimento</div>
+    <p>Contar dos veces un mismo experimento —por ejemplo, la tesis y el artículo que salió de ella— infla la precisión del efecto combinado y le da a ese experimento el doble de peso. Las pistas: los mismos autores, el mismo sitio, los mismos años y medias idénticas. Ante la duda, escribe a los autores.</p>
+  </div>
+  <div class="caja ejemplo">
+    <div class="caja-t"><span class="ico">▸</span>Ejemplo · 21 informes, 20 estudios</div>
+    <p>De los 23 informes evaluados, se excluyeron 2 (uno de invernadero, E1, y uno sin datos extraíbles, E4) y se incluyeron 21. Dos de ellos describen el mismo experimento de campo, así que se ligaron: la revisión incluye <b>20 estudios en 21 informes</b>.</p>
+  </div>
+
+  <!-- 5.5 -->
+  <h2 id="s5-5"><span class="num">5.5</span>El diagrama de flujo PRISMA 2020</h2>
+  <figure>
+    <div class="marco"><img src="../img/b5-flujo.png" alt="El diagrama de flujo PRISMA 2020 del ejemplo, con cuatro cifras arriba —20 estudios incluidos en 21 informes, 2 excluidos a texto completo, 1 no recuperado, 0 pendientes— y el aviso de que todos los conteos cuadran; el diagrama tiene dos columnas, bases de datos y otros métodos, con las fases de identificación, cribado e incluidos"></div>
+    <figcaption><b>Figura 5.4.</b> El diagrama del ejemplo. A la izquierda, 33 registros de tres bases de datos; a la derecha, 11 de otros métodos, 4 de los cuales ya se habían encontrado en las bases. Todo termina en 20 estudios incluidos en 21 informes.</figcaption>
+  </figure>
+  <p>El diagrama se arma solo con los conteos reales de los Bloques 3, 4 y 5 y sigue la plantilla de PRISMA 2020 con sus dos columnas: <b>identificación vía bases de datos y registros</b> y <b>vía otros métodos</b> (Page et al. 2021). En una revisión exploratoria se titula como diagrama de PRISMA-ScR. Cada caja cuenta:</p>
+  <table class="compacta">
+    <thead><tr><th style="width:2.1in">Caja</th><th>De dónde sale</th></tr></thead>
+    <tbody>
+      <tr><td><b>Registros identificados</b></td><td>Los registros importados de cada fuente (Bloque 3), según el tipo de su fuente; en otros métodos, también lo agregado en la sección 5.2, con su vía.</td></tr>
+      <tr><td><b>Eliminados antes del cribado</b></td><td>Los duplicados; en la columna de otros métodos, «ya encontrados en bases de datos».</td></tr>
+      <tr><td><b>Registros cribados y excluidos</b></td><td>Las decisiones finales del Bloque 4, con los no leídos tras la regla de paro si los hay.</td></tr>
+      <tr><td><b>Informes buscados y no recuperados</b></td><td>La sección 5.1.</td></tr>
+      <tr><td><b>Evaluados y excluidos, con motivos</b></td><td>La sección 5.3, un renglón por motivo.</td></tr>
+      <tr><td><b>Estudios e informes incluidos</b></td><td>La sección 5.4.</td></tr>
+    </tbody>
+  </table>
+  <p>Arriba, cuatro cifras —estudios incluidos, excluidos a texto completo, no recuperados y pendientes— y una revisión de que todo cuadra: <i>«Todos los conteos están completos y cuadran»</i>, o qué falta. La figura se exporta en PNG, JPG o SVG con el botón ⤓ de su esquina, y <span class="ui">⤓ Conteos del diagrama (.md)</span> descarga los números en una tabla.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Regla de decisión · antes de dar el diagrama por final</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>Si</b> hay pendientes</td><td><b>entonces</b> el diagrama es provisional: faltan decisiones de cribado, informes por conseguir o evaluaciones por hacer, y la app dice cuántos de cada uno.</td></tr>
+      <tr><td><b>Si</b> la app avisa que una vía no cuadra</td><td><b>entonces</b> algún registro quedó sin decisión en un paso; revisa ese bloque.</td></tr>
+      <tr><td><b>Si</b> hay exclusiones de texto completo sin motivo</td><td><b>entonces</b> dales motivo: PRISMA 2020 lo pide (punto 16b).</td></tr>
+      <tr><td><b>Si</b> un registro de un repositorio cae en la columna de bases de datos</td><td><b>entonces</b> revisa el tipo de su fuente en el Bloque 2 o en la bitácora del Bloque 3.</td></tr>
+    </tbody></table>
+  </div>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Los avisos de este bloque</div>
+    <p><i>«Todavía ningún registro pasó el cribado (Bloque 4)»</i>; <i>«Sin ruta del PDF: anótala arriba para abrirlo desde aquí»</i>; <i>«Elige el motivo de exclusión»</i>; <i>«Evaluaste todos los informes obtenidos»</i>; y los de la revisión del diagrama: vías que no cuadran, registros sin decisión final, informes sin conseguir ni dar por perdidos, evaluaciones pendientes o con conflicto, y exclusiones sin motivo.</p>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+const s4 = state.screening, act = s4.active, dm = s4.decisions[act];
+const ks4 = Object.keys(dm).sort((a, b) => (dm[a].t || 0) - (dm[b].t || 0)); ks4.slice(-12).forEach(k => delete dm[k]); delete s4.stop[act]; Object.keys(s4.final || {}).forEach(k => { if (!dm[k]) delete s4.final[k]; }); Block4.renderAll();

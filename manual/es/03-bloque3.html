@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · Manual de usuario · Capítulo 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+<style>
+  .formula { font-family: var(--mono); font-size: 8.6pt; background: var(--marino-suave); border-radius: 5px; padding: 0.07in 0.12in; margin: 0.08in 0; }
+</style>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b3" data-pestana="B3" data-orden="3" style="--acento: var(--b3)">
+  <div class="cap-apertura">
+    <div class="cap-num">3</div>
+    <div class="cap-etiqueta">Bloque 3 · Búsqueda</div>
+    <h1>Búsqueda y registros</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">La estrategia se arma por bloques de conceptos y se escribe en la sintaxis de cada tipo de base de datos; la búsqueda se corre en cada base y sus resultados se importan aquí, en cualquiera de seis formatos. Luego se juntan los duplicados, con tu decisión en los casos dudosos, y se comprueba que la cadena encuentre los estudios que ya sabes que existen. Lo que sale es la lista de registros únicos que se cribará en el Bloque 4.</p>
+    <ul class="cap-contenido">
+      <li><b>3.1</b>La estrategia por bloques de conceptos</li>
+      <li><b>3.2</b>La cadena en cinco sintaxis</li>
+      <li><b>3.3</b>La bitácora de búsqueda</li>
+      <li><b>3.4</b>Importar los registros</li>
+      <li><b>3.5</b>Los duplicados</li>
+      <li><b>3.6</b>Probar la estrategia</li>
+      <li><b>3.7</b>Resumen y exportación</li>
+    </ul>
+  </div>
+
+  <!-- 3.1 -->
+  <h2 id="s3-1"><span class="num">3.1</span>La estrategia por bloques de conceptos</h2>
+  <p class="lead">Una búsqueda sistemática se construye con <b>un bloque por concepto</b> de la pregunta —la población, la intervención, el desenlace—, y cada bloque reúne todos los modos en que un autor pudo haber escrito ese concepto: sinónimos, variantes ortográficas, nombres científicos, siglas y términos en otros idiomas. Dentro de un bloque los términos se unen con OR; los bloques, con AND.</p>
+  <figure>
+    <div class="marco"><img src="../img/b3-estrategia.png" alt="La tarjeta 1 del Bloque 3: tres bloques de conceptos —población o sistema, intervención y desenlace— con sus términos como fichas, unidos por AND; el bloque NOT vacío; y la cadena escrita en la sintaxis de función de campo con su botón para copiar"></div>
+    <figcaption><b>Figura 3.1.</b> Los tres bloques del ejemplo y la cadena resultante en la sintaxis de función de campo. El truncamiento con asterisco (<code>mycorrhiz*</code>) recoge <i>mycorrhiza</i>, <i>mycorrhizal</i>, <i>mycorrhizae</i>…</figcaption>
+  </figure>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:2.1in"><span class="ui">Proponer bloques desde la pregunta</span></td><td>Crea un bloque por cada elemento de la pregunta del Bloque 2 que se busca —en PICO, la población, la intervención y el desenlace— con las palabras significativas de ese elemento como primeros términos. Es un borrador: agrega los sinónimos.</td></tr>
+      <tr><td><span class="ui">+ bloque</span></td><td>Agrega un bloque vacío; su nombre es libre.</td></tr>
+      <tr><td><b>Campo</b> de cada bloque</td><td><span class="ui">Título, resumen y palabras clave</span> (lo habitual), <span class="ui">Solo título</span> (más preciso, menos sensible) o <span class="ui">Todos los campos</span>.</td></tr>
+      <tr><td><b>Términos</b></td><td>Se escriben y se confirman con <kbd>Enter</kbd>. Una frase de varias palabras se entrecomilla sola. <code>*</code> trunca y <code>?</code> reemplaza un solo carácter. Un clic sobre una ficha la <b>desactiva</b> sin borrarla (útil para probar); la ✕ la borra.</td></tr>
+      <tr><td><b>NOT</b></td><td>Términos que excluyen, restados de todo lo demás. Úsalo con cuidado: un NOT mal pensado quita estudios relevantes que mencionan de paso el término excluido.</td></tr>
+    </tbody>
+  </table>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Teoría en breve · por qué el comparador casi nunca es un bloque</div>
+    <p>Un AND exige que <i>todos</i> los bloques aparezcan en el registro. Los estudios casi nunca nombran su testigo en el título o el resumen («sin inocular», «testigo absoluto»), así que un bloque de comparador descartaría muchos relevantes. La búsqueda debe ser <b>sensible</b> —no perder estudios— aunque traiga ruido: el cribado del Bloque 4 se encarga del ruido, pero nada recupera lo que la búsqueda no trajo.</p>
+  </div>
+
+  <!-- 3.2 -->
+  <h2 id="s3-2"><span class="num">3.2</span>La cadena en cinco sintaxis</h2>
+  <p>Las bases de datos bibliográficas no hablan el mismo idioma. La app escribe los mismos bloques en cinco sintaxis, descritas por su forma y no por un producto; en la ayuda de cada base averiguas cuál usa.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.8in">Sintaxis</th><th>Cómo se ve</th></tr></thead>
+    <tbody>
+      <tr><td><b>Función de campo</b></td><td><code>TITLE-ABS-KEY(maize OR "zea mays")</code></td></tr>
+      <tr><td><b>Etiqueta con igual</b></td><td><code>TS=(maize OR "zea mays")</code></td></tr>
+      <tr><td><b>Etiqueta entre corchetes</b></td><td><code>maize[tiab] OR "zea mays"[tiab]</code></td></tr>
+      <tr><td><b>Líneas numeradas con sufijo</b></td><td><code>1 (maize or zea mays).ti,ab,kw.</code> — una línea por bloque y una final que los combina</td></tr>
+      <tr><td><b>Sin campos</b></td><td><code>maize OR "zea mays"</code> — para buscadores académicos generales</td></tr>
+    </tbody>
+  </table>
+  <p>El botón <span class="ui">Copiar</span> lleva la cadena al portapapeles para pegarla en la base. Debajo, la app avisa lo que se debe cuidar en cada sintaxis; por ejemplo, <i>«Los buscadores académicos generales no truncan: se quitó el asterisco. Escribe a mano las variantes que importen (singular y plural).»</i></p>
+
+  <!-- 3.3 -->
+  <h2 id="s3-3"><span class="num">3.3</span>La bitácora de búsqueda</h2>
+  <figure>
+    <div class="marco"><img src="../img/b3-bitacora.png" alt="La bitácora del ejemplo: seis fuentes con su tipo, su sintaxis, la fecha de búsqueda, los resultados que dio la fuente, los importados con una marca de coincidencia y el botón para copiar la cadena en la sintaxis de esa fuente"></div>
+    <figcaption><b>Figura 3.2.</b> La bitácora del ejemplo. Para cada fuente coinciden los resultados que dio la base con los registros importados (✓).</figcaption>
+  </figure>
+  <p>Cada fuente declarada en el protocolo, y cada fuente de un archivo importado, tiene su renglón. Anota ahí la <b>fecha</b> de la búsqueda y cuántos <b>resultados</b> dio la base: PRISMA 2020 (punto 6) y su extensión para búsquedas, PRISMA-S, piden reportarlo. La columna <b>Importados</b> cuenta los registros que realmente entraron; si no coincide con lo que dio la base, aparece <b>≠</b>: muchas bases exportan por lotes y una exportación incompleta es el error más común y más silencioso de una revisión.</p>
+  <p>El <b>tipo</b> de cada fuente (base de datos, literatura gris u otros métodos) es el mismo del Bloque 2 y se puede cambiar aquí; la <b>sintaxis</b> se elige por fuente, y <span class="ui">Copiar cadena</span> copia la cadena escrita en esa sintaxis. La fecha más reciente de la bitácora es el dato vivo <code>{{search.date}}</code> del Bloque 9.</p>
+
+  <!-- 3.4 -->
+  <h2 id="s3-4"><span class="num">3.4</span>Importar los registros</h2>
+  <figure>
+    <div class="marco"><img src="../img/b3-importar.png" alt="La tarjeta 2 del Bloque 3: el selector de fuente, los botones para elegir archivos, cargar y descargar los archivos de prueba, la zona para arrastrar archivos y la tabla de los seis archivos importados con su formato, su fuente, sus registros y los que no tienen resumen"></div>
+    <figcaption><b>Figura 3.3.</b> Los seis archivos de prueba importados, cada uno en un formato distinto. En la tabla delimitada, la app dice qué columna reconoció para cada campo.</figcaption>
+  </figure>
+  <ol>
+    <li>Corre la cadena en la base y exporta <b>todos</b> los resultados con título, autores, año, revista, resumen, palabras clave y DOI.</li>
+    <li>En la app, elige la <span class="ui">Fuente</span> de la que vienen los archivos.</li>
+    <li>Pulsa <span class="ui">Elegir archivos…</span> o arrástralos a la zona punteada. El formato se reconoce solo.</li>
+  </ol>
+  <table class="compacta">
+    <thead><tr><th style="width:2.2in">Formato</th><th>Cómo lo reconoce</th></tr></thead>
+    <tbody>
+      <tr><td><b>RIS</b></td><td>Etiquetas de dos letras con guiones: <code>TY  - … ER  -</code></td></tr>
+      <tr><td><b>BibTeX</b></td><td>Entradas <code>@article{…}</code>, con acentos de LaTeX que se convierten</td></tr>
+      <tr><td><b>Texto etiquetado de dos letras</b></td><td>Etiquetas sin guion, del tipo <code>PT … ER</code>, exportadas por índices de citas</td></tr>
+      <tr><td><b>MEDLINE</b></td><td>Etiquetas del tipo <code>PMID- …</code></td></tr>
+      <tr><td><b>Etiquetas %</b></td><td><code>%T</code>, <code>%A</code>… de los gestores de referencias</td></tr>
+      <tr><td><b>Tabla delimitada</b> (CSV o TSV)</td><td>Encabezados en español o en inglés; el separador (coma, punto y coma o tabulador) y las columnas se detectan solos</td></tr>
+    </tbody>
+  </table>
+  <p>La columna <b>Sin resumen</b> cuenta los registros que llegaron sin resumen: se criban solo con el título y conviene saber cuántos son. <span class="ui">Cargar los archivos de prueba</span> importa los seis archivos ficticios del ejemplo y <span class="ui">⤓ Descargarlos</span> los guarda, para ver cómo es cada formato por dentro.</p>
+
+  <!-- 3.5 -->
+  <h2 id="s3-5"><span class="num">3.5</span>Los duplicados</h2>
+  <p>Un mismo artículo aparece en varias bases, y un mismo experimento a veces en una tesis, un congreso y un artículo. La app los junta en dos niveles:</p>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:1.9in"><b>Coincidencias seguras</b></td><td>Mismo DOI, o mismo título normalizado con el mismo año (±1) y un primer autor compatible. Se fusionan solas.</td></tr>
+      <tr><td><b>Pares por decidir</b></td><td>Títulos casi iguales (se muestra su parecido en %), o iguales pero con otro año o con otro autor. Los decides tú con <span class="ui">Es el mismo estudio</span> o <span class="ui">Son distintos</span>.</td></tr>
+    </tbody>
+  </table>
+  <figure>
+    <div class="marco"><img src="../img/b3-duplicados.png" alt="La tarjeta 3 del Bloque 3: 43 registros importados, 13 fusionados, 0 pares por decidir y 30 únicos; abajo, dos pares ya decididos —un mismo título con autores y años distintos marcado como distintos, y dos títulos casi iguales al 98 % marcados como el mismo estudio— con sus diferencias resaltadas"></div>
+    <figcaption><b>Figura 3.4.</b> Los duplicados del ejemplo. Arriba, un par con el mismo título pero otros autores y otro año: son estudios distintos. Abajo, un error de tecleo en el título («compnents») y un DOI faltante: es el mismo estudio.</figcaption>
+  </figure>
+  <p>En cada par, lo que difiere entre los dos registros aparece resaltado. Al fusionar, queda el registro más completo y los demás le llenan los huecos (un DOI, un resumen). <span class="ui">Ver las N fusiones automáticas</span> muestra lo que se juntó solo, por si quieres revisarlo.</p>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>Ante la duda, «Son distintos»</div>
+    <p>Fusionar por error pierde un estudio para siempre: nadie lo vuelve a ver. Un duplicado que se escapa, en cambio, reaparece en el cribado y se excluye ahí con el motivo «duplicado». Por eso la app nunca fusiona sola un caso dudoso.</p>
+  </div>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Pares y registros</div>
+    <p>La tarjeta de fusionados cuenta <b>registros</b> quitados, y su nota cuenta <b>pares</b>. No siempre coinciden: si un estudio aparece en tres bases, sus tres copias forman tres pares, pero se quitan dos registros. En el ejemplo, 13 pares seguros y uno confirmado quitaron 13 registros: 43 importados, 30 únicos.</p>
+  </div>
+
+  <!-- 3.6 -->
+  <h2 id="s3-6"><span class="num">3.6</span>Probar la estrategia</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/b3-probar.png" alt="La tarjeta 4 del Bloque 3: cuántos registros recupera cada bloque —27, 25 y 24— y la cadena completa —22 de 30—; la lista de cuatro estudios conocidos y, para cada uno, que la búsqueda lo recupera; y la sensibilidad de 4 de 4"></div>
+    <figcaption><b>Figura 3.5.</b> La cadena del ejemplo, ejecutada sobre los 30 registros únicos: cada bloque y la cadena completa, y los cuatro estudios conocidos, todos recuperados.</figcaption>
+  </figure>
+  <p>La cadena se ejecuta aquí mismo sobre los registros únicos, en título, resumen y palabras clave, para ver cuánto recorta cada bloque. Que la cadena recupere menos registros que los importados es normal: cada base busca también en campos que aquí no se ven, o en su vocabulario controlado. Revisa esos registros antes de concluir que sobran.</p>
+  <p>Lo más útil de esta tarjeta es la lista de <b>estudios que la búsqueda debe encontrar</b>: los que el equipo ya conoce antes de buscar, uno por línea, por DOI o por título. Si alguno no aparece, a la estrategia le falta un término, y la app dice cuál es la sensibilidad frente a esos estudios conocidos.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Regla de decisión · antes de dar la búsqueda por buena</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>Si</b> un estudio conocido no se recupera</td><td><b>entonces</b> léelo, busca cómo nombra cada concepto y agrega ese término al bloque que falla; vuelve a correr la búsqueda en las bases.</td></tr>
+      <tr><td><b>Si</b> la bitácora muestra ≠ en una fuente</td><td><b>entonces</b> la exportación quedó incompleta: vuelve a exportar por lotes.</td></tr>
+      <tr><td><b>Si</b> una fuente trae muchos registros sin resumen</td><td><b>entonces</b> considera exportar de nuevo con el resumen, o prepárate para leer más textos completos.</td></tr>
+    </tbody></table>
+  </div>
+
+  <!-- 3.7 -->
+  <h2 id="s3-7"><span class="num">3.7</span>Resumen y exportación</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/b3-resumen.png" alt="La tarjeta 5 del Bloque 3: los registros de cada fuente, 43 identificados, 13 duplicados eliminados y 30 registros para el cribado; el gráfico de los registros únicos por año de publicación; y los botones de exportación"></div>
+    <figcaption><b>Figura 3.6.</b> El resumen de la búsqueda del ejemplo: 43 registros identificados, 13 duplicados eliminados y 30 registros para el cribado del Bloque 4.</figcaption>
+  </figure>
+  <p>Tres descargas: los registros únicos en <b>RIS</b> (para un gestor de referencias) y en <b>CSV</b> (para una hoja de cálculo), y el <b>informe de la búsqueda</b> en Markdown, con los bloques, la cadena en cada sintaxis, la bitácora y los duplicados: es el material suplementario que PRISMA 2020 pide en su punto 7.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Los avisos de este bloque</div>
+    <p><i>«No hay bloques de conceptos»</i>, el aviso de truncamiento de la sintaxis sin campos, la marca ≠ de la bitácora y los pares por decidir. Mientras un par siga sin decidir, sus registros pasan al cribado como distintos.</p>
+  </div>
+</section>
+
+</body>
+</html>

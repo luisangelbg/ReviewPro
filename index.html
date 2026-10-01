@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<!-- ReviewPro — Copyright (C) 2026 Luis Ángel Barrera-Guzmán.
+     Free software under the GNU General Public License, version 3; see LICENSE. -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-es="ReviewPro — Artículos de revisión, de la pregunta al manuscrito" data-en="ReviewPro — Review articles, from the question to the manuscript">ReviewPro — Artículos de revisión, de la pregunta al manuscrito</title>
+<meta name="description" content="Narrative, scoping and systematic reviews and meta-analyses in the browser: protocol, search strings, prioritized screening, PRISMA 2020, data extraction, risk of bias, synthesis, meta-analysis and guided writing.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M6 4 h14 l6 6 v18 h-20 z' fill='%2333539e'/%3E%3Ccircle cx='19.5' cy='21.5' r='5.2' fill='%23d97a2b'/%3E%3Ccircle cx='19.5' cy='21.5' r='3' fill='%2333539e'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/labg-base.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/i18n.js"></script>
+</head>
+<body class="on-home">
+
+<a class="skip-link" href="#main"><span data-l="es">Saltar al contenido</span><span data-l="en">Skip to content</span></a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-row">
+      <div class="brand" id="brand" data-es-title="Inicio" data-en-title="Home"><span id="brandLogo"></span><span>Review<span class="brand-pro">Pro</span></span>
+        <span class="brand-sub">· <span data-l="es">artículos de revisión y meta-análisis</span><span data-l="en">review articles and meta-analysis</span></span></div>
+      <div class="top-tools">
+        <button type="button" class="icon-btn" id="figStyleBtn" data-es-title="Estudio de figuras: paleta, tipografía y fondo de todas las gráficas" data-en-title="Figure studio: palette, font and background of every chart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 2-.9 2-2 0-.6-.2-1-.6-1.4-.4-.4-.6-.8-.6-1.3 0-1 .9-1.8 2-1.8H16a5 5 0 0 0 5-5c0-3.6-4-6.5-9-6.5z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7" r="1.2"/><circle cx="15" cy="7.5" r="1.2"/></svg>
+        </button>
+        <a class="suite-link" href="https://luisangelbg.github.io/" data-es-title="Volver al portal de la LABG Suite" data-en-title="Back to the LABG Suite portal" title="Volver al portal de la LABG Suite" aria-label="Volver al portal de la LABG Suite">
+          <svg class="labg-iso" viewBox="0 0 828 946.2" aria-hidden="true" focusable="false"><defs><linearGradient id="labgIsoHo" gradientUnits="userSpaceOnUse" x1="0" y1="473.1" x2="828" y2="413.1"><stop offset="0" stop-color="#BF8B3C"/><stop offset=".3" stop-color="#C99C49"/><stop offset=".55" stop-color="#D9B05C"/><stop offset=".78" stop-color="#E6C470"/><stop offset="1" stop-color="#F6D985"/></linearGradient><linearGradient id="labgIsoHb"><stop offset="0" stop-color="#FFF8E6" stop-opacity="0"/><stop offset=".5" stop-color="#FFF8E6" stop-opacity=".95"/><stop offset="1" stop-color="#FFF8E6" stop-opacity="0"/></linearGradient><clipPath id="labgIsoHc"><path clip-rule="evenodd" d="M440.8 246.5L421.7 257.7L404.8 247.9L424 236.8ZM318.9 256.4L301.7 266.3L285.7 257.1L302.9 247.2ZM522.2 260.9L438.6 309.1L420.1 298.5L503.7 250.2ZM392.5 269.9L373.4 280.9L356.1 271L375.3 260ZM277 277.3L235 301.6L219.9 292.9L261.9 268.6ZM576.1 291.8L398.2 394.4L380.4 384.1L558.3 281.5ZM348.1 295.6L287.5 330.5L270.1 320.5L330.6 285.6ZM404.3 419.1L577.9 318.9L579.2 318.1C579.6 318 580.7 317.9 581.5 317.6C582.2 317.4 583 317 583.8 316.6C584.5 316.2 585.3 315.8 586 315.5C586.8 315.1 587.6 314.8 588.3 314.4C589 314.1 589.8 313.8 590.6 313.5C591.4 313.2 592.2 313 593 312.9C593.8 312.6 594.6 312.5 595.5 312.4C596.3 312.2 597.1 312.2 597.9 312.1C598.9 312.1 599.7 312.1 600.4 312.1C601.4 312.1 602.2 312.1 603 312.2C603.9 312.3 604.7 312.4 605.5 312.5C606.3 312.7 607.1 313 607.9 313.2C608.7 313.5 609.5 313.9 610.1 314.2C610.9 314.6 611.6 315 612.4 315.5C613.1 315.8 613.8 316.3 614.5 316.7C615.2 317.3 615.8 317.8 616.5 318.3C617.1 318.8 617.8 319.4 618.3 319.9C618.9 320.6 619.5 321.2 620.1 321.9C620.6 322.4 621.1 323.1 621.7 323.8C622.1 324.5 622.6 325.2 623 325.8C623.5 326.5 623.9 327.2 624.4 328C624.8 328.7 625.2 329.4 625.6 330.2C626 330.9 626.4 331.7 626.8 332.3C627.1 333.1 627.5 333.8 627.9 334.6C628.3 335.4 628.6 336.1 628.9 336.9C629.3 337.7 629.6 338.4 630 339.2C630.3 340 630.7 340.7 630.9 341.5C631.2 342.3 631.6 343.1 631.9 343.9C632.1 344.5 632.5 345.3 632.7 346.1C632.9 346.9 633.3 347.7 633.5 348.5C633.7 349.3 634 350.1 634.3 350.9C634.5 351.7 634.8 352.5 635.1 353.3C635.3 354.1 635.7 354.9 635.9 355.7C636.1 356.5 636.5 357.3 636.7 358.1C636.9 358.9 637.2 359.7 637.3 360.5C637.5 361.3 637.7 362.1 638 362.9C638.1 363.8 638.3 364.6 638.5 365.4C638.6 366.2 638.9 367 639.1 367.8C639.2 368.6 639.4 369.4 639.7 370.3C639.9 371.1 640 371.9 640.2 372.7C640.3 373.5 640.5 374.3 640.7 375.2C640.8 376 640.9 376.8 641 377.6C641.1 378.5 641.3 379.3 641.4 380.1C641.5 381 641.5 381.8 641.6 382.6C641.7 383.4 641.7 384.3 641.8 385.1C641.9 385.9 641.9 386.8 642.1 387.6C642.1 388.4 642.2 389.3 642.3 390.1C642.3 390.9 642.4 391.9 642.4 392.7C642.5 393.5 642.6 394.2 642.6 395.2C642.7 396 642.7 396.8 642.9 397.7C642.9 398.5 642.9 399.3 642.9 400.2C642.9 401 642.9 401.8 642.9 402.7C642.9 403.5 642.9 404.3 642.7 405.2C642.6 406 642.6 406.8 642.5 407.7C642.4 408.5 642.3 409.3 642.2 410.1C642.1 411 641.9 411.8 641.7 412.6C641.6 413.4 641.5 414.2 641.3 415.1C641.1 415.9 640.9 416.7 640.8 417.5C640.6 418.3 640.3 419.1 640.2 420C640 420.8 639.8 421.6 639.6 422.4C639.4 423.2 639.2 424 638.9 424.8C638.6 425.6 638.4 426.4 638.2 427.2C637.8 428 637.6 428.8 637.3 429.6C637 430.4 636.8 431.2 636.6 432C636.4 432.8 636.2 433.6 636.1 434.5C636.1 435.3 636.2 436.1 636.4 436.9C636.5 437.8 636.8 438.6 637 439.3C637.4 440.1 637.8 440.9 638.2 441.6C638.6 442.2 639.1 442.9 639.6 443.7C640 444.4 640.5 445.1 640.9 445.8C641.4 446.5 641.8 447.1 642.3 447.9C642.6 448.6 643.1 449.3 643.4 450.1C643.9 450.8 644.2 451.6 644.6 452.4C644.9 453.1 645.3 453.9 645.6 454.7C645.9 455.5 646.2 456.2 646.5 456.9C646.8 457.7 647.1 458.5 647.4 459.3C647.6 460.1 647.9 460.9 648.2 461.7C648.4 462.5 648.7 463.3 648.9 464.1C649.1 464.9 649.2 465.7 649.5 466.5C649.7 467.3 649.8 468.2 650 469C650.2 469.8 650.4 470.6 650.5 471.4C650.6 472.3 650.8 473.1 651 473.9C651.1 474.7 651.3 475.5 651.4 476.4C651.5 477.2 651.7 478 651.9 478.8C652 479.6 652.1 480.5 652.2 481.3C652.3 482.1 652.4 483.1 652.5 483.9C652.7 484.7 652.7 485.4 652.8 486.4C652.8 487.2 652.9 488 652.9 488.9C652.9 489.7 653 490.5 653 491.4C653 492.2 653 493 653 493.9C653 494.7 653 495.5 653 496.4C653 497.2 653 498 653 498.9C653 499.7 653 500.5 652.9 501.4C652.9 502.2 652.9 503 652.9 503.9C652.9 504.7 652.8 505.5 652.8 506.4C652.7 507.2 652.7 508 652.5 508.9C652.5 509.7 652.4 510.5 652.3 511.4C652.3 512.2 652.2 513 652.1 513.8C652 514.7 651.9 515.5 651.7 516.3C651.6 517.1 651.5 518.1 651.3 518.9C651.2 519.6 651.1 520.4 651 521.4C650.8 522.2 650.6 523 650.5 523.8C650.4 524.7 650.3 525.5 650 526.3C649.9 527.1 649.7 527.9 649.6 528.8C649.4 529.6 649.2 530.4 649 531.2C648.9 532 648.7 532.8 648.6 533.7C648.3 534.5 648.1 535.3 648 536.1C647.8 536.9 647.5 537.7 647.3 538.5C647.2 539.3 647 540.2 646.7 541C646.4 541.8 646.2 542.6 645.9 543.4C645.7 544 645.4 544.8 645 545.6C644.8 546.4 644.5 547.2 644.1 548C643.8 548.7 643.5 549.5 643.2 550.3C642.9 551.1 642.5 551.8 642.2 552.6C641.8 553.4 641.6 554.2 641.3 554.9C640.9 555.7 640.6 556.5 640.2 557.3C639.9 558 639.6 558.8 639.2 559.5C638.8 560.2 638.4 561 638 561.7C637.6 562.4 637.2 563.2 636.7 563.9C636.4 564.6 635.9 565.4 635.4 566C635 566.7 634.5 567.4 634 568.1C633.5 568.8 633.1 569.5 632.5 570.2C632 570.7 631.5 571.4 630.9 572.1C630.4 572.7 629.9 573.3 629.3 573.9C628.7 574.6 628.2 575.2 627.6 575.7C626.9 576.3 626.3 576.9 625.6 577.4C625.1 578 624.4 578.5 623.7 579C623 579.5 622.3 580 621.7 580.4C621 581 620.3 581.4 619.6 581.9C618.9 582.3 618 582.9 617.5 583.4C617.2 583.8 617.3 584.4 617.2 584.6L403.2 708.2L380.8 695.3L380.8 575.7L220.4 483.2L218.9 482.3C218.5 482.1 217.4 481.9 216.6 481.7C215.9 481.3 215.1 480.9 214.3 480.5C213.6 480.3 212.8 479.9 212.1 479.7C211.3 479.5 210.3 479.4 209.5 479.4C208.7 479.5 207.5 479.7 207 479.9C206.7 479.9 207 479.9 207 479.9L207 596.8L175.1 578.4L175.1 319.8L203.6 303.3L404.3 419.1ZM400.8 328.5L342.4 362.2L325.6 352.6L384.1 318.8ZM381.2 446.6L381.2 536.9L206.8 436.2L206.8 345.9ZM440.3 521.4L440.3 561.1L605.9 465.6L606.9 464.9C607.2 465.3 607.7 466.4 608.3 467C608.9 467.7 609.7 468 610.4 468.5C610.9 469 611.7 469.5 612.3 470.1C612.9 470.6 613.4 471.2 614 471.9C614.5 472.6 614.9 473.3 615.4 473.9C615.8 474.7 616.2 475.4 616.5 476.2C616.9 476.9 617.2 477.7 617.5 478.5C617.9 479.3 618.1 480.1 618.3 480.9C618.7 481.7 618.9 482.5 619.1 483.3C619.4 484.1 619.6 484.9 619.8 485.7C619.9 486.5 620.2 487.3 620.3 488.1C620.4 489 620.6 489.8 620.7 490.6C620.9 491.4 621 492.3 621 493.1C621.1 493.9 621.2 494.8 621.3 495.6C621.3 496.4 621.4 497.2 621.4 498.1C621.5 498.9 621.5 499.7 621.7 500.6C621.7 501.4 621.8 502.2 621.8 503.1C621.8 503.9 621.8 504.7 621.8 505.6C621.8 506.4 621.8 507.2 621.8 508.1C621.8 508.9 621.7 509.7 621.7 510.6C621.7 511.4 621.5 512.2 621.4 513.2C621.4 513.9 621.3 514.7 621.2 515.5C621.1 516.5 621.1 517.3 621 518.1C620.9 519 620.7 519.8 620.6 520.6C620.5 521.4 620.5 522.3 620.3 523.1C620.2 523.9 620.1 524.8 619.9 525.6C619.7 526.4 619.5 527.2 619.4 528C619.1 528.8 618.8 529.6 618.6 530.4C618.2 531.2 618 532 617.7 532.8C617.3 533.4 617 534.2 616.6 535C616.3 535.8 616 536.5 615.6 537.3C615.3 538.1 614.9 538.8 614.6 539.6C614.1 540.3 613.8 541.1 613.3 541.8C612.9 542.4 612.4 543.1 612 543.8C611.5 544.5 610.9 545.2 610.4 545.8C609.8 546.4 609.2 547 608.7 547.6C608.1 548.1 607.4 548.7 606.7 549.3C606.1 549.7 605.5 550.3 604.8 550.8C604.1 551.3 603.4 552 602.8 552.4C602.2 552.6 601.1 552.8 600.8 552.8C600.4 552.8 600.6 552.6 600.6 552.6L415.5 659.3L415.5 455.6L595.9 351.5L597.6 350.6C597.8 350.8 598.6 351.8 599.3 352.3C600 352.6 600.9 352.6 601.7 352.9C602.5 353.1 603.3 353.6 604 353.9C604.7 354.3 605.4 354.8 606 355.4C606.6 355.9 607.2 356.5 607.7 357.2C608.3 357.9 608.8 358.6 609.2 359.3C609.7 359.9 610.1 360.6 610.5 361.4C610.9 362.1 611.3 362.9 611.6 363.6C612 364.4 612.3 365.2 612.6 366C612.9 366.7 613.2 367.5 613.4 368.3C613.8 369.1 614 369.9 614.4 370.7C614.6 371.4 614.8 372.2 615 373C615.2 373.8 615.4 374.8 615.5 375.6C615.7 376.4 615.8 377.1 616 377.9C616.1 378.9 616.2 379.7 616.3 380.5C616.3 381.4 616.4 382.2 616.5 383C616.5 383.8 616.6 384.7 616.6 385.5C616.8 386.3 616.8 387.2 616.9 388C616.9 388.8 616.9 389.7 616.9 390.5C616.9 391.3 616.9 392.2 616.9 393C616.8 393.8 616.8 394.7 616.8 395.5C616.6 396.3 616.5 397.2 616.5 398C616.4 398.8 616.3 399.6 616.2 400.5C616.1 401.3 615.8 402.1 615.7 402.9C615.5 403.8 615.4 404.6 615.2 405.4C614.9 406.2 614.7 407 614.5 407.8C614.2 408.6 614.1 409.4 613.8 410.2C613.6 411 613.3 411.8 613 412.6C612.8 413.4 612.4 414.2 612.1 414.9C611.7 415.7 611.3 416.5 610.9 417.2C610.5 417.8 610 418.5 609.6 419.2C609 419.9 608.5 420.6 608 421.3C607.4 421.8 606.8 422.5 606.3 423.1C605.7 423.7 605.1 424.3 604.6 424.9C604 425.5 603.4 426.2 602.8 426.7C602.3 427.3 601.6 428 601 428.4C600.6 428.9 600 429.1 599.8 429.2L440.3 521.4ZM596.1 417.6L576.9 428.8L531 402.3L550.4 391.2ZM353.9 441L293.6 475.8L276.3 465.7L336.5 431ZM498.1 481.7L478.6 492.9L423.7 461.3L443.2 450ZM374.5 483.1L343.5 501L326.6 491.3L357.6 473.4ZM603.5 540.4L584 551.7L531.7 521.5L551.2 510.2ZM272.6 534.1L272.6 633.6L255.3 623.6L255.3 524.1ZM320.8 561.3L320.8 596.5L303.7 586.6L303.7 551.5ZM363.7 585.2L363.7 684.2L348.4 675.4L348.4 576.4ZM320.8 609.7L320.8 629.8L302.9 619.4L302.9 599.3ZM320.8 642.9L320.8 661.4L303.3 651.2L303.3 632.9Z"/></clipPath></defs><path fill="url(#labgIsoHo)" fill-rule="evenodd" d="M414 0L828 232.9L828 713.3L414 946.2L0 713.3L0 232.9ZM414 36.6L796 251.5L796 694.7L414 909.6L32 694.7L32 251.5Z"/><path fill="#000" d="M414 36.6L796 251.5L796 694.7L414 909.6L32 694.7L32 251.5Z"/><path class="iso-cubo" fill="url(#labgIsoHo)" fill-rule="evenodd" d="M440.8 246.5L421.7 257.7L404.8 247.9L424 236.8ZM318.9 256.4L301.7 266.3L285.7 257.1L302.9 247.2ZM522.2 260.9L438.6 309.1L420.1 298.5L503.7 250.2ZM392.5 269.9L373.4 280.9L356.1 271L375.3 260ZM277 277.3L235 301.6L219.9 292.9L261.9 268.6ZM576.1 291.8L398.2 394.4L380.4 384.1L558.3 281.5ZM348.1 295.6L287.5 330.5L270.1 320.5L330.6 285.6ZM404.3 419.1L577.9 318.9L579.2 318.1C579.6 318 580.7 317.9 581.5 317.6C582.2 317.4 583 317 583.8 316.6C584.5 316.2 585.3 315.8 586 315.5C586.8 315.1 587.6 314.8 588.3 314.4C589 314.1 589.8 313.8 590.6 313.5C591.4 313.2 592.2 313 593 312.9C593.8 312.6 594.6 312.5 595.5 312.4C596.3 312.2 597.1 312.2 597.9 312.1C598.9 312.1 599.7 312.1 600.4 312.1C601.4 312.1 602.2 312.1 603 312.2C603.9 312.3 604.7 312.4 605.5 312.5C606.3 312.7 607.1 313 607.9 313.2C608.7 313.5 609.5 313.9 610.1 314.2C610.9 314.6 611.6 315 612.4 315.5C613.1 315.8 613.8 316.3 614.5 316.7C615.2 317.3 615.8 317.8 616.5 318.3C617.1 318.8 617.8 319.4 618.3 319.9C618.9 320.6 619.5 321.2 620.1 321.9C620.6 322.4 621.1 323.1 621.7 323.8C622.1 324.5 622.6 325.2 623 325.8C623.5 326.5 623.9 327.2 624.4 328C624.8 328.7 625.2 329.4 625.6 330.2C626 330.9 626.4 331.7 626.8 332.3C627.1 333.1 627.5 333.8 627.9 334.6C628.3 335.4 628.6 336.1 628.9 336.9C629.3 337.7 629.6 338.4 630 339.2C630.3 340 630.7 340.7 630.9 341.5C631.2 342.3 631.6 343.1 631.9 343.9C632.1 344.5 632.5 345.3 632.7 346.1C632.9 346.9 633.3 347.7 633.5 348.5C633.7 349.3 634 350.1 634.3 350.9C634.5 351.7 634.8 352.5 635.1 353.3C635.3 354.1 635.7 354.9 635.9 355.7C636.1 356.5 636.5 357.3 636.7 358.1C636.9 358.9 637.2 359.7 637.3 360.5C637.5 361.3 637.7 362.1 638 362.9C638.1 363.8 638.3 364.6 638.5 365.4C638.6 366.2 638.9 367 639.1 367.8C639.2 368.6 639.4 369.4 639.7 370.3C639.9 371.1 640 371.9 640.2 372.7C640.3 373.5 640.5 374.3 640.7 375.2C640.8 376 640.9 376.8 641 377.6C641.1 378.5 641.3 379.3 641.4 380.1C641.5 381 641.5 381.8 641.6 382.6C641.7 383.4 641.7 384.3 641.8 385.1C641.9 385.9 641.9 386.8 642.1 387.6C642.1 388.4 642.2 389.3 642.3 390.1C642.3 390.9 642.4 391.9 642.4 392.7C642.5 393.5 642.6 394.2 642.6 395.2C642.7 396 642.7 396.8 642.9 397.7C642.9 398.5 642.9 399.3 642.9 400.2C642.9 401 642.9 401.8 642.9 402.7C642.9 403.5 642.9 404.3 642.7 405.2C642.6 406 642.6 406.8 642.5 407.7C642.4 408.5 642.3 409.3 642.2 410.1C642.1 411 641.9 411.8 641.7 412.6C641.6 413.4 641.5 414.2 641.3 415.1C641.1 415.9 640.9 416.7 640.8 417.5C640.6 418.3 640.3 419.1 640.2 420C640 420.8 639.8 421.6 639.6 422.4C639.4 423.2 639.2 424 638.9 424.8C638.6 425.6 638.4 426.4 638.2 427.2C637.8 428 637.6 428.8 637.3 429.6C637 430.4 636.8 431.2 636.6 432C636.4 432.8 636.2 433.6 636.1 434.5C636.1 435.3 636.2 436.1 636.4 436.9C636.5 437.8 636.8 438.6 637 439.3C637.4 440.1 637.8 440.9 638.2 441.6C638.6 442.2 639.1 442.9 639.6 443.7C640 444.4 640.5 445.1 640.9 445.8C641.4 446.5 641.8 447.1 642.3 447.9C642.6 448.6 643.1 449.3 643.4 450.1C643.9 450.8 644.2 451.6 644.6 452.4C644.9 453.1 645.3 453.9 645.6 454.7C645.9 455.5 646.2 456.2 646.5 456.9C646.8 457.7 647.1 458.5 647.4 459.3C647.6 460.1 647.9 460.9 648.2 461.7C648.4 462.5 648.7 463.3 648.9 464.1C649.1 464.9 649.2 465.7 649.5 466.5C649.7 467.3 649.8 468.2 650 469C650.2 469.8 650.4 470.6 650.5 471.4C650.6 472.3 650.8 473.1 651 473.9C651.1 474.7 651.3 475.5 651.4 476.4C651.5 477.2 651.7 478 651.9 478.8C652 479.6 652.1 480.5 652.2 481.3C652.3 482.1 652.4 483.1 652.5 483.9C652.7 484.7 652.7 485.4 652.8 486.4C652.8 487.2 652.9 488 652.9 488.9C652.9 489.7 653 490.5 653 491.4C653 492.2 653 493 653 493.9C653 494.7 653 495.5 653 496.4C653 497.2 653 498 653 498.9C653 499.7 653 500.5 652.9 501.4C652.9 502.2 652.9 503 652.9 503.9C652.9 504.7 652.8 505.5 652.8 506.4C652.7 507.2 652.7 508 652.5 508.9C652.5 509.7 652.4 510.5 652.3 511.4C652.3 512.2 652.2 513 652.1 513.8C652 514.7 651.9 515.5 651.7 516.3C651.6 517.1 651.5 518.1 651.3 518.9C651.2 519.6 651.1 520.4 651 521.4C650.8 522.2 650.6 523 650.5 523.8C650.4 524.7 650.3 525.5 650 526.3C649.9 527.1 649.7 527.9 649.6 528.8C649.4 529.6 649.2 530.4 649 531.2C648.9 532 648.7 532.8 648.6 533.7C648.3 534.5 648.1 535.3 648 536.1C647.8 536.9 647.5 537.7 647.3 538.5C647.2 539.3 647 540.2 646.7 541C646.4 541.8 646.2 542.6 645.9 543.4C645.7 544 645.4 544.8 645 545.6C644.8 546.4 644.5 547.2 644.1 548C643.8 548.7 643.5 549.5 643.2 550.3C642.9 551.1 642.5 551.8 642.2 552.6C641.8 553.4 641.6 554.2 641.3 554.9C640.9 555.7 640.6 556.5 640.2 557.3C639.9 558 639.6 558.8 639.2 559.5C638.8 560.2 638.4 561 638 561.7C637.6 562.4 637.2 563.2 636.7 563.9C636.4 564.6 635.9 565.4 635.4 566C635 566.7 634.5 567.4 634 568.1C633.5 568.8 633.1 569.5 632.5 570.2C632 570.7 631.5 571.4 630.9 572.1C630.4 572.7 629.9 573.3 629.3 573.9C628.7 574.6 628.2 575.2 627.6 575.7C626.9 576.3 626.3 576.9 625.6 577.4C625.1 578 624.4 578.5 623.7 579C623 579.5 622.3 580 621.7 580.4C621 581 620.3 581.4 619.6 581.9C618.9 582.3 618 582.9 617.5 583.4C617.2 583.8 617.3 584.4 617.2 584.6L403.2 708.2L380.8 695.3L380.8 575.7L220.4 483.2L218.9 482.3C218.5 482.1 217.4 481.9 216.6 481.7C215.9 481.3 215.1 480.9 214.3 480.5C213.6 480.3 212.8 479.9 212.1 479.7C211.3 479.5 210.3 479.4 209.5 479.4C208.7 479.5 207.5 479.7 207 479.9C206.7 479.9 207 479.9 207 479.9L207 596.8L175.1 578.4L175.1 319.8L203.6 303.3L404.3 419.1ZM400.8 328.5L342.4 362.2L325.6 352.6L384.1 318.8ZM381.2 446.6L381.2 536.9L206.8 436.2L206.8 345.9ZM440.3 521.4L440.3 561.1L605.9 465.6L606.9 464.9C607.2 465.3 607.7 466.4 608.3 467C608.9 467.7 609.7 468 610.4 468.5C610.9 469 611.7 469.5 612.3 470.1C612.9 470.6 613.4 471.2 614 471.9C614.5 472.6 614.9 473.3 615.4 473.9C615.8 474.7 616.2 475.4 616.5 476.2C616.9 476.9 617.2 477.7 617.5 478.5C617.9 479.3 618.1 480.1 618.3 480.9C618.7 481.7 618.9 482.5 619.1 483.3C619.4 484.1 619.6 484.9 619.8 485.7C619.9 486.5 620.2 487.3 620.3 488.1C620.4 489 620.6 489.8 620.7 490.6C620.9 491.4 621 492.3 621 493.1C621.1 493.9 621.2 494.8 621.3 495.6C621.3 496.4 621.4 497.2 621.4 498.1C621.5 498.9 621.5 499.7 621.7 500.6C621.7 501.4 621.8 502.2 621.8 503.1C621.8 503.9 621.8 504.7 621.8 505.6C621.8 506.4 621.8 507.2 621.8 508.1C621.8 508.9 621.7 509.7 621.7 510.6C621.7 511.4 621.5 512.2 621.4 513.2C621.4 513.9 621.3 514.7 621.2 515.5C621.1 516.5 621.1 517.3 621 518.1C620.9 519 620.7 519.8 620.6 520.6C620.5 521.4 620.5 522.3 620.3 523.1C620.2 523.9 620.1 524.8 619.9 525.6C619.7 526.4 619.5 527.2 619.4 528C619.1 528.8 618.8 529.6 618.6 530.4C618.2 531.2 618 532 617.7 532.8C617.3 533.4 617 534.2 616.6 535C616.3 535.8 616 536.5 615.6 537.3C615.3 538.1 614.9 538.8 614.6 539.6C614.1 540.3 613.8 541.1 613.3 541.8C612.9 542.4 612.4 543.1 612 543.8C611.5 544.5 610.9 545.2 610.4 545.8C609.8 546.4 609.2 547 608.7 547.6C608.1 548.1 607.4 548.7 606.7 549.3C606.1 549.7 605.5 550.3 604.8 550.8C604.1 551.3 603.4 552 602.8 552.4C602.2 552.6 601.1 552.8 600.8 552.8C600.4 552.8 600.6 552.6 600.6 552.6L415.5 659.3L415.5 455.6L595.9 351.5L597.6 350.6C597.8 350.8 598.6 351.8 599.3 352.3C600 352.6 600.9 352.6 601.7 352.9C602.5 353.1 603.3 353.6 604 353.9C604.7 354.3 605.4 354.8 606 355.4C606.6 355.9 607.2 356.5 607.7 357.2C608.3 357.9 608.8 358.6 609.2 359.3C609.7 359.9 610.1 360.6 610.5 361.4C610.9 362.1 611.3 362.9 611.6 363.6C612 364.4 612.3 365.2 612.6 366C612.9 366.7 613.2 367.5 613.4 368.3C613.8 369.1 614 369.9 614.4 370.7C614.6 371.4 614.8 372.2 615 373C615.2 373.8 615.4 374.8 615.5 375.6C615.7 376.4 615.8 377.1 616 377.9C616.1 378.9 616.2 379.7 616.3 380.5C616.3 381.4 616.4 382.2 616.5 383C616.5 383.8 616.6 384.7 616.6 385.5C616.8 386.3 616.8 387.2 616.9 388C616.9 388.8 616.9 389.7 616.9 390.5C616.9 391.3 616.9 392.2 616.9 393C616.8 393.8 616.8 394.7 616.8 395.5C616.6 396.3 616.5 397.2 616.5 398C616.4 398.8 616.3 399.6 616.2 400.5C616.1 401.3 615.8 402.1 615.7 402.9C615.5 403.8 615.4 404.6 615.2 405.4C614.9 406.2 614.7 407 614.5 407.8C614.2 408.6 614.1 409.4 613.8 410.2C613.6 411 613.3 411.8 613 412.6C612.8 413.4 612.4 414.2 612.1 414.9C611.7 415.7 611.3 416.5 610.9 417.2C610.5 417.8 610 418.5 609.6 419.2C609 419.9 608.5 420.6 608 421.3C607.4 421.8 606.8 422.5 606.3 423.1C605.7 423.7 605.1 424.3 604.6 424.9C604 425.5 603.4 426.2 602.8 426.7C602.3 427.3 601.6 428 601 428.4C600.6 428.9 600 429.1 599.8 429.2L440.3 521.4ZM596.1 417.6L576.9 428.8L531 402.3L550.4 391.2ZM353.9 441L293.6 475.8L276.3 465.7L336.5 431ZM498.1 481.7L478.6 492.9L423.7 461.3L443.2 450ZM374.5 483.1L343.5 501L326.6 491.3L357.6 473.4ZM603.5 540.4L584 551.7L531.7 521.5L551.2 510.2ZM272.6 534.1L272.6 633.6L255.3 623.6L255.3 524.1ZM320.8 561.3L320.8 596.5L303.7 586.6L303.7 551.5ZM363.7 585.2L363.7 684.2L348.4 675.4L348.4 576.4ZM320.8 609.7L320.8 629.8L302.9 619.4L302.9 599.3ZM320.8 642.9L320.8 661.4L303.3 651.2L303.3 632.9Z"/><g clip-path="url(#labgIsoHc)"><rect class="iso-brillo" x="-300" y="-40" width="220" height="1030" fill="url(#labgIsoHb)" transform="skewX(-18)"/></g></svg>
+          <span class="suite-text">LABG Suite</span>
+        </a>
+        <div class="seg lang-seg" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="es" title="Español">ES</button><button type="button" data-lang="en" title="English">EN</button>
+        </div>
+        <button type="button" class="icon-btn theme-btn" id="themeBtn" title="Cambiar entre tema claro y oscuro" aria-label="Cambiar entre tema claro y oscuro">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+        </button>
+        <button type="button" class="icon-btn" id="helpBtn" data-es-title="Atajos de teclado (?)" data-en-title="Keyboard shortcuts (?)" title="Atajos de teclado (?)" aria-label="Atajos de teclado (?)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.2-2.4 3.6"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="stepper" id="stepper" aria-label="Bloques"></nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ==================== BLOCK 1 · HOME ==================== -->
+<section class="step-panel active" id="panel-1">
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow"><span data-l="es">Revisiones narrativas, exploratorias, sistemáticas y meta-análisis</span><span data-l="en">Narrative, scoping and systematic reviews and meta-analyses</span></div>
+        <h1><span data-l="es">Del <span class="gold">montón de artículos</span> a una <span class="accent">revisión que se sostiene</span></span><span data-l="en">From a <span class="gold">pile of papers</span> to a <span class="accent">review that holds up</span></span></h1>
+        <p class="lead"><span data-l="es">Todo el camino de un artículo de revisión en un solo lugar: la <b>pregunta</b> y el protocolo, las <b>cadenas de búsqueda</b>, el <b>cribado priorizado</b> que te ahorra leer lo irrelevante, el <b>diagrama PRISMA</b>, la <b>extracción de datos</b>, el <b>riesgo de sesgo</b>, la <b>síntesis</b> —narrativa o <b>meta-análisis</b>— y la <b>escritura orientada</b> que liga cada afirmación con su evidencia. Sin programar, sin instalar nada y sin que tus datos salgan de tu computadora.</span><span data-l="en">The whole road of a review article in one place: the <b>question</b> and the protocol, the <b>search strings</b>, the <b>prioritized screening</b> that spares you reading the irrelevant, the <b>PRISMA diagram</b>, <b>data extraction</b>, <b>risk of bias</b>, the <b>synthesis</b> —narrative or <b>meta-analysis</b>— and the <b>guided writing</b> that ties every claim to its evidence. No programming, nothing to install, and your data never leave your computer.</span></p>
+        <div class="hero-cta">
+          <button class="btn btn-primary btn-lg" id="startBtn"><span data-l="es">Empezar mi revisión →</span><span data-l="en">Start my review →</span></button>
+          <button class="btn btn-secondary btn-lg" id="typeBtn"><span data-l="es">¿Qué tipo de revisión me conviene?</span><span data-l="en">Which type of review suits me?</span></button>
+          <button class="btn btn-ghost btn-lg" id="simBtn"><span data-l="es">Probar los laboratorios</span><span data-l="en">Try the labs</span></button>
+          <button class="btn btn-secondary btn-lg" id="demoBtn"><span data-l="es">Abrir el ejemplo completo</span><span data-l="en">Open the complete example</span></button>
+          <button class="btn btn-ghost btn-lg" id="citeBtn"><span data-l="es">Cómo citar</span><span data-l="en">How to cite</span></button>
+        </div>
+        <div class="badge-row">
+          <span class="badge ok"><span data-l="es">Funciona completo en tu navegador</span><span data-l="en">Runs entirely in your browser</span></span>
+          <span class="badge ok"><span data-l="es">Tus registros no salen de tu computadora</span><span data-l="en">Your records never leave your computer</span></span>
+          <span class="badge ok"><span data-l="es">Español e inglés</span><span data-l="en">Spanish and English</span></span>
+          <span class="badge ok"><span data-l="es">PRISMA 2020 y PRISMA-ScR</span><span data-l="en">PRISMA 2020 and PRISMA-ScR</span></span>
+          <span class="badge ok"><span data-l="es">Meta-análisis verificado con ejemplos publicados</span><span data-l="en">Meta-analysis checked against published examples</span></span>
+        </div>
+      </div>
+      <div class="hero-art" id="heroArt" role="img" aria-label="A pile of records passes through the screening funnel and becomes a forest plot"></div>
+    </div>
+  </div>
+
+  <div class="messages" id="homeMessages"></div>
+
+  <!-- ---------- Review types ---------- -->
+  <h2 class="section-title" id="types"><span data-l="es">Cuatro tipos de revisión, cuatro rutas</span><span data-l="en">Four types of review, four routes</span></h2>
+  <p class="section-sub"><span data-l="es">No todas las revisiones piden lo mismo. Elige una tarjeta para ver qué bloques necesita; la app activará esa ruta cuando la elijas en el protocolo.</span><span data-l="en">Not every review asks for the same things. Pick a card to see which blocks it needs; the app will turn that route on when you choose it in the protocol.</span></p>
+  <div class="type-grid" id="typeGrid"></div>
+  <div class="route-strip" id="routeStrip"></div>
+
+  <h2 class="section-title"><span data-l="es">¿No sabes cuál? Cinco preguntas</span><span data-l="en">Not sure which? Five questions</span></h2>
+  <p class="section-sub"><span data-l="es">El asistente explica por qué recomienda lo que recomienda, para que puedas estar en desacuerdo con conocimiento de causa.</span><span data-l="en">The assistant explains why it recommends what it recommends, so you can disagree knowing why.</span></p>
+  <div class="card wizard" id="wizard"></div>
+
+  <!-- ---------- Interactive labs ---------- -->
+  <h2 class="section-title" id="labs"><span data-l="es">Pruébalo: dos laboratorios con el motor real</span><span data-l="en">Try it: two labs with the real engine</span></h2>
+  <p class="section-sub"><span data-l="es">Nada aquí es una animación. El laboratorio de cribado escribe una pila de registros <b>ficticios</b> cuya verdad conoce, la criba con el mismo modelo que usará el Bloque 4 y te dice cuánto habrías ahorrado y cuánto habría costado parar. El de meta-análisis genera ensayos de campo a partir de un efecto verdadero y los combina con el motor del Bloque 8, para que veas la distancia entre la verdad y la estimación.</span><span data-l="en">Nothing here is an animation. The screening lab writes a pile of <b>fictitious</b> records whose truth it knows, screens it with the same model Block 4 will use and tells you how much you would have saved and what stopping would have cost. The meta-analysis lab generates field trials from a true effect and pools them with the engine of Block 8, so you can see the distance between the truth and the estimate.</span></p>
+
+  <div class="playground">
+    <div class="lab-tabs" role="tablist">
+      <button class="lab-tab on" data-lab="labScreen" role="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v7l-4 2v-9z"/></svg>
+        <span data-l="es">Laboratorio de cribado priorizado</span><span data-l="en">Prioritized screening lab</span></button>
+      <button class="lab-tab" data-lab="labMeta" role="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18"/><path d="M5 7h8M8 11h9M4 15h7"/><path d="M9 19l3-2 3 2-3 2z"/></svg>
+        <span data-l="es">Laboratorio de meta-análisis</span><span data-l="en">Meta-analysis lab</span></button>
+    </div>
+
+    <!-- screening lab -->
+    <div class="lab on" id="labScreen">
+      <p class="hint" style="margin-top:0"><span data-l="es">La pregunta ficticia: <i>¿la inoculación con hongos micorrízicos arbusculares aumenta el rendimiento de grano del maíz en campo?</i> La pila mezcla los estudios relevantes con vecinos que se les parecen (micorrizas en invernadero, fertilización del maíz, enfermedades fúngicas del maíz) y con temas lejanos. El revisor conoce de antemano un relevante y un irrelevante; a partir de ahí, el modelo reordena la pila después de cada lote de decisiones.</span><span data-l="en">The fictitious question: <i>does inoculation with arbuscular mycorrhizal fungi increase maize grain yield in the field?</i> The pile mixes the relevant studies with neighbours that resemble them (mycorrhizae in the greenhouse, maize fertilization, fungal diseases of maize) and with distant topics. The reviewer knows one relevant and one irrelevant record beforehand; from there, the model re-ranks the pile after each batch of decisions.</span></p>
+      <div class="pg-controls">
+        <label class="inline-label"><span data-l="es">Registros</span><span data-l="en">Records</span>
+          <select id="slN"><option value="500">500</option><option value="1000" selected>1,000</option><option value="2000">2,000</option></select></label>
+        <label class="inline-label"><span data-l="es">Lote</span><span data-l="en">Batch</span>
+          <select id="slBatch"><option value="1">1</option><option value="5" selected>5</option><option value="10">10</option><option value="25">25</option></select></label>
+        <label class="inline-label"><span data-l="es">Regla de paro</span><span data-l="en">Stopping rule</span>
+          <select id="slStop">
+            <option value="50" data-es="50 irrelevantes seguidos" data-en="50 irrelevant in a row">50 irrelevantes seguidos</option>
+            <option value="100" selected data-es="100 irrelevantes seguidos" data-en="100 irrelevant in a row">100 irrelevantes seguidos</option>
+            <option value="200" data-es="200 irrelevantes seguidos" data-en="200 irrelevant in a row">200 irrelevantes seguidos</option>
+            <option value="knee6" data-es="Rodilla, ρ ≥ 6" data-en="Knee, ρ ≥ 6">Rodilla, ρ ≥ 6</option>
+            <option value="knee" data-es="Rodilla ajustada, ρ ≥ 156 − relevantes" data-en="Adjusted knee, ρ ≥ 156 − relevant">Rodilla ajustada, ρ ≥ 156 − relevantes</option>
+          </select></label>
+        <label class="inline-label"><span data-l="es">Semilla</span><span data-l="en">Seed</span> <input type="number" id="slSeed" value="7" min="1" style="width:84px"></label>
+        <button class="btn btn-secondary btn-sm" id="slNew"><span data-l="es">↻ Otra pila</span><span data-l="en">↻ Another pile</span></button>
+      </div>
+      <div class="slider-grid">
+        <div class="slider-row"><label for="slPrev"><span data-l="es">Prevalencia de relevantes</span><span data-l="en">Prevalence of relevant</span></label><input type="range" id="slPrev" min="1" max="10" step="0.5" value="3"><span class="range-val" id="slPrevVal"></span></div>
+        <div class="slider-row"><label for="slDiff"><span data-l="es">Dificultad de la pila</span><span data-l="en">Difficulty of the pile</span></label><input type="range" id="slDiff" min="0" max="1" step="0.5" value="0.5"><span class="range-val" id="slDiffVal"></span></div>
+      </div>
+      <div class="sim-readout" id="slReadout" style="margin-top:14px"></div>
+      <div class="pg-status" id="slStatus"></div>
+      <div class="lab-grid" style="margin-top:14px">
+        <div class="pg-pane"><div class="pg-title"><span data-l="es">Curva de recuperación</span><span data-l="en">Recall curve</span></div><svg id="slCurve"></svg></div>
+        <div class="pg-pane"><div class="pg-title"><span data-l="es">Diagrama de flujo PRISMA 2020 de la revisión simulada</span><span data-l="en">PRISMA 2020 flow diagram of the simulated review</span></div><svg id="slPrisma"></svg></div>
+      </div>
+      <div class="sl-records" id="slRecords"></div>
+    </div>
+
+    <!-- meta-analysis lab -->
+    <div class="lab" id="labMeta">
+      <p class="hint" style="margin-top:0"><span data-l="es">Ensayos de campo ficticios de un insumo sobre el rendimiento. Cada ensayo tiene su propio efecto verdadero, tomado de una distribución con media «efecto verdadero» y dispersión τ; sus parcelas agregan el error de muestreo. El efecto se mide como razón de respuesta (ln de la media tratada entre la testigo) y se lee como cambio porcentual. Activa el sesgo de publicación y observa el embudo.</span><span data-l="en">Fictitious field trials of an input on yield. Each trial has its own true effect, drawn from a distribution with mean "true effect" and spread τ; its plots add sampling error. The effect is measured as a response ratio (ln of the treated over the control mean) and read as a percentage change. Turn publication bias on and watch the funnel.</span></p>
+      <div class="pg-controls">
+        <label class="inline-label"><span data-l="es">Estimador de τ²</span><span data-l="en">τ² estimator</span>
+          <select id="mlMethod">
+            <option value="REML" selected data-es="REML (máxima verosimilitud restringida)" data-en="REML (restricted maximum likelihood)">REML</option>
+            <option value="DL" data-es="DerSimonian–Laird" data-en="DerSimonian–Laird">DerSimonian–Laird</option>
+            <option value="PM" data-es="Paule–Mandel" data-en="Paule–Mandel">Paule–Mandel</option>
+            <option value="HE" data-es="Hedges" data-en="Hedges">Hedges</option>
+            <option value="ML" data-es="Máxima verosimilitud" data-en="Maximum likelihood">ML</option>
+          </select></label>
+        <label class="checkbox-label"><input type="checkbox" id="mlKnha"> <span data-l="es">Knapp–Hartung</span><span data-l="en">Knapp–Hartung</span></label>
+        <label class="checkbox-label"><input type="checkbox" id="mlBias"> <span data-l="es">Sesgo de publicación</span><span data-l="en">Publication bias</span></label>
+        <label class="inline-label"><span data-l="es">Semilla</span><span data-l="en">Seed</span> <input type="number" id="mlSeed" value="3" min="1" style="width:84px"></label>
+        <button class="btn btn-secondary btn-sm" id="mlNew"><span data-l="es">↻ Otra literatura</span><span data-l="en">↻ Another literature</span></button>
+      </div>
+      <div class="slider-grid">
+        <div class="slider-row"><label for="mlK"><span data-l="es">Número de ensayos</span><span data-l="en">Number of trials</span></label><input type="range" id="mlK" min="3" max="40" step="1" value="14"><span class="range-val" id="mlKVal"></span></div>
+        <div class="slider-row"><label for="mlEff"><span data-l="es">Efecto verdadero</span><span data-l="en">True effect</span></label><input type="range" id="mlEff" min="-20" max="40" step="1" value="10"><span class="range-val" id="mlEffVal"></span></div>
+        <div class="slider-row"><label for="mlTau"><span data-l="es">Heterogeneidad τ</span><span data-l="en">Heterogeneity τ</span></label><input type="range" id="mlTau" min="0" max="0.3" step="0.01" value="0.08"><span class="range-val" id="mlTauVal"></span></div>
+        <div class="slider-row"><label for="mlN"><span data-l="es">Parcelas por tratamiento</span><span data-l="en">Plots per treatment</span></label><input type="range" id="mlN" min="3" max="20" step="1" value="10"><span class="range-val" id="mlNVal"></span></div>
+      </div>
+      <div class="sim-readout" id="mlReadout" style="margin-top:14px"></div>
+      <div class="lab-grid wide-left" style="margin-top:14px">
+        <div class="pg-pane"><div class="pg-title"><span data-l="es">Diagrama de bosque (forest plot)</span><span data-l="en">Forest plot</span></div><svg id="mlForest"></svg></div>
+        <div class="pg-pane"><div class="pg-title"><span data-l="es">Gráfico de embudo</span><span data-l="en">Funnel plot</span></div><svg id="mlFunnel"></svg></div>
+      </div>
+      <div class="ml-reading" id="mlReading"></div>
+    </div>
+  </div>
+
+  <!-- ---------- Blocks ---------- -->
+  <h2 class="section-title"><span data-l="es">Qué incluye</span><span data-l="en">What's inside</span></h2>
+  <p class="section-sub"><span data-l="es">Nueve bloques de trabajo después de esta portada, en el orden en que se hace una revisión.</span><span data-l="en">Nine working blocks after this home page, in the order in which a review is done.</span></p>
+  <div class="feature-grid" id="featureGrid"></div>
+
+  <h2 class="section-title"><span data-l="es">Cómo está hecha</span><span data-l="en">How it is made</span></h2>
+  <div class="bring-grid" id="bringGrid"></div>
+
+  <!-- ---------- Theory ---------- -->
+  <h2 class="section-title" id="theory"><span data-l="es">La teoría, en lenguaje claro</span><span data-l="en">The theory, in plain language</span></h2>
+  <p class="section-sub"><span data-l="es">Lo que conviene entender antes de abrir la primera base de datos.</span><span data-l="en">What is worth understanding before opening the first database.</span></p>
+  <div class="theory-card">
+
+    <details class="acc"><summary><span data-l="es">Lo que hace «sistemática» a una revisión</span><span data-l="en">What makes a review "systematic"</span> <span class="acc-tag"><span data-l="es">empieza aquí</span><span data-l="en">start here</span></span></summary>
+      <div class="acc-body">
+        <p><span data-l="es">No es el número de artículos ni el tono. Una revisión es sistemática cuando <b>otra persona, con tu protocolo, llegaría a los mismos estudios</b>: la pregunta y los criterios se fijan antes de buscar, la búsqueda se documenta al carácter, cada exclusión tiene un motivo registrado y la calidad de cada estudio se evalúa con una herramienta declarada. La narrativa no está obligada a nada de eso; su valor está en la interpretación, y su riesgo en que el autor elija, sin saberlo, los estudios que le dan la razón.</span><span data-l="en">It is not the number of papers nor the tone. A review is systematic when <b>someone else, with your protocol, would arrive at the same studies</b>: the question and criteria are fixed before searching, the search is documented to the character, every exclusion has a recorded reason and each study's quality is assessed with a declared tool. A narrative review is bound to none of this; its value lies in interpretation, and its risk in the author choosing, unknowingly, the studies that prove them right.</span></p>
+        <p><span data-l="es">La exploratoria (<i>scoping</i>) comparte el rigor de la búsqueda, pero su producto es un mapa —qué se ha estudiado, cómo y dónde faltan estudios—, no una respuesta. El meta-análisis es una técnica estadística que se aplica <i>dentro</i> de una revisión sistemática cuando los efectos son comparables; sin la sistemática debajo, un meta-análisis solo promedia con precisión una muestra sesgada.</span><span data-l="en">The scoping review shares the rigour of the search, but its product is a map —what has been studied, how and where studies are missing—, not an answer. Meta-analysis is a statistical technique applied <i>within</i> a systematic review when effects are comparable; without the systematic review underneath, a meta-analysis only averages a biased sample precisely.</span></p>
+      </div></details>
+
+    <details class="acc"><summary><span data-l="es">Por qué el cribado priorizado no decide por ti</span><span data-l="en">Why prioritized screening does not decide for you</span></summary>
+      <div class="acc-body clearfix">
+        <figure class="theory-fig" id="theoryRecallFig"><figcaption class="cap"><span data-l="es">WSS@95: la parte de la pila que no se lee para encontrar el 95 % de los relevantes, menos lo que habría ahorrado el azar.</span><span data-l="en">WSS@95: the share of the pile left unread to find 95 % of the relevant records, minus what chance would have saved.</span></figcaption></figure>
+        <p><span data-l="es">El modelo no excluye nada: solo cambia el <b>orden</b> en que ves los registros. Cada vez que decides, aprende qué palabras distinguen lo relevante de lo irrelevante y sube a la cima de la pila lo que más se parece a lo que ya incluiste. Como los relevantes aparecen pronto, llega un momento en que solo salen irrelevantes; ahí entra una <b>regla de paro</b> que se declara en el protocolo y se reporta en el artículo.</span><span data-l="en">The model excludes nothing: it only changes the <b>order</b> in which you see the records. Each time you decide, it learns which words separate the relevant from the irrelevant and brings to the top what most resembles what you have already included. Because relevant records appear early, a moment comes when only irrelevant ones appear; that is where a <b>stopping rule</b> comes in, declared in the protocol and reported in the article.</span></p>
+        <p><span data-l="es">El costo es explícito: parar antes de terminar puede dejar fuera algún relevante. Por eso el laboratorio te muestra la recuperación al parar, y por eso el Bloque 4 recomienda una verificación con una muestra al azar de lo no leído.</span><span data-l="en">The cost is explicit: stopping before the end can leave some relevant record out. That is why the lab shows you the recall at the stopping point, and why Block 4 recommends a check with a random sample of the unread.</span></p>
+      </div></details>
+
+    <details class="acc"><summary><span data-l="es">Efecto común o efectos aleatorios</span><span data-l="en">Common effect or random effects</span></summary>
+      <div class="acc-body clearfix">
+        <figure class="theory-fig" id="theoryFeReFig"><figcaption class="cap"><span data-l="es">Izquierda: un solo efecto verdadero. Derecha: una distribución de efectos verdaderos, uno por estudio.</span><span data-l="en">Left: one true effect. Right: a distribution of true effects, one per study.</span></figcaption></figure>
+        <p><span data-l="es">El modelo de <b>efecto común</b> (o fijo) supone que todos los estudios estiman el mismo número y que solo el azar del muestreo los separa. El de <b>efectos aleatorios</b> supone que cada estudio tiene su propio efecto verdadero θᵢ —otro suelo, otro clima, otro cultivar— tomado de una distribución con media μ y varianza τ². En agronomía y ecología casi siempre es el segundo, y la pregunta deja de ser «¿cuál es el efecto?» para ser «¿cuál es el efecto medio y cuánto varía de un sitio a otro?».</span><span data-l="en">The <b>common</b> (or fixed) effect model assumes that every study estimates the same number and that only sampling chance separates them. The <b>random-effects</b> model assumes each study has its own true effect θᵢ —another soil, another climate, another cultivar— drawn from a distribution with mean μ and variance τ². In agronomy and ecology it is almost always the second, and the question stops being "what is the effect?" to become "what is the mean effect, and how much does it vary from site to site?".</span></p>
+        <div class="formula">μ̂ = Σ wᵢ yᵢ / Σ wᵢ,  wᵢ = 1 / (vᵢ + τ̂²)</div>
+      </div></details>
+
+    <details class="acc"><summary><span data-l="es">Heterogeneidad: τ², I² y el intervalo de predicción</span><span data-l="en">Heterogeneity: τ², I² and the prediction interval</span></summary>
+      <div class="acc-body">
+        <p><span data-l="es"><b>τ²</b> es la varianza de los efectos verdaderos, en las unidades del efecto: es la heterogeneidad absoluta. <b>I²</b> es la fracción de la variación observada que no se debe al azar del muestreo; es relativa, y crece con estudios grandes aunque τ² no cambie. Por eso I² = 80 % no dice «mucha variación» sino «poco error de muestreo en comparación». Lo que un agrónomo necesita es el <b>intervalo de predicción</b>: el rango donde caería el efecto verdadero de un sitio nuevo. Si incluye pérdidas, el insumo no paga en todas partes, aunque el promedio sea positivo y significativo.</span><span data-l="en"><b>τ²</b> is the variance of the true effects, in the effect's units: it is the absolute heterogeneity. <b>I²</b> is the share of the observed variation not due to sampling chance; it is relative, and it grows with large studies even when τ² does not change. That is why I² = 80 % does not say "a lot of variation" but "little sampling error by comparison". What an agronomist needs is the <b>prediction interval</b>: the range where the true effect at a new site would fall. If it includes losses, the input does not pay everywhere, even when the mean is positive and significant.</span></p>
+        <div class="formula">I² = τ̂² / (τ̂² + s²)    PI = μ̂ ± t<sub>k−2</sub> √(τ̂² + SE(μ̂)²)</div>
+      </div></details>
+
+    <details class="acc"><summary><span data-l="es">El sesgo de publicación y el embudo</span><span data-l="en">Publication bias and the funnel</span></summary>
+      <div class="acc-body">
+        <p><span data-l="es">Los estudios grandes se publican casi siempre; los pequeños, sobre todo cuando «salieron». Así la literatura pierde justo los estudios pequeños con efectos nulos o negativos, y el promedio se infla. En el gráfico de embudo —efecto contra error estándar— eso se ve como una esquina vacía. La prueba de <b>Egger</b> mide esa asimetría, pero tiene poca potencia con menos de unos diez estudios, y la asimetría también puede venir de heterogeneidad real. Por eso se busca literatura gris desde el Bloque 3, y no solo se prueba al final.</span><span data-l="en">Large studies are almost always published; small ones, mostly when they "worked". So the literature loses precisely the small studies with null or negative effects, and the mean inflates. In the funnel plot —effect against standard error— that shows up as an empty corner. <b>Egger's</b> test measures that asymmetry, but it has little power with fewer than about ten studies, and asymmetry can also come from real heterogeneity. That is why grey literature is searched from Block 3 onwards, and not only tested for at the end.</span></p>
+      </div></details>
+  </div>
+
+  <!-- ---------- Cite ---------- -->
+  <h2 class="section-title" id="cite"><span data-l="es">Cómo citar</span><span data-l="en">How to cite</span></h2>
+  <p class="section-sub"><span data-l="es">Si ReviewPro te ayudó en un artículo o una tesis, cita el programa y las obras originales de los métodos que implementa; el informe del Bloque 10 los nombra por autor y año.</span><span data-l="en">If ReviewPro helped with an article or a thesis, please cite the software and the original works of the methods it implements; the report of Block 10 names them by author and year.</span></p>
+  <div class="cite-box">
+    <div class="cite-ref" id="citeText"><span data-l="es">Barrera-Guzmán, L.Á. (2026). ReviewPro: plataforma en el navegador para artículos de revisión narrativos, exploratorios y sistemáticos y meta-análisis (versión <span class="app-v"></span>) [software].</span><span data-l="en">Barrera-Guzmán, L.Á. (2026). ReviewPro: a browser-based platform for narrative, scoping and systematic review articles and meta-analysis (Version <span class="app-v"></span>) [Computer software].</span></div>
+    <button class="btn btn-secondary btn-sm" id="copyCite" data-es="Copiar la cita" data-en="Copy the citation">Copiar la cita</button>
+    <span class="hint" style="margin-left:8px"><span data-l="es">El DOI se añadirá al archivar la versión 1.0.</span><span data-l="en">The DOI will be added when version 1.0 is archived.</span></span>
+  </div>
+
+  <h2 class="section-title"><span data-l="es">Referencias detrás de los cálculos</span><span data-l="en">References behind the calculations</span></h2>
+  <p class="section-sub"><span data-l="es">Cada método de la app viene de una obra publicada, y se vuelve a nombrar en el lugar donde se usa.</span><span data-l="en">Every method in this app comes from a published work, and is named again where it is used.</span></p>
+  <div class="ref-tools chips" id="refFilter"></div>
+  <ol class="ref-list" id="refList"></ol>
+
+  <p class="footer-note"><span data-l="es">ReviewPro · versión <span class="app-v"></span> · hecha para quienes quieren que su revisión aguante la lectura de un revisor escéptico.</span><span data-l="en">ReviewPro · version <span class="app-v"></span> · made for those who want their review to survive the reading of a sceptical referee.</span></p>
+
+</section>
+
+<!-- ==================== BLOCKS 2–10 (built in later stages) ==================== -->
+<section class="step-panel" id="panel-2">
+  <div class="panel-title"><div class="pt-num">2</div>
+    <div><h2><span data-l="es">Protocolo</span><span data-l="en">Protocol</span></h2>
+      <p><span data-l="es">Lo que se decide antes de buscar, para que la revisión no se acomode a lo que encuentre: la pregunta, los criterios, las fuentes, los métodos y quién hace qué. De aquí salen el registro (PROSPERO u OSF) y el documento del protocolo.</span><span data-l="en">What is decided before searching, so the review cannot bend to what it finds: the question, the criteria, the sources, the methods and who does what. The registration (PROSPERO or OSF) and the protocol document come out of here.</span></p></div>
+  </div>
+
+  <!-- ---------- project ---------- -->
+  <div class="card b2-project">
+    <div class="card-head">
+      <div>
+        <h2><span data-l="es">Proyecto</span><span data-l="en">Project</span></h2>
+        <p class="hint"><span data-l="es">El proyecto se guarda solo en este navegador. Descarga el archivo <b>.reviewpro.json</b> para conservarlo con tu manuscrito o compartirlo con coautores: es lo único que sale de tu computadora, y solo cuando tú lo descargas.</span><span data-l="en">The project saves itself in this browser. Download the <b>.reviewpro.json</b> file to keep it with your manuscript or share it with co-authors: it is the only thing that leaves your computer, and only when you download it.</span></p>
+      </div>
+      <div class="b2-meter" id="b2Meter"></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-secondary btn-sm" id="b2New"><span data-l="es">Nuevo</span><span data-l="en">New</span></button>
+      <button class="btn btn-secondary btn-sm" id="b2Open"><span data-l="es">Abrir archivo…</span><span data-l="en">Open file…</span></button>
+      <button class="btn btn-primary btn-sm" id="b2Save"><span data-l="es">⤓ Guardar archivo</span><span data-l="en">⤓ Save file</span></button>
+      <input type="file" id="b2File" accept=".json,application/json" hidden>
+      <span class="b2-sep"></span>
+      <label class="inline-label"><span data-l="es">Ejemplo</span><span data-l="en">Example</span>
+        <select id="b2ExSel">
+          <option value="meta" data-es="Meta-análisis: micorrizas y maíz" data-en="Meta-analysis: mycorrhizae and maize">Meta-análisis: micorrizas y maíz</option>
+          <option value="scoping" data-es="Exploratoria: agroecología en café" data-en="Scoping: agroecology in coffee">Exploratoria: agroecología en café</option>
+          <option value="narrative" data-es="Narrativa: micorrizas y fósforo" data-en="Narrative: mycorrhizae and phosphorus">Narrativa: micorrizas y fósforo</option>
+        </select></label>
+      <button class="btn btn-ghost btn-sm" id="b2LoadEx"><span data-l="es">Cargar ejemplo</span><span data-l="en">Load example</span></button>
+      <span class="hint b2-saved" id="b2Saved"></span>
+    </div>
+    <div class="messages" id="b2Msg"></div>
+  </div>
+
+  <!-- ---------- 1 · type ---------- -->
+  <div class="card">
+    <h2><span data-l="es">1 · Tipo de revisión</span><span data-l="en">1 · Type of review</span></h2>
+    <p class="hint"><span data-l="es">El tipo decide qué pide el protocolo, qué marco de pregunta se recomienda, qué guía de reporte se sigue y qué bloques son necesarios.</span><span data-l="en">The type decides what the protocol asks for, which question framework is recommended, which reporting guideline is followed and which blocks are required.</span></p>
+    <div class="b2-types" id="b2Types"></div>
+    <p class="hint" id="b2TypeNote" style="margin-top:10px"></p>
+  </div>
+
+  <!-- ---------- 2 · question ---------- -->
+  <div class="card">
+    <h2><span data-l="es">2 · Título y pregunta</span><span data-l="en">2 · Title and question</span></h2>
+    <div class="form-grid">
+      <div class="field wide" style="grid-column:1/-1"><label data-es="Título de la revisión" data-en="Review title">Título de la revisión</label>
+        <input type="text" data-b="title" data-es-ph="Efecto de … sobre … en …: revisión sistemática y meta-análisis" data-en-ph="Effect of … on … in …: a systematic review and meta-analysis"></div>
+    </div>
+    <h3><span data-l="es">Marco de la pregunta</span><span data-l="en">Question framework</span></h3>
+    <div class="chips" id="b2Fw"></div>
+    <p class="hint" id="b2FwUse"></p>
+    <div class="form-grid" id="b2Elements"></div>
+    <div class="b2-qbox">
+      <div class="b2-q-label"><span data-l="es">La pregunta, redactada con tus elementos</span><span data-l="en">The question, written from your elements</span></div>
+      <div id="b2Question"></div>
+      <details class="b2-own"><summary><span data-l="es">Prefiero redactarla yo</span><span data-l="en">I prefer to word it myself</span></summary>
+        <textarea class="prose" rows="2" data-b="questionText" data-es-title="La pregunta, redactada por ti" data-en-title="The question, worded by you" data-es-ph="Déjalo vacío para usar la redacción automática" data-en-ph="Leave empty to use the automatic wording"></textarea></details>
+    </div>
+    <div id="b2Checks"></div>
+    <div class="form-grid">
+      <div class="field wide"><label data-es="Justificación: qué no resuelven las revisiones existentes" data-en="Rationale: what existing reviews do not settle">Justificación</label><textarea class="prose" rows="4" data-b="background"></textarea></div>
+      <div class="field wide"><label data-es="Objetivos" data-en="Objectives">Objetivos</label><textarea class="prose" rows="4" data-b="objectives"></textarea></div>
+      <div class="field wide"><label data-es="Hipótesis o expectativas (opcional)" data-en="Hypotheses or expectations (optional)">Hipótesis</label><textarea class="prose" rows="2" data-b="hypotheses"></textarea></div>
+      <div class="field wide"><label data-es="Palabras clave" data-en="Keywords">Palabras clave</label><input type="text" data-b="keywords" data-es-ph="separadas por punto y coma" data-en-ph="separated by semicolons"></div>
+    </div>
+  </div>
+
+  <!-- ---------- 3 · criteria ---------- -->
+  <div class="card">
+    <h2><span data-l="es">3 · Criterios de elegibilidad</span><span data-l="en">3 · Eligibility criteria</span></h2>
+    <p class="hint"><span data-l="es">Cada criterio recibe una clave (I1, I2… para inclusión; E1, E2… para exclusión). En el cribado y en el texto completo, cada exclusión citará la clave del criterio que la motiva, y el diagrama PRISMA contará los motivos solo.</span><span data-l="en">Each criterion gets an ID (I1, I2… for inclusion; E1, E2… for exclusion). In screening and full text, every exclusion will cite the ID of the criterion behind it, and the PRISMA diagram will count the reasons by itself.</span></p>
+    <div class="btn-row" style="margin:0 0 12px">
+      <button class="btn btn-secondary btn-sm" id="b2SeedCrit"><span data-l="es">Proponer a partir de la pregunta</span><span data-l="en">Propose from the question</span></button>
+      <button class="btn btn-ghost btn-sm" id="b2AddInc"><span data-l="es">+ inclusión</span><span data-l="en">+ inclusion</span></button>
+      <button class="btn btn-ghost btn-sm" id="b2AddExc"><span data-l="es">+ exclusión</span><span data-l="en">+ exclusion</span></button>
+    </div>
+    <div id="b2Criteria"></div>
+    <div class="form-grid" style="margin-top:14px">
+      <div class="field"><label data-es="Publicados desde (año)" data-en="Published from (year)">Desde</label><input type="number" data-b="years.from" min="1800" max="2100" placeholder="—"></div>
+      <div class="field"><label data-es="Hasta (vacío = actual)" data-en="To (empty = present)">Hasta</label><input type="number" data-b="years.to" min="1800" max="2100" placeholder="—"></div>
+      <div class="field"><label data-es="Idiomas" data-en="Languages">Idiomas</label><input type="text" data-b="languages"></div>
+      <div class="field"><label data-es="Tipos de publicación" data-en="Publication types">Tipos de publicación</label>
+        <div class="b2-checks">
+          <label class="checkbox-label"><input type="checkbox" data-pub="journal"> <span data-l="es">artículos arbitrados</span><span data-l="en">peer-reviewed articles</span></label>
+          <label class="checkbox-label"><input type="checkbox" data-pub="thesis"> <span data-l="es">tesis</span><span data-l="en">theses</span></label>
+          <label class="checkbox-label"><input type="checkbox" data-pub="report"> <span data-l="es">informes técnicos</span><span data-l="en">technical reports</span></label>
+          <label class="checkbox-label"><input type="checkbox" data-pub="preprint"> <span data-l="es">preimpresos</span><span data-l="en">preprints</span></label>
+          <label class="checkbox-label"><input type="checkbox" data-pub="book"> <span data-l="es">libros y capítulos</span><span data-l="en">books and chapters</span></label>
+          <label class="checkbox-label"><input type="checkbox" data-pub="conf"> <span data-l="es">actas de congresos</span><span data-l="en">conference proceedings</span></label>
+        </div></div>
+    </div>
+  </div>
+
+  <!-- ---------- 4 · outcomes ---------- -->
+  <div class="card">
+    <h2><span data-l="es">4 · Desenlaces y variables</span><span data-l="en">4 · Outcomes and variables</span></h2>
+    <p class="hint"><span data-l="es">El desenlace primario es el que decide la conclusión y se fija antes de ver los datos; cambiarlo después es la forma más común de reporte selectivo.</span><span data-l="en">The primary outcome is the one that decides the conclusion and is fixed before seeing the data; changing it afterwards is the most common form of selective reporting.</span></p>
+    <div id="b2Outcomes"></div>
+    <div class="btn-row" style="margin-top:8px"><button class="btn btn-ghost btn-sm" id="b2AddOut"><span data-l="es">+ desenlace</span><span data-l="en">+ outcome</span></button></div>
+    <div class="form-grid"><div class="field wide" style="grid-column:1/-1"><label data-es="Moderadores y covariables previstos" data-en="Planned moderators and covariates">Moderadores</label><textarea class="prose" rows="2" data-b="moderators" data-es-ph="suelo, clima, dosis, tipo de manejo…" data-en-ph="soil, climate, rate, management type…"></textarea></div></div>
+  </div>
+
+  <!-- ---------- 5 · sources ---------- -->
+  <div class="card">
+    <h2><span data-l="es">5 · Fuentes de información</span><span data-l="en">5 · Information sources</span></h2>
+    <p class="hint"><span data-l="es">Escribe el nombre de cada base de datos o repositorio y los años que cubrirás. Las cadenas de búsqueda se construyen en el Bloque 3.</span><span data-l="en">Write the name of each database or repository and the years you will cover. The search strings are built in Block 3.</span></p>
+    <div id="b2Sources"></div>
+    <div class="btn-row" style="margin-top:8px"><button class="btn btn-ghost btn-sm" id="b2AddSrc"><span data-l="es">+ fuente</span><span data-l="en">+ source</span></button></div>
+    <div class="form-grid">
+      <div class="field wide"><label data-es="Literatura gris" data-en="Grey literature">Literatura gris</label><textarea class="prose" rows="2" data-b="greyLit"></textarea></div>
+      <div class="field wide"><label data-es="Otras estrategias (referencias, citas, expertos)" data-en="Other strategies (references, citations, experts)">Otras estrategias</label><textarea class="prose" rows="2" data-b="otherSearch"></textarea></div>
+    </div>
+  </div>
+
+  <!-- ---------- 6 · methods ---------- -->
+  <div class="card">
+    <h2><span data-l="es">6 · Métodos</span><span data-l="en">6 · Methods</span></h2>
+    <h3><span data-l="es">Selección de estudios</span><span data-l="en">Study selection</span></h3>
+    <div class="form-grid">
+      <div class="field"><label data-es="Revisores por registro" data-en="Reviewers per record">Revisores</label><input type="number" min="1" max="5" data-b="screening.reviewers"></div>
+      <div class="field"><label data-es="Registros del piloto" data-en="Pilot records">Piloto</label><input type="number" min="0" max="500" data-b="screening.pilot"></div>
+      <div class="field"><label data-es="Acuerdo mínimo (kappa)" data-en="Minimum agreement (kappa)">Kappa</label><input type="number" min="0" max="1" step="0.05" data-b="screening.kappa"></div>
+      <div class="field"><label data-es="Desacuerdos" data-en="Disagreements">Desacuerdos</label><select data-b="screening.disagreements"><option value="discussion" data-es="por discusión" data-en="by discussion">por discusión</option><option value="third" data-es="con un tercer revisor" data-en="by a third reviewer">con un tercer revisor</option></select></div>
+    </div>
+    <label class="checkbox-label"><input type="checkbox" data-b="screening.prioritized"> <span data-l="es">Cribado priorizado con aprendizaje activo (como en el laboratorio de la portada)</span><span data-l="en">Prioritized screening with active learning (as in the home-page lab)</span></label>
+    <div class="form-grid b2-stop-only">
+      <div class="field"><label data-es="Regla de paro" data-en="Stopping rule">Regla de paro</label><select data-b="screening.stop"><option value="consecutive" data-es="irrelevantes consecutivos" data-en="consecutive irrelevant">irrelevantes consecutivos</option><option value="knee" data-es="método de la rodilla" data-en="knee method">método de la rodilla</option></select></div>
+      <div class="field"><label data-es="Irrelevantes seguidos para parar" data-en="Irrelevant in a row to stop">N</label><input type="number" min="10" max="2000" data-b="screening.stopN"></div>
+      <div class="field"><label class="checkbox-label"><input type="checkbox" data-b="screening.check"> <span data-l="es">Verificar con una muestra al azar de lo no leído</span><span data-l="en">Verify with a random sample of the unread</span></label></div>
+    </div>
+    <label class="checkbox-label"><input type="checkbox" data-b="screening.fulltextDual"> <span data-l="es">Texto completo evaluado por duplicado</span><span data-l="en">Full text assessed in duplicate</span></label>
+
+    <h3><span data-l="es">Extracción de datos</span><span data-l="en">Data extraction</span></h3>
+    <label class="checkbox-label"><input type="checkbox" data-b="extraction.dual"> <span data-l="es">Por duplicado e independiente</span><span data-l="en">In duplicate and independently</span></label>
+    <label class="checkbox-label"><input type="checkbox" data-b="extraction.contactAuthors"> <span data-l="es">Contactar a los autores cuando falten datos</span><span data-l="en">Contact authors when data are missing</span></label>
+    <div class="form-grid"><div class="field wide" style="grid-column:1/-1"><label data-es="Variables a extraer" data-en="Items to extract">Variables</label><textarea class="prose" rows="3" data-b="extraction.items" data-es-ph="país; diseño; tratamientos; medias, dispersión y n…" data-en-ph="country; design; treatments; means, dispersion and n…"></textarea></div></div>
+
+    <h3><span data-l="es">Calidad y certeza</span><span data-l="en">Quality and certainty</span></h3>
+    <div class="form-grid">
+      <div class="field wide"><label data-es="Herramienta de riesgo de sesgo" data-en="Risk-of-bias tool">Herramienta</label><select id="b2Appraisal" data-b="appraisal.tool"></select></div>
+      <div class="field"><label data-es="Certeza de la evidencia" data-en="Certainty of the evidence">Certeza</label><select data-b="appraisal.certainty"><option value="grade">GRADE</option><option value="none" data-es="no se calificará" data-en="will not be rated">no se calificará</option></select></div>
+    </div>
+
+    <h3><span data-l="es">Síntesis</span><span data-l="en">Synthesis</span></h3>
+    <div class="form-grid">
+      <div class="field wide"><label data-es="Enfoque" data-en="Approach">Enfoque</label><select id="b2Synth" data-b="synthesis.approach"></select></div>
+      <div class="field wide b2-meta-only"><label data-es="Medida del efecto" data-en="Effect measure">Medida</label><select id="b2Metric" data-b="synthesis.metric"></select></div>
+      <div class="field b2-meta-only"><label data-es="Estimador de τ²" data-en="τ² estimator">τ²</label><select id="b2Estimator" data-b="synthesis.estimator"></select></div>
+      <div class="field b2-meta-only"><label class="checkbox-label"><input type="checkbox" data-b="synthesis.knha"> Knapp–Hartung</label><label class="checkbox-label"><input type="checkbox" data-b="synthesis.pubBias"> <span data-l="es">Explorar sesgo de publicación</span><span data-l="en">Explore publication bias</span></label></div>
+      <div class="field wide b2-meta-only"><label data-es="Subgrupos y meta-regresión" data-en="Subgroups and meta-regression">Subgrupos</label><textarea class="prose" rows="2" data-b="synthesis.subgroups"></textarea></div>
+      <div class="field wide b2-meta-only"><label data-es="Análisis de sensibilidad" data-en="Sensitivity analyses">Sensibilidad</label><textarea class="prose" rows="2" data-b="synthesis.sensitivity"></textarea></div>
+      <div class="field wide" style="grid-column:1/-1"><label data-es="Notas del plan de síntesis" data-en="Synthesis plan notes">Notas</label><textarea class="prose" rows="2" data-b="synthesis.notes"></textarea></div>
+    </div>
+  </div>
+
+  <!-- ---------- 7 · team and schedule ---------- -->
+  <div class="card">
+    <h2><span data-l="es">7 · Equipo, financiamiento y cronograma</span><span data-l="en">7 · Team, funding and schedule</span></h2>
+    <div id="b2Team"></div>
+    <div class="btn-row" style="margin-top:6px"><button class="btn btn-ghost btn-sm" id="b2AddAuthor"><span data-l="es">+ autor</span><span data-l="en">+ author</span></button></div>
+    <div class="form-grid">
+      <div class="field wide"><label data-es="Financiamiento y papel del financiador" data-en="Funding and role of the funder">Financiamiento</label><textarea class="prose" rows="2" data-b="funding"></textarea></div>
+      <div class="field wide"><label data-es="Conflictos de interés" data-en="Conflicts of interest">Conflictos</label><textarea class="prose" rows="2" data-b="coi"></textarea></div>
+      <div class="field"><label data-es="Inicio" data-en="Start">Inicio</label><input type="date" data-b="dates.start"></div>
+      <div class="field"><label data-es="Término previsto" data-en="Planned end">Término</label><input type="date" data-b="dates.end"></div>
+    </div>
+    <div class="btn-row" style="margin:4px 0 10px">
+      <button class="btn btn-secondary btn-sm" id="b2Plan"><span data-l="es">Proponer cronograma</span><span data-l="en">Propose schedule</span></button>
+      <button class="btn btn-ghost btn-sm" id="b2AddMs"><span data-l="es">+ etapa</span><span data-l="en">+ phase</span></button>
+    </div>
+    <div id="b2Milestones"></div>
+    <div class="pg-pane" style="margin-top:12px"><div class="pg-title"><span data-l="es">Cronograma de la revisión</span><span data-l="en">Review schedule</span></div><svg id="b2Gantt"></svg></div>
+  </div>
+
+  <!-- ---------- 8 · check ---------- -->
+  <div class="card">
+    <h2><span data-l="es">8 · Revisión del protocolo</span><span data-l="en">8 · Protocol check</span></h2>
+    <p class="hint"><span data-l="es">Qué está completo según el tipo de revisión, y cómo va contra la lista PRISMA-P 2015 (Moher et al. 2015; Shamseer et al. 2015).</span><span data-l="en">What is complete for the type of review, and how it stands against the PRISMA-P 2015 checklist (Moher et al. 2015; Shamseer et al. 2015).</span></p>
+    <ul class="b2-sections" id="b2Sections"></ul>
+    <h3>PRISMA-P 2015</h3>
+    <p class="hint" id="b2PrismaPSum"></p>
+    <div id="b2PrismaP"></div>
+  </div>
+
+  <!-- ---------- 9 · registration ---------- -->
+  <div class="card">
+    <h2><span data-l="es">9 · Registro y documento del protocolo</span><span data-l="en">9 · Registration and protocol document</span></h2>
+    <p class="hint"><span data-l="es">Cada campo del registro se redacta a partir de lo que escribiste arriba. Revísalo, cópialo al formulario del registro y anota aquí el número que te asignen. PROSPERO acepta revisiones con un desenlace relevante para la salud (incluida la alimentación); OSF acepta cualquier tema y cualquier tipo de revisión. Los formularios de los registros cambian: verifica los campos vigentes al momento de enviar.</span><span data-l="en">Each registration field is written from what you entered above. Review it, copy it into the registry's form and note here the number you are given. PROSPERO accepts reviews with an outcome relevant to health (including food); OSF accepts any topic and any type of review. Registry forms change: check the current fields when you submit.</span></p>
+    <div class="b2-regbar">
+      <div class="seg" id="b2RegTabs"><button data-reg="prospero">PROSPERO</button><button data-reg="osf">OSF</button></div>
+      <div class="seg" id="b2RegLang"><button data-rl="en">EN</button><button data-rl="es">ES</button></div>
+      <span class="hint" id="b2RegSum" style="margin:0"></span>
+    </div>
+    <div id="b2RegFit"></div>
+    <div class="b2-reg" id="b2Reg"></div>
+    <div class="form-grid">
+      <div class="field"><label data-es="Número de registro" data-en="Registration number">Registro</label><input type="text" data-b="registration.id" data-es-ph="p. ej., CRD42026… u osf.io/…" data-en-ph="e.g., CRD42026… or osf.io/…"></div>
+      <div class="field wide"><label data-es="Cómo se documentarán las enmiendas" data-en="How amendments will be documented">Enmiendas</label><textarea class="prose" rows="2" data-b="amendments"></textarea></div>
+      <div class="field wide"><label data-es="Difusión" data-en="Dissemination">Difusión</label><textarea class="prose" rows="2" data-b="dissemination"></textarea></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-primary" id="b2DlProto"><span data-l="es">⤓ Documento del protocolo (.html)</span><span data-l="en">⤓ Protocol document (.html)</span></button>
+      <button class="btn btn-secondary" id="b2DlReg"><span data-l="es">⤓ Campos del registro (.md)</span><span data-l="en">⤓ Registration fields (.md)</span></button>
+    </div>
+  </div>
+</section>
+<section class="step-panel" id="panel-3">
+  <div class="panel-title"><div class="pt-num">3</div>
+    <div><h2><span data-l="es">Búsqueda y registros</span><span data-l="en">Search and records</span></h2>
+      <p><span data-l="es">La estrategia se arma por bloques de conceptos y se escribe en la sintaxis de cada base de datos; luego se importan las exportaciones, se eliminan los duplicados y se comprueba que la búsqueda encuentre los estudios que ya sabes que existen.</span><span data-l="en">The strategy is built from concept blocks and written in each database's syntax; then the exports are imported, duplicates are removed and the search is checked against the studies you already know exist.</span></p></div>
+  </div>
+  <div class="messages" id="b3Msg"></div>
+
+  <!-- ---------- 1 · strategy ---------- -->
+  <div class="card">
+    <h2><span data-l="es">1 · Estrategia de búsqueda</span><span data-l="en">1 · Search strategy</span></h2>
+    <p class="hint"><span data-l="es">Un bloque por concepto de la pregunta, con todos sus sinónimos, variantes ortográficas, nombres científicos y términos en otros idiomas. Dentro de un bloque los términos se unen con OR; los bloques, con AND. El comparador casi nunca va como bloque: los estudios rara vez lo nombran en el título. Haz clic en un término para desactivarlo sin borrarlo.</span><span data-l="en">One block per concept of the question, with all its synonyms, spelling variants, scientific names and terms in other languages. Within a block terms are joined with OR; blocks, with AND. The comparator is almost never a block: studies rarely name it in the title. Click a term to turn it off without deleting it.</span></p>
+    <div class="btn-row" style="margin:0 0 12px">
+      <button class="btn btn-secondary btn-sm" id="b3Seed"><span data-l="es">Proponer bloques desde la pregunta</span><span data-l="en">Propose blocks from the question</span></button>
+      <button class="btn btn-ghost btn-sm" id="b3AddBlock"><span data-l="es">+ bloque</span><span data-l="en">+ block</span></button>
+    </div>
+    <div id="b3Blocks"></div>
+    <h3><span data-l="es">La cadena, en la sintaxis de cada tipo de base</span><span data-l="en">The string, in the syntax of each kind of database</span></h3>
+    <div class="seg" id="b3Dialects" style="flex-wrap:wrap">
+      <button data-dia="func" data-es="Función de campo" data-en="Field function">Función de campo</button>
+      <button data-dia="tag" data-es="Etiqueta con =" data-en="Tag with =">Etiqueta con =</button>
+      <button data-dia="bracket" data-es="Etiqueta [ ]" data-en="Tag [ ]">Etiqueta [ ]</button>
+      <button data-dia="suffix" data-es="Líneas numeradas" data-en="Numbered lines">Líneas numeradas</button>
+      <button data-dia="plain" data-es="Sin campos" data-en="No fields">Sin campos</button>
+    </div>
+    <p class="hint" id="b3DiaEx" style="margin-top:8px"></p>
+    <div class="b3-strwrap"><pre class="b3-string" id="b3String"></pre><button class="btn btn-secondary btn-sm" id="b3CopyStr"><span data-l="es">Copiar</span><span data-l="en">Copy</span></button></div>
+    <div id="b3Checks"></div>
+    <h3><span data-l="es">Bitácora de búsqueda por fuente</span><span data-l="en">Search log per source</span></h3>
+    <p class="hint"><span data-l="es">Anota la fecha y cuántos resultados dio cada base: la guía PRISMA-S pide reportarlo, y si el número no coincide con lo importado, la exportación quedó incompleta.</span><span data-l="en">Note the date and how many hits each database gave: the PRISMA-S guideline asks for it, and if the number does not match what was imported, the export was incomplete.</span></p>
+    <div id="b3Log"></div>
+  </div>
+
+  <!-- ---------- 2 · import ---------- -->
+  <div class="card">
+    <h2><span data-l="es">2 · Importar registros</span><span data-l="en">2 · Import records</span></h2>
+    <p class="hint"><span data-l="es">Formatos: RIS, BibTeX, texto etiquetado de dos letras, MEDLINE, etiquetas %, y tablas CSV o TSV con encabezados en español o inglés. El formato se reconoce solo. Elige primero de qué fuente vienen los archivos.</span><span data-l="en">Formats: RIS, BibTeX, two-letter tagged text, MEDLINE, percent tags, and CSV or TSV tables with Spanish or English headers. The format is recognized automatically. First choose which source the files come from.</span></p>
+    <div class="pg-controls">
+      <label class="inline-label"><span data-l="es">Fuente</span><span data-l="en">Source</span> <select id="b3Src"></select></label>
+      <input type="text" id="b3SrcNew" data-es-ph="Nombre de la nueva fuente" data-en-ph="Name of the new source" data-es-title="Nombre de la nueva fuente" data-en-title="Name of the new source" style="width:220px">
+      <button class="btn btn-primary btn-sm" id="b3Pick"><span data-l="es">Elegir archivos…</span><span data-l="en">Choose files…</span></button>
+      <input type="file" id="b3FileIn" multiple hidden accept=".ris,.bib,.txt,.nbib,.enw,.csv,.tsv,.ciw">
+      <span class="b2-sep"></span>
+      <button class="btn btn-ghost btn-sm" id="b3Samples"><span data-l="es">Cargar los archivos de prueba</span><span data-l="en">Load the test files</span></button>
+      <button class="btn btn-ghost btn-sm" id="b3DlSamples"><span data-l="es">⤓ Descargarlos</span><span data-l="en">⤓ Download them</span></button>
+    </div>
+    <div class="b3-drop" id="b3Drop"><span data-l="es">…o arrastra aquí los archivos exportados</span><span data-l="en">…or drop the exported files here</span></div>
+    <div id="b3Files"></div>
+  </div>
+
+  <!-- ---------- 3 · duplicates ---------- -->
+  <div class="card">
+    <h2><span data-l="es">3 · Duplicados</span><span data-l="en">3 · Duplicates</span></h2>
+    <p class="hint"><span data-l="es">Se fusionan solos los registros con el mismo DOI, o con el mismo título normalizado y año (±1) y primer autor compatibles. Los títulos casi iguales, o iguales pero con otro año o autor, los decides tú: fusionar por error pierde un estudio para siempre, y un duplicado que se escapa aparece después en el cribado. Queda el registro más completo y los demás le llenan los huecos.</span><span data-l="en">Records with the same DOI, or the same normalized title with compatible year (±1) and first author, merge by themselves. Nearly identical titles, or identical ones with another year or author, are yours to decide: a wrong merge loses a study for ever, and a duplicate that slips through turns up later in screening. The most complete record is kept and the others fill its gaps.</span></p>
+    <div class="sim-readout" id="b3DupTiles"></div>
+    <div id="b3Pairs" style="margin-top:14px"></div>
+    <div id="b3Auto" style="margin-top:10px"></div>
+  </div>
+
+  <!-- ---------- 4 · test ---------- -->
+  <div class="card">
+    <h2><span data-l="es">4 · Probar la estrategia</span><span data-l="en">4 · Test the strategy</span></h2>
+    <p class="hint"><span data-l="es">La cadena se ejecuta aquí mismo sobre los registros únicos (título, resumen y palabras clave), para ver cuánto aporta cada bloque. Abajo, lista los estudios que ya sabes que deben aparecer —uno por línea, por DOI o por título—: si la búsqueda no los encuentra, falta algún término.</span><span data-l="en">The string runs right here on the unique records (title, abstract and keywords), to see what each block contributes. Below, list the studies you already know must appear —one per line, by DOI or by title—: if the search does not find them, some term is missing.</span></p>
+    <div id="b3Test"></div>
+    <div class="form-grid"><div class="field wide" style="grid-column:1/-1"><label data-es="Estudios que la búsqueda debe encontrar" data-en="Studies the search must find">Estudios conocidos</label><textarea class="prose" rows="4" id="b3GoldIn" data-es-ph="10.5555/… o el título completo, uno por línea" data-en-ph="10.5555/… or the full title, one per line"></textarea></div></div>
+    <div id="b3Gold"></div>
+  </div>
+
+  <!-- ---------- 5 · summary ---------- -->
+  <div class="card">
+    <h2><span data-l="es">5 · Resumen y exportación</span><span data-l="en">5 · Summary and export</span></h2>
+    <div class="lab-grid">
+      <div id="b3Summary"></div>
+      <div class="pg-pane"><div class="pg-title"><span data-l="es">Registros únicos por año</span><span data-l="en">Unique records by year</span></div><svg id="b3Years"></svg></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-primary" id="b3DlRis"><span data-l="es">⤓ Registros únicos (.ris)</span><span data-l="en">⤓ Unique records (.ris)</span></button>
+      <button class="btn btn-secondary" id="b3DlCsv"><span data-l="es">⤓ Registros únicos (.csv)</span><span data-l="en">⤓ Unique records (.csv)</span></button>
+      <button class="btn btn-secondary" id="b3DlReport"><span data-l="es">⤓ Informe de la búsqueda (.md)</span><span data-l="en">⤓ Search report (.md)</span></button>
+    </div>
+  </div>
+</section>
+<section class="step-panel" id="panel-4">
+  <div class="panel-title"><div class="pt-num">4</div>
+    <div><h2><span data-l="es">Cribado de título y resumen</span><span data-l="en">Title and abstract screening</span></h2>
+      <p><span data-l="es">Cada registro se decide con una tecla. El orden aprende de tus decisiones para que los relevantes lleguen primero; la regla de paro y su verificación quedan documentadas; con dos revisores, cada quien lee a ciegas y los desacuerdos se concilian al final.</span><span data-l="en">Each record is decided with one key. The order learns from your decisions so relevant records come first; the stopping rule and its verification are documented; with two reviewers, each reads blind and disagreements are reconciled at the end.</span></p></div>
+  </div>
+  <div class="messages" id="b4Msg"></div>
+
+  <!-- ---------- reviewers ---------- -->
+  <div class="card">
+    <div class="card-head">
+      <h2><span data-l="es">Revisores y forma de trabajo</span><span data-l="en">Reviewers and way of working</span></h2>
+      <div class="seg" id="b4Mode"><button data-mode="same" data-es="Misma computadora, por turnos" data-en="Same computer, by turns">Misma computadora, por turnos</button><button data-mode="split" data-es="Cada quien en su computadora" data-en="One computer each">Cada quien en su computadora</button></div>
+    </div>
+    <p class="hint" id="b4ModeNote"></p>
+    <div id="b4Reviewers"></div>
+    <div class="btn-row" style="margin-top:6px"><button class="btn btn-ghost btn-sm" id="b4AddRv"><span data-l="es">+ revisor</span><span data-l="en">+ reviewer</span></button>
+      <span class="b2-sep"></span><span class="hint" style="margin:0"><span data-l="es">Orden de lectura</span><span data-l="en">Reading order</span></span>
+      <div class="seg" id="b4Order"><button data-order="prioritized" data-es="Priorizado" data-en="Prioritized">Priorizado</button><button data-order="random" data-es="Aleatorio" data-en="Random">Aleatorio</button><button data-order="original" data-es="Original" data-en="Original">Original</button></div></div>
+    <p class="hint" id="b4Plan" style="margin-top:10px"></p>
+    <div id="b4Exchange" class="b4-exchange">
+      <h3><span data-l="es">Intercambiar decisiones</span><span data-l="en">Exchange decisions</span></h3>
+      <p class="hint"><span data-l="es">Exporta las decisiones del revisor activo y envíalas a quien concilia; esa persona las importa aquí. También se puede importar el archivo de proyecto completo de otro revisor.</span><span data-l="en">Export the active reviewer's decisions and send them to whoever reconciles; that person imports them here. The whole project file of another reviewer can be imported too.</span></p>
+      <div class="btn-row" style="margin:0">
+        <button class="btn btn-primary btn-sm" id="b4Export"><span data-l="es">⤓ Exportar mis decisiones</span><span data-l="en">⤓ Export my decisions</span></button>
+        <button class="btn btn-secondary btn-sm" id="b4Import"><span data-l="es">Importar decisiones de otro revisor…</span><span data-l="en">Import another reviewer's decisions…</span></button>
+        <input type="file" id="b4ImportIn" accept=".json" multiple hidden>
+      </div>
+    </div>
+    <details class="b4-words"><summary><span data-l="es">Palabras que resaltar</span><span data-l="en">Words to highlight</span></summary>
+      <div class="form-grid">
+        <div class="field"><label data-es="Sugieren incluir (además de la búsqueda)" data-en="Suggest inclusion (besides the search)">Incluir</label><input type="text" id="b4WordsInc" data-es-ph="field, trial*, yield" data-en-ph="field, trial*, yield"></div>
+        <div class="field"><label data-es="Sugieren excluir" data-en="Suggest exclusion">Excluir</label><input type="text" id="b4WordsExc" data-es-ph="greenhouse, pot*, review" data-en-ph="greenhouse, pot*, review"></div>
+      </div></details>
+  </div>
+
+  <!-- ---------- screening ---------- -->
+  <div class="b4-grid">
+    <div class="card b4-main" id="b4Card"></div>
+    <div class="card b4-aside" id="b4Side"></div>
+  </div>
+
+  <!-- ---------- agreement ---------- -->
+  <div class="card">
+    <h2><span data-l="es">Acuerdo y conciliación</span><span data-l="en">Agreement and reconciliation</span></h2>
+    <p class="hint"><span data-l="es">Kappa de Cohen con su intervalo al 95 % (Fleiss, Cohen y Everitt 1969) para cada par de revisores, leído con la escala de Landis y Koch (1977). «Incluir» y «tal vez» mandan ambos el registro a texto completo, así que no cuentan como conflicto entre sí.</span><span data-l="en">Cohen's kappa with its 95 % interval (Fleiss, Cohen and Everitt 1969) for each pair of reviewers, read on the Landis and Koch (1977) scale. "Include" and "maybe" both send the record to full text, so they do not count as a conflict with each other.</span></p>
+    <div id="b4Agree"></div>
+    <div id="b4Conflicts"></div>
+  </div>
+
+  <!-- ---------- summary ---------- -->
+  <div class="card">
+    <h2><span data-l="es">Resumen</span><span data-l="en">Summary</span></h2>
+    <div class="sim-readout" id="b4Tiles"></div>
+    <div class="lab-grid" style="margin-top:14px">
+      <div class="pg-pane"><div class="pg-title"><span data-l="es">Curva de ganancia por revisor</span><span data-l="en">Gain curve per reviewer</span></div><svg id="b4Gain"></svg></div>
+      <div id="b4Reasons"></div>
+    </div>
+    <h3><span data-l="es">Mis decisiones</span><span data-l="en">My decisions</span></h3>
+    <div class="chips" id="b4MineFilter"><button class="chip on" data-f="all" data-es="Todas" data-en="All">Todas</button><button class="chip" data-f="inc" data-es="Incluidas" data-en="Included">Incluidas</button><button class="chip" data-f="maybe" data-es="Tal vez" data-en="Maybe">Tal vez</button><button class="chip" data-f="exc" data-es="Excluidas" data-en="Excluded">Excluidas</button></div>
+    <div id="b4Mine"></div>
+    <div class="btn-row">
+      <button class="btn btn-primary" id="b4DlRis"><span data-l="es">⤓ Registros a texto completo (.ris)</span><span data-l="en">⤓ Records to full text (.ris)</span></button>
+      <button class="btn btn-secondary" id="b4DlCsv"><span data-l="es">⤓ Todas las decisiones (.csv)</span><span data-l="en">⤓ All decisions (.csv)</span></button>
+    </div>
+  </div>
+</section>
+<section class="step-panel" id="panel-5">
+  <div class="panel-title"><div class="pt-num">5</div>
+    <div><h2><span data-l="es">Texto completo y PRISMA</span><span data-l="en">Full text and PRISMA</span></h2>
+      <p><span data-l="es">Consigue cada informe, anota dónde guardaste su PDF, decide su elegibilidad con el motivo de cada exclusión y obtén el diagrama de flujo con los conteos reales de toda la revisión.</span><span data-l="en">Obtain each report, note where you saved its PDF, decide its eligibility with the reason for every exclusion and get the flow diagram with the real counts of the whole review.</span></p></div>
+  </div>
+  <div class="messages" id="b5Msg"></div>
+
+  <!-- ---------- 1 · retrieval ---------- -->
+  <div class="card">
+    <h2><span data-l="es">1 · Obtener los textos completos</span><span data-l="en">1 · Obtain the full texts</span></h2>
+    <p class="hint"><span data-l="es">Los PDF se quedan en tu computadora; aquí solo se anota su ruta. Si fijas una carpeta base, basta escribir el nombre del archivo. El nombre sugerido (Autor_Año_Título.pdf) mantiene la carpeta ordenada. El enlace «abrir» funciona cuando abres ReviewPro con doble clic en index.html; si lo abres desde el servidor, el navegador puede bloquearlo por seguridad y conviene copiar la ruta.</span><span data-l="en">The PDFs stay on your computer; only their path is noted here. If you set a base folder, the file name is enough. The suggested name (Author_Year_Title.pdf) keeps the folder in order. The "open" link works when ReviewPro is opened by double-clicking index.html; if opened from the server, the browser may block it for security and it is better to copy the path.</span></p>
+    <div class="form-grid"><div class="field wide" style="grid-column:1/-1"><label data-es="Carpeta base de los PDF (opcional)" data-en="Base folder of the PDFs (optional)">Carpeta base</label><input type="text" id="b5Base" placeholder="C:\Revision\PDF"></div></div>
+    <div class="sim-readout" id="b5RetTiles"></div>
+    <div class="btn-row" style="margin:12px 0 8px">
+      <div class="chips" id="b5Filter" style="margin:0"><button class="chip on" data-f="all" data-es="Todos" data-en="All">Todos</button><button class="chip" data-f="pending" data-es="Por conseguir" data-en="To obtain">Por conseguir</button><button class="chip" data-f="retrieved" data-es="Obtenidos" data-en="Retrieved">Obtenidos</button><button class="chip" data-f="not" data-es="No se consiguieron" data-en="Not retrieved">No se consiguieron</button></div>
+      <button class="btn btn-ghost btn-sm" id="b5MarkPath"><span data-l="es">Marcar como obtenidos los que tienen ruta</span><span data-l="en">Mark those with a path as retrieved</span></button>
+      <button class="btn btn-ghost btn-sm" id="b5Missing"><span data-l="es">⤓ Lista de los que faltan (.csv)</span><span data-l="en">⤓ List of the missing ones (.csv)</span></button>
+    </div>
+    <div id="b5Table"></div>
+  </div>
+
+  <!-- ---------- 2 · other methods ---------- -->
+  <div class="card">
+    <h2><span data-l="es">2 · Estudios encontrados por otros métodos</span><span data-l="en">2 · Studies found by other methods</span></h2>
+    <p class="hint"><span data-l="es">Lo que encuentras al revisar las referencias de los incluidos, al buscar quién los cita, al preguntar a expertos o en sitios de organizaciones. Pasan directo a texto completo y aparecen en la columna de «otros métodos» del diagrama.</span><span data-l="en">What you find by checking the references of the included studies, by looking up who cites them, by asking experts or on organizations' websites. They go straight to full text and appear in the "other methods" column of the diagram.</span></p>
+    <div class="form-grid">
+      <div class="field wide"><label data-es="Título" data-en="Title">Título</label><input type="text" id="b5XTitle"></div>
+      <div class="field"><label data-es="Autores (separados por ;)" data-en="Authors (separated by ;)">Autores</label><input type="text" id="b5XAuthors"></div>
+      <div class="field"><label data-es="Año" data-en="Year">Año</label><input type="number" id="b5XYear" min="1800" max="2100"></div>
+      <div class="field"><label>DOI</label><input type="text" id="b5XDoi"></div>
+      <div class="field"><label data-es="¿Cómo se encontró?" data-en="How was it found?">Vía</label><select id="b5XHow">
+        <option value="back" data-es="Búsqueda de citas hacia atrás" data-en="Backward citation searching">Búsqueda de citas hacia atrás</option>
+        <option value="fwd" data-es="Búsqueda de citas hacia adelante" data-en="Forward citation searching">Búsqueda de citas hacia adelante</option>
+        <option value="expert" data-es="Contacto con expertos" data-en="Contact with experts">Contacto con expertos</option>
+        <option value="web" data-es="Sitio web u organización" data-en="Website or organization">Sitio web u organización</option>
+        <option value="other" data-es="Otra vía" data-en="Other route">Otra vía</option></select></div>
+    </div>
+    <div class="btn-row" style="margin-top:6px"><button class="btn btn-secondary btn-sm" id="b5AddX"><span data-l="es">+ Añadir a texto completo</span><span data-l="en">+ Add to full text</span></button></div>
+    <div id="b5Extra"></div>
+  </div>
+
+  <!-- ---------- 3 · eligibility ---------- -->
+  <div class="card">
+    <div class="card-head"><h2><span data-l="es">3 · Elegibilidad a texto completo</span><span data-l="en">3 · Full-text eligibility</span></h2>
+      <label class="inline-label"><span data-l="es">Revisor</span><span data-l="en">Reviewer</span> <select id="b5Reviewer"></select></label></div>
+    <p class="hint"><span data-l="es">Los mismos revisores del cribado. Para excluir hay que elegir el criterio que falla (o escribir otro motivo): el diagrama los cuenta. Teclas: <kbd>I</kbd> incluir, <kbd>1</kbd>–<kbd>9</kbd> excluir por el criterio de ese número.</span><span data-l="en">The same reviewers as in screening. To exclude, the failing criterion must be chosen (or another reason written): the diagram counts them. Keys: <kbd>I</kbd> include, <kbd>1</kbd>–<kbd>9</kbd> exclude for that criterion.</span></p>
+    <div id="b5Card"></div>
+    <div id="b5Conflicts"></div>
+  </div>
+
+  <!-- ---------- 4 · flow ---------- -->
+  <div class="card">
+    <h2 id="b5FlowTitle"></h2>
+    <div class="sim-readout" id="b5Tiles"></div>
+    <div id="b5Checks" style="margin-top:10px"></div>
+    <div class="pg-pane" style="margin-top:12px"><div class="pg-title"><span data-l="es">Diagrama de flujo</span><span data-l="en">Flow diagram</span></div><svg id="b5Flow"></svg></div>
+    <div class="btn-row"><button class="btn btn-secondary" id="b5DlFlow"><span data-l="es">⤓ Conteos del diagrama (.md)</span><span data-l="en">⤓ Diagram counts (.md)</span></button><span class="hint" style="margin:0"><span data-l="es">La figura se exporta en PNG, JPG o SVG con el botón ⤓ de su esquina.</span><span data-l="en">The figure exports as PNG, JPG or SVG with the ⤓ button in its corner.</span></span></div>
+  </div>
+</section>
+<section class="step-panel" id="panel-6">
+  <div class="panel-title"><div class="pt-num">6</div>
+    <div><h2><span data-l="es">Extracción de datos</span><span data-l="en">Data extraction</span></h2>
+      <p><span data-l="es">Un formulario que diseñas tú, llenado por estudio y por revisor; una calculadora que convierte lo que el artículo reporta —medias con DE, EE, IC o CV; la DMS, el EED o el CV del ANOVA; medianas; t, F, p o conteos— en el tamaño de efecto; y las tablas finales que usará la síntesis.</span><span data-l="en">A form you design, filled per study and per reviewer; a calculator that turns what the paper reports —means with SD, SE, CI or CV; the ANOVA LSD, SED or CV; medians; t, F, p or counts— into the effect size; and the final tables the synthesis will use.</span></p></div>
+  </div>
+  <div class="messages" id="b6Msg"></div>
+
+  <!-- ---------- 1 · form ---------- -->
+  <div class="card">
+    <details class="b6-formdet"><summary><h2 style="display:inline"><span data-l="es">1 · Formulario de extracción</span><span data-l="en">1 · Extraction form</span></h2> <span class="hint" style="margin:0"><span data-l="es">(clic para editarlo)</span><span data-l="en">(click to edit it)</span></span></summary>
+      <p class="hint"><span data-l="es">Parte de la plantilla del tipo de revisión e incluye como campos los moderadores del protocolo. Prueba el formulario con dos o tres estudios antes de extraer todos (el piloto que pide PRISMA-P).</span><span data-l="en">It starts from the review type template and includes the protocol moderators as fields. Try the form on two or three studies before extracting all of them (the pilot PRISMA-P asks for).</span></p>
+      <div id="b6Fields"></div>
+      <div class="btn-row"><button class="btn btn-ghost btn-sm" id="b6AddField"><span data-l="es">+ campo</span><span data-l="en">+ field</span></button><button class="btn btn-ghost btn-sm" id="b6Template"><span data-l="es">Volver a la plantilla</span><span data-l="en">Back to the template</span></button></div>
+    </details>
+  </div>
+
+  <!-- ---------- 2 · extraction ---------- -->
+  <div class="card">
+    <div class="card-head"><h2><span data-l="es">2 · Extraer</span><span data-l="en">2 · Extract</span></h2>
+      <label class="inline-label"><span data-l="es">Revisor</span><span data-l="en">Reviewer</span> <select id="b6Reviewer"></select></label></div>
+    <div class="b6-grid">
+      <div class="b6-list" id="b6Studies"></div>
+      <div class="b6-main" id="b6Study"></div>
+    </div>
+  </div>
+
+  <!-- ---------- 3 · compare ---------- -->
+  <div class="card">
+    <h2><span data-l="es">3 · Comparar la extracción doble</span><span data-l="en">3 · Compare the double extraction</span></h2>
+    <p class="hint"><span data-l="es">Solo aparecen los campos en que los revisores difieren. Elige el valor correcto (después de volver al artículo); los tamaños de efecto se comparan por desenlace, comparación y valor.</span><span data-l="en">Only the fields where the reviewers differ appear. Choose the right value (after going back to the paper); the effect sizes are compared by outcome, comparison and value.</span></p>
+    <div id="b6Compare"></div>
+  </div>
+
+  <!-- ---------- 4 · tables ---------- -->
+  <div class="card">
+    <h2><span data-l="es">4 · Tablas finales</span><span data-l="en">4 · Final tables</span></h2>
+    <div class="sim-readout" id="b6Tiles"></div>
+    <div id="b6CV" style="margin-top:10px"></div>
+    <h3><span data-l="es">Características de los estudios</span><span data-l="en">Characteristics of the studies</span></h3>
+    <div id="b6Chars"></div>
+    <h3><span data-l="es">Tamaños de efecto</span><span data-l="en">Effect sizes</span></h3>
+    <div id="b6EffTable"></div>
+    <div class="btn-row">
+      <button class="btn btn-primary" id="b6DlEff"><span data-l="es">⤓ Tabla de efectos (.csv)</span><span data-l="en">⤓ Effects table (.csv)</span></button>
+      <button class="btn btn-secondary" id="b6DlChars"><span data-l="es">⤓ Características (.csv)</span><span data-l="en">⤓ Characteristics (.csv)</span></button>
+    </div>
+  </div>
+</section>
+<section class="step-panel" id="panel-7">
+  <div class="panel-title"><div class="pt-num">7</div>
+    <div><h2><span data-l="es">Calidad, sesgo y certeza</span><span data-l="en">Quality, bias and certainty</span></h2>
+      <p><span data-l="es">Cada estudio incluido se evalúa por dominios con preguntas guía; la app propone el juicio y tú lo confirmas o lo ajustas con una justificación. Los juicios alimentan los gráficos de semáforo y de resumen, y la certeza de la evidencia de cada desenlace (GRADE).</span><span data-l="en">Each included study is assessed by domains with signalling questions; the app proposes the judgement and you confirm it or adjust it with a justification. The judgements feed the traffic-light and summary plots, and the certainty of the evidence for each outcome (GRADE).</span></p></div>
+  </div>
+  <div class="messages" id="b7Msg"></div>
+
+  <div class="card">
+    <div class="card-head"><h2><span data-l="es">1 · Evaluar cada estudio</span><span data-l="en">1 · Assess each study</span></h2>
+      <div class="b7-top"><label class="inline-label"><span data-l="es">Herramienta</span><span data-l="en">Tool</span> <select id="b7Tool"></select></label>
+      <label class="inline-label"><span data-l="es">Revisor</span><span data-l="en">Reviewer</span> <select id="b7Reviewer"></select></label></div></div>
+    <p class="hint"><span data-l="es">La lista agronómica evalúa lo que decide la validez de un experimento de campo: aleatorización y control local, repeticiones verdaderas (no submuestras), un testigo que solo difiere en el factor evaluado, datos completos, medición comparable, reporte selectivo y conflicto de interés. Las preguntas marcadas con ● son clave: un «no» lleva el dominio a riesgo alto. El juicio global es el peor dominio, y también «alto» cuando tres o más dominios tienen algunas dudas.</span><span data-l="en">The agronomic checklist assesses what decides the validity of a field experiment: randomization and local control, true replicates (not subsamples), a control that differs only in the factor evaluated, complete data, comparable measurement, selective reporting and conflict of interest. Questions marked ● are key: a "no" takes the domain to high risk. The overall judgement is the worst domain, and also "high" when three or more domains have some concerns.</span></p>
+    <div class="b6-grid">
+      <div class="b6-list" id="b7Studies"></div>
+      <div class="b6-main" id="b7Form"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">2 · Conciliar los juicios</span><span data-l="en">2 · Reconcile the judgements</span></h2>
+    <div id="b7Recon"></div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">3 · Gráficos de riesgo de sesgo</span><span data-l="en">3 · Risk-of-bias plots</span></h2>
+    <div class="pg-pane"><div class="pg-title"><span data-l="es">Semáforo por estudio y dominio</span><span data-l="en">Traffic light by study and domain</span></div><svg id="b7Traffic"></svg></div>
+    <label class="checkbox-label" style="margin-top:12px"><input type="checkbox" id="b7Weighted"> <span data-l="es">Ponderar el resumen por el peso de cada estudio en el desenlace primario</span><span data-l="en">Weight the summary by each study's weight in the primary outcome</span></label>
+    <div class="pg-pane"><div class="pg-title"><span data-l="es">Resumen por dominio</span><span data-l="en">Summary by domain</span></div><svg id="b7Summary"></svg></div>
+    <div class="btn-row"><button class="btn btn-secondary" id="b7DlCsv"><span data-l="es">⤓ Juicios por estudio (.csv)</span><span data-l="en">⤓ Judgements per study (.csv)</span></button></div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">4 · Certeza de la evidencia (GRADE)</span><span data-l="en">4 · Certainty of the evidence (GRADE)</span></h2>
+    <p class="hint"><span data-l="es">Por desenlace. Los experimentos aleatorizados parten de certeza alta y los observacionales de baja; cinco razones pueden bajarla y tres subirla (solo en observacionales). Las sugerencias se calculan con los datos: la proporción del peso con riesgo alto, I² y el intervalo de predicción, si el intervalo de confianza cruza el valor nulo, el número total de unidades experimentales y la prueba de Egger con al menos 10 estudios. El efecto combinado es el del modelo elegido en el Bloque 8 (multinivel, salvo que elijas el promedio por estudio).</span><span data-l="en">Per outcome. Randomized experiments start at high certainty and observational studies at low; five reasons can rate it down and three up (observational only). The suggestions are computed from the data: the share of weight at high risk, I² and the prediction interval, whether the confidence interval crosses the null, the total number of experimental units and Egger's test with at least 10 studies. The pooled effect is that of the model chosen in Block 8 (multilevel, unless you choose the average per study).</span></p>
+    <div id="b7Grade"></div>
+    <h3><span data-l="es">Resumen de hallazgos</span><span data-l="en">Summary of findings</span></h3>
+    <div id="b7SoF"></div>
+    <div class="btn-row"><button class="btn btn-primary" id="b7DlSoF"><span data-l="es">⤓ Tabla de resumen de hallazgos (.html)</span><span data-l="en">⤓ Summary of findings table (.html)</span></button></div>
+  </div>
+</section>
+<section class="step-panel" id="panel-8">
+  <div class="panel-title"><div class="pt-num">8</div>
+    <div><h2><span data-l="es">Síntesis y meta-análisis</span><span data-l="en">Synthesis and meta-analysis</span></h2>
+      <p><span data-l="es">El meta-análisis de cada desenlace con la tabla de efectos del Bloque 6: modelo multinivel para los estudios con varios efectos (o su promedio), heterogeneidad, moderadores, sensibilidad y sesgo de publicación. Para revisiones sin meta-análisis: conteo de votos, matriz de conceptos y mapa de vacíos.</span><span data-l="en">The meta-analysis of each outcome from the effects table of Block 6: a multilevel model for studies with several effects (or their average), heterogeneity, moderators, sensitivity and publication bias. For reviews without meta-analysis: vote counting, concept matrix and gap map.</span></p></div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">1 · Datos y modelo</span><span data-l="en">1 · Data and model</span></h2>
+    <div class="pg-controls">
+      <label class="inline-label"><span data-l="es">Desenlace</span><span data-l="en">Outcome</span> <select id="b8Outcome"></select></label>
+      <div class="seg" id="b8Model"><button data-model="multi" data-es="Multinivel (efectos en estudios)" data-en="Multilevel (effects in studies)">Multinivel (efectos en estudios)</button><button data-model="avg" data-es="Promedio por estudio" data-en="Average per study">Promedio por estudio</button></div>
+      <label class="inline-label"><span data-l="es">Prueba</span><span data-l="en">Test</span> <select id="b8Test"><option value="t" data-es="t (recomendada)" data-en="t (recommended)">t (recomendada)</option><option value="z">z</option></select></label>
+      <label class="inline-label" id="b8EstRow"><span data-l="es">Estimador de τ²</span><span data-l="en">τ² estimator</span> <select id="b8Est"><option value="REML">REML</option><option value="DL">DerSimonian–Laird</option><option value="PM">Paule–Mandel</option><option value="HE">Hedges</option><option value="ML">ML</option></select></label>
+    </div>
+    <div class="slider-row" id="b8RhoRow" style="max-width:560px"><label for="b8Rho"><span data-l="es">Correlación entre efectos de un estudio (ρ)</span><span data-l="en">Correlation between effects of a study (ρ)</span></label><input type="range" id="b8Rho" min="0" max="1" step="0.05" value="0.5"><span class="range-val" id="b8RhoVal"></span></div>
+    <p class="hint"><span data-l="es">El modelo multinivel respeta que los efectos de un mismo estudio se parecen entre sí y estima cuánto varían entre estudios y dentro de ellos. El promedio es más simple pero pierde la variación dentro de estudios y depende de un ρ que casi nunca se reporta; por eso se incluye siempre en la sensibilidad con ρ = 0.2, 0.5 y 0.8.</span><span data-l="en">The multilevel model respects that the effects of one study resemble each other and estimates how much they vary between and within studies. The average is simpler but loses the within-study variation and depends on a ρ that is almost never reported; that is why it is always included in the sensitivity analysis with ρ = 0.2, 0.5 and 0.8.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">2 · Resultado</span><span data-l="en">2 · Result</span></h2>
+    <div class="sim-readout" id="b8Tiles"></div>
+    <div class="ml-reading" id="b8Result" style="margin-top:12px"></div>
+    <div class="pg-pane" style="margin-top:12px"><div class="pg-title"><span data-l="es">Diagrama de bosque</span><span data-l="en">Forest plot</span></div><svg id="b8Forest"></svg></div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">3 · Heterogeneidad y moderadores</span><span data-l="en">3 · Heterogeneity and moderators</span></h2>
+    <p class="hint"><span data-l="es">Los moderadores son los campos del formulario de extracción (Bloque 6). Declararlos en el protocolo antes de ver los datos es lo que separa una exploración de una pesca de resultados.</span><span data-l="en">Moderators are the fields of the extraction form (Block 6). Declaring them in the protocol before seeing the data is what separates an exploration from a fishing expedition.</span></p>
+    <h3><span data-l="es">Subgrupos</span><span data-l="en">Subgroups</span></h3>
+    <label class="inline-label"><span data-l="es">Moderador categórico</span><span data-l="en">Categorical moderator</span> <select id="b8SubMod"></select></label>
+    <div id="b8Sub"></div>
+    <h3><span data-l="es">Meta-regresión</span><span data-l="en">Meta-regression</span></h3>
+    <div class="b8-regmods" id="b8RegMods"></div>
+    <div class="lab-grid" style="margin-top:8px">
+      <div id="b8Reg"></div>
+      <div class="pg-pane"><div class="pg-title"><span data-l="es">Gráfico de burbujas</span><span data-l="en">Bubble plot</span></div><svg id="b8Bubble"></svg></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">4 · Análisis de sensibilidad</span><span data-l="en">4 · Sensitivity analyses</span></h2>
+    <div id="b8Sens"></div>
+    <div class="pg-pane" style="margin-top:12px"><div class="pg-title"><span data-l="es">Dejando un estudio fuera</span><span data-l="en">Leaving one study out</span></div><svg id="b8Loo"></svg></div>
+    <p class="hint" id="b8LooNote"></p>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">5 · Sesgo de publicación</span><span data-l="en">5 · Publication bias</span></h2>
+    <div class="lab-grid">
+      <div class="ml-reading" id="b8Bias"></div>
+      <div class="pg-pane"><div class="pg-title"><span data-l="es">Embudo con los estudios rellenados</span><span data-l="en">Funnel with the filled studies</span></div><svg id="b8Funnel"></svg></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">6 · Síntesis sin meta-análisis</span><span data-l="en">6 · Synthesis without meta-analysis</span></h2>
+    <h3><span data-l="es">Conteo de votos por dirección del efecto</span><span data-l="en">Vote counting by direction of effect</span></h3>
+    <div id="b8Vote"></div>
+    <h3><span data-l="es">Matriz de conceptos</span><span data-l="en">Concept matrix</span></h3>
+    <label class="inline-label"><span data-l="es">Campo</span><span data-l="en">Field</span> <select id="b8MatField"></select></label>
+    <div id="b8Matrix" style="margin-top:8px"></div>
+    <h3><span data-l="es">Mapa de vacíos de evidencia</span><span data-l="en">Evidence gap map</span></h3>
+    <div class="pg-controls"><label class="inline-label"><span data-l="es">Filas</span><span data-l="en">Rows</span> <select id="b8GapA"></select></label><label class="inline-label"><span data-l="es">Columnas</span><span data-l="en">Columns</span> <select id="b8GapB"></select></label></div>
+    <div class="pg-pane"><div class="pg-title"><span data-l="es">Mapa de vacíos</span><span data-l="en">Gap map</span></div><svg id="b8Gap"></svg></div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">7 · Métodos y exportación</span><span data-l="en">7 · Methods and export</span></h2>
+    <p class="hint"><span data-l="es">Un párrafo de métodos redactado con lo que realmente se corrió, para adaptarlo a tu manuscrito.</span><span data-l="en">A methods paragraph written from what was actually run, to adapt into your manuscript.</span></p>
+    <div class="b3-strwrap"><div class="b8-methods" id="b8Methods"></div><button class="btn btn-secondary btn-sm" id="b8CopyMethods"><span data-l="es">Copiar</span><span data-l="en">Copy</span></button></div>
+    <div class="btn-row"><button class="btn btn-primary" id="b8DlCsv"><span data-l="es">⤓ Resultados por desenlace (.csv)</span><span data-l="en">⤓ Results per outcome (.csv)</span></button></div>
+  </div>
+</section>
+<section class="step-panel" id="panel-9">
+  <div class="panel-title"><div class="pt-num">9</div>
+    <div><h2><span data-l="es">Escritura orientada</span><span data-l="en">Guided writing</span></h2>
+      <p><span data-l="es">El manuscrito se escribe aquí, sección por sección, sobre el esqueleto del tipo de revisión. La app no redacta: dice qué necesita cada sección, ofrece las citas de los estudios incluidos y los números del análisis como datos vivos que siguen al proyecto, revisa que cada afirmación tenga respaldo y lleva la lista de verificación.</span><span data-l="en">The manuscript is written here, section by section, on the skeleton of the review type. The app does not write: it says what each section needs, offers the citations of the included studies and the numbers of the analysis as live data that follow the project, checks that every claim is supported and keeps the reporting checklist.</span></p></div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">1 · Manuscrito</span><span data-l="en">1 · Manuscript</span></h2>
+    <p class="hint"><span data-l="es">Cita con <code>[@clave]</code> (o <code>[@clave1; @clave2]</code>) y usa datos vivos como <code>{{n.included}}</code> o <code>{{effect:desenlace}}</code>: si el análisis cambia, el texto cambia con él. Las tablas se insertan con <code>{{table:characteristics}}</code>, <code>{{table:prisma}}</code> y <code>{{table:sof}}</code>.</span><span data-l="en">Cite with <code>[@key]</code> (or <code>[@key1; @key2]</code>) and use live data such as <code>{{n.included}}</code> or <code>{{effect:outcome}}</code>: if the analysis changes, the text changes with it. Tables are inserted with <code>{{table:characteristics}}</code>, <code>{{table:prisma}}</code> and <code>{{table:sof}}</code>.</span></p>
+    <div class="b9-grid">
+      <nav class="b9-nav" id="b9Nav"></nav>
+      <div class="b9-editor" id="b9Editor"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">2 · Verificador de afirmaciones</span><span data-l="en">2 · Claim checker</span></h2>
+    <p class="hint"><span data-l="es">Señala las oraciones con cifras o conclusiones que no tienen cita ni dato vivo, los valores p sin tamaño del efecto, las claves que no existen y los estudios incluidos que el texto no menciona. Los Métodos no se revisan así: ahí se citan métodos, no estudios.</span><span data-l="en">It flags sentences with figures or conclusions that have no citation or live datum, p values without an effect size, keys that do not exist and included studies the text does not mention. Methods are not checked this way: they cite methods, not studies.</span></p>
+    <div class="sim-readout" id="b9Tiles"></div>
+    <div id="b9Check" style="margin-top:12px"></div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">3 · Lista de verificación del reporte</span><span data-l="en">3 · Reporting checklist</span></h2>
+    <div class="pg-controls"><label class="inline-label"><span data-l="es">Lista</span><span data-l="en">Checklist</span> <select id="b9ListSel"><option value="prisma2020">PRISMA 2020 (Page et al. 2021)</option><option value="prismascr">PRISMA-ScR (Tricco et al. 2018)</option><option value="sanra">SANRA (Baethge et al. 2019)</option></select></label></div>
+    <p class="hint"><span data-l="es">El estado junta dos fuentes: si la sección correspondiente ya tiene texto y si los bloques anteriores tienen los datos que el punto pide. «Reportado» lo marcas tú cuando lo revisas.</span><span data-l="en">The status joins two sources: whether the corresponding section has text and whether the previous blocks hold the data the item asks for. "Reported" is marked by you when you check it.</span></p>
+    <div id="b9List"></div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">4 · Exportar</span><span data-l="en">4 · Export</span></h2>
+    <div class="field" style="max-width:640px"><label><span data-l="es">Autores (tal como irán en el manuscrito)</span><span data-l="en">Authors (as they will appear in the manuscript)</span></label><input type="text" id="b9Authors"></div>
+    <p class="hint"><span data-l="es">Las citas salen como autor y año, la lista de referencias incluye solo los estudios citados y las referencias de métodos que el texto menciona (por ejemplo, «Page et al. 2021»). Se exporta en el idioma de la interfaz.</span><span data-l="en">Citations come out as author and year; the reference list includes only the cited studies and the method references the text mentions (for example, "Page et al. 2021"). The export uses the language of the interface.</span></p>
+    <div class="btn-row">
+      <button class="btn btn-primary" id="b9Docx"><span data-l="es">⤓ Word (.docx)</span><span data-l="en">⤓ Word (.docx)</span></button>
+      <button class="btn btn-secondary" id="b9Html"><span data-l="es">⤓ HTML</span><span data-l="en">⤓ HTML</span></button>
+      <button class="btn btn-secondary" id="b9Md"><span data-l="es">⤓ Markdown</span><span data-l="en">⤓ Markdown</span></button>
+      <button class="btn btn-secondary" id="b9Keys"><span data-l="es">⤓ Claves de cita (.csv)</span><span data-l="en">⤓ Citation keys (.csv)</span></button>
+    </div>
+  </div>
+</section>
+<section class="step-panel" id="panel-10">
+  <div class="panel-title"><div class="pt-num">10</div>
+    <div><h2><span data-l="es">Figuras, informe y paquete</span><span data-l="en">Figures, report and package</span></h2>
+      <p><span data-l="es">Dónde está el proyecto frente a lo que su tipo de revisión necesita, las figuras de todos los bloques en un solo lugar, un informe que se lee solo y un paquete .zip con el archivo del proyecto que lo reproduce todo.</span><span data-l="en">Where the project stands against what its review type needs, the figures of every block in one place, a report that reads on its own and a .zip package with the project file that reproduces it all.</span></p></div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">1 · Estado del proyecto</span><span data-l="en">1 · Project status</span></h2>
+    <div class="sim-readout" id="b10Tiles"></div>
+    <div id="b10Status" style="margin-top:12px"></div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">2 · Figuras</span><span data-l="en">2 · Figures</span></h2>
+    <p class="hint"><span data-l="es">Las figuras incluidas se numeran en orden y van al informe y al paquete con su leyenda. Escribe la leyenda que llevará en el manuscrito; si la dejas vacía se usa el título. El estilo (paleta, fuente, fondo) es el del estudio de figuras de la barra superior.</span><span data-l="en">Included figures are numbered in order and go into the report and the package with their caption. Write the caption the manuscript will carry; if left empty the title is used. The style (palette, font, background) is the one of the figure studio in the top bar.</span></p>
+    <p class="hint" id="b10FigNote"></p>
+    <div class="b10-figs" id="b10Figs"></div>
+    <div class="btn-row"><button class="btn btn-secondary btn-sm" id="b10Refresh"><span data-l="es">↻ Actualizar desde los bloques</span><span data-l="en">↻ Refresh from the blocks</span></button></div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">3 · Informe</span><span data-l="en">3 · Report</span></h2>
+    <div class="pg-controls">
+      <label class="inline-label"><input type="checkbox" id="b10Ms"> <span data-l="es">Incluir el manuscrito (Bloque 9)</span><span data-l="en">Include the manuscript (Block 9)</span></label>
+      <label class="inline-label"><input type="checkbox" id="b10Annex"> <span data-l="es">Anexar el protocolo</span><span data-l="en">Annex the protocol</span></label>
+    </div>
+    <iframe class="b10-frame" id="b10Frame" title="Informe"></iframe>
+    <div class="btn-row">
+      <button class="btn btn-primary" id="b10Html"><span data-l="es">⤓ Informe (.html)</span><span data-l="en">⤓ Report (.html)</span></button>
+      <button class="btn btn-secondary" id="b10Print"><span data-l="es">🖶 Imprimir o guardar como PDF</span><span data-l="en">🖶 Print or save as PDF</span></button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span data-l="es">4 · Paquete del proyecto</span><span data-l="en">4 · Project package</span></h2>
+    <p class="hint"><span data-l="es">Un solo .zip para archivar, compartir con coautores o adjuntar como material suplementario: el proyecto (.reviewpro.json), el informe, el protocolo y los campos de registro, la búsqueda, las decisiones del cribado, las tablas de extracción y resultados, los estudios incluidos en RIS y BibTeX, el manuscrito y las figuras. Los PDF de los estudios no se incluyen.</span><span data-l="en">A single .zip to archive, share with co-authors or attach as supplementary material: the project (.reviewpro.json), the report, the protocol and the registration fields, the search, the screening decisions, the extraction and results tables, the included studies in RIS and BibTeX, the manuscript and the figures. The PDFs of the studies are not included.</span></p>
+    <div class="pg-controls"><label class="inline-label"><input type="checkbox" id="b10Png"> <span data-l="es">Agregar las figuras también en PNG a 300 dpi</span><span data-l="en">Also add the figures as PNG at 300 dpi</span></label></div>
+    <div class="btn-row"><button class="btn btn-primary" id="b10Zip"><span data-l="es">⤓ Paquete (.zip)</span><span data-l="en">⤓ Package (.zip)</span></button><button class="btn btn-secondary" id="b10Ris"><span data-l="es">⤓ Estudios incluidos (.ris)</span><span data-l="en">⤓ Included studies (.ris)</span></button><button class="btn btn-secondary" id="b10Bib"><span data-l="es">⤓ Estudios incluidos (.bib)</span><span data-l="en">⤓ Included studies (.bib)</span></button></div>
+    <p class="hint"><span data-l="es">Los estudios incluidos salen en RIS y en BibTeX para tu gestor de referencias; en BibTeX llevan las mismas claves que usas para citar en el Bloque 9.</span><span data-l="en">The included studies come out in RIS and BibTeX for your reference manager; in BibTeX they carry the same keys you cite with in Block 9.</span></p>
+    <div id="b10ZipMsg"></div>
+  </div>
+</section>
+
+</main>
+
+<script src="js/labg-core.js"></script>
+<!-- Estudio de figuras y Navegador LABG: módulos compartidos de la suite (íconos de Lucide, ISC; ver LICENSES-TERCEROS.md) -->
+<script src="js/labg-figure-studio.js" defer></script>
+<script src="js/labg-navigator.js" defer></script>
+<script src="js/core.js"></script>
+<script src="js/art.js"></script>
+<script src="js/plotkit.js"></script>
+<script src="js/figstyle.js"></script>
+<script src="js/figure.js"></script>
+<script src="js/labg-figedit.js" data-key="reviewpro:figedit"></script>
+<script src="js/meta.js"></script>
+<script src="js/screen.js"></script>
+<script src="js/labs.js"></script>
+<script src="js/protocol.js"></script>
+<script src="js/project.js"></script>
+<script src="js/examples.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/search.js"></script>
+<script src="js/records.js"></script>
+<script src="js/dedup.js"></script>
+<script src="js/samples.js"></script>
+<script src="js/screening.js"></script>
+<script src="js/fulltext.js"></script>
+<script src="js/extract.js"></script>
+<script src="js/appraisal.js"></script>
+<script src="js/synth.js"></script>
+<script src="js/zip.js"></script>
+<script src="js/writing.js"></script>
+<script src="js/report.js"></script>
+<script src="js/home.js"></script>
+<script src="js/block2.js"></script>
+<script src="js/block3.js"></script>
+<script src="js/block4.js"></script>
+<script src="js/block5.js"></script>
+<script src="js/block6.js"></script>
+<script src="js/block7.js"></script>
+<script src="js/block8.js"></script>
+<script src="js/block9.js"></script>
+<script src="js/block10.js"></script>
+</body>
+</html>

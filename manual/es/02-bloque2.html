@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · Manual de usuario · Capítulo 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b2" data-pestana="B2" data-orden="2" style="--acento: var(--b2)">
+  <div class="cap-apertura">
+    <div class="cap-num">2</div>
+    <div class="cap-etiqueta">Bloque 2 · Protocolo</div>
+    <h1>El protocolo: lo que se decide antes de buscar</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">El protocolo fija la pregunta, los criterios, los desenlaces, las fuentes, los métodos y quién hace qué, antes de ver un solo resultado. Es lo que impide que la revisión se acomode a lo que encuentra. El bloque también guarda y abre el proyecto, revisa el protocolo contra la lista PRISMA-P, redacta los campos del registro en PROSPERO u OSF y descarga el documento del protocolo.</p>
+    <ul class="cap-contenido">
+      <li><b>2.1</b>El proyecto: nuevo, abrir, guardar y ejemplos</li>
+      <li><b>2.2</b>El tipo de revisión</li>
+      <li><b>2.3</b>Título y pregunta</li>
+      <li><b>2.4</b>Criterios de elegibilidad</li>
+      <li><b>2.5</b>Desenlaces, moderadores y fuentes</li>
+      <li><b>2.6</b>Métodos</li>
+      <li><b>2.7</b>Equipo, financiamiento y cronograma</li>
+      <li><b>2.8</b>La revisión del protocolo y PRISMA-P</li>
+      <li><b>2.9</b>El registro y el documento del protocolo</li>
+    </ul>
+  </div>
+
+  <!-- 2.1 -->
+  <h2 id="s2-1"><span class="num">2.1</span>El proyecto: nuevo, abrir, guardar y ejemplos</h2>
+  <p class="lead">La primera tarjeta del bloque, <span class="ui">Proyecto</span> (figura I.2), maneja el proyecto entero, no solo el protocolo. Su barra de color mide qué tan completo está el protocolo —en el ejemplo, <i>«100 % del protocolo · 13 secciones completas, 0 por revisar, 0 faltan»</i>— y a la derecha dice cuándo se guardó por última vez en el navegador.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.8in">Botón</th><th>Qué hace</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ui">Nuevo</span></td><td>Empieza un proyecto vacío del mismo tipo que el abierto. Pide confirmación, porque todo lo abierto se reemplaza: guárdalo antes.</td></tr>
+      <tr><td><span class="ui">Abrir archivo…</span></td><td>Abre un <code>.reviewpro.json</code>: el tuyo de otra sesión o el de un coautor.</td></tr>
+      <tr><td><span class="ui">⤓ Guardar archivo</span></td><td>Descarga el proyecto completo con el título como nombre de archivo.</td></tr>
+      <tr><td><span class="ui">Ejemplo</span> · <span class="ui">Cargar ejemplo</span></td><td>Llena solo el protocolo con uno de tres ejemplos: <i>Meta-análisis: micorrizas y maíz</i>, <i>Exploratoria: agroecología en café</i> o <i>Narrativa: micorrizas y fósforo</i>. Sirven para ver un protocolo completo de cada tipo antes de escribir el tuyo.</td></tr>
+    </tbody>
+  </table>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Dos coautores, un proyecto</div>
+    <p>El archivo del proyecto es la forma de trabajar en equipo: quien escribe el protocolo lo guarda y lo comparte; quien criba abre esa copia. Las decisiones de cribado de cada revisor, en cambio, se intercambian con un archivo propio del Bloque 4, para que cada quien cribe a ciegas en su computadora (sección 4.5).</p>
+  </div>
+
+  <!-- 2.2 -->
+  <h2 id="s2-2"><span class="num">2.2</span>El tipo de revisión</h2>
+  <figure>
+    <div class="marco"><img src="../img/b2-tipo.png" alt="La tarjeta 1 del Bloque 2 con los cuatro tipos de revisión —narrativa, exploratoria, sistemática y meta-análisis— con su guía de reporte; el meta-análisis está elegido y abajo se lee su ruta"></div>
+    <figcaption><b>Figura 2.1.</b> El tipo de revisión elegido fija la ruta: para un meta-análisis, los bloques 2 a 10 son necesarios y la guía de reporte es PRISMA 2020 con la certeza GRADE.</figcaption>
+  </figure>
+  <p>Este es el tipo que manda en todo el proyecto (sección 1.2). Cambiarlo más adelante es posible, pero tiene consecuencias: cambia el marco recomendado de la pregunta, la herramienta de sesgo por omisión, el enfoque de la síntesis, el esqueleto del manuscrito y la lista de reporte. Los datos que ya capturaste no se pierden.</p>
+
+  <!-- 2.3 -->
+  <h2 id="s2-3"><span class="num">2.3</span>Título y pregunta</h2>
+  <figure>
+    <div class="marco"><img src="../img/b2-pregunta.png" alt="La tarjeta 2 del Bloque 2: el título de la revisión, los seis marcos de pregunta con PICOS recomendado, los cinco elementos de PICOS llenos, la pregunta redactada con esos elementos, el aviso de que la pregunta tiene todos sus elementos, y los campos de justificación, objetivos, hipótesis y palabras clave"></div>
+    <figcaption><b>Figura 2.2.</b> La pregunta del ejemplo con el marco PICOS: la app la redacta con los cinco elementos y comprueba que no falte ninguno.</figcaption>
+  </figure>
+  <p>El <b>título</b> debe decir qué tipo de revisión es («revisión sistemática y meta-análisis», «revisión exploratoria»): PRISMA 2020 lo pide en su primer punto, y el Bloque 9 lo comprueba. Luego se elige el <b>marco de la pregunta</b>; la app marca como <i>recomendado</i> el que corresponde al tipo.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.1in">Marco</th><th>Elementos</th><th style="width:2.3in">Para qué</th></tr></thead>
+    <tbody>
+      <tr><td><b>PICO</b></td><td>Población o sistema · Intervención · Comparador · Desenlace</td><td>Intervenciones y tratamientos: ¿funciona?, ¿cuánto?</td></tr>
+      <tr><td><b>PICOS</b></td><td>PICO + Diseño de estudio</td><td>PICO con el diseño fijado de antemano (recomendado para meta-análisis)</td></tr>
+      <tr><td><b>PECO</b></td><td>Población · Exposición · Comparador · Desenlace</td><td>Exposiciones que no se asignan: clima, contaminación, manejo observado</td></tr>
+      <tr><td><b>PCC</b></td><td>Población · Concepto · Contexto</td><td>Revisiones exploratorias: mapear conceptos en un contexto</td></tr>
+      <tr><td><b>SPIDER</b></td><td>Muestra · Fenómeno de interés · Diseño · Evaluación · Tipo de investigación</td><td>Evidencia cualitativa o de métodos mixtos</td></tr>
+      <tr><td><b>Pregunta libre</b></td><td>Una sola pregunta escrita a mano</td><td>Revisiones narrativas</td></tr>
+    </tbody>
+  </table>
+  <p>Cada elemento trae un recordatorio de qué va ahí. Con ellos, la app redacta <b>la pregunta</b> en un recuadro; si prefieres escribirla tú, abre <span class="ui">Prefiero redactarla yo</span> y lo que escribas reemplaza a la redactada. Debajo, un aviso comprueba la pregunta: <i>«La pregunta tiene todos sus elementos»</i>, o bien qué falta o qué no cuadra con el tipo.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Regla de decisión · los avisos de la pregunta</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>Si</b> una sistemática o un meta-análisis usa pregunta libre o PCC</td><td><b>entonces</b> la app pide una pregunta focalizada: PICO, PICOS, PECO o SPIDER.</td></tr>
+      <tr><td><b>Si</b> un meta-análisis no tiene comparador</td><td><b>entonces</b> no hay efecto que combinar: define contra qué se mide.</td></tr>
+      <tr><td><b>Si</b> un meta-análisis usa SPIDER</td><td><b>entonces</b> la app advierte que SPIDER es para evidencia cualitativa.</td></tr>
+      <tr><td><b>Si</b> una exploratoria usa PICO</td><td><b>entonces</b> funciona si ya sabes qué intervención mapear; lo usual es PCC.</td></tr>
+    </tbody></table>
+  </div>
+  <p>La <b>justificación</b> responde qué no resuelven las revisiones existentes; los <b>objetivos</b>, qué se estimará o se mapeará; la <b>hipótesis</b> es opcional; las <b>palabras clave</b> se separan con punto y coma. Los elementos de la pregunta —no las palabras clave— siembran los bloques de conceptos de la búsqueda (sección 3.1).</p>
+
+  <!-- 2.4 -->
+  <h2 id="s2-4"><span class="num">2.4</span>Criterios de elegibilidad</h2>
+  <figure>
+    <div class="marco"><img src="../img/b2-criterios.png" alt="La tarjeta 3 del Bloque 2: cinco criterios de inclusión (I1 a I5) y cinco de exclusión (E1 a E5), cada uno con su tipo, su faceta y su texto; debajo, el año desde el que se publicaron, el año hasta, los idiomas y los tipos de publicación marcados"></div>
+    <figcaption><b>Figura 2.3.</b> Los criterios del ejemplo. Cada uno lleva una clave —I1… para inclusión, E1… para exclusión— y la faceta de la pregunta a la que responde.</figcaption>
+  </figure>
+  <p>La clave no es un adorno: en el cribado y en el texto completo, cada exclusión se registra con la clave del criterio que la motiva, y el diagrama PRISMA cuenta los motivos solo. Por eso conviene que cada criterio de exclusión sea <b>uno solo</b> y <b>verificable</b>: «experimentos en maceta, invernadero o cámara de crecimiento» se decide leyendo; «estudios de baja calidad» no.</p>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:2.1in"><span class="ui">Proponer a partir de la pregunta</span></td><td>Escribe un criterio de inclusión por cada elemento de la pregunta, más exclusiones habituales. Es un punto de partida: edítalos.</td></tr>
+      <tr><td><span class="ui">+ inclusión</span> · <span class="ui">+ exclusión</span></td><td>Agregan un criterio; la ✕ lo quita y las claves se renumeran.</td></tr>
+      <tr><td><b>Faceta</b></td><td>El elemento de la pregunta (P, I, C, O, S…) o una categoría general: publicación, datos, duplicados.</td></tr>
+      <tr><td><b>Años, idiomas, tipos de publicación</b></td><td>El periodo (el año final vacío significa «hasta hoy»), los idiomas aceptados y qué tipos cuentan: artículos arbitrados, tesis, informes técnicos, preimpresos, libros y capítulos, actas de congresos.</td></tr>
+    </tbody>
+  </table>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>Restringir por idioma o por tipo de publicación es una decisión con costo</div>
+    <p>Dejar fuera tesis, informes técnicos y resúmenes de congreso excluye justo la literatura donde se esconden los resultados nulos, y aumenta el riesgo de sesgo de publicación que el Bloque 8 intentará medir. Si decides excluirlos, escríbelo y justifícalo; si los incluyes, la búsqueda del Bloque 3 tendrá que ir a buscarlos.</p>
+  </div>
+
+  <!-- 2.5 -->
+  <h2 id="s2-5"><span class="num">2.5</span>Desenlaces, moderadores y fuentes</h2>
+  <figure>
+    <div class="marco"><img src="../img/b2-desenlaces.png" alt="La tarjeta 4 del Bloque 2: tres desenlaces —rendimiento de grano, colonización micorrízica de la raíz y absorción de fósforo— con su papel y cómo se miden, y el campo de moderadores y covariables previstos"></div>
+    <figcaption><b>Figura 2.4.</b> Un desenlace primario (el rendimiento, en t/ha al 14 % de humedad) y dos secundarios, y los moderadores declarados de antemano.</figcaption>
+  </figure>
+  <p>Cada <b>desenlace</b> lleva su nombre, su papel —primario o secundario— y cómo se mide. El primario decide la conclusión y se fija antes de ver los datos; cambiarlo después es la forma más común de reporte selectivo. Los nombres que escribas aquí vuelven en el Bloque 6 (a qué desenlace pertenece cada efecto) y en el Bloque 7 (una fila de GRADE por desenlace). Los <b>moderadores</b> son las variables con las que piensas explicar la heterogeneidad; declararlos aquí es lo que separa una exploración de una pesca de resultados (sección 8.3).</p>
+  <figure>
+    <div class="marco"><img src="../img/b2-fuentes.png" alt="La tarjeta 5 del Bloque 2: cinco fuentes —dos bases de citas multidisciplinarias, una base bibliográfica agrícola, repositorios de tesis y búsqueda manual— con su tipo y su cobertura, y los campos de literatura gris y otras estrategias"></div>
+    <figcaption><b>Figura 2.5.</b> Las fuentes del ejemplo, cada una con su tipo —base de datos, literatura gris u otra— y su cobertura.</figcaption>
+  </figure>
+  <p>Las <b>fuentes</b> se listan por nombre, con su tipo y los años que cubrirás; el tipo decide en qué columna del diagrama PRISMA caen sus registros (bases de datos y registros, u otros métodos). Para eso, el nombre que le des a cada archivo importado en el Bloque 3 debe ser <b>el mismo</b> que el de su fuente aquí; un archivo cuya fuente no aparece en esta lista se cuenta como base de datos. Los campos de <b>literatura gris</b> y de <b>otras estrategias</b> (listas de referencias, citas hacia adelante, consulta a expertos) completan el punto 7 de PRISMA-P. Las cadenas se construyen en el Bloque 3.</p>
+
+  <!-- 2.6 -->
+  <h2 id="s2-6"><span class="num">2.6</span>Métodos</h2>
+  <figure>
+    <div class="marco"><img src="../img/b2-metodos.png" alt="La tarjeta 6 del Bloque 2 con los métodos: selección de estudios (dos revisores, piloto de 50, kappa 0.6, desacuerdos con un tercer revisor, cribado priorizado, regla de 100 irrelevantes seguidos, verificación), extracción por duplicado, lista agronómica y GRADE, y la síntesis con meta-análisis de efectos aleatorios, razón de respuesta, REML, Knapp–Hartung, sesgo de publicación, subgrupos, sensibilidad y notas"></div>
+    <figcaption><b>Figura 2.6.</b> Los métodos del ejemplo. Lo que se elige aquí se vuelve el valor inicial de los Bloques 4 a 8.</figcaption>
+  </figure>
+  <table class="compacta">
+    <thead><tr><th style="width:1.45in">Apartado</th><th>Qué se declara</th><th style="width:1.2in">Lo usa</th></tr></thead>
+    <tbody>
+      <tr><td><b>Selección de estudios</b></td><td>Revisores por registro, tamaño del piloto, acuerdo mínimo (kappa), cómo se resuelven los desacuerdos (por discusión o con un tercer revisor), si se criba con priorización y con qué regla de paro, si se verifica con una muestra de lo no leído, y si el texto completo se evalúa por duplicado.</td><td>Bloques 4 y 5</td></tr>
+      <tr><td><b>Extracción de datos</b></td><td>Si es por duplicado e independiente, si se contactará a los autores cuando falten datos, y las variables a extraer.</td><td>Bloque 6</td></tr>
+      <tr><td><b>Calidad y certeza</b></td><td>La herramienta de riesgo de sesgo —la lista de calidad para experimentos agronómicos, RoB 2, ROBINS-I, Newcastle–Ottawa, una lista para estudios cualitativos o ninguna— y si la certeza se calificará con GRADE.</td><td>Bloque 7</td></tr>
+      <tr><td><b>Síntesis</b></td><td>El enfoque (temático, tablas de caracterización, SWiM o meta-análisis), la medida del efecto, el estimador de τ², Knapp–Hartung, si se explora el sesgo de publicación, los subgrupos, la sensibilidad y notas.</td><td>Bloques 6 y 8</td></tr>
+    </tbody>
+  </table>
+  <table class="compacta">
+    <thead><tr><th style="width:2.3in">Medida del efecto</th><th>Cuándo</th></tr></thead>
+    <tbody>
+      <tr><td><b>Razón de respuesta, ln(RR)</b></td><td>Cambio proporcional entre medias de la misma variable positiva (rendimiento, biomasa): la de uso más común en agronomía y ecología (Hedges et al. 1999).</td></tr>
+      <tr><td><b>Diferencia de medias estandarizada (g de Hedges)</b></td><td>Medias en escalas distintas entre estudios.</td></tr>
+      <tr><td><b>Diferencia de medias</b></td><td>Todos los estudios en la misma unidad.</td></tr>
+      <tr><td><b>Razón de riesgos</b>, <b>razón de momios</b>, <b>diferencia de riesgos</b></td><td>Conteos: plantas enfermas y sanas, parcelas con y sin daño.</td></tr>
+      <tr><td><b>Correlación (z de Fisher)</b></td><td>Asociaciones entre dos variables continuas.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 2.7 -->
+  <h2 id="s2-7"><span class="num">2.7</span>Equipo, financiamiento y cronograma</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/b2-equipo.png" alt="La tarjeta 7 del Bloque 2: tres autores con su nombre, afiliación, correo, ORCID validado y sus roles, el autor de contacto; el financiamiento, los conflictos de interés y las fechas de inicio y término"></div>
+    <figcaption><b>Figura 2.7.</b> El equipo del ejemplo, con los roles de cada autor, el autor de contacto y el ORCID validado (✓), y las fechas de la revisión.</figcaption>
+  </figure>
+  <p>Cada <b>autor</b> lleva nombre, afiliación, correo y ORCID; la app valida el dígito verificador del ORCID y pone una ✓ cuando es correcto. Los <b>roles</b> —conceptualización, metodología, búsqueda, cribado, extracción, análisis, redacción, supervisión y garante— se marcan con un clic, y uno de los autores es el <b>de contacto</b>. El <b>financiamiento</b> y los <b>conflictos de interés</b> se declaran siempre, aunque sea «ninguno»: PRISMA 2020 los pide y los datos vivos <code>{{funding}}</code> y <code>{{coi}}</code> del Bloque 9 los copian al manuscrito.</p>
+  <p>Con las fechas de <b>inicio</b> y <b>término</b>, <span class="ui">Proponer cronograma</span> reparte el tiempo en etapas con las proporciones típicas del tipo de revisión —en una sistemática, por ejemplo, el cribado de título y resumen se lleva cerca de una sexta parte— y dibuja el diagrama de barras. Las etapas y sus fechas se editan a mano.</p>
+  <figure class="media">
+    <div class="marco"><img src="../img/b2-cronograma.png" alt="El cronograma de la revisión: ocho etapas, del protocolo y registro a la redacción, como barras de colores entre octubre de 2026 y octubre de 2027"></div>
+    <figcaption><b>Figura 2.8.</b> El cronograma propuesto para un meta-análisis de un año; se exporta como cualquier otra figura.</figcaption>
+  </figure>
+
+  <!-- 2.8 -->
+  <h2 id="s2-8"><span class="num">2.8</span>La revisión del protocolo y PRISMA-P</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/b2-revision.png" alt="La tarjeta 8 del Bloque 2: las trece secciones del protocolo marcadas como completas y el inicio de la tabla PRISMA-P 2015, con 25 de 26 ítems aplicables cumplidos y el ítem 2 (registro) marcado para un bloque posterior"></div>
+    <figcaption><b>Figura 2.9.</b> La revisión del protocolo del ejemplo: las trece secciones completas y, en PRISMA-P 2015, 25 de 26 ítems cumplidos; el del registro queda para después de registrar.</figcaption>
+  </figure>
+  <p>La tarjeta junta dos revisiones. Arriba, cada <b>sección</b> que el tipo de revisión pide, con su estado —<i>completo</i>, <i>por revisar</i> o <i>falta</i>— y, cuando algo falta, qué hacer (<i>«Declara ambos, aunque sea "ninguno"»</i>, <i>«Explica por qué hace falta esta revisión»</i>). Abajo, la lista <b>PRISMA-P 2015</b> (Moher et al. 2015; Shamseer et al. 2015), punto por punto: qué pide, en qué lugar del protocolo se cumple y su estado. Algunos puntos se cumplen en bloques posteriores —el número de registro, por ejemplo, solo existe después de registrar— y se marcan así, no como faltantes.</p>
+
+  <!-- 2.9 -->
+  <h2 id="s2-9"><span class="num">2.9</span>El registro y el documento del protocolo</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/b2-registro.png" alt="La tarjeta 9 del Bloque 2: los botones PROSPERO u OSF y EN o ES, los avisos sobre qué registra PROSPERO y sobre el idioma, los campos del registro redactados con su estado y su botón para copiar, el número de registro, las enmiendas, la difusión y los botones de descarga"></div>
+    <figcaption><b>Figura 2.10.</b> Los campos de PROSPERO redactados en inglés a partir del protocolo, con los avisos de alcance y de idioma. Abajo, el número de registro por llenar y las descargas.</figcaption>
+  </figure>
+  <p>Cada campo del registro se redacta a partir de lo que escribiste arriba, con un botón <span class="ui">Copiar</span> para pegarlo en el formulario del registro. Se elige el registro —<b>PROSPERO</b> u <b>OSF</b>— y el idioma de los campos. La app avisa dos cosas: el alcance de cada registro y si tus textos están en otro idioma que el del registro.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Regla de decisión · qué registro</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>Si</b> la revisión es exploratoria o narrativa</td><td><b>entonces</b> OSF: PROSPERO no las registra.</td></tr>
+      <tr><td><b>Si</b> es sistemática con un desenlace relevante para la salud (humana o animal, incluida la alimentación)</td><td><b>entonces</b> PROSPERO es una opción; verifica que tu pregunta califique.</td></tr>
+      <tr><td><b>Si</b> es sistemática sobre un tema agronómico o ambiental sin desenlace de salud</td><td><b>entonces</b> OSF, que registra cualquier tipo de revisión y de tema.</td></tr>
+      <tr><td><b>Si</b> el registro pide inglés y tu protocolo está en español</td><td><b>entonces</b> traduce el título, la pregunta y los criterios antes de copiarlos; la app no traduce tus textos.</td></tr>
+    </tbody></table>
+    <p class="regla-pie">Los formularios de los registros cambian: verifica los campos vigentes al momento de enviar.</p>
+  </div>
+  <p>Al registrar, anota el <b>número de registro</b> (por ejemplo, <code>CRD42026…</code> u <code>osf.io/…</code>): con él se cumple el punto 2 de PRISMA-P, el 24a de PRISMA 2020 y el dato vivo <code>{{reg}}</code> del manuscrito. Las <b>enmiendas</b> dicen cómo se documentarán los cambios; la <b>difusión</b>, dónde se publicará. <span class="ui">⤓ Documento del protocolo (.html)</span> descarga el protocolo completo, listo para imprimir o adjuntar; <span class="ui">⤓ Campos del registro (.md)</span>, los campos en texto.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Los avisos de este bloque</div>
+    <p>Los del marco de la pregunta (sección 2.3), los de cada sección incompleta (2.8) y los del registro (2.9). Ninguno te impide avanzar: el protocolo se puede enmendar, y una revisión real lo hace. Lo que importa es que cada cambio quede fechado y justificado en <span class="ui">Enmiendas</span> y se reporte en el artículo (punto 24c de PRISMA 2020).</p>
+  </div>
+</section>
+
+</body>
+</html>

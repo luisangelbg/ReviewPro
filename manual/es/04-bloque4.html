@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · Manual de usuario · Capítulo 4</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b4" data-pestana="B4" data-orden="4" style="--acento: var(--b4)">
+  <div class="cap-apertura">
+    <div class="cap-num">4</div>
+    <div class="cap-etiqueta">Bloque 4 · Cribado</div>
+    <h1>Cribado de título y resumen</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">Cada registro se decide con una tecla. El orden aprende de tus decisiones para que los relevantes lleguen primero; la regla de paro y su verificación quedan documentadas; con dos revisores, cada quien lee a ciegas, se mide el acuerdo con kappa y los desacuerdos se concilian al final. Lo que pasa a texto completo es todo lo que alguien marcó como «incluir» o «tal vez».</p>
+    <ul class="cap-contenido">
+      <li><b>4.1</b>Revisores y forma de trabajo</li>
+      <li><b>4.2</b>La pantalla de cribado</li>
+      <li><b>4.3</b>El orden priorizado y la regla de paro</li>
+      <li><b>4.4</b>Dos revisores en dos computadoras</li>
+      <li><b>4.5</b>Acuerdo y conciliación</li>
+      <li><b>4.6</b>El resumen y las descargas</li>
+    </ul>
+  </div>
+
+  <!-- 4.1 -->
+  <h2 id="s4-1"><span class="num">4.1</span>Revisores y forma de trabajo</h2>
+  <figure>
+    <div class="marco"><img src="../img/b4-revisores.png" alt="La tarjeta de revisores del Bloque 4: el modo misma computadora por turnos, dos revisores con 30 decisiones cada uno, el orden de lectura priorizado, la línea que resume lo que pide el protocolo y el desplegable de palabras que resaltar"></div>
+    <figcaption><b>Figura 4.1.</b> Dos revisores que cribaron los 30 registros del ejemplo en la misma computadora, por turnos. Debajo, lo que el protocolo pide: dos revisores por registro, piloto de 50, kappa objetivo 0.6 y paro tras 100 irrelevantes seguidos.</figcaption>
+  </figure>
+  <p class="lead">Los revisores se crean solos a partir de los autores con el rol «Cribado» del protocolo; <span class="ui">+ revisor</span> agrega otro y la ✕ lo quita con todas sus decisiones. El círculo marca al <b>revisor activo</b>: el que está cribando ahora.</p>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:2.1in"><span class="ui">Misma computadora, por turnos</span></td><td>Cada quien elige su nombre antes de empezar. La pantalla nunca muestra las decisiones de los demás; los desacuerdos aparecen solo en la conciliación.</td></tr>
+      <tr><td><span class="ui">Cada quien en su computadora</span></td><td>Todos importan los mismos archivos en el Bloque 3 (o abren el mismo proyecto), cada revisor criba en la suya y exporta sus decisiones; una persona las importa todas para conciliar (sección 4.4).</td></tr>
+      <tr><td><span class="ui">Orden de lectura</span></td><td><b>Priorizado</b> (el modelo sube lo que se parece a lo incluido), <b>Aleatorio</b> o <b>Original</b> (el de la importación).</td></tr>
+      <tr><td><span class="ui">Palabras que resaltar</span></td><td>Los términos de la estrategia de búsqueda se resaltan solos en el título, el resumen y las palabras clave. Aquí se añaden dos listas, separadas por comas: <i>incluir</i> (por ejemplo, <i>field</i>) y <i>excluir</i> (<i>greenhouse</i>, <i>pot</i>), que se marcan con otro color. Aceleran la lectura sin decidir nada.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 4.2 -->
+  <h2 id="s4-2"><span class="num">4.2</span>La pantalla de cribado</h2>
+  <figure>
+    <div class="marco"><img src="../img/b4-pantalla.png" alt="La pantalla de cribado: la etiqueta piloto, quedan 12, el título, autores, año, revista y DOI de un registro sobre biocarbón, su resumen y palabras clave; los botones incluir, tal vez, excluir y deshacer; los criterios de exclusión E1 a E6 con su número de tecla; el campo de nota; y a la derecha los leídos, relevantes y por leer, la barra de la regla de paro y los atajos de teclado"></div>
+    <figcaption><b>Figura 4.2.</b> Un registro en pantalla. Un estudio sobre biocarbón no evalúa micorrizas: se excluye con la tecla <kbd>6</kbd>, que registra el motivo E6. A la derecha, el avance y la regla de paro.</figcaption>
+  </figure>
+  <p>Cada registro muestra su título, autores, año, revista, DOI, resumen y palabras clave. Se decide con los botones o con el teclado:</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.2in">Tecla</th><th>Qué hace</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>I</kbd></td><td>Incluir: pasa a texto completo.</td></tr>
+      <tr><td><kbd>M</kbd> o <kbd>?</kbd></td><td>Tal vez: también pasa a texto completo; úsalo cuando el resumen no alcanza para decidir.</td></tr>
+      <tr><td><kbd>E</kbd></td><td>Excluir sin motivo.</td></tr>
+      <tr><td><kbd>1</kbd> a <kbd>9</kbd></td><td>Excluir por el criterio de exclusión de ese número (E1, E2…), que queda registrado como motivo.</td></tr>
+      <tr><td><kbd>Z</kbd> o <kbd>⌫</kbd></td><td>Deshacer la última decisión.</td></tr>
+      <tr><td><kbd>N</kbd></td><td>Escribir una nota para este registro.</td></tr>
+    </tbody>
+  </table>
+  <p>La etiqueta de arriba dice en qué fase estás: <b>piloto</b> mientras no se complete el número de registros del piloto del protocolo, en el que conviene medir el acuerdo antes de seguir. Un registro sin resumen lo advierte: <i>«Sin resumen: decide por el título o márcalo "tal vez"»</i>.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Regla de decisión · incluir, tal vez o excluir</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>Si</b> el registro cumple claramente la pregunta</td><td><b>entonces</b> incluir.</td></tr>
+      <tr><td><b>Si</b> el resumen no deja saber si cumple (no dice el diseño, el sitio o la variable)</td><td><b>entonces</b> tal vez: el texto completo lo aclarará. En el título y resumen, ante la duda, no se excluye.</td></tr>
+      <tr><td><b>Si</b> falla claramente un criterio</td><td><b>entonces</b> excluir con la tecla de ese criterio.</td></tr>
+      <tr><td><b>Si</b> ningún criterio de exclusión describe por qué sobra</td><td><b>entonces</b> tu protocolo necesita un criterio más: agrégalo como enmienda (el ejemplo agregó E6, «otro tema»).</td></tr>
+    </tbody></table>
+  </div>
+
+  <!-- 4.3 -->
+  <h2 id="s4-3"><span class="num">4.3</span>El orden priorizado y la regla de paro</h2>
+  <p>Con el orden priorizado, el modelo del laboratorio de la portada (sección 1.4) aprende de cada decisión y reordena lo que falta. El panel lateral cuenta los <b>leídos</b>, los <b>relevantes</b> (incluir o tal vez) y los que quedan <b>por leer</b>, y lleva la <b>regla de paro</b> declarada en el protocolo: la barra avanza con los irrelevantes seguidos (<i>«0 / 100 irrelevantes seguidos»</i>) o muestra la pendiente de la rodilla ρ.</p>
+  <p>Cuando la regla se cumple, la app no para sola. Dice <i>«La regla se cumplió. Antes de parar, verifica con una muestra al azar de los no leídos: si aparece un relevante, se sigue cribando»</i> y propone un tamaño de muestra (el 10 % de lo no leído, entre 50 y 300). Al elegir el tamaño, explica qué garantiza:</p>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Teoría en breve · lo que dice una muestra sin relevantes</div>
+    <p>Si en una muestra al azar de <i>n</i> no leídos no aparece ningún relevante, la proporción de relevantes que queda entre los no leídos está, con 95 % de confianza, por debajo del límite superior exacto de Clopper–Pearson para 0 de <i>n</i>. La app lo traduce a registros: <i>«Si no aparece ningún relevante en n registros, a 95 % de confianza quedarán como máximo k relevantes entre los N no leídos.»</i> Una muestra más grande estrecha el límite. Si en la verificación aparece un relevante, se reanuda el cribado.</p>
+  </div>
+  <p>Al terminar la verificación sin relevantes, la app dice <i>«La muestra no encontró relevantes: el cribado queda detenido y documentado»</i>; los registros no leídos se cuentan como tales en el diagrama PRISMA del Bloque 5, con la regla y la verificación que los respaldan. <span class="ui">Reanudar el cribado</span> deshace el paro si decides seguir.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>En el ejemplo, el orden casi no importa</div>
+    <p>El ejemplo tiene solo 30 registros, y 23 de ellos son relevantes: con una prevalencia tan alta la priorización no ahorra nada y la regla de paro nunca se cumple. Es lo normal en una búsqueda pequeña y muy precisa. La priorización paga en búsquedas de miles de registros con 1 a 5 % de relevantes, como las del laboratorio de la portada.</p>
+  </div>
+
+  <!-- 4.4 -->
+  <h2 id="s4-4"><span class="num">4.4</span>Dos revisores en dos computadoras</h2>
+  <p>En el modo <span class="ui">Cada quien en su computadora</span>, el desplegable <span class="ui">Intercambiar decisiones</span> tiene dos botones. <span class="ui">⤓ Exportar mis decisiones</span> guarda las del revisor activo en un archivo pequeño; quien concilia las recibe y usa <span class="ui">Importar decisiones de otro revisor…</span>. Si el revisor no existía, se crea con su nombre. También se puede importar el archivo de proyecto completo de otro revisor: la app toma de él solo sus decisiones.</p>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>Los registros deben ser los mismos</div>
+    <p>Las decisiones se ligan a cada registro por su DOI o, sin DOI, por su título y año. Para que las decisiones de dos computadoras coincidan, ambos revisores deben haber importado los mismos archivos en el Bloque 3 —lo más seguro es que uno importe, guarde el proyecto y el otro abra esa copia—.</p>
+  </div>
+
+  <!-- 4.5 -->
+  <h2 id="s4-5"><span class="num">4.5</span>Acuerdo y conciliación</h2>
+  <figure>
+    <div class="marco"><img src="../img/b4-conflicto.png" alt="La tarjeta de acuerdo y conciliación: 30 registros en común, 93 % de acuerdo, kappa incluir/excluir 0.81 con su intervalo, kappa con tal vez 0.83 y kappa en el piloto 0.81, todos casi perfectos; y un conflicto por resolver sobre un estudio de labranza, con la decisión de cada revisor, la nota de uno de ellos y los botones de la decisión final"></div>
+    <figcaption><b>Figura 4.3.</b> El acuerdo entre los dos revisores del ejemplo y un conflicto por resolver: uno incluyó el estudio y el otro lo excluyó por E1 con la nota «parece de invernadero».</figcaption>
+  </figure>
+  <p>Para cada par de revisores, la tabla da cuántos registros leyeron en común, el porcentaje de acuerdo y tres kappas de Cohen con su intervalo al 95 % (Fleiss, Cohen y Everitt 1969): el de incluir contra excluir, el de las tres categorías con «tal vez» y el del piloto. Cada kappa se lee con la escala de Landis y Koch (1977). Con tres o más revisores, se añade el kappa de Fleiss de todos.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.3in">Kappa</th><th style="width:1.3in">Acuerdo</th><th>Qué hacer</th></tr></thead>
+    <tbody>
+      <tr><td>≤ 0</td><td>pobre</td><td rowspan="3">Detente: discutan los desacuerdos del piloto, afinen la redacción de los criterios y repitan el piloto.</td></tr>
+      <tr><td>0.01–0.20</td><td>leve</td></tr>
+      <tr><td>0.21–0.40</td><td>aceptable</td></tr>
+      <tr><td>0.41–0.60</td><td>moderado</td><td>Revisa los criterios que más dividen antes de seguir.</td></tr>
+      <tr><td>0.61–0.80</td><td>sustancial</td><td rowspan="2">Sigue; concilia los desacuerdos al final.</td></tr>
+      <tr><td>0.81–1.00</td><td>casi perfecto</td></tr>
+    </tbody>
+  </table>
+  <p>Si el kappa del piloto queda debajo del objetivo del protocolo, la app lo avisa: <i>«El kappa del piloto está bajo el objetivo del protocolo. Discutan los desacuerdos del piloto y afinen los criterios antes de seguir.»</i> Como «incluir» y «tal vez» mandan ambos el registro a texto completo, no cuentan como conflicto entre sí.</p>
+  <p>Cada <b>conflicto por resolver</b> muestra lo que decidió cada revisor, con su motivo y su nota. La decisión final se toma con <span class="ui">Incluir</span>, <span class="ui">Tal vez</span> o <span class="ui">excluir por…</span> un criterio, y se anota quién la tomó: <i>por consenso</i> o por uno de los revisores (el tercero, si el protocolo lo prevé). Los resueltos quedan en <span class="ui">Resueltos</span>, donde se pueden reabrir.</p>
+  <div class="caja ejemplo">
+    <div class="caja-t"><span class="ico">▸</span>Ejemplo · dos desacuerdos</div>
+    <p>Los revisores discreparon en 2 de 30 registros (93 % de acuerdo, kappa = 0.81, casi perfecto). En un estudio de labranza, uno lo incluyó y el otro lo excluyó por E1 porque «parece de invernadero»; al releer el resumen, era de campo: se incluyó por consenso. En un estudio de diversidad microbiana, uno lo marcó «tal vez» y el otro lo excluyó por E6: se excluyó por E6.</p>
+  </div>
+
+  <!-- 4.6 -->
+  <h2 id="s4-6"><span class="num">4.6</span>El resumen y las descargas</h2>
+  <figure>
+    <div class="marco"><img src="../img/b4-resumen.png" alt="La tarjeta de resumen del Bloque 4: 30 registros, 23 a texto completo, 7 excluidos, 0 pendientes y 0 sin leer; la curva de ganancia de los dos revisores y la tabla de motivos de exclusión con E6, E1 y E3"></div>
+    <figcaption><b>Figura 4.4.</b> El resumen del cribado del ejemplo: 23 registros pasan a texto completo y 7 se excluyen, con sus motivos (4 por otro tema, 2 de invernadero y 1 revisión).</figcaption>
+  </figure>
+  <p>Las cinco cifras de arriba cuentan los registros, los que pasan a texto completo, los excluidos con decisión final, los <b>pendientes</b> (conflictos y registros que esperan la lectura de otro revisor) y los <b>sin leer</b>. La <b>curva de ganancia por revisor</b> muestra cuántos relevantes encontró cada quien según avanzaba; la tabla, los motivos de exclusión, que el Bloque 5 llevará al diagrama PRISMA.</p>
+  <p><span class="ui">Mis decisiones</span> lista las del revisor activo, filtrables por incluidas, tal vez y excluidas, y cada una se puede cambiar desde su menú. Dos descargas: <span class="ui">⤓ Registros a texto completo (.ris)</span>, para buscarlos y guardarlos en tu gestor de referencias, y <span class="ui">⤓ Todas las decisiones (.csv)</span>, con la decisión, el motivo y la nota de cada revisor y la final: el registro de auditoría que un revisor puede pedir.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Los avisos de este bloque</div>
+    <p><i>«No hay registros. Impórtalos y deduplícalos en el Bloque 3»</i>; <i>«Sin criterios de exclusión en el protocolo (Bloque 2): las exclusiones no llevarán motivo»</i>; <i>«Con un solo revisor no hay acuerdo que medir»</i>; el kappa del piloto bajo el objetivo; la regla de paro cumplida; y <i>«¡Terminaste! Leíste todos los registros»</i>.</p>
+  </div>
+</section>
+
+</body>
+</html>

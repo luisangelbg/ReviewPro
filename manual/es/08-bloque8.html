@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · Manual de usuario · Capítulo 8</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+<style>
+  .formula { font-family: var(--mono); font-size: 8.8pt; background: var(--marino-suave); border-radius: 5px; padding: 0.07in 0.12in; margin: 0.08in 0; }
+</style>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b8" data-pestana="B8" data-orden="8" style="--acento: var(--b8)">
+  <div class="cap-apertura">
+    <div class="cap-num">8</div>
+    <div class="cap-etiqueta">Bloque 8 · Síntesis</div>
+    <h1>Síntesis y meta-análisis</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">El meta-análisis de cada desenlace con la tabla de efectos del Bloque 6: un modelo multinivel para los estudios que aportan varios efectos (o el promedio por estudio), la heterogeneidad con su intervalo de predicción, los moderadores en subgrupos y meta-regresión, la sensibilidad y el sesgo de publicación. Para las revisiones que no combinan efectos: el conteo de votos por dirección, la matriz de conceptos y el mapa de vacíos. Y un párrafo de métodos escrito con lo que realmente se corrió.</p>
+    <ul class="cap-contenido">
+      <li><b>8.1</b>Datos y modelo</li>
+      <li><b>8.2</b>El resultado y el diagrama de bosque</li>
+      <li><b>8.3</b>Heterogeneidad y moderadores</li>
+      <li><b>8.4</b>Análisis de sensibilidad</li>
+      <li><b>8.5</b>Sesgo de publicación</li>
+      <li><b>8.6</b>Síntesis sin meta-análisis</li>
+      <li><b>8.7</b>Métodos y exportación</li>
+    </ul>
+  </div>
+
+  <!-- 8.1 -->
+  <h2 id="s8-1"><span class="num">8.1</span>Datos y modelo</h2>
+  <figure>
+    <div class="marco"><img src="../img/b8-modelo.png" alt="La tarjeta 1 del Bloque 8: el desenlace rendimiento de grano, el modelo multinivel elegido frente al promedio por estudio, y la prueba t recomendada"></div>
+    <figcaption><b>Figura 8.1.</b> Se elige el desenlace, el modelo y la prueba.</figcaption>
+  </figure>
+  <p class="lead">Se trabaja con un <b>desenlace</b> a la vez: los del menú son los que tienen efectos en el Bloque 6. En los experimentos agronómicos casi siempre un estudio aporta varios efectos —sitios, ciclos, dosis— que se parecen entre sí más que a los de otros estudios. Hay dos maneras de tratarlos:</p>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:2in"><span class="ui">Multinivel (efectos en estudios)</span> <i>(por omisión)</i></td><td>Un modelo de efectos aleatorios de tres niveles —el error de muestreo de cada efecto, la variación entre efectos del mismo estudio y la variación entre estudios— ajustado por máxima verosimilitud restringida (Konstantopoulos 2011; Cheung 2014). Usa todos los efectos y dice cuánta heterogeneidad hay en cada nivel.</td></tr>
+      <tr><td><span class="ui">Promedio por estudio</span></td><td>Promedia los efectos de cada estudio suponiendo una correlación ρ entre ellos (Borenstein et al. 2009) y combina los promedios con el modelo clásico de efectos aleatorios, con el estimador de τ² que elijas (REML, DerSimonian–Laird, Paule–Mandel, Hedges o ML). Aparece el deslizador de ρ.</td></tr>
+    </tbody>
+  </table>
+  <p>La <span class="ui">Prueba</span> <b>t</b> (recomendada) usa grados de libertad iguales al número de estudios menos el de coeficientes, como el ajuste de Knapp y Hartung (2003): con pocos estudios, sus intervalos son honestos; la <b>z</b> los estrecha de más.</p>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Teoría en breve · por qué no tratar los efectos como independientes</div>
+    <p>Si los tres sitios de un estudio entran como tres estudios independientes, ese estudio pesa el triple y el intervalo de confianza se estrecha como si hubiera más evidencia de la que hay. El modelo multinivel reparte el peso del estudio entre sus efectos. El promedio también lo evita, pero pierde la variación dentro de estudios y depende de un ρ que casi nunca se reporta; por eso la app lo corre siempre en la sensibilidad con ρ = 0.2, 0.5 y 0.8.</p>
+  </div>
+
+  <!-- 8.2 -->
+  <h2 id="s8-2"><span class="num">8.2</span>El resultado y el diagrama de bosque</h2>
+  <figure>
+    <div class="marco"><img src="../img/b8-resultado.png" alt="La tarjeta 2 del Bloque 8: cinco cifras —efecto combinado +16.9 % con su IC, 41 efectos de 20 estudios, intervalo de predicción de −12.7 % a +56.5 %, varianzas entre y dentro de estudios con I² de 79 %, y p menor a 0.001— y la lectura del resultado en tres párrafos"></div>
+    <figcaption><b>Figura 8.2.</b> El resultado del ejemplo y su lectura: el efecto medio es claro, pero el intervalo de predicción incluye pérdidas.</figcaption>
+  </figure>
+  <table class="compacta">
+    <thead><tr><th style="width:1.8in">Cifra</th><th>Qué dice</th></tr></thead>
+    <tbody>
+      <tr><td><b>Efecto combinado</b></td><td>El efecto medio con su IC 95 %; con la razón de respuesta, como cambio porcentual.</td></tr>
+      <tr><td><b>Datos</b></td><td>Efectos / estudios.</td></tr>
+      <tr><td><b>Intervalo de predicción</b></td><td>Dónde caería el efecto verdadero de un sitio o estudio nuevo (Higgins et al. 2009).</td></tr>
+      <tr><td><b>σ² entre · dentro</b></td><td>La varianza entre estudios y la varianza entre efectos del mismo estudio, con el I² total y su reparto por nivel.</td></tr>
+      <tr><td><b>Prueba del efecto</b></td><td>El valor p, con el estadístico y sus grados de libertad.</td></tr>
+    </tbody>
+  </table>
+  <p>Debajo, la app lee el resultado en palabras: el efecto con su intervalo, lo que dice el intervalo de predicción (<i>«incluye pérdidas, así que el efecto no está garantizado en todas partes»</i>), y cómo se reparte la heterogeneidad, con la prueba de razón de verosimilitud de que el nivel dentro de estudios hace falta.</p>
+  <figure class="media">
+    <div class="marco"><img src="../img/b8-bosque.png" alt="El diagrama de bosque del ejemplo: 41 efectos por estudio y sitio, cada uno con su cuadrado proporcional al peso y su intervalo, su valor en porcentaje y su peso; abajo, el rombo del efecto combinado de +16.9 % y la línea punteada del intervalo de predicción, sobre un eje en porcentaje"></div>
+    <figcaption><b>Figura 8.3.</b> El diagrama de bosque: cada efecto con su intervalo y su peso multinivel; abajo, el rombo del efecto combinado y el intervalo de predicción, más ancho.</figcaption>
+  </figure>
+  <p>En el bosque, el tamaño de cada cuadrado es su <b>peso</b> en el modelo multinivel: los efectos de un estudio con muchos sitios pesan menos cada uno que un efecto solitario de la misma precisión, porque comparten el peso de su estudio. El eje está en la escala del análisis (logarítmica para lnRR) con etiquetas en porcentaje.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Regla de decisión · cómo leer el resultado</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>Si</b> el IC excluye el cero y el intervalo de predicción también</td><td><b>entonces</b> el efecto es consistente: se espera en casi cualquier sitio.</td></tr>
+      <tr><td><b>Si</b> el IC excluye el cero pero el intervalo de predicción lo incluye</td><td><b>entonces</b> funciona en promedio, pero no en todas partes: busca los moderadores que explican dónde sí (es el caso del ejemplo).</td></tr>
+      <tr><td><b>Si</b> el IC incluye el cero</td><td><b>entonces</b> no hay evidencia de un efecto medio; no es lo mismo que evidencia de que no hay efecto.</td></tr>
+      <tr><td><b>Si</b> casi toda la heterogeneidad está dentro de estudios</td><td><b>entonces</b> el efecto cambia de un sitio o ciclo a otro más que de un estudio a otro: las condiciones locales mandan.</td></tr>
+    </tbody></table>
+  </div>
+
+  <!-- 8.3 -->
+  <h2 id="s8-3"><span class="num">8.3</span>Heterogeneidad y moderadores</h2>
+  <figure>
+    <div class="marco"><img src="../img/b8-moderadores.png" alt="La tarjeta 3 del Bloque 8: los subgrupos por tipo de inoculante con su efecto e I², la prueba de diferencias entre subgrupos con p = 0.328; la meta-regresión con el fósforo disponible del suelo marcado, sus coeficientes con pendiente −0.0062 y p = 0.015, la prueba conjunta y el pseudo-R² de 18 %; y el gráfico de burbujas del efecto contra el fósforo del suelo con la recta ajustada"></div>
+    <figcaption><b>Figura 8.4.</b> Los moderadores del ejemplo: el tipo de inoculante no explica la variación (p = 0.328), el fósforo del suelo sí (p = 0.015): la respuesta cae al aumentar el fósforo disponible.</figcaption>
+  </figure>
+  <p>Los moderadores son los campos del formulario de extracción. Declararlos en el protocolo antes de ver los datos es lo que separa una exploración de una pesca de resultados.</p>
+  <ul>
+    <li><b>Subgrupos</b>: un moderador categórico. Para cada nivel, sus efectos y estudios, su efecto combinado y su I²; y la prueba de diferencias entre subgrupos (F con la prueba t, Q<sub>M</sub> con la z).</li>
+    <li><b>Meta-regresión</b>: uno o varios moderadores numéricos o categóricos, en un modelo de efectos mixtos con la misma estructura multinivel. Da cada coeficiente con su EE, su IC y su p, la prueba conjunta y la heterogeneidad explicada (pseudo-R²). Con un solo moderador numérico, el <b>gráfico de burbujas</b> muestra cada efecto (con tamaño según su peso) y la recta ajustada.</li>
+  </ul>
+  <div class="caja ejemplo">
+    <div class="caja-t"><span class="ico">▸</span>Ejemplo · el fósforo del suelo</div>
+    <p>La pendiente es −0.0062 por mg/kg de fósforo disponible (IC 95 % −0.0111 a −0.0014; p = 0.015): con 5 mg/kg la respuesta estimada ronda +27 %, y con 35 mg/kg, +5 %. El fósforo explica el 18 % de la heterogeneidad. Es lo que predecía la hipótesis del protocolo, y por eso vale como resultado confirmatorio y no como hallazgo de pesca.</p>
+  </div>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>Los moderadores asocian, no prueban</div>
+    <p>Un moderador compara estudios, no parcelas asignadas al azar: el fósforo del suelo puede ir de la mano del clima, del cultivar o del manejo. Una asociación entre estudios es una hipótesis para un experimento, no la demostración de una causa. Con pocos estudios por nivel o muchos moderadores a la vez, los resultados se vuelven inestables.</p>
+  </div>
+
+  <!-- 8.4 -->
+  <h2 id="s8-4"><span class="num">8.4</span>Análisis de sensibilidad</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/b8-sensibilidad.png" alt="La tarjeta 4 del Bloque 8: la tabla del análisis principal y cuatro alternativas —promedio por estudio con ρ de 0.5, 0.2 y 0.8 y sin estudios con riesgo de sesgo alto— todas marcadas como se sostiene; y el gráfico dejando un estudio fuera, con el efecto y su intervalo sin cada uno de los 20 estudios, y la nota de que el efecto va de +15.2 % a +18.8 %"></div>
+    <figcaption><b>Figura 8.5.</b> El resultado del ejemplo se sostiene con el otro modelo, con cualquier ρ, sin los estudios de riesgo alto y sin cada uno de los estudios.</figcaption>
+  </figure>
+  <p>La tabla repite el análisis con decisiones distintas y dice, frente al principal, si el resultado <b>se sostiene</b>, <b>cambia la significancia</b> o <b>cambia de signo</b>: el otro tratamiento de los efectos múltiples (el promedio por estudio con ρ = 0.2, 0.5 y 0.8, o el multinivel si el principal es el promedio), sin los estudios con riesgo de sesgo alto del Bloque 7, sin las desviaciones estándar imputadas del Bloque 6 y, con el promedio, con el estimador DerSimonian–Laird. El gráfico <b>dejando un estudio fuera</b> repite el análisis sin cada estudio y nombra al más influyente.</p>
+
+  <!-- 8.5 -->
+  <h2 id="s8-5"><span class="num">8.5</span>Sesgo de publicación</h2>
+  <figure>
+    <div class="marco"><img src="../img/b8-sesgo.png" alt="La tarjeta 5 del Bloque 8: la prueba de Egger sobre los promedios por estudio con p = 0.423, la de Egger multinivel con p = 0.824 y el recorte y relleno sin estudios faltantes; y el gráfico de embudo simétrico de los 20 estudios"></div>
+    <figcaption><b>Figura 8.6.</b> El embudo del ejemplo es simétrico, las dos pruebas de Egger no detectan asimetría y el recorte y relleno no añade estudios.</figcaption>
+  </figure>
+  <p>Tres herramientas, sobre los promedios por estudio o sobre todos los efectos: la <b>prueba de Egger</b> (Egger et al. 1997) con los promedios; su <b>versión multinivel</b>, con el error estándar como moderador (Nakagawa et al. 2022); y el <b>recorte y relleno</b> (Duval y Tweedie 2000), que estima cuántos estudios faltarían para que el embudo fuera simétrico, los dibuja en el embudo y da el efecto ajustado. Este último es un análisis de sensibilidad, no una corrección.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Regla de decisión · el embudo</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>Si</b> hay menos de 10 estudios</td><td><b>entonces</b> las pruebas tienen muy poca potencia: la app las muestra como referencia, no como conclusión.</td></tr>
+      <tr><td><b>Si</b> los errores estándar casi no varían</td><td><b>entonces</b> la app avisa que las pruebas no son informativas; con lnRR, la varianza depende del efecto y puede crear una pendiente espuria.</td></tr>
+      <tr><td><b>Si</b> hay asimetría</td><td><b>entonces</b> puede ser sesgo de publicación, pero también heterogeneidad real (los estudios pequeños se hacen en otras condiciones); mira si un moderador la explica.</td></tr>
+    </tbody></table>
+  </div>
+
+  <!-- 8.6 -->
+  <h2 id="s8-6"><span class="num">8.6</span>Síntesis sin meta-análisis</h2>
+  <p>Cuando los efectos no se pueden combinar —medidas incomparables, datos incompletos, una revisión exploratoria o narrativa—, la tarjeta 6 ofrece tres herramientas de la guía SWiM (Campbell et al. 2020).</p>
+  <ul>
+    <li><b>Conteo de votos por dirección del efecto</b>: un voto por estudio según el signo de su efecto (el promedio de sus efectos), con la proporción a favor, su intervalo y una prueba de signos exacta. Es la síntesis permitida cuando los efectos no se pueden combinar; nunca cuentes votos de «significativo / no significativo», que confunden el tamaño del efecto con el tamaño del estudio.</li>
+    <li><b>Matriz de conceptos</b>: los estudios contra los valores de un campo de lista del formulario —prácticas, desenlaces medidos, tipo de inoculante—, con sus totales. Es la tabla central de una revisión exploratoria.</li>
+    <li><b>Mapa de vacíos de evidencia</b>: dos campos cruzados, con el número de estudios en cada celda; las vacías son vacíos de investigación.</li>
+  </ul>
+  <div class="dos">
+  <figure style="margin:0">
+    <div class="marco"><img src="../img/b8-sinma.png" alt="La tarjeta 6 del Bloque 8: el conteo de votos con 18 estudios a favor y 2 en contra, 90 % a favor con su intervalo y p menor a 0.001; y la matriz de conceptos de los 20 estudios según el tipo de inoculante, con sus totales"></div>
+    <figcaption><b>Figura 8.7.</b> El conteo de votos y la matriz de conceptos del ejemplo.</figcaption>
+  </figure>
+  <figure style="margin:0">
+    <div class="marco"><img src="../img/b8-vacios.png" alt="El mapa de vacíos del ejemplo: los 15 países en filas y los tres tipos de inoculante en columnas, con círculos del número de estudios y las celdas vacías marcadas en rojo"></div>
+    <figcaption><b>Figura 8.8.</b> El mapa de vacíos por país y tipo de inoculante: los inoculantes nativos se han probado en pocos países, y en ninguno de los de Europa.</figcaption>
+  </figure>
+  </div>
+
+  <!-- 8.7 -->
+  <h2 id="s8-7"><span class="num">8.7</span>Métodos y exportación</h2>
+  <figure>
+    <div class="marco"><img src="../img/b8-metodos.png" alt="La tarjeta 7 del Bloque 8: el párrafo de métodos redactado con la medida del efecto, el modelo multinivel, la heterogeneidad, los moderadores, la sensibilidad, el sesgo de publicación y la versión del programa, con su botón para copiar y el de descargar los resultados por desenlace"></div>
+    <figcaption><b>Figura 8.9.</b> El párrafo de métodos del ejemplo, redactado con lo que realmente se corrió y con sus referencias.</figcaption>
+  </figure>
+  <p>El párrafo de métodos dice qué medida del efecto se usó, qué modelo y por qué, qué prueba, cómo se describió la heterogeneidad, qué moderadores se exploraron, qué análisis de sensibilidad y cómo se exploró el sesgo de publicación, con las referencias de cada método y la versión del programa. Cambia si cambias el modelo o los moderadores. Es un punto de partida para tu manuscrito: en el Bloque 9 se inserta con un clic en la sección de síntesis, y sus referencias entran solas a la lista. <span class="ui">⤓ Resultados por desenlace (.csv)</span> descarga el efecto, su EE, IC, p, intervalo de predicción, varianzas e I² de cada desenlace.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Los avisos de este bloque</div>
+    <p><i>«No hay datos suficientes para este desenlace. Extrae los efectos en el Bloque 6»</i>; <i>«Hacen falta al menos dos subgrupos con datos»</i>; <i>«No hay suficientes efectos con datos de esos moderadores»</i>; los de pocos estudios o precisiones parecidas en el sesgo de publicación; y los de la matriz y el mapa cuando el campo elegido no tiene valores.</p>
+  </div>
+</section>
+
+</body>
+</html>

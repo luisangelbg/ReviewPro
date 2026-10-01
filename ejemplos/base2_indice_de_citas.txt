@@ -1,0 +1,306 @@
+FN Exported records
+VR 1.0
+PT J
+AU Ramirez Soto, L
+   Hernandez, JC
+   Vega, M
+AF Ramirez Soto, Laura
+   Hernandez, Julio C.
+   Vega, Marta
+TI Arbuscular mycorrhizal inoculation increases maize grain
+   yield in low-phosphorus soils of central Mexico
+SO JOURNAL OF FIELD AGRONOMY
+LA English
+DT Article
+DE arbuscular mycorrhizal fungi; maize; grain yield; phosphorus
+AB We evaluated the effect of inoculation with arbuscular mycorrhizal
+   fungi on maize under field conditions. Inoculated plots were compared
+   with non-inoculated controls in a randomized complete block design
+   with four replicates. Grain yield increased by 9% on average, and the
+   response was larger where available soil phosphorus was low.
+PY 2019
+VL 41
+IS 3
+BP 211
+EP 224
+DI 10.5555/rp.2019.0101
+UT W01
+ER
+
+PT J
+AU Okoth, P
+   Wanjiru, G
+AF Okoth, Peter
+   Wanjiru, Grace
+TI Field performance of commercial mycorrhizal inoculants in
+   rainfed maize
+SO AGRONOMY FOR DEVELOPMENT
+LA English
+DT Article
+DE inoculants; rainfed maize; yield
+AB We evaluated the effect of inoculation with arbuscular mycorrhizal
+   fungi on maize under field conditions. Inoculated plots were compared
+   with non-inoculated controls in a randomized complete block design
+   with four replicates. Grain yield increased by 10% on average, and the
+   response was larger where available soil phosphorus was low.
+PY 2021
+VL 12
+IS 1
+BP 33
+EP 47
+DI 10.5555/rp.2021.0202
+UT W02
+ER
+
+PT J
+AU Silva, AP
+   Costa, B
+   Lima, D
+AF Silva, Ana P.
+   Costa, Bruno
+   Lima, Daniela
+TI MAIZE YIELD RESPONSE TO RHIZOPHAGUS IRREGULARIS ACROSS
+   TWELVE ON-FARM TRIALS
+SO CROP SCIENCE REPORTS
+LA English
+DT Article
+DE Rhizophagus irregularis; on-farm trials; maize yield
+AB We evaluated the effect of inoculation with arbuscular mycorrhizal
+   fungi on maize under field conditions. Inoculated plots were compared
+   with non-inoculated controls in a randomized complete block design
+   with four replicates. Grain yield increased by 11% on average, and the
+   response was larger where available soil phosphorus was low.
+PY 2018
+VL 58
+IS 6
+BP 2890
+EP 2902
+DI 10.5555/rp.2018.0303
+UT W03
+ER
+
+PT J
+AU Mutua, J
+   Otieno, R
+   Kariuki, S
+AF Mutua, James
+   Otieno, Rose
+   Kariuki, Samuel
+TI Does inoculation with arbuscular mycorrhizal fungi pay?
+   Yield and profitability of maize in Kenya
+SO AGRONOMY FOR DEVELOPMENT
+LA English
+DT Article
+DE profitability; maize; mycorrhizal inoculation
+AB We evaluated the effect of inoculation with arbuscular mycorrhizal
+   fungi on maize under field conditions. Inoculated plots were compared
+   with non-inoculated controls in a randomized complete block design
+   with four replicates. Grain yield increased by 12% on average, and the
+   response was larger where available soil phosphorus was low.
+PY 2020
+VL 11
+IS 4
+BP 501
+EP 515
+DI 10.5555/rp.2020.0404
+UT W04
+ER
+
+PT J
+AU Zhang, W
+   Liu, M
+AF Zhang, Wei
+   Liu, Min
+TI MYCORRHIZAL COLONIZATION AND PHOSPHORUS UPTAKE OF MAIZE
+   UNDER REDUCED FERTILIZATION
+SO PLANT AND SOIL RESEARCH
+LA English
+DT Article
+DE phosphorus uptake; colonization; maize
+AB We evaluated the effect of inoculation with arbuscular mycorrhizal
+   fungi on maize under field conditions. Inoculated plots were compared
+   with non-inoculated controls in a randomized complete block design
+   with four replicates. Grain yield increased by 13% on average, and the
+   response was larger where available soil phosphorus was low.
+PY 2017
+VL 415
+IS 1
+BP 77
+EP 90
+DI 10.5555/rp.2017.0505
+UT W05
+ER
+
+PT J
+AU Martinez, A
+   Ruiz Ortega, S
+AF Martinez, Alejandro
+   Ruiz Ortega, Sofia
+TI Native versus commercial AMF inocula for maize production in
+   the Bajío
+SO JOURNAL OF FIELD AGRONOMY
+LA English
+DT Article
+DE native inoculum; AMF; maize production
+AB We evaluated the effect of inoculation with arbuscular mycorrhizal
+   fungi on maize under field conditions. Inoculated plots were compared
+   with non-inoculated controls in a randomized complete block design
+   with four replicates. Grain yield increased by 14% on average, and the
+   response was larger where available soil phosphorus was low.
+PY 2022
+VL 44
+IS 2
+BP 145
+EP 158
+DI 10.5555/rp.2022.0606
+UT W06
+ER
+
+PT J
+AU Novak, P
+   Horvat, I
+AF Novak, Petra
+   Horvat, Ivan
+TI Root colonization dynamics of arbuscular mycorrhizal fungi
+   in maize hybrids
+SO PLANT AND SOIL RESEARCH
+LA English
+DT Article
+DE root colonization; maize hybrids
+AB We evaluated the effect of inoculation with arbuscular mycorrhizal
+   fungi on maize under field conditions. Inoculated plots were compared
+   with non-inoculated controls in a randomized complete block design
+   with four replicates. Grain yield increased by 11% on average, and the
+   response was larger where available soil phosphorus was low.
+PY 2015
+VL 390
+IS 1
+BP 201
+EP 214
+DI 10.5555/rp.2015.1717
+UT W17
+ER
+
+PT J
+AU Garcia, E
+   Moreno, I
+AF Garcia, Elena
+   Moreno, Ivan
+TI Mycorrhizal inoculation of maize under contrasting tillage
+   systems
+SO JOURNAL OF FIELD AGRONOMY
+LA English
+DT Article
+DE tillage; mycorrhizal inoculation
+AB We evaluated the effect of inoculation with arbuscular mycorrhizal
+   fungi on maize under field conditions. Inoculated plots were compared
+   with non-inoculated controls in a randomized complete block design
+   with four replicates. Grain yield increased by 12% on average, and the
+   response was larger where available soil phosphorus was low.
+PY 2023
+VL 45
+IS 1
+BP 12
+EP 25
+DI 10.5555/rp.2023.1818
+UT W18
+ER
+
+PT J
+AU Andersson, K
+   Nilsson, E
+AF Andersson, Karl
+   Nilsson, Eva
+TI A meta-analysis of biofertilizer effects on cereal yields
+SO CROP SCIENCE REPORTS
+LA English
+DT Article
+DE meta-analysis; biofertilizers; cereals
+AB We pooled 214 field studies of biofertilizers on cereal yields with a
+   random-effects model. The mean response was positive but highly
+   heterogeneous among sites.
+PY 2022
+VL 62
+IS 3
+BP 1001
+EP 1019
+DI 10.5555/rp.2022.1919
+UT W19
+ER
+
+PT J
+AU Oliveira, C
+   Santos, P
+AF Oliveira, Carla
+   Santos, Pedro
+TI Phosphorus use efficiency of maize inoculated with Glomus
+   intraradices in Brazil
+SO PLANT AND SOIL RESEARCH
+LA English
+DT Article
+DE phosphorus use efficiency; Glomus intraradices
+AB We evaluated the effect of inoculation with arbuscular mycorrhizal
+   fungi on maize under field conditions. Inoculated plots were compared
+   with non-inoculated controls in a randomized complete block design
+   with four replicates. Grain yield increased by 14% on average, and the
+   response was larger where available soil phosphorus was low.
+PY 2018
+VL 425
+IS 1
+BP 99
+EP 112
+DI 10.5555/rp.2018.2020
+UT W20
+ER
+
+PT J
+AU Hassan, O
+   Ali, F
+AF Hassan, Omar
+   Ali, Fatima
+TI Grain yield and nutrient uptake of maize with dual
+   inoculation of rhizobacteria and mycorrhizal fungi
+SO APPLIED SOIL ECOLOGY NOTES
+LA English
+DT Article
+DE dual inoculation; rhizobacteria
+AB We evaluated the effect of inoculation with arbuscular mycorrhizal
+   fungi on maize under field conditions. Inoculated plots were compared
+   with non-inoculated controls in a randomized complete block design
+   with four replicates. Grain yield increased by 15% on average, and the
+   response was larger where available soil phosphorus was low.
+PY 2020
+VL 11
+IS 3
+BP 230
+EP 244
+DI 10.5555/rp.2020.2121
+UT W21
+ER
+
+PT J
+AU Banda, C
+   Phiri, M
+AF Banda, Chikondi
+   Phiri, Mercy
+TI Mycorrhizal inoculants in sub-Saharan maize systems:
+   evidence from farmer-managed trials
+SO AGRONOMY FOR DEVELOPMENT
+LA English
+DT Article
+DE sub-Saharan Africa; farmer-managed trials
+AB We evaluated the effect of inoculation with arbuscular mycorrhizal
+   fungi on maize under field conditions. Inoculated plots were compared
+   with non-inoculated controls in a randomized complete block design
+   with four replicates. Grain yield increased by 16% on average, and the
+   response was larger where available soil phosphorus was low.
+PY 2024
+VL 15
+IS 1
+BP 1
+EP 18
+DI 10.5555/rp.2024.2222
+UT W22
+ER
+
+EF

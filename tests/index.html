@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>ReviewPro — tests</title>
+<link rel="stylesheet" href="../css/labg-base.css">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/i18n.js"></script>
+<style>
+  body { padding: 20px; }
+  .t { font-family: var(--mono); font-size: .8rem; padding: 2px 0; }
+  .ok { color: var(--success); } .bad { color: var(--danger); font-weight: 700; }
+  h2 { margin: 18px 0 4px; font-size: 1rem; }
+</style>
+</head>
+<body>
+<h1>ReviewPro · <span id="sum">…</span></h1>
+<div id="out"></div>
+<script src="../js/core.js"></script>
+<script src="../js/art.js"></script>
+<script src="../js/plotkit.js"></script>
+<script src="../js/figstyle.js"></script>
+<script src="../js/figure.js"></script>
+<script src="../js/meta.js"></script>
+<script src="../js/screen.js"></script>
+<script src="../js/protocol.js"></script>
+<script src="../js/project.js"></script>
+<script src="../js/examples.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/records.js"></script>
+<script src="../js/dedup.js"></script>
+<script src="../js/samples.js"></script>
+<script src="../js/screening.js"></script>
+<script src="../js/fulltext.js"></script>
+<script src="../js/extract.js"></script>
+<script src="../js/appraisal.js"></script>
+<script src="../js/synth.js"></script>
+<script src="../js/zip.js"></script>
+<script src="../js/writing.js"></script>
+<script src="../js/report.js"></script>
+<script src="../js/home.js"></script>
+<script src="../js/demo.js"></script>
+<script src="r_reference_b1.js"></script>
+<script src="r_reference_b4.js"></script>
+<script src="r_reference_b6.js"></script>
+<script src="r_reference_b8.js"></script>
+<script>
+/* A tiny harness shared by every block's test file: check(), near(), section(). */
+window.TT = (function () {
+  const out = document.getElementById('out');
+  let pass = 0, fail = 0;
+  const api = {
+    section: t => out.insertAdjacentHTML('beforeend', `<h2>${t}</h2>`),
+    check(name, cond, detail) {
+      if (cond) pass++; else fail++;
+      out.insertAdjacentHTML('beforeend', `<div class="t ${cond ? 'ok' : 'bad'}">${cond ? '✓' : '✗'} ${name}${detail != null ? ' — ' + detail : ''}</div>`);
+    },
+    near: (a, b, tol) => Math.abs(a - b) <= (tol == null ? 1e-9 : tol),
+    rel: (a, b, tol) => Math.abs(a - b) <= (tol == null ? 1e-9 : tol) * Math.max(1e-300, Math.abs(b)),
+    done() {
+      document.getElementById('sum').innerHTML = `<span class="${fail ? 'bad' : 'ok'}">${pass} pasan, ${fail} fallan</span>`;
+      document.title = `ReviewPro — ${pass} ok, ${fail} fail`;
+      window.TEST_RESULT = { pass, fail };
+    },
+  };
+  return api;
+})();
+</script>
+<script src="tests1.js"></script>
+<script src="tests2.js"></script>
+<script src="tests3.js"></script>
+<script src="tests4.js"></script>
+<script src="tests5.js"></script>
+<script src="tests6.js"></script>
+<script src="tests7.js"></script>
+<script src="tests8.js"></script>
+<script src="tests9.js"></script>
+<script src="tests10.js"></script>
+<script>
+/* Every script the app loads must at least compile: the interface files are
+   not exercised by the engine tests, so a syntax error there would pass
+   unnoticed. The list is read from the app's own index.html. Needs the local
+   server (a page opened as file:// cannot fetch). */
+(async function () {
+  await Promise.all(window.TT_WAIT || []);
+  if (location.protocol === 'file:') { TT.section('Sintaxis'); TT.check('revisión de sintaxis omitida (abre las pruebas desde el servidor local)', true); TT.done(); return; }
+  TT.section('Sintaxis de todos los archivos de la app');
+  try {
+    const html = await fetch('../index.html', { cache: 'no-store' }).then(r => r.text());
+    const files = [...html.matchAll(/<script src="(js\/[^"]+)"/g)].map(m => m[1]);
+    for (const f of files) {
+      const src = await fetch('../' + f, { cache: 'no-store' }).then(r => r.text());
+      let err = null;
+      try { new Function(src); } catch (e) { err = e.message; }
+      TT.check(`${f} compila`, !err, err || undefined);
+    }
+  } catch (e) { TT.check('no se pudo leer index.html', false, e.message); }
+  TT.done();
+})();
+</script>
+</body>
+</html>

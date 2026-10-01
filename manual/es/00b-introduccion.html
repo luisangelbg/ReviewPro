@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · Manual de usuario · Preliminares e introducción</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<!-- reparte el contenido en hojas tamaño carta, con encabezados, números de página e índice -->
+<script src="../paginar.js"></script>
+<style>
+  figure.reducida { width: 80%; margin-left: auto; margin-right: auto; }
+</style>
+</head>
+<body>
+
+<!-- ====================================================================== CRÉDITOS -->
+<section class="preliminares creditos" id="creditos">
+  <div class="cred-titulo">ReviewPro</div>
+  <div class="cred-sub">Manual de usuario · Artículos de revisión y meta-análisis</div>
+
+  <dl>
+    <dt>Autor</dt><dd><b>Luis Ángel Barrera-Guzmán</b><br><span class="small">ORCID 0000-0001-8057-2583</span></dd>
+    <dt>Programa</dt><dd>ReviewPro, versión 1.0.0 (septiembre de 2026)</dd>
+    <dt>Manual</dt><dd>Primera edición en español, 2026. Describe la versión 1.0 del programa.</dd>
+    <dt>Licencia del programa</dt><dd>Licencia Pública General de GNU, versión 3 o posterior (GPL-3.0-or-later).</dd>
+    <dt>Derechos del manual</dt><dd>© 2026 Luis Ángel Barrera-Guzmán. Todos los derechos reservados.</dd>
+    <dt>Idioma de la interfaz</dt><dd>Español o inglés, con el botón <span class="ui">ES</span> · <span class="ui">EN</span> de la barra superior. En este manual los nombres de botones, campos y menús se escriben como aparecen en pantalla en español, por ejemplo <span class="ui">Empezar mi revisión →</span>.</dd>
+  </dl>
+
+  <h4>Cómo citar el programa</h4>
+  <div class="cita">Barrera-Guzmán, L. Á. (2026). <i>ReviewPro: plataforma en el navegador para artículos de revisión narrativos, exploratorios y sistemáticos y meta-análisis</i> (versión 1.0) [Programa de cómputo].</div>
+  <h4>Cómo citar este manual</h4>
+  <div class="cita">Barrera-Guzmán, L. Á. (2026). <i>ReviewPro. Manual de usuario</i> (1.ª ed.). Distribuido con ReviewPro, versión 1.0.</div>
+  <p class="small">El identificador de objeto digital (DOI) se añadirá a ambas citas cuando la versión 1.0 se archive. Mientras tanto, la cita del programa aparece en la sección <span class="ui">Cómo citar</span> de la portada de la app.</p>
+
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Privacidad</div>
+    <p>ReviewPro funciona por completo dentro de tu navegador. Los registros bibliográficos que importas, tus decisiones de cribado, los datos que extraes y el texto que escribes se guardan en tu computadora y <b>nunca se envían a ningún servidor</b>. Lo único que sale del programa es lo que tú descargas: el archivo del proyecto, las tablas, las figuras, el manuscrito y el paquete. El programa tampoco necesita internet: una vez copiado, funciona con la máquina desconectada.</p>
+  </div>
+
+  <p class="small" style="margin-top:0.4in;color:var(--gris)">Las ilustraciones, los diagramas y las capturas de pantalla de este manual son originales: se generaron con el propio programa o con código escrito para el manual. El proyecto de ejemplo con el que se ilustra —un meta-análisis del efecto de la inoculación con hongos micorrízicos arbusculares sobre el rendimiento de grano del maíz— es <b>ficticio</b>: los registros, los estudios, las revistas, los datos y los revisores se generaron para enseñar a usar el programa y no describen investigaciones reales. La única persona con nombre propio que aparece en él, Josiah Carberry, es la identidad de prueba pública de la documentación de ORCID; los identificadores DOI del ejemplo usan el prefijo 10.5555, reservado para pruebas.</p>
+</section>
+
+<!-- ====================================================================== ÍNDICE -->
+<section class="preliminares indice" id="indice" data-nueva-hoja>
+  <h1>Índice</h1>
+  <div class="indice-sub">Contenido general del manual</div>
+
+  <ol class="toc">
+    <li>
+      <div class="toc-cap"><span class="chip k0">P</span><a href="#como-leer">Cómo leer este manual</a><a class="pag" href="#como-leer"></a></div>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k0">In</span><a href="#cap-intro">Introducción a ReviewPro</a><a class="pag" href="#cap-intro"></a></div>
+      <ul>
+        <li><span class="n">I.1</span><a href="#si-1"><span class="t">¿Qué es ReviewPro?</span></a></li>
+        <li><span class="n">I.2</span><a href="#si-2"><span class="t">Cuatro tipos de revisión</span></a></li>
+        <li><span class="n">I.3</span><a href="#si-3"><span class="t">Cinco ideas que sostienen el manual</span></a></li>
+        <li><span class="n">I.4</span><a href="#si-4"><span class="t">Qué entra y qué sale</span></a></li>
+        <li><span class="n">I.5</span><a href="#si-5"><span class="t">Qué necesitas y cómo abrirlo</span></a></li>
+        <li><span class="n">I.6</span><a href="#si-6"><span class="t">Recorrido por la interfaz</span></a></li>
+        <li><span class="n">I.7</span><a href="#si-7"><span class="t">El proyecto de ejemplo del manual</span></a></li>
+        <li><span class="n">I.8</span><a href="#si-8"><span class="t">Cómo se recorre una revisión</span></a></li>
+        <li><span class="n">I.9</span><a href="#si-9"><span class="t">Lo que el programa no hace</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k1">1</span><a href="#cap-b1">Inicio: los tipos, los laboratorios y la teoría</a><a class="pag" href="#cap-b1"></a></div>
+      <ul>
+        <li><span class="n">1.1</span><a href="#s1-1"><span class="t">La portada y sus botones</span></a></li>
+        <li><span class="n">1.2</span><a href="#s1-2"><span class="t">Cuatro tipos de revisión, cuatro rutas</span></a></li>
+        <li><span class="n">1.3</span><a href="#s1-3"><span class="t">El asistente de cinco preguntas</span></a></li>
+        <li><span class="n">1.4</span><a href="#s1-4"><span class="t">El laboratorio de cribado priorizado</span></a></li>
+        <li><span class="n">1.5</span><a href="#s1-5"><span class="t">El laboratorio de meta-análisis</span></a></li>
+        <li><span class="n">1.6</span><a href="#s1-6"><span class="t">Qué incluye, cómo está hecha y la teoría</span></a></li>
+        <li><span class="n">1.7</span><a href="#s1-7"><span class="t">Cómo citar y las referencias</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k2">2</span><a href="#cap-b2">El protocolo: lo que se decide antes de buscar</a><a class="pag" href="#cap-b2"></a></div>
+      <ul>
+        <li><span class="n">2.1</span><a href="#s2-1"><span class="t">El proyecto: nuevo, abrir, guardar y ejemplos</span></a></li>
+        <li><span class="n">2.2</span><a href="#s2-2"><span class="t">El tipo de revisión</span></a></li>
+        <li><span class="n">2.3</span><a href="#s2-3"><span class="t">Título y pregunta</span></a></li>
+        <li><span class="n">2.4</span><a href="#s2-4"><span class="t">Criterios de elegibilidad</span></a></li>
+        <li><span class="n">2.5</span><a href="#s2-5"><span class="t">Desenlaces, moderadores y fuentes</span></a></li>
+        <li><span class="n">2.6</span><a href="#s2-6"><span class="t">Métodos</span></a></li>
+        <li><span class="n">2.7</span><a href="#s2-7"><span class="t">Equipo, financiamiento y cronograma</span></a></li>
+        <li><span class="n">2.8</span><a href="#s2-8"><span class="t">La revisión del protocolo y PRISMA-P</span></a></li>
+        <li><span class="n">2.9</span><a href="#s2-9"><span class="t">El registro y el documento del protocolo</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k3">3</span><a href="#cap-b3">Búsqueda y registros</a><a class="pag" href="#cap-b3"></a></div>
+      <ul>
+        <li><span class="n">3.1</span><a href="#s3-1"><span class="t">La estrategia por bloques de conceptos</span></a></li>
+        <li><span class="n">3.2</span><a href="#s3-2"><span class="t">La cadena en cinco sintaxis</span></a></li>
+        <li><span class="n">3.3</span><a href="#s3-3"><span class="t">La bitácora de búsqueda</span></a></li>
+        <li><span class="n">3.4</span><a href="#s3-4"><span class="t">Importar los registros</span></a></li>
+        <li><span class="n">3.5</span><a href="#s3-5"><span class="t">Los duplicados</span></a></li>
+        <li><span class="n">3.6</span><a href="#s3-6"><span class="t">Probar la estrategia</span></a></li>
+        <li><span class="n">3.7</span><a href="#s3-7"><span class="t">Resumen y exportación</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k4">4</span><a href="#cap-b4">Cribado de título y resumen</a><a class="pag" href="#cap-b4"></a></div>
+      <ul>
+        <li><span class="n">4.1</span><a href="#s4-1"><span class="t">Revisores y forma de trabajo</span></a></li>
+        <li><span class="n">4.2</span><a href="#s4-2"><span class="t">La pantalla de cribado</span></a></li>
+        <li><span class="n">4.3</span><a href="#s4-3"><span class="t">El orden priorizado y la regla de paro</span></a></li>
+        <li><span class="n">4.4</span><a href="#s4-4"><span class="t">Dos revisores en dos computadoras</span></a></li>
+        <li><span class="n">4.5</span><a href="#s4-5"><span class="t">Acuerdo y conciliación</span></a></li>
+        <li><span class="n">4.6</span><a href="#s4-6"><span class="t">El resumen y las descargas</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k5">5</span><a href="#cap-b5">Texto completo y diagrama PRISMA</a><a class="pag" href="#cap-b5"></a></div>
+      <ul>
+        <li><span class="n">5.1</span><a href="#s5-1"><span class="t">Obtener los textos completos</span></a></li>
+        <li><span class="n">5.2</span><a href="#s5-2"><span class="t">Estudios encontrados por otros métodos</span></a></li>
+        <li><span class="n">5.3</span><a href="#s5-3"><span class="t">La elegibilidad a texto completo</span></a></li>
+        <li><span class="n">5.4</span><a href="#s5-4"><span class="t">Informes y estudios</span></a></li>
+        <li><span class="n">5.5</span><a href="#s5-5"><span class="t">El diagrama de flujo PRISMA 2020</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k6">6</span><a href="#cap-b6">Extracción de datos y tamaños de efecto</a><a class="pag" href="#cap-b6"></a></div>
+      <ul>
+        <li><span class="n">6.1</span><a href="#s6-1"><span class="t">El formulario de extracción</span></a></li>
+        <li><span class="n">6.2</span><a href="#s6-2"><span class="t">Extraer un estudio</span></a></li>
+        <li><span class="n">6.3</span><a href="#s6-3"><span class="t">La calculadora de tamaños de efecto</span></a></li>
+        <li><span class="n">6.4</span><a href="#s6-4"><span class="t">Cuando falta la desviación estándar</span></a></li>
+        <li><span class="n">6.5</span><a href="#s6-5"><span class="t">La extracción doble</span></a></li>
+        <li><span class="n">6.6</span><a href="#s6-6"><span class="t">Las tablas finales</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k7">7</span><a href="#cap-b7">Riesgo de sesgo y certeza de la evidencia</a><a class="pag" href="#cap-b7"></a></div>
+      <ul>
+        <li><span class="n">7.1</span><a href="#s7-1"><span class="t">Las herramientas</span></a></li>
+        <li><span class="n">7.2</span><a href="#s7-2"><span class="t">Evaluar cada estudio</span></a></li>
+        <li><span class="n">7.3</span><a href="#s7-3"><span class="t">Conciliar los juicios</span></a></li>
+        <li><span class="n">7.4</span><a href="#s7-4"><span class="t">Los gráficos de riesgo de sesgo</span></a></li>
+        <li><span class="n">7.5</span><a href="#s7-5"><span class="t">La certeza de la evidencia con GRADE</span></a></li>
+        <li><span class="n">7.6</span><a href="#s7-6"><span class="t">El resumen de hallazgos</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k8">8</span><a href="#cap-b8">Síntesis y meta-análisis</a><a class="pag" href="#cap-b8"></a></div>
+      <ul>
+        <li><span class="n">8.1</span><a href="#s8-1"><span class="t">Datos y modelo</span></a></li>
+        <li><span class="n">8.2</span><a href="#s8-2"><span class="t">El resultado y el diagrama de bosque</span></a></li>
+        <li><span class="n">8.3</span><a href="#s8-3"><span class="t">Heterogeneidad y moderadores</span></a></li>
+        <li><span class="n">8.4</span><a href="#s8-4"><span class="t">Análisis de sensibilidad</span></a></li>
+        <li><span class="n">8.5</span><a href="#s8-5"><span class="t">Sesgo de publicación</span></a></li>
+        <li><span class="n">8.6</span><a href="#s8-6"><span class="t">Síntesis sin meta-análisis</span></a></li>
+        <li><span class="n">8.7</span><a href="#s8-7"><span class="t">Métodos y exportación</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k9">9</span><a href="#cap-b9">Escritura orientada</a><a class="pag" href="#cap-b9"></a></div>
+      <ul>
+        <li><span class="n">9.1</span><a href="#s9-1"><span class="t">El esqueleto del manuscrito</span></a></li>
+        <li><span class="n">9.2</span><a href="#s9-2"><span class="t">Citas y datos vivos</span></a></li>
+        <li><span class="n">9.3</span><a href="#s9-3"><span class="t">Frases con datos para empezar</span></a></li>
+        <li><span class="n">9.4</span><a href="#s9-4"><span class="t">El verificador de afirmaciones</span></a></li>
+        <li><span class="n">9.5</span><a href="#s9-5"><span class="t">La lista de verificación del reporte</span></a></li>
+        <li><span class="n">9.6</span><a href="#s9-6"><span class="t">Exportar el manuscrito</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k10">10</span><a href="#cap-b10">Figuras, informe y paquete</a><a class="pag" href="#cap-b10"></a></div>
+      <ul>
+        <li><span class="n">10.1</span><a href="#s10-1"><span class="t">El estado del proyecto</span></a></li>
+        <li><span class="n">10.2</span><a href="#s10-2"><span class="t">Las figuras</span></a></li>
+        <li><span class="n">10.3</span><a href="#s10-3"><span class="t">El informe</span></a></li>
+        <li><span class="n">10.4</span><a href="#s10-4"><span class="t">El paquete del proyecto</span></a></li>
+        <li><span class="n">10.5</span><a href="#s10-5"><span class="t">Antes de enviar</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip kx">Ap</span><a href="#cap-ap">Apéndices</a><a class="pag" href="#cap-ap"></a></div>
+      <ul>
+        <li><span class="n">A</span><a href="#ap-a"><span class="t">Los archivos que la app lee y escribe</span></a></li>
+        <li><span class="n">B</span><a href="#ap-b"><span class="t">Las reglas de decisión, reunidas</span></a></li>
+        <li><span class="n">C</span><a href="#ap-c"><span class="t">Glosario</span></a></li>
+        <li><span class="n">D</span><a href="#ap-d"><span class="t">Cuando algo no sale</span></a></li>
+        <li><span class="n">E</span><a href="#ap-e"><span class="t">Referencias</span></a></li>
+        <li><span class="n">F</span><a href="#ap-f"><span class="t">La herramienta: licencia y cómo citarla</span></a></li>
+      </ul>
+    </li>
+  </ol>
+</section>
+
+<!-- ====================================================================== CÓMO LEER -->
+<section class="preliminares" id="como-leer" data-nueva-hoja style="--acento: var(--b0)">
+  <h2 style="margin-top:0.2in">Cómo leer este manual</h2>
+  <p class="lead">El manual sigue el mismo orden que la app: diez bloques numerados que se recorren de izquierda a derecha en la barra de arriba. Cada capítulo explica un bloque y lleva su mismo número —el capítulo 5 es el Bloque 5, y sus secciones, figuras y tablas se numeran 5.1, 5.2…—. Cada uno empieza con la idea metodológica que el bloque necesita, sigue con lo que la pantalla hace y cómo se lee, y termina con los avisos que el bloque puede mostrar y qué hacer con ellos. Esta introducción no lleva número: sus secciones van como I.1, I.2…</p>
+
+  <h3>Un color para cada bloque</h3>
+  <p>El color del bloque aparece en la apertura de su capítulo, en el número de cada sección, en la pestaña del borde de la hoja y en el índice, y es el mismo de la franja de la portada. Así sabes de un vistazo en qué parte de la app estás.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:0.6in">Bloque</th><th style="width:1.45in">Nombre en la app</th><th>Qué hace</th></tr></thead>
+    <tbody>
+      <tr><td><span class="chip k1">1</span></td><td><span class="ui">Inicio</span></td><td>Portada, los cuatro tipos de revisión con su ruta, un asistente de cinco preguntas, dos laboratorios que calculan de verdad, la teoría en lenguaje claro y las referencias</td></tr>
+      <tr><td><span class="chip k2">2</span></td><td><span class="ui">Protocolo</span></td><td>El proyecto, la pregunta con su marco (PICO, PECO, PCC, SPIDER), los criterios, los desenlaces, las fuentes, los métodos, el equipo y el cronograma; la revisión con PRISMA-P y el registro en PROSPERO u OSF</td></tr>
+      <tr><td><span class="chip k3">3</span></td><td><span class="ui">Búsqueda</span></td><td>La cadena por bloques de conceptos, escrita en cinco sintaxis; la bitácora de cada fuente; la importación de seis formatos; los duplicados; la prueba con artículos conocidos</td></tr>
+      <tr><td><span class="chip k4">4</span></td><td><span class="ui">Cribado</span></td><td>Título y resumen con atajos de teclado, priorización por aprendizaje activo, reglas de paro, doble revisión ciega, kappa y conciliación</td></tr>
+      <tr><td><span class="chip k5">5</span></td><td><span class="ui">Texto completo</span></td><td>Dónde está cada PDF, lo encontrado por otras vías, la elegibilidad con su motivo de exclusión y el diagrama de flujo PRISMA 2020 armado con los conteos reales</td></tr>
+      <tr><td><span class="chip k6">6</span></td><td><span class="ui">Extracción</span></td><td>El formulario que diseñas, la extracción por revisor, la calculadora de tamaños de efecto, la comparación de la extracción doble y las tablas finales</td></tr>
+      <tr><td><span class="chip k7">7</span></td><td><span class="ui">Calidad y sesgo</span></td><td>Riesgo de sesgo por dominios con la lista agronómica (u otras herramientas), la conciliación, los gráficos de semáforo, la certeza GRADE y el resumen de hallazgos</td></tr>
+      <tr><td><span class="chip k8">8</span></td><td><span class="ui">Síntesis</span></td><td>El meta-análisis multinivel (o el promedio por estudio), la heterogeneidad, los moderadores, la sensibilidad y el sesgo de publicación; y la síntesis sin meta-análisis</td></tr>
+      <tr><td><span class="chip k9">9</span></td><td><span class="ui">Escritura</span></td><td>El manuscrito por secciones, con citas y datos vivos, el verificador de afirmaciones, la lista PRISMA o SANRA y la exportación a Word, HTML y Markdown</td></tr>
+      <tr><td><span class="chip k10">10</span></td><td><span class="ui">Informe</span></td><td>El estado del proyecto, las figuras numeradas, el informe que se lee solo y el paquete .zip que reproduce la revisión entera</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Tipos de recuadros</h3>
+  <div class="dos">
+    <div class="caja nota" style="margin:0"><div class="caja-t"><span class="ico">i</span>Nota</div><p>Aclaraciones y consejos prácticos que ahorran tiempo.</p></div>
+    <div class="caja importante" style="margin:0"><div class="caja-t"><span class="ico">!</span>Importante</div><p>Lo que puede cambiar tus conclusiones si se pasa por alto.</p></div>
+    <div class="caja teoria" style="margin:0"><div class="caja-t"><span class="ico">θ</span>Teoría en breve</div><p>La idea detrás de un paso o de un cálculo, sin fórmulas innecesarias.</p></div>
+    <div class="caja ejemplo" style="margin:0"><div class="caja-t"><span class="ico">▸</span>Ejemplo</div><p>Un caso con el proyecto de ejemplo del programa, paso a paso.</p></div>
+  </div>
+  <div class="caja regla" style="margin-top:0.18in">
+    <div class="caja-t"><span class="ico">✓</span>Regla de decisión</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:40%"><b>Si</b> el resultado cae en este caso…</td><td><b>entonces</b> esta es la lectura recomendada.</td></tr>
+    </tbody></table>
+    <p class="regla-pie">Son guías para decidir y para interpretar, no leyes: lo que sabes del tema, de los estudios y de tu pregunta siempre manda.</p>
+  </div>
+  <h3>Convenciones de escritura</h3>
+  <table class="compacta">
+    <thead><tr><th style="width:38%">Así se escribe</th><th>Significa</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ui">Empezar mi revisión →</span></td><td>Un botón, casilla o menú de la app, con su texto tal como aparece en pantalla en español.</td></tr>
+      <tr><td><span class="ruta">Bloque 8<span class="sep">›</span>Sesgo de publicación</span></td><td>Una ruta: abre lo primero y dentro busca lo segundo.</td></tr>
+      <tr><td><code>[@Cruz2021]</code>, <code>{{n.included}}</code>, <code>.reviewpro.json</code></td><td>Algo que se escribe tal cual: una cita, un dato vivo, un nombre de archivo o de campo.</td></tr>
+      <tr><td>lnRR · IC 95 % · IP · I² · τ²</td><td>El logaritmo de la razón de respuesta, el intervalo de confianza al 95 %, el intervalo de predicción, la heterogeneidad relativa y la varianza entre estudios.</td></tr>
+      <tr><td>+16.9 % · 0.156 · 1,480</td><td>Los efectos en lnRR se leen como cambio porcentual; los decimales llevan punto y los millares coma, como en la app.</td></tr>
+      <tr><td>registro · informe · estudio</td><td>Un <b>registro</b> es una ficha bibliográfica; un <b>informe</b>, un documento (artículo, tesis, resumen de congreso); un <b>estudio</b>, una investigación, que puede tener varios informes. PRISMA 2020 los distingue y la app también.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>Las cifras de este manual</div>
+    <p>Todos los resultados que aparecen en el texto se obtuvieron abriendo en la app el <b>proyecto de ejemplo completo</b> —el botón <span class="ui">Abrir el ejemplo completo</span> de la portada— y se copiaron de la pantalla. Si lo abres tú, debes ver los mismos números: el ejemplo es un archivo fijo y todos los cálculos son deterministas. Donde un capítulo usa otra cosa —el protocolo de ejemplo de una revisión exploratoria, los laboratorios del Bloque 1— lo dice antes de dar la cifra.</p>
+  </div>
+</section>
+
+<!-- ====================================================================== INTRODUCCIÓN -->
+<section class="capitulo" id="cap-intro" data-pestana="In" data-orden="0" style="--acento: var(--b0)">
+  <div class="cap-apertura">
+    <div class="cap-num">In</div>
+    <div class="cap-etiqueta">Introducción · Antes de los bloques</div>
+    <h1 data-corto="Introducción">Introducción a ReviewPro</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">Qué es el programa, qué tipos de revisión cubre, qué recibe y qué entrega, y cómo se recorre de principio a fin. Incluye las cinco ideas que sostienen todo lo demás —se decide antes de buscar, todo queda registrado, el modelo ordena pero no decide, el promedio no basta y la app orienta pero no redacta— y una lista honesta de lo que el programa no hace.</p>
+    <div class="cap-franja"><span class="k1"></span><span class="k2"></span><span class="k3"></span><span class="k4"></span><span class="k5"></span><span class="k6"></span><span class="k7"></span><span class="k8"></span><span class="k9"></span><span class="k10"></span></div>
+    <ul class="cap-contenido">
+      <li><b>I.1</b>¿Qué es ReviewPro?</li>
+      <li><b>I.2</b>Cuatro tipos de revisión</li>
+      <li><b>I.3</b>Cinco ideas que sostienen el manual</li>
+      <li><b>I.4</b>Qué entra y qué sale</li>
+      <li><b>I.5</b>Qué necesitas y cómo abrirlo</li>
+      <li><b>I.6</b>Recorrido por la interfaz</li>
+      <li><b>I.7</b>El proyecto de ejemplo del manual</li>
+      <li><b>I.8</b>Cómo se recorre una revisión</li>
+      <li><b>I.9</b>Lo que el programa no hace</li>
+    </ul>
+  </div>
+
+  <!-- I.1 -->
+  <h2 id="si-1"><span class="num">I.1</span>¿Qué es ReviewPro?</h2>
+  <p class="lead">ReviewPro es una plataforma para hacer un artículo de revisión <b>de la pregunta al manuscrito</b>: fija la pregunta y el protocolo antes de buscar, escribe las cadenas de búsqueda en la sintaxis de cada base, junta y depura los registros, ordena el cribado para que lo relevante aparezca primero, lleva la cuenta de cada exclusión hasta el diagrama PRISMA, extrae los datos y calcula los tamaños de efecto, evalúa el riesgo de sesgo y la certeza, combina los estudios —con o sin meta-análisis— y acompaña la escritura hasta un documento de Word con sus citas y sus referencias.</p>
+  <p>Todo ocurre dentro del navegador. No hay que instalar nada, no se necesita saber programar y los datos no salen de la computadora. Está escrito para investigadores, profesores y tesistas de las ciencias agrícolas y biológicas, pero sirve para cualquier campo: sabe que la mayoría de las revisiones agronómicas combinan experimentos de campo con varios sitios o ciclos por estudio, que las medias vienen con la DMS o el error estándar en vez de la desviación estándar, que el riesgo de sesgo de un ensayo de campo no se evalúa con la misma lista que un ensayo clínico, y que lo que el lector necesita saber no es solo si un tratamiento funciona en promedio, sino qué pasaría en un sitio nuevo.</p>
+  <figure>
+    <div class="marco"><img src="../img/in-portada.png" alt="La portada de ReviewPro: la barra superior con los diez bloques, el título «Del montón de artículos a una revisión que se sostiene», los botones de inicio y la ilustración de los registros que se reducen por un embudo hasta un diagrama de bosque"></div>
+    <figcaption><b>Figura I.1.</b> La portada de la app (Bloque 1). Arriba, la barra con los diez bloques; en el centro, los botones para empezar una revisión, elegir el tipo, probar los laboratorios, abrir el ejemplo completo y ver cómo citar.</figcaption>
+  </figure>
+
+  <!-- I.2 -->
+  <h2 id="si-2"><span class="num">I.2</span>Cuatro tipos de revisión</h2>
+  <p>No todas las revisiones piden lo mismo. La app distingue cuatro, y el tipo que eliges en el protocolo decide qué marco de pregunta se recomienda, qué guía de reporte se sigue, qué bloques son necesarios y cómo es el esqueleto del manuscrito (Grant y Booth 2009).</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.15in">Tipo</th><th>Cuándo conviene</th><th style="width:1.2in">Guía de reporte</th><th style="width:0.9in">Bloques necesarios</th><th style="width:0.75in">Tiempo típico</th></tr></thead>
+    <tbody>
+      <tr><td><b>Narrativa</b></td><td>Estado del arte, marco conceptual de un proyecto, tema emergente o muy amplio, debate entre escuelas.</td><td>SANRA (Baethge et al. 2019)</td><td>2, 3, 6, 8, 9, 10<br><span class="small">opcionales 4, 5, 7</span></td><td>1 a 3 meses</td></tr>
+      <tr><td><b>Exploratoria</b> <i>(scoping)</i></td><td>Mapear un campo antes de una revisión sistemática, identificar conceptos y métodos, detectar vacíos de investigación.</td><td>PRISMA-ScR (Tricco et al. 2018)</td><td>2 a 6, 8, 9, 10<br><span class="small">opcional 7</span></td><td>3 a 9 meses</td></tr>
+      <tr><td><b>Sistemática</b></td><td>Una pregunta focalizada (PICO o PECO) que pide una respuesta defendible y auditable.</td><td>PRISMA 2020 (Page et al. 2021)</td><td>2 a 10</td><td>6 a 18 meses</td></tr>
+      <tr><td><b>Meta-análisis</b></td><td>Una revisión sistemática cuyos estudios reportan efectos comparables (medias, DE y n; conteos; correlaciones).</td><td>PRISMA 2020 + certeza GRADE</td><td>2 a 10</td><td>6 a 18 meses</td></tr>
+    </tbody>
+  </table>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Teoría en breve · qué hace «sistemática» a una revisión</div>
+    <p>No es el número de artículos ni el tono. Una revisión es sistemática cuando otra persona, con tu protocolo, llegaría a los mismos estudios: la pregunta y los criterios se fijan antes de buscar, la búsqueda se documenta al carácter, cada exclusión tiene un motivo registrado y la calidad de cada estudio se evalúa con una herramienta declarada. La exploratoria comparte ese rigor en la búsqueda, pero su producto es un mapa, no una respuesta. El meta-análisis es una técnica estadística que se aplica <i>dentro</i> de una revisión sistemática cuando los efectos son comparables; sin la sistemática debajo, solo promedia con precisión una muestra sesgada.</p>
+  </div>
+
+  <!-- I.3 -->
+  <h2 id="si-3"><span class="num">I.3</span>Cinco ideas que sostienen el manual</h2>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:1.9in"><b>1 · Se decide antes de buscar</b></td><td>La pregunta, los criterios, los desenlaces, los moderadores y el plan de síntesis se escriben en el protocolo (Bloque 2) antes de ver un solo resultado. Es lo que impide que la revisión se acomode a lo que encuentra, y es lo primero que un revisor escéptico busca.</td></tr>
+      <tr><td><b>2 · Todo queda registrado</b></td><td>Cada cadena con su fecha, cada duplicado fusionado, cada decisión de cada revisor con su motivo, cada valor extraído y de dónde salió, cada juicio de sesgo. De ahí salen los números del diagrama PRISMA y el paquete que reproduce la revisión.</td></tr>
+      <tr><td><b>3 · El modelo ordena, no decide</b></td><td>La priorización del cribado aprende de tus decisiones y sube a la cima lo que se parece a lo que incluiste, pero no excluye nada. Parar antes de leer todo es una decisión tuya, con una regla declarada y una verificación.</td></tr>
+      <tr><td><b>4 · El promedio no basta</b></td><td>Un efecto medio positivo y significativo puede convivir con sitios donde el tratamiento pierde. Por eso la app reporta siempre la heterogeneidad y el intervalo de predicción, y la certeza GRADE por desenlace.</td></tr>
+      <tr><td><b>5 · La app orienta, no redacta</b></td><td>Dice qué necesita cada sección, ofrece las citas y los números del análisis y señala las afirmaciones sin respaldo, pero el texto interpretativo es tuyo. Nada en ReviewPro genera prosa por ti.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- I.4 -->
+  <h2 id="si-4"><span class="num">I.4</span>Qué entra y qué sale</h2>
+  <div class="dos">
+    <div>
+      <h3>Lo que la app lee</h3>
+      <ul>
+        <li>Exportaciones de bases de citas en <b>RIS</b>, <b>BibTeX</b>, formato <b>etiquetado</b> de dos letras, <b>MEDLINE</b>, <b>EndNote</b> de texto y <b>texto delimitado</b> (CSV o tabulado) con columnas que tú asignas.</li>
+        <li>Decisiones de cribado de otro revisor (archivo de intercambio).</li>
+        <li>Un proyecto <code>.reviewpro.json</code> guardado antes, propio o de un coautor.</li>
+        <li>Datos que escribes o pegas: medias, desviaciones, repeticiones, estadísticos de prueba, valores p.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Lo que la app entrega</h3>
+      <ul>
+        <li>El protocolo en HTML y los campos del registro en PROSPERO u OSF.</li>
+        <li>Las cadenas de búsqueda y su bitácora; registros únicos en RIS o CSV.</li>
+        <li>Las decisiones de cribado, el diagrama de flujo PRISMA 2020 y sus conteos.</li>
+        <li>Las tablas de características y de efectos (CSV), el resumen de hallazgos y los resultados del meta-análisis.</li>
+        <li>El manuscrito en Word, HTML y Markdown; los estudios incluidos en RIS y BibTeX.</li>
+        <li>Figuras en PNG, JPG o SVG, el informe y el paquete <code>.zip</code>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- I.5 -->
+  <h2 id="si-5"><span class="num">I.5</span>Qué necesitas y cómo abrirlo</h2>
+  <p>Un navegador moderno —cualquiera basado en Chromium o Firefox, de 2023 en adelante— y la carpeta del programa. Hay dos maneras de abrirlo:</p>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:2.1in"><b>Doble clic en <code>index.html</code></b></td><td>La forma normal. La app se abre desde el disco y funciona completa, sin conexión.</td></tr>
+      <tr><td><b>Doble clic en <code>Open ReviewPro.bat</code></b></td><td>En Windows, levanta un pequeño servidor local y abre <code>http://localhost:9550</code>. Solo hace falta si tu navegador bloquea algo al abrir archivos locales, o para correr la página de pruebas del programa.</td></tr>
+    </tbody>
+  </table>
+  <p>El proyecto se guarda solo en el almacenamiento del navegador cada vez que cambias algo; la barra del <span class="ruta">Bloque 2<span class="sep">›</span>Proyecto</span> dice a qué hora fue la última vez. Pero ese almacenamiento vive en <i>ese</i> navegador de <i>esa</i> computadora: si borras los datos de navegación, cambias de navegador o abres la app en otra máquina, no estará.</p>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>Guarda el archivo del proyecto</div>
+    <p>Descarga el proyecto con <span class="ui">⤓ Guardar archivo</span> al terminar cada sesión de trabajo y guárdalo junto a tu manuscrito. Es un solo archivo <code>.reviewpro.json</code> con todo: el protocolo, la búsqueda, cada decisión, la extracción, la evaluación, la síntesis y el texto. Con él retomas el trabajo en otra computadora, lo compartes con un coautor o lo adjuntas como material suplementario.</p>
+  </div>
+
+  <!-- I.6 -->
+  <h2 id="si-6"><span class="num">I.6</span>Recorrido por la interfaz</h2>
+  <figure>
+    <div class="marco"><img src="../img/in-interfaz.png" alt="La parte de arriba del Bloque 2 con el proyecto de ejemplo abierto: la barra superior con el logotipo, los botones del estudio de figuras, del idioma y del tema, los diez bloques; y debajo la apertura del bloque y la tarjeta del proyecto"></div>
+    <figcaption><b>Figura I.2.</b> La interfaz con el proyecto de ejemplo abierto en el Bloque 2. La barra superior se queda fija al desplazarte; cada bloque abre con su número, su título y una línea que dice para qué sirve, y se organiza en tarjetas numeradas.</figcaption>
+  </figure>
+  <table class="compacta">
+    <thead><tr><th style="width:1.8in">Elemento</th><th>Qué hace</th></tr></thead>
+    <tbody>
+      <tr><td><b>Logotipo</b></td><td>Vuelve a la portada (Bloque 1).</td></tr>
+      <tr><td><b>Paleta</b> (primer botón redondo)</td><td>Abre el <b>estudio de figuras</b>: paleta de colores, tipografía, grosores y fondo de todas las gráficas de la app a la vez, en pantalla y en lo que se exporta.</td></tr>
+      <tr><td><span class="ui">ES</span> · <span class="ui">EN</span></td><td>El idioma de toda la interfaz. El texto que tú escribes no se traduce; las exportaciones (informe, manuscrito) salen en el idioma activo.</td></tr>
+      <tr><td><b>Sol / luna</b></td><td>Tema claro u oscuro. Las figuras exportadas usan el tema que elijas en su menú, no el de la pantalla.</td></tr>
+      <tr><td><b>Barra de bloques</b></td><td>Los diez bloques. Todos están disponibles siempre: puedes volver atrás a corregir y los bloques siguientes se recalculan al abrirlos.</td></tr>
+      <tr><td><b>Botón ⤓ de cada figura</b></td><td>Aparece al pasar el cursor por la esquina de una gráfica: exporta esa figura en PNG, JPG o SVG, con su título y su nota.</td></tr>
+    </tbody>
+  </table>
+  <p>Al abrir un archivo con la dirección terminada en <code>#b5</code> (o cualquier otro número), la app va directo a ese bloque; así puedes guardar un marcador para seguir donde te quedaste.</p>
+
+  <!-- I.7 -->
+  <h2 id="si-7"><span class="num">I.7</span>El proyecto de ejemplo del manual</h2>
+  <p>El botón <span class="ui">Abrir el ejemplo completo</span> de la portada carga una revisión ya recorrida de punta a punta, la misma de todas las figuras de este manual. Si tienes un proyecto abierto, la app pregunta antes de reemplazarlo: guárdalo primero si lo quieres conservar.</p>
+  <div class="caja ejemplo">
+    <div class="caja-t"><span class="ico">▸</span>Ejemplo · micorrizas y rendimiento de maíz</div>
+    <p><b>Pregunta:</b> en maíz cultivado en campo, ¿qué efecto tiene la inoculación con hongos micorrízicos arbusculares sobre el rendimiento de grano, comparada con el mismo manejo sin inocular? Es un <b>meta-análisis</b> con el marco PICOS. <b>Búsqueda:</b> los seis archivos de prueba del Bloque 3 —tres bases de datos, un repositorio de tesis, un repositorio institucional y una búsqueda manual—, 44 registros identificados y 13 duplicados. <b>Cribado:</b> dos revisores con decisiones independientes y conciliadas. <b>Incluidos:</b> 20 estudios en 21 informes, con 41 comparaciones (sitios o ciclos) de rendimiento. <b>Resultado:</b> el rendimiento aumentó +16.9 % (IC 95 % +9.7 % a +24.6 %), con I² = 79 % y un intervalo de predicción de −12.7 % a +56.5 %; la certeza de la evidencia es <i>muy baja</i>. Tres estudios siguen con juicios de sesgo sin conciliar y el manuscrito es un borrador: así el ejemplo también enseña cómo se ven los pendientes.</p>
+  </div>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Los otros ejemplos</div>
+    <p>El Bloque 2 trae además protocolos de ejemplo para cada tipo de revisión (menú <span class="ui">Ejemplo</span> y botón <span class="ui">Cargar ejemplo</span>), que llenan solo el protocolo; el Bloque 3 carga los seis archivos de prueba con <span class="ui">Cargar los archivos de prueba</span>; y los laboratorios del Bloque 1 generan literaturas ficticias con una semilla. Todo es inventado y la app lo dice cada vez.</p>
+  </div>
+
+  <!-- I.8 -->
+  <h2 id="si-8"><span class="num">I.8</span>Cómo se recorre una revisión</h2>
+  <ol>
+    <li><b>Elige el tipo y escribe el protocolo</b> (Bloque 2). Revísalo con la lista PRISMA-P que la app lleva y regístralo antes de buscar.</li>
+    <li><b>Arma la búsqueda</b> (Bloque 3): los bloques de conceptos, la cadena en la sintaxis de cada base, la fecha de cada búsqueda. Corre la cadena en cada base, exporta los resultados e impórtalos. Revisa los duplicados.</li>
+    <li><b>Criba título y resumen</b> (Bloque 4) con dos revisores; mide el acuerdo en un piloto, sigue con la priorización y para con la regla declarada.</li>
+    <li><b>Consigue y evalúa los textos completos</b> (Bloque 5), con el motivo de cada exclusión. El diagrama PRISMA se arma solo.</li>
+    <li><b>Extrae los datos</b> (Bloque 6) con el formulario, calcula los efectos y compara la extracción doble.</li>
+    <li><b>Evalúa el riesgo de sesgo y la certeza</b> (Bloque 7).</li>
+    <li><b>Sintetiza</b> (Bloque 8): meta-análisis, moderadores, sensibilidad y sesgo de publicación, o la síntesis sin meta-análisis.</li>
+    <li><b>Escribe</b> (Bloque 9) sobre el esqueleto, con citas y datos vivos, hasta que el verificador y la lista de reporte queden limpios.</li>
+    <li><b>Entrega</b> (Bloque 10): figuras, informe y paquete.</li>
+  </ol>
+  <p>El orden no es una cárcel: una revisión real va y viene. Si al extraer descubres que un criterio era ambiguo, lo documentas como enmienda en el protocolo y sigues; si agregas un estudio por búsqueda manual, entra por el Bloque 5 y el diagrama lo cuenta aparte.</p>
+
+  <!-- I.9 -->
+  <h2 id="si-9"><span class="num">I.9</span>Lo que el programa no hace</h2>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:2.2in"><b>No busca en las bases por ti</b></td><td>Escribe la cadena en la sintaxis de cada base, pero la búsqueda se corre en el sitio de cada base, con tu acceso, y los resultados se importan. Así la búsqueda queda documentada tal como se hizo.</td></tr>
+      <tr><td><b>No lee los PDF</b></td><td>Guarda dónde está cada uno en tu computadora y lo abre, pero los datos se extraen leyendo, no se adivinan del archivo.</td></tr>
+      <tr><td><b>No decide qué se incluye</b></td><td>Ordena el cribado y sugiere juicios de GRADE a partir de los datos; la decisión y su justificación son siempre de los revisores.</td></tr>
+      <tr><td><b>No redacta</b></td><td>Ni la introducción ni la discusión. Da el esqueleto, las citas, los números y la revisión de afirmaciones.</td></tr>
+      <tr><td><b>No hace todos los meta-análisis</b></td><td>Cubre el de efectos aleatorios de dos y tres niveles con moderadores. No hace meta-análisis en red, de exactitud diagnóstica, bayesiano ni con datos individuales; si tu pregunta los pide, exporta la tabla de efectos y continúa con software estadístico especializado.</td></tr>
+      <tr><td><b>No sustituye el juicio experto</b></td><td>Un I² alto, un embudo asimétrico o una certeza baja son señales para pensar, no veredictos. El manual da reglas de decisión; lo que sabes de tu tema manda.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+</body>
+</html>
