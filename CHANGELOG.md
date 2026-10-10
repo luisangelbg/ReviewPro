@@ -1,5 +1,12 @@
 # Cambios
 
+## Después de la 1.0.0 — 2026-10-09
+
+- **Contraste de las teclas (WCAG 1.4.3):** la hoja de estilos de la app atenuaba toda tecla (`kbd { opacity: .8 }`),
+  también la «Ctrl K» de los dos botones de búsqueda del navegador, que quedaba en 4.13:1 sobre blanco (se piden
+  4.5:1). Sin la opacidad mide 6.72:1, y las teclas del cribado y del texto completo (Bloques 4 y 5) dejan también de
+  verse atenuadas. No cambia ningún cálculo; las 518 pruebas siguen pasando.
+
 ## 1.0.0 — 2026-10-01
 
 Primera versión publicada: los diez bloques completos y el manual en español.

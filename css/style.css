@@ -652,7 +652,8 @@ mark.ex { background: rgba(194, 65, 94, .22); }
 .b4-inc { background: var(--success-text); color: var(--on-primary); }
 .b4-may { background: var(--gold); color: #1d1d1d; }
 .b4-exc { background: var(--rose); color: var(--on-primary); }
-kbd { font-family: var(--mono); font-size: 0.72rem; border: 1px solid currentColor; border-radius: 4px; padding: 0 4px; opacity: .8; margin-right: 3px; }
+/* no opacity here: this rule reaches every key on the page (those of the navigation bar too) and a dimmed key lost AA contrast */
+kbd { font-family: var(--mono); font-size: 0.72rem; border: 1px solid currentColor; border-radius: 4px; padding: 0 4px; margin-right: 3px; }
 .b4-reasons { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; align-items: center; }
 .b4-reason { font: inherit; font-size: 0.76rem; border: 1px solid rgba(194, 65, 94, .4); color: var(--rose); background: transparent; border-radius: 999px; padding: 3px 10px; cursor: pointer; }
 .b4-reason:hover { background: rgba(194, 65, 94, .1); }
