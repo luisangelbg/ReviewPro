@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · User’s Manual · Chapter 4</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b4" data-pestana="B4" data-orden="4" style="--acento: var(--b4)">
+  <div class="cap-apertura">
+    <div class="cap-num">4</div>
+    <div class="cap-etiqueta">Block 4 · Screening</div>
+    <h1>Title and abstract screening</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">Each record is decided with one key. The order learns from your decisions so that relevant records come first; the stopping rule and its verification are documented; with two reviewers, each one reads blind, agreement is measured with kappa and disagreements are reconciled at the end. Everything that someone marked “include” or “maybe” goes on to full text.</p>
+    <ul class="cap-contenido">
+      <li><b>4.1</b>Reviewers and way of working</li>
+      <li><b>4.2</b>The screening screen</li>
+      <li><b>4.3</b>The prioritized order and the stopping rule</li>
+      <li><b>4.4</b>Two reviewers on two computers</li>
+      <li><b>4.5</b>Agreement and reconciliation</li>
+      <li><b>4.6</b>The summary and the downloads</li>
+    </ul>
+  </div>
+
+  <!-- 4.1 -->
+  <h2 id="s4-1"><span class="num">4.1</span>Reviewers and way of working</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b4-revisores.png" alt="The reviewers card of Block 4: the same-computer-by-turns mode, two reviewers with 30 decisions each, the prioritized reading order, the line summarizing what the protocol asks for and the collapsible list of words to highlight"></div>
+    <figcaption><b>Figure 4.1.</b> Two reviewers who screened the 30 records of the example on the same computer, by turns. Below, what the protocol asks for: two reviewers per record, a pilot of 50, a target kappa of 0.6 and stopping after 100 irrelevant records in a row.</figcaption>
+  </figure>
+  <p class="lead">Reviewers are created automatically from the protocol authors with the “Screening” role; <span class="ui">+ reviewer</span> adds another one and the ✕ removes a reviewer together with all of their decisions. The radio button marks the <b>active reviewer</b>: the one screening now.</p>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:2.1in"><span class="ui">Same computer, by turns</span></td><td>Each person chooses their name before starting. The screen never shows the others’ decisions; disagreements appear only in the reconciliation.</td></tr>
+      <tr><td><span class="ui">One computer each</span></td><td>Everybody imports the same files in Block 3 (or opens the same project), each reviewer screens on their own computer and exports their decisions; one person imports them all to reconcile (Section 4.4).</td></tr>
+      <tr><td><span class="ui">Reading order</span></td><td><b>Prioritized</b> (the model moves up what resembles the included records), <b>Random</b> or <b>Original</b> (the import order).</td></tr>
+      <tr><td><span class="ui">Words to highlight</span></td><td>The terms of the search strategy are highlighted automatically in the title, abstract and keywords. Here you add two comma-separated lists: <i>include</i> (for example, <i>field</i>) and <i>exclude</i> (<i>greenhouse</i>, <i>pot</i>), which are marked in another color. They speed up reading without deciding anything.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 4.2 -->
+  <h2 id="s4-2"><span class="num">4.2</span>The screening screen</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b4-pantalla.png" alt="The screening screen: the pilot label, 12 left, the title, authors, year, journal and DOI of a record on biochar, its abstract and keywords; the include, maybe, exclude and undo buttons; the exclusion criteria E1 to E6 with their key number; the note field; and on the right the records read, relevant and to read, the stopping-rule bar and the keyboard shortcuts"></div>
+    <figcaption><b>Figure 4.2.</b> A record on screen. A study on biochar does not assess mycorrhizae: it is excluded with the <kbd>6</kbd> key, which records reason E6. On the right, the progress and the stopping rule.</figcaption>
+  </figure>
+  <p>Each record shows its title, authors, year, journal, DOI, abstract and keywords. You decide with the buttons or the keyboard:</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.2in">Key</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>I</kbd></td><td>Include: goes on to full text.</td></tr>
+      <tr><td><kbd>M</kbd> or <kbd>?</kbd></td><td>Maybe: also goes on to full text; use it when the abstract is not enough to decide.</td></tr>
+      <tr><td><kbd>E</kbd></td><td>Exclude without a reason.</td></tr>
+      <tr><td><kbd>1</kbd> to <kbd>9</kbd></td><td>Exclude for the exclusion criterion with that number (E1, E2…), which is recorded as the reason.</td></tr>
+      <tr><td><kbd>Z</kbd> or <kbd>⌫</kbd></td><td>Undo the last decision.</td></tr>
+      <tr><td><kbd>N</kbd></td><td>Write a note for this record.</td></tr>
+    </tbody>
+  </table>
+  <p>The label at the top tells you which phase you are in: <b>pilot</b> until the number of pilot records set in the protocol is reached, a phase in which it is wise to measure agreement before going on. A record without an abstract warns you: <i>“No abstract: decide by the title or mark it "maybe".”</i></p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Decision rule · include, maybe or exclude</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>If</b> the record clearly meets the question</td><td><b>then</b> include.</td></tr>
+      <tr><td><b>If</b> the abstract does not let you know whether it meets it (it does not state the design, the site or the variable)</td><td><b>then</b> maybe: the full text will settle it. At title and abstract, when in doubt, do not exclude.</td></tr>
+      <tr><td><b>If</b> it clearly fails a criterion</td><td><b>then</b> exclude with that criterion’s key.</td></tr>
+      <tr><td><b>If</b> no exclusion criterion describes why it does not belong</td><td><b>then</b> your protocol needs one more criterion: add it as an amendment (the example added E6, “another topic”).</td></tr>
+    </tbody></table>
+  </div>
+
+  <!-- 4.3 -->
+  <h2 id="s4-3"><span class="num">4.3</span>The prioritized order and the stopping rule</h2>
+  <p>With the prioritized order, the model of the home-page lab (Section 1.4) learns from each decision and reorders what is left. The side panel counts the records <b>read</b>, the <b>relevant</b> ones (include or maybe) and those still <b>to read</b>, and carries the <b>stopping rule</b> declared in the protocol: the bar advances with the irrelevant records in a row (<i>“0 / 100 irrelevant in a row”</i>) or shows the knee slope ratio ρ.</p>
+  <p>When the rule is met, the app does not stop on its own. It says <i>“The rule is met. Before stopping, verify with a random sample of the unread: if a relevant one appears, screening goes on.”</i> and proposes a sample size (10% of the unread records, between 50 and 300). When you choose the size, it explains what it guarantees:</p>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Theory in brief · what a sample without relevant records says</div>
+    <p>If no relevant record appears in a random sample of <i>n</i> unread records, the proportion of relevant records left among the unread is, with 95% confidence, below the exact Clopper–Pearson upper limit for 0 of <i>n</i>. The app translates this into records: <i>“If no relevant record appears among n, with 95 % confidence at most k relevant remain among the N unread.”</i> A larger sample narrows the limit. If a relevant record appears during the verification, screening resumes.</p>
+  </div>
+  <p>When the verification ends without relevant records, the app says <i>“The sample found no relevant record: screening is stopped and documented.”</i>; the unread records are counted as such in the PRISMA diagram of Block 5, with the rule and the verification that back them. <span class="ui">Resume screening</span> undoes the stop if you decide to go on.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>In the example, the order hardly matters</div>
+    <p>The example has only 30 records, and 23 of them are relevant: with such a high prevalence, prioritization saves nothing and the stopping rule is never met. This is normal in a small, very precise search. Prioritization pays off in searches of thousands of records with 1 to 5% relevant ones, like those of the home-page lab.</p>
+  </div>
+
+  <!-- 4.4 -->
+  <h2 id="s4-4"><span class="num">4.4</span>Two reviewers on two computers</h2>
+  <p>In the <span class="ui">One computer each</span> mode, the <span class="ui">Exchange decisions</span> panel has two buttons. <span class="ui">⤓ Export my decisions</span> saves those of the active reviewer in a small file; whoever reconciles receives them and uses <span class="ui">Import another reviewer's decisions…</span>. If the reviewer did not exist, they are created with their name. You can also import another reviewer’s complete project file: the app takes only their decisions from it.</p>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>The records must be the same</div>
+    <p>Decisions are tied to each record by its DOI or, without a DOI, by its title and year. For the decisions from two computers to match, both reviewers must have imported the same files in Block 3—the safest way is for one of them to import, save the project and for the other to open that copy.</p>
+  </div>
+
+  <!-- 4.5 -->
+  <h2 id="s4-5"><span class="num">4.5</span>Agreement and reconciliation</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b4-conflicto.png" alt="The agreement and reconciliation card: 30 records in common, 93% agreement, include/exclude kappa 0.81 with its interval, kappa with maybe 0.83 and kappa in the pilot 0.81, all almost perfect; and one conflict to resolve on a tillage study, with each reviewer’s decision, one reviewer’s note and the final-decision buttons"></div>
+    <figcaption><b>Figure 4.3.</b> The agreement between the two reviewers of the example and a conflict to resolve: one included the study and the other excluded it for E1 with the note “parece de invernadero” (looks like a greenhouse study).</figcaption>
+  </figure>
+  <p>For each pair of reviewers, the table gives how many records they read in common, the percentage of agreement and three Cohen’s kappas with their 95% interval (Fleiss, Cohen and Everitt 1969): include versus exclude, the three categories with “maybe,” and the pilot. Each kappa is read on the Landis and Koch (1977) scale. With three or more reviewers, Fleiss’ kappa for all of them is added.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.3in">Kappa</th><th style="width:1.3in">Agreement</th><th>What to do</th></tr></thead>
+    <tbody>
+      <tr><td>≤ 0</td><td>poor</td><td rowspan="3">Stop: discuss the pilot disagreements, refine the wording of the criteria and repeat the pilot.</td></tr>
+      <tr><td>0.01–0.20</td><td>slight</td></tr>
+      <tr><td>0.21–0.40</td><td>fair</td></tr>
+      <tr><td>0.41–0.60</td><td>moderate</td><td>Review the criteria that divide you most before going on.</td></tr>
+      <tr><td>0.61–0.80</td><td>substantial</td><td rowspan="2">Go on; reconcile the disagreements at the end.</td></tr>
+      <tr><td>0.81–1.00</td><td>almost perfect</td></tr>
+    </tbody>
+  </table>
+  <p>If the pilot kappa falls below the protocol target, the app warns you: <i>“The pilot kappa (…) is below the protocol target (…). Discuss the pilot disagreements and sharpen the criteria before going on.”</i> Since “include” and “maybe” both send the record to full text, they do not count as a conflict with each other.</p>
+  <p>Each <b>conflict to resolve</b> shows what each reviewer decided, with their reason and note. The final decision is made with <span class="ui">Include</span>, <span class="ui">Maybe</span> or <span class="ui">exclude for…</span> a criterion, and who made it is recorded: <i>by consensus</i> or by one of the reviewers (the third one, if the protocol provides for it). Resolved conflicts go to <span class="ui">Resolved</span>, where they can be reopened.</p>
+  <div class="caja ejemplo">
+    <div class="caja-t"><span class="ico">▸</span>Example · two disagreements</div>
+    <p>The reviewers disagreed on 2 of 30 records (93% agreement, kappa = 0.81, almost perfect). In a tillage study, one included it and the other excluded it for E1 because it “looks like a greenhouse study”; on rereading the abstract, it was a field study: it was included by consensus. In a microbial diversity study, one marked it “maybe” and the other excluded it for E6: it was excluded for E6.</p>
+  </div>
+
+  <!-- 4.6 -->
+  <h2 id="s4-6"><span class="num">4.6</span>The summary and the downloads</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b4-resumen.png" alt="The summary card of Block 4: 30 records, 23 to full text, 7 excluded, 0 pending and 0 unread; the gain curve of the two reviewers and the table of reasons for exclusion with E6, E1 and E3"></div>
+    <figcaption><b>Figure 4.4.</b> The screening summary of the example: 23 records go on to full text and 7 are excluded, with their reasons (4 for another topic, 2 greenhouse studies and 1 review).</figcaption>
+  </figure>
+  <p>The five figures at the top count the records, those going on to full text, those excluded with a final decision, the <b>pending</b> ones (conflicts and records awaiting another reviewer’s reading) and the <b>unread</b> ones. The <b>gain curve per reviewer</b> shows how many relevant records each person found as they went along; the table shows the reasons for exclusion, which Block 5 will carry to the PRISMA diagram.</p>
+  <p><span class="ui">My decisions</span> lists those of the active reviewer, filterable by included, maybe and excluded, and each one can be changed from its menu. Two downloads: <span class="ui">⤓ Records to full text (.ris)</span>, to find and file them in your reference manager, and <span class="ui">⤓ All decisions (.csv)</span>, with each reviewer’s decision, reason and note and the final one: the audit trail a peer reviewer may ask for.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>The warnings of this block</div>
+    <p><i>“There are no records. Import and deduplicate them in Block 3.”</i>; <i>“No exclusion criteria in the protocol (Block 2): exclusions will carry no reason.”</i>; <i>“With a single reviewer there is no agreement to measure.”</i>; the pilot kappa below the target; the stopping rule met; and <i>“Done! You read every record.”</i></p>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · User’s Manual · Chapter 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+<style>
+  .formula { font-family: var(--mono); font-size: 8.6pt; background: var(--marino-suave); border-radius: 5px; padding: 0.07in 0.12in; margin: 0.08in 0; }
+</style>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b3" data-pestana="B3" data-orden="3" style="--acento: var(--b3)">
+  <div class="cap-apertura">
+    <div class="cap-num">3</div>
+    <div class="cap-etiqueta">Block 3 · Search</div>
+    <h1>Search and records</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">The strategy is built from concept blocks and written in the syntax of each kind of database; the search is run in each database and its results are imported here, in any of six formats. Duplicates are then merged, with your decision in the doubtful cases, and you check that the string finds the studies you already know exist. What comes out is the list of unique records to be screened in Block 4.</p>
+    <ul class="cap-contenido">
+      <li><b>3.1</b>The strategy by concept blocks</li>
+      <li><b>3.2</b>The string in five syntaxes</li>
+      <li><b>3.3</b>The search log</li>
+      <li><b>3.4</b>Importing the records</li>
+      <li><b>3.5</b>Duplicates</li>
+      <li><b>3.6</b>Testing the strategy</li>
+      <li><b>3.7</b>Summary and export</li>
+    </ul>
+  </div>
+
+  <!-- 3.1 -->
+  <h2 id="s3-1"><span class="num">3.1</span>The strategy by concept blocks</h2>
+  <p class="lead">A systematic search is built with <b>one block per concept</b> of the question—the population, the intervention, the outcome—and each block gathers every way an author might have written that concept: synonyms, spelling variants, scientific names, acronyms and terms in other languages. Within a block, terms are joined with OR; blocks are joined with AND.</p>
+  <figure>
+    <div class="marco"><img src="../img/en/b3-estrategia.png" alt="Card 1 of Block 3: three concept blocks—population or system, intervention and outcome—with their terms as chips, joined by AND; the empty NOT block; and the string written in the field-function syntax with its copy button"></div>
+    <figcaption><b>Figure 3.1.</b> The three blocks of the example and the resulting string in the field-function syntax. Truncation with an asterisk (<code>mycorrhiz*</code>) picks up <i>mycorrhiza</i>, <i>mycorrhizal</i>, <i>mycorrhizae</i>…</figcaption>
+  </figure>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:2.1in"><span class="ui">Propose blocks from the question</span></td><td>Creates one block for each element of the Block 2 question that is searched for—in PICO, the population, the intervention and the outcome—with the meaningful words of that element as the first terms. It is a draft: add the synonyms.</td></tr>
+      <tr><td><span class="ui">+ block</span></td><td>Adds an empty block; its name is up to you.</td></tr>
+      <tr><td><b>Field</b> of each block</td><td><span class="ui">Title, abstract and keywords</span> (the usual choice), <span class="ui">Title only</span> (more precise, less sensitive) or <span class="ui">All fields</span>.</td></tr>
+      <tr><td><b>Terms</b></td><td>Type them and confirm with <kbd>Enter</kbd>. A phrase of several words is put in quotation marks automatically. <code>*</code> truncates and <code>?</code> replaces a single character. Clicking a chip <b>turns it off</b> without deleting it (useful for testing); the ✕ deletes it.</td></tr>
+      <tr><td><b>NOT</b></td><td>Excluding terms, subtracted from everything else. Use it with care: a poorly thought-out NOT removes relevant studies that mention the excluded term in passing.</td></tr>
+    </tbody>
+  </table>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Theory in brief · why the comparator is almost never a block</div>
+    <p>An AND requires <i>all</i> blocks to appear in the record. Studies hardly ever name their control in the title or abstract (“uninoculated,” “absolute control”), so a comparator block would discard many relevant ones. The search must be <b>sensitive</b>—it must not lose studies—even if it brings noise: Block 4 screening takes care of the noise, but nothing recovers what the search did not bring in.</p>
+  </div>
+
+  <!-- 3.2 -->
+  <h2 id="s3-2"><span class="num">3.2</span>The string in five syntaxes</h2>
+  <p>Bibliographic databases do not speak the same language. The app writes the same blocks in five syntaxes, described by their form rather than by a product; the help pages of each database tell you which one it uses.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.8in">Syntax</th><th>What it looks like</th></tr></thead>
+    <tbody>
+      <tr><td><b>Field function</b></td><td><code>TITLE-ABS-KEY(maize OR "zea mays")</code></td></tr>
+      <tr><td><b>Tag with equals sign</b></td><td><code>TS=(maize OR "zea mays")</code></td></tr>
+      <tr><td><b>Bracketed tag</b></td><td><code>maize[tiab] OR "zea mays"[tiab]</code></td></tr>
+      <tr><td><b>Numbered lines with suffix</b></td><td><code>1 (maize or zea mays).ti,ab,kw.</code>—one line per block and a final line that combines them</td></tr>
+      <tr><td><b>No fields</b></td><td><code>maize OR "zea mays"</code>—for general academic search engines</td></tr>
+    </tbody>
+  </table>
+  <p>The <span class="ui">Copy</span> button puts the string on the clipboard so you can paste it into the database. Below it, the app warns you about what to watch for in each syntax; for example, <i>“General academic search engines do not truncate: the asterisk was removed. Write out the variants that matter (singular and plural).”</i></p>
+
+  <!-- 3.3 -->
+  <h2 id="s3-3"><span class="num">3.3</span>The search log</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b3-bitacora.png" alt="The search log of the example: six sources with their kind, their syntax, the search date, the hits at the source, the imported records with a match mark and the button to copy the string in that source’s syntax"></div>
+    <figcaption><b>Figure 3.2.</b> The search log of the example. For every source, the hits the database gave match the records imported (✓).</figcaption>
+  </figure>
+  <p>Every source declared in the protocol, and every source of an imported file, has its own row. Record there the <b>date</b> of the search and how many <b>hits</b> the database gave: PRISMA 2020 (item 6) and its extension for searches, PRISMA-S, ask you to report it. The <b>Imported</b> column counts the records that actually came in; if it does not match what the database gave, <b>≠</b> appears: many databases export in batches, and an incomplete export is the most common and most silent error in a review.</p>
+  <p>The <b>kind</b> of each source (database, grey literature or other methods) is the same as in Block 2 and can be changed here; the <b>syntax</b> is chosen per source, and <span class="ui">Copy string</span> copies the string written in that syntax. The most recent date in the log is the live field <code>{{search.date}}</code> of Block 9.</p>
+
+  <!-- 3.4 -->
+  <h2 id="s3-4"><span class="num">3.4</span>Importing the records</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b3-importar.png" alt="Card 2 of Block 3: the source selector, the buttons to choose files, load and download the test files, the drop zone for files and the table of the six imported files with their format, their source, their records and those without an abstract"></div>
+    <figcaption><b>Figure 3.3.</b> The six test files imported, each one in a different format. For the delimited table, the app states which column it recognized for each field.</figcaption>
+  </figure>
+  <ol>
+    <li>Run the string in the database and export <b>all</b> the results with title, authors, year, journal, abstract, keywords and DOI.</li>
+    <li>In the app, choose the <span class="ui">Source</span> the files come from.</li>
+    <li>Click <span class="ui">Choose files…</span> or drag them onto the dashed zone. The format is recognized automatically.</li>
+  </ol>
+  <table class="compacta">
+    <thead><tr><th style="width:2.2in">Format</th><th>How it is recognized</th></tr></thead>
+    <tbody>
+      <tr><td><b>RIS</b></td><td>Two-letter tags with hyphens: <code>TY  - … ER  -</code></td></tr>
+      <tr><td><b>BibTeX</b></td><td><code>@article{…}</code> entries, with LaTeX accents that are converted</td></tr>
+      <tr><td><b>Two-letter tagged text</b></td><td>Tags without a hyphen, of the <code>PT … ER</code> kind, exported by citation indexes</td></tr>
+      <tr><td><b>MEDLINE</b></td><td>Tags of the <code>PMID- …</code> kind</td></tr>
+      <tr><td><b>Percent tags</b></td><td><code>%T</code>, <code>%A</code>… from reference managers</td></tr>
+      <tr><td><b>Delimited table</b> (CSV or TSV)</td><td>Headers in Spanish or English; the separator (comma, semicolon or tab) and the columns are detected automatically</td></tr>
+    </tbody>
+  </table>
+  <p>The <b>No abstract</b> column counts the records that arrived without an abstract: they are screened on the title alone, and it is worth knowing how many there are. <span class="ui">Load the test files</span> imports the six fictitious files of the example, and <span class="ui">⤓ Download them</span> saves them so you can see what each format looks like inside.</p>
+
+  <!-- 3.5 -->
+  <h2 id="s3-5"><span class="num">3.5</span>Duplicates</h2>
+  <p>The same article appears in several databases, and the same experiment sometimes in a thesis, a conference paper and an article. The app merges them at two levels:</p>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:1.9in"><b>Certain matches</b></td><td>Same DOI, or the same normalized title with the same year (±1) and a compatible first author. They are merged automatically.</td></tr>
+      <tr><td><b>Pairs to decide</b></td><td>Nearly identical titles (their similarity is shown as a %), or identical ones with another year or another author. You decide them with <span class="ui">Same study</span> or <span class="ui">Different</span>.</td></tr>
+    </tbody>
+  </table>
+  <figure>
+    <div class="marco"><img src="../img/en/b3-duplicados.png" alt="Card 3 of Block 3: 43 records imported, 13 merged, 0 pairs to decide and 30 unique; below, two pairs already decided—the same title with different authors and years marked as different, and two titles 98% identical marked as the same study—with their differences highlighted"></div>
+    <figcaption><b>Figure 3.4.</b> The duplicates of the example. Above, a pair with the same title but other authors and another year: they are different studies. Below, a typo in the title (“compnents”) and a missing DOI: it is the same study.</figcaption>
+  </figure>
+  <p>In each pair, whatever differs between the two records is highlighted. When records are merged, the most complete one is kept and the others fill its gaps (a DOI, an abstract). <span class="ui">See the N automatic merges</span> shows what was merged automatically, in case you want to check it.</p>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>When in doubt, “Different”</div>
+    <p>A wrong merge loses a study forever: nobody sees it again. A duplicate that slips through, on the other hand, reappears in screening and is excluded there with the reason “duplicate.” That is why the app never merges a doubtful case on its own.</p>
+  </div>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Pairs and records</div>
+    <p>The merged card counts <b>records</b> removed, and its note counts <b>pairs</b>. They do not always agree: if a study appears in three databases, its three copies form three pairs, but two records are removed. In the example, 13 certain pairs and one confirmed pair removed 13 records: 43 imported, 30 unique.</p>
+  </div>
+
+  <!-- 3.6 -->
+  <h2 id="s3-6"><span class="num">3.6</span>Testing the strategy</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/en/b3-probar.png" alt="Card 4 of Block 3: how many records each block retrieves—27, 25 and 24—and the whole string—22 of 30; the list of four known studies and, for each one, that the search retrieves it; and the sensitivity of 4 of 4"></div>
+    <figcaption><b>Figure 3.5.</b> The string of the example, run on the 30 unique records: each block and the whole string, and the four known studies, all retrieved.</figcaption>
+  </figure>
+  <p>The string is run right here on the unique records, in title, abstract and keywords, to see how much each block cuts. It is normal for the string to retrieve fewer records than were imported: each database also searches fields that are not visible here, or its controlled vocabulary. Look at those records before concluding that they are surplus.</p>
+  <p>The most useful part of this card is the list of <b>studies the search must find</b>: those the team already knows before searching, one per line, by DOI or by title. If one of them does not appear, the strategy is missing a term, and the app reports the sensitivity against those known studies.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Decision rule · before accepting the search</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>If</b> a known study is not retrieved</td><td><b>then</b> read it, find how it names each concept and add that term to the failing block; run the search in the databases again.</td></tr>
+      <tr><td><b>If</b> the log shows ≠ for a source</td><td><b>then</b> the export was incomplete: export again in batches.</td></tr>
+      <tr><td><b>If</b> a source brings many records without an abstract</td><td><b>then</b> consider exporting again with the abstract, or be ready to read more full texts.</td></tr>
+    </tbody></table>
+  </div>
+
+  <!-- 3.7 -->
+  <h2 id="s3-7"><span class="num">3.7</span>Summary and export</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/en/b3-resumen.png" alt="Card 5 of Block 3: the records of each source, 43 identified, 13 duplicates removed and 30 records for screening; the chart of unique records by publication year; and the export buttons"></div>
+    <figcaption><b>Figure 3.6.</b> The search summary of the example: 43 records identified, 13 duplicates removed and 30 records for Block 4 screening.</figcaption>
+  </figure>
+  <p>Three downloads: the unique records in <b>RIS</b> (for a reference manager) and in <b>CSV</b> (for a spreadsheet), and the <b>search report</b> in Markdown, with the blocks, the string in each syntax, the log and the duplicates: it is the supplementary material that PRISMA 2020 asks for in item 7.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>The warnings of this block</div>
+    <p><i>“There are no concept blocks.”</i>, the truncation warning of the no-fields syntax, the ≠ mark in the log and the pairs to decide. As long as a pair remains undecided, its records go on to screening as different records.</p>
+  </div>
+</section>
+
+</body>
+</html>

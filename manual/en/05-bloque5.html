@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · User’s Manual · Chapter 5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b5" data-pestana="B5" data-orden="5" style="--acento: var(--b5)">
+  <div class="cap-apertura">
+    <div class="cap-num">5</div>
+    <div class="cap-etiqueta">Block 5 · Full text</div>
+    <h1>Full text and PRISMA diagram</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">What passed screening is read in full. Here you obtain each report and record where its PDF is stored, add the studies found by other routes, decide the eligibility of each report with the reason for each exclusion, group the reports that describe the same study, and get the PRISMA 2020 flow diagram with the actual counts of the whole review.</p>
+    <ul class="cap-contenido">
+      <li><b>5.1</b>Obtaining the full texts</li>
+      <li><b>5.2</b>Studies found by other methods</li>
+      <li><b>5.3</b>Full-text eligibility</li>
+      <li><b>5.4</b>Reports and studies</li>
+      <li><b>5.5</b>The PRISMA 2020 flow diagram</li>
+    </ul>
+  </div>
+
+  <!-- 5.1 -->
+  <h2 id="s5-1"><span class="num">5.1</span>Obtaining the full texts</h2>
+  <p class="lead">The PDFs stay on your computer: the app neither stores nor reads them, it only records their <b>path</b>. That way the project remains a small file that can be shared, and each PDF stays wherever you keep it.</p>
+  <figure>
+    <div class="marco"><img src="../img/en/b5-obtener.png" alt="Card 1 of Block 5: the base folder of the PDFs, four figures—24 to full text, 23 retrieved, 0 to obtain, 1 not retrieved—, the filters, the buttons to mark records as retrieved and to download the list of missing ones, and the table of reports with the suggested name of their PDF, the path, the status and the note"></div>
+    <figcaption><b>Figure 5.1.</b> The 24 reports that reached full text in the example: 23 retrieved and one that could not be obtained. Under each report, the suggested name of its PDF.</figcaption>
+  </figure>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:2in"><b>Base folder of the PDFs</b></td><td>Optional. If you set it (for example, <code>C:\Revision\PDF</code>), the file name is enough for each report.</td></tr>
+      <tr><td><b>Suggested name</b></td><td><code>Author_Year_Title.pdf</code>, with <span class="ui">copy name</span>: saving each PDF under that name keeps the folder tidy and lets the paths write themselves.</td></tr>
+      <tr><td><b>Status</b></td><td><i>to obtain</i>, <i>retrieved</i> or <i>not retrieved</i>. Those not retrieved are reported in PRISMA as “reports not retrieved.”</td></tr>
+      <tr><td><b>Note or request</b></td><td>To keep track of the requests: “asked the authors on 03/03/2027; no reply.”</td></tr>
+      <tr><td><span class="ui">Mark those with a path as retrieved</span></td><td>Changes to <i>retrieved</i> every report that already has a path written.</td></tr>
+      <tr><td><span class="ui">⤓ List of the missing ones (.csv)</span></td><td>Title, authors, year, journal, DOI, file name and note of those still missing: the list for the library or for writing to the authors.</td></tr>
+    </tbody>
+  </table>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Opening the PDF from the app</div>
+    <p>The <span class="ui">open</span> link works when the app is opened by double-clicking <code>index.html</code>. If you open it from the local server, the browser blocks links to files on disk for security reasons; in that case copy the path and open it from the file explorer.</p>
+  </div>
+
+  <!-- 5.2 -->
+  <h2 id="s5-2"><span class="num">5.2</span>Studies found by other methods</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b5-otros.png" alt="Card 2 of Block 5: the form with title, authors, year, DOI and how it was found, the button to add to full text and a study from Zambia added by backward citation searching"></div>
+    <figcaption><b>Figure 5.2.</b> A technical report on Zambia, found in the reference list of an included study.</figcaption>
+  </figure>
+  <p>What turns up when checking the references of the included studies, looking up who cites them, asking experts or browsing organizations’ websites comes in here, with its title, authors, year, DOI and the route: <i>Backward citation searching</i>, <i>Forward citation searching</i>, <i>Contact with experts</i>, <i>Website or organization</i> or <i>Other route</i>. These reports go straight to full text—they are not screened on title and abstract—and the diagram counts them in the other-methods column, with their route.</p>
+
+  <!-- 5.3 -->
+  <h2 id="s5-3"><span class="num">5.3</span>Full-text eligibility</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b5-elegibilidad.png" alt="Card 3 of Block 5 with a report to assess: its title and institutional author, the notice that it has no PDF path, the checkboxes of the five inclusion criteria, the include button, the required exclusion-reason menu, the exclude button, the note, the menu to link it to another study, the agreement between reviewers and the conflicts"></div>
+    <figcaption><b>Figure 5.3.</b> A technical report to assess. The checkboxes of the inclusion criteria guide the reading; to exclude, you must choose the reason.</figcaption>
+  </figure>
+  <p>The reviewers are the same as in screening, and the <span class="ui">Reviewer</span> menu says who is assessing. For each retrieved report, the card shows the link to its PDF and the list of <b>inclusion criteria</b> with checkboxes: ticking them while you read makes it clear which one fails. Then you decide:</p>
+  <ul>
+    <li><span class="ui">Include</span> (key <kbd>I</kbd>).</li>
+    <li><span class="ui">Exclude</span>, with a <b>required</b> reason: an exclusion criterion (keys <kbd>1</kbd>–<kbd>9</kbd>) or <i>Other reason (write it in the note)</i>. PRISMA 2020 asks you to report why each full-text report was excluded, and the diagram counts them.</li>
+  </ul>
+  <p>Below, the agreement between reviewers at full text (reports in common, percentage and kappa) and the <b>conflicts</b>, which are resolved as in screening.</p>
+
+  <!-- 5.4 -->
+  <h2 id="s5-4"><span class="num">5.4</span>Reports and studies</h2>
+  <p>The same experiment may be published in a thesis and later in an article, or in two articles that report different variables. PRISMA 2020 counts included <b>studies</b> and, separately, their <b>reports</b>. The <span class="ui">It is another report of the study of…</span> menu links a report to another one already included; the normal choice is <i>— a study of its own —</i>. Linked reports form a single study in extraction (Block 6), risk of bias (Block 7) and synthesis (Block 8): that way an experiment does not weigh twice in the meta-analysis.</p>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>Link the reports of the same experiment</div>
+    <p>Counting the same experiment twice—for example, the thesis and the article that came out of it—inflates the precision of the pooled effect and gives that experiment double weight. The clues: the same authors, the same site, the same years and identical means. When in doubt, write to the authors.</p>
+  </div>
+  <div class="caja ejemplo">
+    <div class="caja-t"><span class="ico">▸</span>Example · 21 reports, 20 studies</div>
+    <p>Of the 23 reports assessed, 2 were excluded (one greenhouse study, E1, and one without extractable data, E4) and 21 were included. Two of them describe the same field experiment, so they were linked: the review includes <b>20 studies in 21 reports</b>.</p>
+  </div>
+
+  <!-- 5.5 -->
+  <h2 id="s5-5"><span class="num">5.5</span>The PRISMA 2020 flow diagram</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b5-flujo.png" alt="The PRISMA 2020 flow diagram of the example, with four figures at the top—20 studies included in 21 reports, 2 excluded at full text, 1 not retrieved, 0 pending—and the notice that every count adds up; the diagram has two columns, databases and other methods, with the identification, screening and included phases"></div>
+    <figcaption><b>Figure 5.4.</b> The diagram of the example. On the left, 33 records from three databases; on the right, 11 from other methods, 4 of which had already been found in the databases. Everything ends in 20 studies included in 21 reports.</figcaption>
+  </figure>
+  <p>The diagram is built automatically from the actual counts of Blocks 3, 4 and 5 and follows the PRISMA 2020 template with its two columns: <b>identification via databases and registers</b> and <b>via other methods</b> (Page et al. 2021). In a scoping review it is titled as a PRISMA-ScR diagram. Each box counts:</p>
+  <table class="compacta">
+    <thead><tr><th style="width:2.1in">Box</th><th>Where it comes from</th></tr></thead>
+    <tbody>
+      <tr><td><b>Records identified</b></td><td>The records imported from each source (Block 3), according to the kind of their source; under other methods, also what was added in Section 5.2, with its route.</td></tr>
+      <tr><td><b>Removed before screening</b></td><td>The duplicates; in the other-methods column, “already found in databases.”</td></tr>
+      <tr><td><b>Records screened and excluded</b></td><td>The final decisions of Block 4, with the records left unread after the stopping rule, if any.</td></tr>
+      <tr><td><b>Reports sought and not retrieved</b></td><td>Section 5.1.</td></tr>
+      <tr><td><b>Assessed and excluded, with reasons</b></td><td>Section 5.3, one line per reason.</td></tr>
+      <tr><td><b>Studies and reports included</b></td><td>Section 5.4.</td></tr>
+    </tbody>
+  </table>
+  <p>At the top, four figures—studies included, excluded at full text, not retrieved and pending—and a check that everything adds up: <i>“Every count is complete and adds up.”</i>, or what is missing. The figure is exported as PNG, JPG or SVG with the ⤓ button in its corner, and <span class="ui">⤓ Diagram counts (.md)</span> downloads the numbers in a table.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Decision rule · before accepting the diagram as final</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>If</b> there are pending items</td><td><b>then</b> the diagram is provisional: screening decisions, reports to obtain or assessments to do are missing, and the app says how many of each.</td></tr>
+      <tr><td><b>If</b> the app warns that a route does not add up</td><td><b>then</b> some record was left without a decision at some step; check that block.</td></tr>
+      <tr><td><b>If</b> there are full-text exclusions without a reason</td><td><b>then</b> give them one: PRISMA 2020 asks for it (item 16b).</td></tr>
+      <tr><td><b>If</b> a record from a repository falls in the databases column</td><td><b>then</b> check the kind of its source in Block 2 or in the Block 3 search log.</td></tr>
+    </tbody></table>
+  </div>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>The warnings of this block</div>
+    <p><i>“No record has passed screening yet (Block 4).”</i>; <i>“No PDF path: note it above to open it from here.”</i>; <i>“Choose the reason for exclusion”</i>; <i>“You assessed every retrieved report.”</i>; and those of the diagram check: routes that do not add up, records without a final decision, reports neither obtained nor given up as lost, assessments pending or in conflict, and exclusions without a reason.</p>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · User’s Manual · Chapter 6</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+<style>
+  .formula { font-family: var(--mono); font-size: 8.8pt; background: var(--marino-suave); border-radius: 5px; padding: 0.07in 0.12in; margin: 0.08in 0; }
+</style>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b6" data-pestana="B6" data-orden="6" style="--acento: var(--b6)">
+  <div class="cap-apertura">
+    <div class="cap-num">6</div>
+    <div class="cap-etiqueta">Block 6 · Extraction</div>
+    <h1>Data extraction and effect sizes</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">A form that you design, filled in per study and per reviewer; a calculator that turns what the paper reports—means with SD, SE, CI or CV; the ANOVA LSD, SED or CV; medians; t, F, p or counts—into the effect size with its variance; the comparison of the double extraction; and the final tables that the synthesis and the manuscript will use.</p>
+    <ul class="cap-contenido">
+      <li><b>6.1</b>The extraction form</li>
+      <li><b>6.2</b>Extracting a study</li>
+      <li><b>6.3</b>The effect size calculator</li>
+      <li><b>6.4</b>When the standard deviation is missing</li>
+      <li><b>6.5</b>Double extraction</li>
+      <li><b>6.6</b>The final tables</li>
+    </ul>
+  </div>
+
+  <!-- 6.1 -->
+  <h2 id="s6-1"><span class="num">6.1</span>The extraction form</h2>
+  <p class="lead">The first card is collapsed: <span class="ui">1 · Extraction form (click to edit it)</span>. The form starts from a template for the review type and adds as fields the <b>moderators</b> you declared in the protocol, so that they are extracted from the start.</p>
+  <figure>
+    <div class="marco"><img src="../img/en/b6-formulario.png" alt="Card 1 of Block 6 open: the table of form fields with their section, name, type, options, whether they are required and the buttons to move them up or remove them"></div>
+    <figcaption><b>Figure 6.1.</b> The form of the example, grouped into sections: general data, design, context, data quality and moderators.</figcaption>
+  </figure>
+  <table class="compacta">
+    <thead><tr><th style="width:1.7in">Field type</th><th>What for</th></tr></thead>
+    <tbody>
+      <tr><td>Short text · Long text</td><td>Country, cultivar; description of the treatment and of the control.</td></tr>
+      <tr><td>Number</td><td>Replicates, years, soil phosphorus, rate. Numeric fields can be moderators of a meta-regression.</td></tr>
+      <tr><td>List (one option) · List (several options)</td><td>Experimental design, publication type, data source; options are separated by semicolons. Lists can be subgroup moderators.</td></tr>
+      <tr><td>Yes / no</td><td>A condition that is met or not.</td></tr>
+      <tr><td>Coordinates (lat, lon)</td><td>The site of the experiment, in decimal degrees.</td></tr>
+    </tbody>
+  </table>
+  <p>Each field has its <b>section</b>, can be <b>required</b> (marked with * when extracting) and is reordered with ↑. <span class="ui">+ field</span> adds one; <span class="ui">Back to the template</span> discards the changes. Test the form on two or three studies before extracting all of them: it is the pilot that PRISMA-P asks for, and changing a field later forces you to go back to every paper.</p>
+
+  <!-- 6.2 -->
+  <h2 id="s6-2"><span class="num">6.2</span>Extracting a study</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b6-extraer.png" alt="Card 2 of Block 6: on the left, the list of included studies with two progress dots each; on the right, the study Kaur 2014 with its general data, design, context, data quality and moderators filled in"></div>
+    <figcaption><b>Figure 6.2.</b> The extraction of a study. In the list, each study has one dot per reviewer: orange while something is missing, green when its extraction is complete.</figcaption>
+  </figure>
+  <p>On the left are the included studies from Block 5, each with author and year; linked reports appear together as a single study. When you choose one, the form is filled in for the active <span class="ui">Reviewer</span>, at the top right. Everything is saved as you type.</p>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>Record where each number comes from</div>
+    <p>The note field of each effect asks <i>where each number came from: table, figure, page</i>. When another reviewer, a referee or you yourself six months from now want to check a value, that note saves rereading the whole paper. If the number was digitized from a figure, say so: it is less precise than one from a table.</p>
+  </div>
+
+  <!-- 6.3 -->
+  <h2 id="s6-3"><span class="num">6.3</span>The effect size calculator</h2>
+  <p>At the foot of the study is the table of <b>effect sizes</b>: one row per comparison—a site, a season, a rate—with its outcome, its result and the buttons to edit, duplicate or remove it. <span class="ui">+ effect</span> opens the editor.</p>
+  <figure class="media">
+    <div class="marco"><img src="../img/en/b6-efecto.png" alt="The editor of an effect: outcome grain yield, comparison site 1, what the paper reports means with dispersion per group, measure response ratio; the treatment and control data with mean, n, dispersion type and value; the result with the effect, its standard error, its interval and the percentage change, and the calculation steps"></div>
+    <figcaption><b>Figure 6.3.</b> The first site of Kaur 2014: means of 5.683 and 6.39 t/ha with their standard deviations and three replicates. The response ratio is −0.1173 (SE 0.1531), that is, −11.1%; below, the calculation steps.</figcaption>
+  </figure>
+  <p>Each row has the <b>outcome</b> (those of the protocol), the <b>comparison</b> (site, season or rate), an optional subgroup or moderator note, <b>what the paper reports</b> and the <b>effect measure</b>. Depending on what is reported, the calculator asks for different data:</p>
+  <table class="compacta">
+    <thead><tr><th style="width:2.3in">What the paper reports</th><th>What it asks for and how it converts</th></tr></thead>
+    <tbody>
+      <tr><td><b>Means with dispersion per group</b></td><td>Mean and n of each group, with the dispersion as standard deviation, variance, standard error (SD = SE·√n), confidence interval of the mean (SD = √n·(U − L)/(2·t), with t if n &lt; 60) or coefficient of variation (SD = CV·mean/100).</td></tr>
+      <tr><td><b>Means with the ANOVA LSD, SED, SEM or CV</b></td><td>The pooled SD of the experiment: from the LSD (with the error degrees of freedom, or deduced from the design—completely randomized, blocks or Latin square—and its α), from the SED (SD = SED·√(r/2)), the SEM (SD = SEM·√r), the CV of the experiment or the error mean square (SD = √MSE).</td></tr>
+      <tr><td><b>Medians with quartiles or range</b></td><td>Estimates the mean and SD (Wan et al. 2014).</td></tr>
+      <tr><td><b>Two-group t statistic</b>, <b>F with 1 df</b>, <b>two-sided p value</b>, <b>CI of the mean difference</b></td><td>The standardized mean difference (Hedges’ g), with the n of each group; for F and p, you supply the sign.</td></tr>
+      <tr><td><b>Counts (2×2 table)</b></td><td>Risk ratio, odds ratio or risk difference.</td></tr>
+      <tr><td><b>Correlation</b></td><td>Fisher’s z, with the n.</td></tr>
+      <tr><td><b>Effect already computed</b></td><td>The effect with its standard error or variance, as the paper gives it.</td></tr>
+    </tbody>
+  </table>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Theory in brief · the response ratio</div>
+    <div class="formula">lnRR = ln(x̄<sub>T</sub> / x̄<sub>C</sub>) &nbsp;&nbsp;·&nbsp;&nbsp; v = SD<sub>T</sub>² / (n<sub>T</sub> x̄<sub>T</sub>²) + SD<sub>C</sub>² / (n<sub>C</sub> x̄<sub>C</sub>²) &nbsp;&nbsp;·&nbsp;&nbsp; % change = 100·(e<sup>lnRR</sup> − 1)</div>
+    <p>The response ratio (Hedges et al. 1999) measures the proportional change of the treatment relative to the control, so it compares well across sites with very different yields. It needs positive means of a variable with a natural zero. Its variance grows when replicates are few or the experiment is variable: that is why small trials weigh less in Block 8.</p>
+  </div>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Decision rule · which effect to extract from a study</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>If</b> the study reports several sites, seasons or rates separately</td><td><b>then</b> one row for each: the multilevel model of Block 8 knows they come from the same study.</td></tr>
+      <tr><td><b>If</b> it also reports the average of all of them</td><td><b>then</b> do not extract it as another row: it would count the same data twice.</td></tr>
+      <tr><td><b>If</b> it has several treatments against a single control</td><td><b>then</b> one row per treatment, and note it: they share the control, and their effects are not independent.</td></tr>
+      <tr><td><b>If</b> there is only a figure</td><td><b>then</b> digitize the means and the bars, and mark the source as “digitized figure.”</td></tr>
+      <tr><td><b>If</b> there is no measure of dispersion at all</td><td><b>then</b> write to the authors; if they do not reply, use the imputation of Section 6.4.</td></tr>
+    </tbody></table>
+  </div>
+
+  <!-- 6.4 -->
+  <h2 id="s6-4"><span class="num">6.4</span>When the standard deviation is missing</h2>
+  <p>Many agronomic experiments publish means without their dispersion. The checkbox of the final tables card, <span class="ui">Impute missing SDs with the mean coefficient of variation of the other groups</span>, estimates them with the mean CV of the studies that do report it (Lajeunesse 2013) and shows that CV—in the example, 12.9%. The imputed rows are flagged as such, and Block 8 always runs a sensitivity analysis without them.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Imputing is a protocol decision</div>
+    <p>Declare it in the protocol (sensitivity analysis “exclude studies with imputed dispersion”), report it in the methods and check whether the result changes without the imputed rows. If it changes a lot, the result depends on data that do not exist: say so.</p>
+  </div>
+
+  <!-- 6.5 -->
+  <h2 id="s6-5"><span class="num">6.5</span>Double extraction</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b6-doble.png" alt="Card 3 of Block 6: the study Rossi 2013 with a discrepancy in the experimental design, split plots according to one reviewer and randomized complete blocks according to the other, each value as a button"></div>
+    <figcaption><b>Figure 6.4.</b> A discrepancy in the double extraction: each reviewer read a different design. You go back to the paper and choose the correct value with one click.</figcaption>
+  </figure>
+  <p>When the protocol calls for duplicate extraction, each reviewer fills in their own form without seeing the other’s. This card shows <b>only the fields where they differ</b>, study by study, with each reviewer’s value as a button: go back to the paper and choose the correct one. Effect sizes are compared by outcome, comparison and value. While a field has differences, the characteristics table marks it as pending.</p>
+  <div class="caja ejemplo">
+    <div class="caja-t"><span class="ico">▸</span>Example · three discrepancies</div>
+    <p>The two reviewers of the example differed on three values out of 20 studies: the replicates of Kaur 2014 (3 or 4), the data source of Oliveira 2018 (table or text) and the design of Rossi 2013 (split plots or blocks). All three were reconciled by going back to the papers.</p>
+  </div>
+
+  <!-- 6.6 -->
+  <h2 id="s6-6" data-nueva-hoja><span class="num">6.6</span>The final tables</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/en/b6-tablas.png" alt="Card 4 of Block 6: 20 included studies, 20 with complete extraction, 41 effect sizes and 0 to reconcile; the imputation checkbox with CV = 12.9%; and the beginning of the table of study characteristics, with country, coordinates, publication type, design, replicates, seasons, treatments and crop"></div>
+    <figcaption><b>Figure 6.5.</b> The final tables of the example: 20 studies with complete extraction, 41 effect sizes and nothing to reconcile.</figcaption>
+  </figure>
+  <p>At the top, four figures: included studies, studies with complete extraction, effect sizes (and how many are incomplete) and studies to reconcile. Below, two tables with the final values—the agreed or the reconciled ones:</p>
+  <ul>
+    <li><b>Characteristics of the studies</b>: one row per study and one column per field. It is the basis of the characteristics table of the manuscript (<code>{{table:characteristics}}</code> in Block 9).</li>
+    <li><b>Effect sizes</b>: one row per comparison, with the effect, its variance, its standard error, its interval, the percentage change, the input data, whether the SD was imputed, the note and the moderators. This is what Block 8 pools.</li>
+  </ul>
+  <p><span class="ui">⤓ Effects table (.csv)</span> and <span class="ui">⤓ Characteristics (.csv)</span> download both: they are the supplementary data that more and more journals ask for, and the input for anyone who wants to repeat the analysis with other software.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>The warnings of this block</div>
+    <p>The calculator says what is missing for each input type: <i>“The response ratio needs positive means and both n.”</i>, <i>“Data are missing to compute the effect.”</i> The cards warn you if there are no included studies yet (Block 5), if there are fields to reconcile and how many effect rows are incomplete.</p>
+  </div>
+</section>
+
+</body>
+</html>
