@@ -113,11 +113,11 @@ const Protocol = {};
     if (!F) return [{ level: 'bad', msg: ['Elige un marco para la pregunta.', 'Choose a framework for the question.'] }];
     const e = p.elements || {};
     F.el.forEach(x => {
-      if (x.req && !has(e[x.k])) out.push({ level: 'bad', msg: [`Falta «${x.t[0]}» (${x.k}).`, `"${x.t[1]}" (${x.k}) is missing.`] });
+      if (x.req && !has(e[x.k])) out.push({ level: 'bad', msg: [`Falta «${x.t[0]}» (${x.k}).`, `“${x.t[1]}” (${x.k}) is missing.`] });
     });
     F.el.forEach(x => {
-      if (has(e[x.k]) && VAGUE.test(e[x.k])) out.push({ level: 'warn', msg: [`«${x.t[0]}» usa palabras vagas («${e[x.k].match(VAGUE)[0]}»): una revisión necesita límites que dos personas lean igual.`, `"${x.t[1]}" uses vague words ("${e[x.k].match(VAGUE)[0]}"): a review needs limits that two people read the same way.`] });
-      if (has(e[x.k]) && (e[x.k].match(/,|\by\b|\bo\b|\band\b|\bor\b/g) || []).length >= 4) out.push({ level: 'warn', msg: [`«${x.t[0]}» junta muchos elementos: considera separar la pregunta o jerarquizarlos.`, `"${x.t[1]}" lumps many elements together: consider splitting the question or ranking them.`] });
+      if (has(e[x.k]) && VAGUE.test(e[x.k])) out.push({ level: 'warn', msg: [`«${x.t[0]}» usa palabras vagas («${e[x.k].match(VAGUE)[0]}»): una revisión necesita límites que dos personas lean igual.`, `“${x.t[1]}” uses vague words (“${e[x.k].match(VAGUE)[0]}”): a review needs limits that two people read the same way.`] });
+      if (has(e[x.k]) && (e[x.k].match(/,|\by\b|\bo\b|\band\b|\bor\b/g) || []).length >= 4) out.push({ level: 'warn', msg: [`«${x.t[0]}» junta muchos elementos: considera separar la pregunta o jerarquizarlos.`, `“${x.t[1]}” lumps many elements together: consider splitting the question or ranking them.`] });
     });
     const t = p.type;
     if ((t === 'meta' || t === 'systematic') && (p.framework === 'PCC' || p.framework === 'FREE')) out.push({ level: 'warn', msg: ['Una revisión sistemática o un meta-análisis piden una pregunta focalizada: PICO, PICOS, PECO o SPIDER.', 'A systematic review or a meta-analysis asks for a focused question: PICO, PICOS, PECO or SPIDER.'] });
@@ -130,7 +130,7 @@ const Protocol = {};
   /* ================= 3 · eligibility criteria ================= */
   const DEFAULT_CRITERIA = {
     narrative: [['inc', 'pub', ['Artículos, capítulos y libros que discutan el tema', 'Articles, chapters and books discussing the topic']]],
-    scoping: [['inc', 'pub', ['Cualquier diseño de estudio primario, revisiones y literatura gris', 'Any primary study design, reviews and grey literature']],
+    scoping: [['inc', 'pub', ['Cualquier diseño de estudio primario, revisiones y literatura gris', 'Any primary study design, reviews and gray literature']],
       ['exc', 'pub', ['Editoriales y opiniones sin datos ni métodos', 'Editorials and opinion pieces without data or methods']]],
     systematic: [['inc', 'design', ['Estudios primarios con grupo de comparación', 'Primary studies with a comparison group']],
       ['exc', 'pub', ['Revisiones, editoriales y resúmenes de congreso sin resultados completos', 'Reviews, editorials and conference abstracts without full results']],
@@ -223,7 +223,7 @@ const Protocol = {};
     const nDb = p.sources.filter(s => has(s.name) && s.kind === 'db').length;
     const needDb = T === 'narrative' ? 1 : 2;
     add('sources', ['Fuentes de información', 'Information sources'], nDb >= needDb ? (T === 'meta' && !has(p.greyLit) ? 'warn' : 'ok') : nDb ? 'warn' : 'missing',
-      [nDb < needDb && [`Declara al menos ${needDb} base(s) de datos.`, `Declare at least ${needDb} database(s).`], T === 'meta' && !has(p.greyLit) && ['Un meta-análisis debe buscar literatura gris contra el sesgo de publicación.', 'A meta-analysis should search grey literature against publication bias.']].filter(Boolean));
+      [nDb < needDb && [`Declara al menos ${needDb} base(s) de datos.`, `Declare at least ${needDb} database(s).`], T === 'meta' && !has(p.greyLit) && ['Un meta-análisis debe buscar literatura gris contra el sesgo de publicación.', 'A meta-analysis should search gray literature against publication bias.']].filter(Boolean));
     const sc = p.screening;
     add('screening', ['Selección de estudios', 'Study selection'], T === 'narrative' ? 'na' : sc.reviewers >= 2 ? 'ok' : 'warn',
       [T !== 'narrative' && sc.reviewers < 2 && ['Con un solo revisor, al menos verifica una muestra con un segundo revisor.', 'With a single reviewer, at least verify a sample with a second reviewer.'], sc.prioritized && !sc.check && ['El cribado priorizado con regla de paro debería verificarse con una muestra al azar de lo no leído.', 'Prioritized screening with a stopping rule should be checked with a random sample of the unread.']].filter(Boolean));
@@ -241,7 +241,7 @@ const Protocol = {};
       [!nTeam && ['Añade a los autores.', 'Add the authors.'], nTeam && !(contact && has(contact.email)) && ['El autor de contacto necesita correo.', 'The contact author needs an e-mail.'], badOrcid.length && [`ORCID con dígito verificador inválido: ${badOrcid.join(', ')}.`, `ORCID with an invalid check character: ${badOrcid.join(', ')}.`]].filter(Boolean));
     const dOk = has(p.dates.start) && has(p.dates.end) && p.dates.end > p.dates.start;
     add('dates', ['Fechas y cronograma', 'Dates and schedule'], dOk ? 'ok' : 'missing', [!dOk && ['Fecha de inicio y de término (el término después del inicio).', 'Start and end date (the end after the start).']].filter(Boolean));
-    add('coi', ['Financiamiento y conflictos de interés', 'Funding and conflicts of interest'], has(p.funding) && has(p.coi) ? 'ok' : 'missing', [(!has(p.funding) || !has(p.coi)) && ['Declara ambos, aunque sea «ninguno».', 'Declare both, even if "none".']].filter(Boolean));
+    add('coi', ['Financiamiento y conflictos de interés', 'Funding and conflicts of interest'], has(p.funding) && has(p.coi) ? 'ok' : 'missing', [(!has(p.funding) || !has(p.coi)) && ['Declara ambos, aunque sea «ninguno».', 'Declare both, even if “none”.']].filter(Boolean));
     return S;
   }
   function score(p) {
@@ -318,7 +318,7 @@ const Protocol = {};
       const parts = [];
       if (db.length) parts.push(T2(L, `Bases de datos: ${join(db, L)}.`, `Databases: ${join(db, L)}.`));
       if (other.length) parts.push(T2(L, `Otras fuentes: ${join(other, L)}.`, `Other sources: ${join(other, L)}.`));
-      if (has(p.greyLit)) parts.push(T2(L, `Literatura gris: ${clean(p.greyLit)}.`, `Grey literature: ${clean(p.greyLit)}.`));
+      if (has(p.greyLit)) parts.push(T2(L, `Literatura gris: ${clean(p.greyLit)}.`, `Gray literature: ${clean(p.greyLit)}.`));
       if (has(p.otherSearch)) parts.push(clean(p.otherSearch) + '.');
       const lim = txt.limits(p, L); if (lim) parts.push(lim);
       return parts.join(' ');
@@ -412,9 +412,9 @@ const Protocol = {};
     { sec: ['Variables', 'Variables'], k: 'dv', t: ['Desenlaces o variables dependientes', 'Dependent variables/outcomes'], req: p => p.type !== 'narrative', get: (p, L) => [txt.outcomes(p, L, 'primary'), txt.outcomes(p, L, 'secondary')].filter(Boolean).join(' | ') },
     { sec: ['Variables', 'Variables'], k: 'iv', t: ['Intervenciones, exposiciones o conceptos', 'Independent variables/interventions/concepts'], req: p => p.type !== 'narrative', get: p => [el('I')(p), el('E')(p), el('Co')(p), el('PI')(p)].filter(Boolean).join('; ') },
     { sec: ['Variables', 'Variables'], k: 'cov', t: ['Covariables y moderadores', 'Additional variables/covariates'], req: false, get: p => p.moderators || '' },
-    { sec: ['Búsqueda', 'Search'], k: 'db', t: ['Bases de datos, literatura gris y otras estrategias', 'Databases, grey literature and other strategies'], req: true, get: txt.sources },
+    { sec: ['Búsqueda', 'Search'], k: 'db', t: ['Bases de datos, literatura gris y otras estrategias', 'Databases, gray literature and other strategies'], req: true, get: txt.sources },
     { sec: ['Búsqueda', 'Search'], k: 'strings', t: ['Cadenas de búsqueda', 'Query strings'], req: true, get: p => searchStrings(p), later: true },
-    { sec: ['Búsqueda', 'Search'], k: 'contact', t: ['Contacto con autores', 'Procedures to contact authors'], req: false, get: (p, L) => p.extraction.contactAuthors ? T2(L, 'Se escribirá al autor de correspondencia; si no responde en tres semanas, se enviará un recordatorio y después el estudio se clasificará como «sin datos».', 'The corresponding author will be written to; if there is no reply in three weeks, a reminder will be sent and then the study will be classed as "no data".') : '' },
+    { sec: ['Búsqueda', 'Search'], k: 'contact', t: ['Contacto con autores', 'Procedures to contact authors'], req: false, get: (p, L) => p.extraction.contactAuthors ? T2(L, 'Se escribirá al autor de correspondencia; si no responde en tres semanas, se enviará un recordatorio y después el estudio se clasificará como «sin datos».', 'The corresponding author will be written to; if there is no reply in three weeks, a reminder will be sent and then the study will be classed as “no data”.') : '' },
     { sec: ['Cribado', 'Screening'], k: 'inc', t: ['Criterios de inclusión', 'Inclusion criteria'], req: true, get: (p, L) => txt.criteria(p, L, 'inc') },
     { sec: ['Cribado', 'Screening'], k: 'exc', t: ['Criterios de exclusión', 'Exclusion criteria'], req: p => p.type !== 'narrative', get: (p, L) => txt.criteria(p, L, 'exc') },
     { sec: ['Cribado', 'Screening'], k: 'proc', t: ['Etapas, fiabilidad y conciliación del cribado', 'Screening stages, reliability and reconciliation'], req: p => p.type !== 'narrative', get: txt.screening },

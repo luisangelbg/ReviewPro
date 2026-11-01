@@ -58,11 +58,11 @@
     renderLog();
   }
   /* one row per database of the protocol: syntax, date, hits reported, imported */
-  /* the kind of a source lives in the protocol (Block 2): database, grey literature or other methods */
+  /* the kind of a source lives in the protocol (Block 2): database, gray literature or other methods */
   function kindSel(name) {
     const src = (state.protocol ? state.protocol.sources : []).find(x => x.name && x.name.trim() === name);
     const k = src ? src.kind : 'db';
-    return `<select data-kind="${esc(name)}" style="min-width:150px">${[['db', T('base de datos', 'database')], ['grey', T('literatura gris', 'grey literature')], ['other', T('otros métodos', 'other methods')]].map(([v, l]) => `<option value="${v}"${k === v ? ' selected' : ''}>${l}</option>`).join('')}</select>`;
+    return `<select data-kind="${esc(name)}" style="min-width:150px">${[['db', T('base de datos', 'database')], ['grey', T('literatura gris', 'gray literature')], ['other', T('otros métodos', 'other methods')]].map(([v, l]) => `<option value="${v}"${k === v ? ' selected' : ''}>${l}</option>`).join('')}</select>`;
   }
   function renderLog() {
     const g = el('b3Log'); if (!g) return;

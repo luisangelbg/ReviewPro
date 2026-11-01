@@ -1,5 +1,25 @@
 # Cambios
 
+## Sin publicar
+
+Revisión de la interfaz inglesa (sale de traducir el manual); la versión sigue siendo la 1.0.0 y no cambia ningún
+cálculo.
+
+- **Textos que seguían en español en inglés:** «IC 95 %» en la ficha del efecto (Bloque 6), «CI 95 %» en el efecto
+  combinado del Bloque 8 y del laboratorio de meta-análisis (ahora «95 % CI»), el encabezado «EE» de la
+  meta-regresión (ahora «SE»), y «s.f.» y «Anónimo» en las citas de un manuscrito en inglés (ahora «n.d.» y
+  «Anonymous»; en español sigue igual). La ficha del efecto en español decía «SE»: ahora «EE».
+- **Ortografía estadounidense** en toda la interfaz inglesa y en los módulos comunes (navegador, Estudio de figuras,
+  editor ✎ y esperas): gray literature, judgment, rigor, neighbors, favorable, color, center, canceled, skeptical,
+  signaling, toward, forever, analyzed. «Organisational affiliation» se queda porque es el nombre literal del campo
+  del formulario de PROSPERO; los títulos de obras citadas tampoco cambian.
+- **Redacción inglesa:** concordancia de «1 is met in later blocks», «it is not rated down and is noted»,
+  «exclude because of…» y «Reason for exclusion (required)», «not applicable» en lugar de «n/a», «Weight» con
+  mayúscula en los forest plots, «changes significance» junto a «changes sign», y comillas tipográficas “ ” en los
+  textos ingleses. En español, «1 se cumple en bloques posteriores» y «Peso» con mayúscula.
+- **«Estimador de τ²»** en mayúsculas mostraba «Τ²» (tau mayúscula); ahora τ² conserva su forma.
+- **Pruebas:** una nueva para las citas en inglés; 558 por el servidor local y 519 con doble clic, todas en verde.
+
 ## Después de la 1.0.0 — 2026-10-09
 
 - **Contraste de las teclas (WCAG 1.4.3):** la hoja de estilos de la app atenuaba toda tecla (`kbd { opacity: .8 }`),

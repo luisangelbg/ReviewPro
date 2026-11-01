@@ -13,7 +13,7 @@
      none     — anything else, including two different DOIs.
    Merging is conservative: a probable pair stays as two records until a
    reviewer confirms it; a missed duplicate is caught later at screening, a
-   wrong merge loses a study for ever.
+   wrong merge loses a study forever.
 
    Only pairs that share a blocking key are compared (the DOI, the first
    sixteen characters of the title, first author + year, and the three

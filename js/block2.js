@@ -67,7 +67,7 @@
   function renderSources() {
     const g = el('b2Sources'); if (!g) return;
     const rows = P().sources;
-    const kinds = [['db', T('base de datos', 'database')], ['grey', T('literatura gris', 'grey literature')], ['other', T('otra', 'other')]];
+    const kinds = [['db', T('base de datos', 'database')], ['grey', T('literatura gris', 'gray literature')], ['other', T('otra', 'other')]];
     g.innerHTML = rows.length ? `<div class="table-scroll"><table class="b2-tbl"><thead><tr><th>${L2('Fuente', 'Source')}</th><th>${L2('Tipo', 'Kind')}</th><th>${L2('Cobertura o nota', 'Coverage or note')}</th><th></th></tr></thead><tbody>` +
       rows.map((s, i) => `<tr><td class="grow"><input type="text" data-l="sources" data-i="${i}" data-f="name" value="${esc(s.name)}"></td>
         <td><select data-l="sources" data-i="${i}" data-f="kind" style="min-width:170px">${kinds.map(([v, l]) => `<option value="${v}"${s.kind === v ? ' selected' : ''}>${l}</option>`).join('')}</select></td>
@@ -154,8 +154,8 @@
         html += `<tr class="st-${r.status}"><td class="b2-id">${r.id}</td><td>${two(r.t)}</td><td class="muted">${two(r.w)}</td><td><span class="b2-pill">${two(LV[r.status])}</span></td></tr>`;
       });
       pp.innerHTML = `<div class="table-scroll">${html}</tbody></table></div>`;
-      const n = rows.filter(r => r.status !== 'na'), ok = n.filter(r => r.status === 'ok').length;
-      const ps = el('b2PrismaPSum'); if (ps) ps.innerHTML = L2(`${ok} de ${n.length} ítems aplicables cumplidos; ${n.filter(r => r.status === 'later').length} se cumplen en bloques posteriores.`, `${ok} of ${n.length} applicable items met; ${n.filter(r => r.status === 'later').length} are met in later blocks.`);
+      const n = rows.filter(r => r.status !== 'na'), ok = n.filter(r => r.status === 'ok').length, nLater = n.filter(r => r.status === 'later').length;
+      const ps = el('b2PrismaPSum'); if (ps) ps.innerHTML = L2(`${ok} de ${n.length} ítems aplicables cumplidos; ${nLater} ${nLater === 1 ? 'se cumple' : 'se cumplen'} en bloques posteriores.`, `${ok} of ${n.length} applicable ${n.length === 1 ? 'item' : 'items'} met; ${nLater} ${nLater === 1 ? 'is' : 'are'} met in later blocks.`);
     }
     renderRegistration();
     drawGantt();
@@ -191,7 +191,7 @@
     const ms = P().milestones.filter(m => parseISO(m.start) && parseISO(m.end));
     Plot.clear(svg);
     const W = 640, rowH = 20, top = 30, left = 170;
-    if (!ms.length) { Plot.empty(svg, W, 90, T('Sin etapas: usa «Proponer cronograma» o añádelas a mano.', 'No phases: use "Propose schedule" or add them by hand.')); return; }
+    if (!ms.length) { Plot.empty(svg, W, 90, T('Sin etapas: usa «Proponer cronograma» o añádelas a mano.', 'No phases: use “Propose schedule” or add them by hand.')); return; }
     const dn = s => { const d = parseISO(s); return dayNumber(d.y, d.m, d.d); };
     const a = Math.min(...ms.map(m => dn(m.start))), b = Math.max(...ms.map(m => dn(m.end)));
     const H = top + ms.length * rowH + 16;

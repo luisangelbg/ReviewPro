@@ -56,7 +56,7 @@ equipo. La interfaz está en español e inglés, con tema claro y oscuro.
 
 ## Pruebas y validación
 
-`tests/index.html` reúne **556 pruebas**, todas en verde. Abierta con doble clic corren 518; las demás piden el
+`tests/index.html` reúne **558 pruebas**, todas en verde. Abierta con doble clic corren 519; las demás piden el
 servidor local (`server.ps1`). Los cálculos de los Bloques 1, 4, 6 y 8 —el meta-análisis, el acuerdo entre
 revisores, los tamaños del efecto y el modelo multinivel— se comprobaron contra cálculos independientes hechos en R
 con los guiones de `tools/` (`validar_bloque*.R`), cuyos resultados viven en `tests/r_reference_*.js`, y contra los
@@ -112,7 +112,7 @@ findings, synthesis with a three-level meta-analytic model fitted by REML, meta-
 analyses and publication bias, guided writing that ties every claim to its evidence, and a self-contained report
 with a reproducible package. All ten blocks are ready: **the application is complete**. Everything runs locally, in
 Spanish and English, with light and dark themes. Open `index.html` by double-clicking it, or run `server.ps1` for
-`http://localhost:9550`. Tests: `tests/index.html` (556, checked against independent calculations in R). The user's
+`http://localhost:9550`. Tests: `tests/index.html` (558, checked against independent calculations in R). The user's
 manual is in Spanish, in `manual/`.
 
 Free software under the GNU GPL v3 (© 2026 Luis Ángel Barrera-Guzmán). Source code:

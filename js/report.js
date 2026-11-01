@@ -120,7 +120,7 @@ const Report = {};
       ...files.map(f => `  ${f.name}${f.desc ? '  —  ' + f.desc : ''}`),
       '',
       t('CÓMO REABRIR EL PROYECTO', 'HOW TO REOPEN THE PROJECT'),
-      t('  Abre ReviewPro (index.html), pulsa «Abrir proyecto» y elige el archivo .reviewpro.json de la carpeta proyecto/.', '  Open ReviewPro (index.html), press "Open project" and choose the .reviewpro.json file in the proyecto/ folder.'),
+      t('  Abre ReviewPro (index.html), pulsa «Abrir proyecto» y elige el archivo .reviewpro.json de la carpeta proyecto/.', '  Open ReviewPro (index.html), press “Open project” and choose the .reviewpro.json file in the proyecto/ folder.'),
       t('  Ese archivo contiene todo: protocolo, búsqueda, decisiones, extracción, evaluación, síntesis y el texto del manuscrito.', '  That file holds everything: protocol, search, decisions, extraction, appraisal, synthesis and the manuscript text.'),
       t('  Los PDF de los estudios no van en el paquete: el proyecto solo guarda dónde está cada uno.', '  The PDFs of the studies are not in the package: the project only stores where each one is.'),
       '',

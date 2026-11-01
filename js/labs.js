@@ -193,8 +193,8 @@
     const hi = new Set(posT.map(i => SL.fe.terms[i]));
     const mark = s => esc(s).replace(/[A-Za-z]+/g, word => (hi.has(Screen.stem(word.toLowerCase())) ? `<mark>${word}</mark>` : word));
     const first = sim.order.slice(sim.nPrior, sim.nPrior + 6);
-    box.innerHTML = `<div class="sl-terms"><div><b>${L2('Palabras que empujan hacia «relevante»', 'Words that push towards "relevant"')}</b><div class="chips">${posT.map(i => `<span class="chip p">${esc(SL.fe.terms[i])}</span>`).join('')}</div></div>
-      <div><b>${L2('Palabras que empujan hacia «irrelevante»', 'Words that push towards "irrelevant"')}</b><div class="chips">${negT.map(i => `<span class="chip bad">${esc(SL.fe.terms[i])}</span>`).join('')}</div></div></div>
+    box.innerHTML = `<div class="sl-terms"><div><b>${L2('Palabras que empujan hacia «relevante»', 'Words that push toward “relevant”')}</b><div class="chips">${posT.map(i => `<span class="chip p">${esc(SL.fe.terms[i])}</span>`).join('')}</div></div>
+      <div><b>${L2('Palabras que empujan hacia «irrelevante»', 'Words that push toward “irrelevant”')}</b><div class="chips">${negT.map(i => `<span class="chip bad">${esc(SL.fe.terms[i])}</span>`).join('')}</div></div></div>
       <p class="hint">${L2('Los primeros registros que el modelo puso frente al revisor, después de los dos que ya conocía. El resaltado marca las palabras que más pesaron; la etiqueta es la verdad del laboratorio.', 'The first records the model put in front of the reviewer, after the two already known. The highlight marks the words that weighed most; the tag is the laboratory\'s truth.')}</p>
       <ol class="sl-list">${first.map(i => { const r = SL.recs[i]; return `<li><span class="tag ${r.label ? 'in' : 'out'}">${r.label ? L2('relevante', 'relevant') : L2('irrelevante', 'irrelevant')}</span><div class="t">${mark(r.title)}</div><div class="a">${mark(r.abstract)}</div><div class="m">${esc(r.journal)} · ${r.year} · ${L2('registro ficticio', 'fictitious record')}</div></li>`; }).join('')}</ol>`;
   }
@@ -230,7 +230,7 @@
   function mlReadout() {
     const { re, fe, eg, mu } = ML;
     statTiles('mlReadout', [
-      [T('Efecto combinado', 'Pooled effect'), fmtPctChange(re.est), `IC 95 %: ${fmtPctChange(re.ci[0])} a ${fmtPctChange(re.ci[1])}`.replace('IC', T('IC', 'CI')).replace(' a ', T(' a ', ' to '))],
+      [T('Efecto combinado', 'Pooled effect'), fmtPctChange(re.est), `${T('IC 95 %', '95 % CI')}: ${fmtPctChange(re.ci[0])} ${T('a', 'to')} ${fmtPctChange(re.ci[1])}`],
       [T('La verdad del laboratorio', 'The laboratory\'s truth'), fmtPctChange(mu), T('efecto medio con que se generaron', 'mean effect they were drawn from')],
       [T('Efecto común (fijo)', 'Common (fixed) effect'), fmtPctChange(fe.est), T('ignora la heterogeneidad', 'ignores heterogeneity')],
       ['τ² · I²', `${fmtFixed(re.tau2, 4)} · ${fmtPct(re.I2, 0)}`, `Q = ${fmtFixed(re.Q, 1)} (${re.df} gl), p ${re.pQ < 0.001 ? '< 0.001' : '= ' + fmtFixed(re.pQ, 3)}`.replace('gl', T('gl', 'df')), re.I2 > 0.75 ? 'warn' : ''],
@@ -260,7 +260,7 @@
     T_(8, 16, T('Ensayo', 'Trial'), { 'font-weight': 700 });
     T_(x0 + (x1 - x0) / 2, 16, T('cambio en el rendimiento', 'change in yield'), { 'font-weight': 700, 'text-anchor': 'middle' });
     T_(W - 92, 16, T('% [IC 95 %]', '% [95 % CI]'), { 'font-weight': 700, 'text-anchor': 'end' });
-    T_(W - 8, 16, T('peso', 'weight'), { 'font-weight': 700, 'text-anchor': 'end' });
+    T_(W - 8, 16, T('Peso', 'Weight'), { 'font-weight': 700, 'text-anchor': 'end' });
     const yEnd = top + k * rowH + 58;
     svg.appendChild(svgEl('line', { x1: sx(0), x2: sx(0), y1: top - 6, y2: yEnd, stroke: C('text-muted'), 'stroke-width': 1 }));
     svg.appendChild(svgEl('line', { x1: sx(mu), x2: sx(mu), y1: top - 6, y2: yEnd, stroke: C('c3'), 'stroke-width': 1.2, 'stroke-dasharray': '2 3' }));

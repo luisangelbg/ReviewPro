@@ -254,11 +254,11 @@ const Screen = {};
      The laboratory needs a pile of records whose truth is known. The review
      question is about the effect of arbuscular mycorrhizal inoculation on
      maize grain yield in the field. Each record is written from sentence
-     templates of its topic: the relevant topic, "hard" neighbours that share
+     templates of its topic: the relevant topic, "hard" neighbors that share
      words with it (mycorrhizae in greenhouse vegetables, maize yield under
      fertilization, fungal diseases of maize) and "easy" distant topics.
      Difficulty moves sentences between topics, so a hard pile has relevant
-     records that read like neighbours and neighbours that read like relevant
+     records that read like neighbors and neighbors that read like relevant
      ones. The records are fictitious. */
   const PLACES = ['central Mexico', 'the Bajío', 'Kenya', 'Ethiopia', 'northern India', 'southern Brazil', 'Argentina', 'Nigeria', 'China', 'Iowa', 'Spain', 'Zimbabwe', 'Pakistan', 'Tanzania', 'Colombia', 'Ghana'];
   const TOPICS = {
@@ -338,7 +338,7 @@ const Screen = {};
   };
   const FUNGI = ['Rhizophagus irregularis', 'Funneliformis mosseae', 'Glomus intraradices', 'a commercial AMF consortium', 'native mycorrhizal fungi'];
   const GENERIC = ['The results are discussed in relation to sustainable intensification.',
-    'Treatment effects were analysed by analysis of variance.',
+    'Treatment effects were analyzed by analysis of variance.',
     'Significant differences were found among treatments.',
     'These findings have implications for smallholder farmers.',
     'Further research is needed to confirm these results under other conditions.',
@@ -366,7 +366,7 @@ const Screen = {};
       let topic;
       if (isRel) topic = 'rel';
       else {
-        /* the harder the pile, the more of its irrelevant records are close neighbours */
+        /* the harder the pile, the more of its irrelevant records are close neighbors */
         const hardShare = 0.25 + 0.5 * o.difficulty;
         const pool = neg.filter(k => (TOPICS[k].hard ? r() < hardShare : r() >= hardShare));
         topic = pool.length ? pick(pool, r) : pick(neg, r);
@@ -377,7 +377,7 @@ const Screen = {};
       const HARD = ['amfVeg', 'maizeFert', 'maizePath'];
       /* A "subtle" relevant record reports the inoculation only in passing, inside
          a study framed as something else (a fertilizer trial with an inoculated
-         treatment); a "near miss" is a neighbour that uses the relevant words
+         treatment); a "near miss" is a neighbor that uses the relevant words
          but fails a criterion (pots, not field; a review of trials). These are
          the records that make real screening hard. */
       const subtle = isRel && r() < 0.3 * o.difficulty;
@@ -392,7 +392,7 @@ const Screen = {};
       } else {
         for (let s = 0; s < nS; s++) {
           const u = r();
-          /* a relevant record borrows neighbour sentences, a neighbour borrows relevant ones */
+          /* a relevant record borrows neighbor sentences, a neighbor borrows relevant ones */
           if (isRel && u < 0.3 * o.difficulty) sents.push(fill(pick(TOPICS[pick(HARD, r)].sent, r), r));
           else if (!isRel && T.hard && u < (nearMiss ? 0.35 : 0.08) * o.difficulty) sents.push(fill(pick(TOPICS.rel.sent, r), r));
           else if (u > 0.82) sents.push(fill(pick(GENERIC, r), r));

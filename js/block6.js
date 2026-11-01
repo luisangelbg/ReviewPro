@@ -38,7 +38,7 @@
       const ks = g.slice().sort(), r = byKey.get(ks[0]);
       const a = (r.authors || [])[0] || '';
       const sur = a.includes(',') ? a.split(',')[0] : a.split(/\s+/).slice(-1)[0];
-      return { id: ks[0], reports: ks.map(k => byKey.get(k)), rec: r, label: `${sur || 'Anon'} ${r.year || 's.f.'}` };
+      return { id: ks[0], reports: ks.map(k => byKey.get(k)), rec: r, label: `${sur || 'Anon'} ${r.year || T('s.f.', 'n.d.')}` };
     }).sort((x, y) => x.label.localeCompare(y.label));
   }
 
@@ -110,7 +110,7 @@
   }
   function fmtRes(res) {
     if (!res.ok) return `<span class="b6-err">${two(res.error)}</span>`;
-    return `<b>${metricName(res.metric)}</b>: ${fmtFixed(res.yi, 4)} · SE ${fmtFixed(res.se, 4)} · IC 95 % [${fmtFixed(res.ci[0], 3)}, ${fmtFixed(res.ci[1], 3)}]${res.pct != null ? ` · <b>${res.pct >= 0 ? '+' : '−'}${fmtFixed(Math.abs(res.pct), 1)} %</b>` : ''}`;
+    return `<b>${metricName(res.metric)}</b>: ${fmtFixed(res.yi, 4)} · ${T('EE', 'SE')} ${fmtFixed(res.se, 4)} · ${T('IC 95 %', '95 % CI')} [${fmtFixed(res.ci[0], 3)}, ${fmtFixed(res.ci[1], 3)}]${res.pct != null ? ` · <b>${res.pct >= 0 ? '+' : '−'}${fmtFixed(Math.abs(res.pct), 1)} %</b>` : ''}`;
   }
   function renderEffects(skipEditor) {
     const box = el('b6Effects'); if (!box) return;

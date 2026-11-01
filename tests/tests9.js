@@ -28,6 +28,7 @@
   const D = { authors: ['Maria Silva'], year: '', title: 'Cuatro' };
   check('uno, dos y tres o más autores', Wr.authorYear(A) === 'García 2019' && Wr.authorYear(B) === 'Pérez & López 2020' && Wr.authorYear(C) === 'Smith et al. 2021');
   check('nombre sin coma → apellido al final; sin año → s.f.', Wr.authorYear(D) === 'Silva s.f.' && Wr.authorYear({ authors: [], year: 2000 }) === 'Anónimo 2000');
+  check('texto en inglés: n.d. y Anonymous (en español sigue s.f. y Anónimo)', Wr.authorYear(D, 'en') === 'Silva n.d.' && Wr.authorYear({ authors: [], year: 2000 }, 'en') === 'Anonymous 2000' && Wr.refEntry({ authors: [], year: '', title: 'X' }, 'en') === 'Anonymous (n.d.). X.' && Wr.authorYear(D, 'es') === 'Silva s.f.' && Wr.refEntry({ authors: [], year: '', title: 'X' }, 'es') === 'Anónimo (s.f.). X.');
   check('ficha de referencia completa', Wr.refEntry(A) === 'García, J. (2019). Uno. Agrociencia, 53(2), 1-9. https://doi.org/10.1/x', Wr.refEntry(A));
   const ctx = {
     study: k => ({ garcia2019: A, perez2020: B, smith2021: C })[k.toLowerCase()] || null,

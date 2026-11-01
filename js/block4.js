@@ -109,7 +109,7 @@
       <div class="b4-tag"><span class="b2-pill">${two(WHY[why] || WHY.none)}</span> <span class="hint" style="margin:0">${L2(`quedan ${q.keys.length}`, `${q.keys.length} left`)}</span></div>
       <h3 class="b4-title">${hl(r.title || '—')}</h3>
       <div class="b4-meta">${esc((r.authors || []).slice(0, 4).join('; '))}${(r.authors || []).length > 4 ? ' et al.' : ''} · <b>${r.year || '—'}</b> · <i>${esc(r.journal || '')}</i>${r.doi ? ` · <span class="b3-doi">doi:${esc(r.doi)}</span>` : ''}</div>
-      <div class="b4-abs">${r.abstract ? hl(r.abstract) : `<i>${L2('Sin resumen: decide por el título o márcalo «tal vez».', 'No abstract: decide by the title or mark it "maybe".')}</i>`}</div>
+      <div class="b4-abs">${r.abstract ? hl(r.abstract) : `<i>${L2('Sin resumen: decide por el título o márcalo «tal vez».', 'No abstract: decide by the title or mark it “maybe”.')}</i>`}</div>
       ${(r.keywords || []).length ? `<div class="b4-kw">${r.keywords.map(k => `<span class="chip">${hl(k)}</span>`).join('')}</div>` : ''}
       <div class="b4-actions">
         <button class="btn b4-inc" data-act="inc"><kbd>I</kbd> ${L2('Incluir', 'Include')}</button>
@@ -214,7 +214,7 @@
     const pk = new Set(pilot());
     const rows = Screening.agreement(s.decisions, ids).map(x => Object.assign(x, { pilot: Screening.agreement(s.decisions, [x.a, x.b], pk)[0] }));
     const kcell = k => (k ? `<b>${fmtFixed(k.kappa, 2)}</b> <span class="muted">[${fmtFixed(k.ci[0], 2)}, ${fmtFixed(k.ci[1], 2)}]</span> · ${two(Screening.landis(k.kappa))}` : '—');
-    let html = `<div class="table-scroll"><table class="b2-tbl"><thead><tr><th>${L2('Revisores', 'Reviewers')}</th><th class="num">${L2('En común', 'In common')}</th><th class="num">${L2('Acuerdo', 'Agreement')}</th><th>${L2('Kappa incluir/excluir', 'Kappa include/exclude')}</th><th>${L2('Kappa con «tal vez»', 'Kappa with "maybe"')}</th><th>${L2('Kappa en el piloto', 'Kappa in the pilot')}</th></tr></thead><tbody>` +
+    let html = `<div class="table-scroll"><table class="b2-tbl"><thead><tr><th>${L2('Revisores', 'Reviewers')}</th><th class="num">${L2('En común', 'In common')}</th><th class="num">${L2('Acuerdo', 'Agreement')}</th><th>${L2('Kappa incluir/excluir', 'Kappa include/exclude')}</th><th>${L2('Kappa con «tal vez»', 'Kappa with “maybe”')}</th><th>${L2('Kappa en el piloto', 'Kappa in the pilot')}</th></tr></thead><tbody>` +
       rows.map(x => `<tr><td>${esc(nameOf(x.a))} · ${esc(nameOf(x.b))}</td><td class="num">${x.n}</td><td class="num">${x.two ? fmtPct(x.two.po, 0) : '—'}</td><td>${kcell(x.two)}</td><td>${kcell(x.three)}</td><td>${x.pilot && x.pilot.two ? kcell(x.pilot.two) + ` <span class="muted">(n = ${x.pilot.n})</span>` : '—'}</td></tr>`).join('') + '</tbody></table></div>';
     const target = +P().screening.kappa || 0.6;
     const low = rows.find(x => x.pilot && x.pilot.two && x.pilot.n >= 10 && x.pilot.two.kappa < target);
@@ -241,7 +241,7 @@
         <div class="b4-res"><span class="hint" style="margin:0">${L2('Decisión final:', 'Final decision:')}</span>
           <button class="btn btn-sm btn-secondary" data-final="inc" data-key="${esc(k)}">${L2('Incluir', 'Include')}</button>
           <button class="btn btn-sm btn-secondary" data-final="maybe" data-key="${esc(k)}">${L2('Tal vez', 'Maybe')}</button>
-          <select data-finalreason="${esc(k)}"><option value="">${esc(T('excluir por…', 'exclude for…'))}</option>${crit.map(cr => `<option value="${esc(cr.id)}">${esc(cr.id)} · ${esc(cr.text.slice(0, 50))}</option>`).join('')}<option value="-">${esc(T('excluir sin motivo', 'exclude without reason'))}</option></select>
+          <select data-finalreason="${esc(k)}"><option value="">${esc(T('excluir por…', 'exclude because of…'))}</option>${crit.map(cr => `<option value="${esc(cr.id)}">${esc(cr.id)} · ${esc(cr.text.slice(0, 50))}</option>`).join('')}<option value="-">${esc(T('excluir sin motivo', 'exclude without reason'))}</option></select>
           <select data-finalby="${esc(k)}"><option value="consensus">${esc(T('por consenso', 'by consensus'))}</option>${ids.map(id => `<option value="${id}">${esc(T('por ', 'by ') + nameOf(id))}</option>`).join('')}</select></div></div>`;
     }).join('') + (conf.length > 30 ? `<p class="hint">${L2(`… y ${conf.length - 30} más.`, `… and ${conf.length - 30} more.`)}</p>` : '') : `<p class="hint">${L2('No hay conflictos.', 'No conflicts.')}</p>`) +
       (resolved.length ? `<details><summary>${L2(`Resueltos (${resolved.length})`, `Resolved (${resolved.length})`)}</summary><ul class="b3-auto">${resolved.map(k => `<li>${esc(c.byKey.get(k).title.slice(0, 90))} — <b>${two(lab[s.final[k].d])}</b>${s.final[k].reason ? ' · ' + esc(s.final[k].reason) : ''} <span class="muted">(${s.final[k].by === 'consensus' ? T('consenso', 'consensus') : esc(nameOf(s.final[k].by))})</span> <button class="btn btn-ghost btn-sm" data-unfinal="${esc(k)}">${L2('reabrir', 'reopen')}</button></li>`).join('')}</ul></details>` : '');

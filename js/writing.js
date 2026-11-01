@@ -32,17 +32,17 @@ const Writing = {};
   const IMRAD = (type) => {
     const sys = type === 'systematic' || type === 'meta', scr = type === 'scoping';
     const secs = [
-      S('title', ['Título', 'Title'], ['Identifica el tipo de revisión («revisión sistemática y meta-análisis», «revisión exploratoria»).', 'Identify the type of review ("systematic review and meta-analysis", "scoping review").'], [8, 25]),
+      S('title', ['Título', 'Title'], ['Identifica el tipo de revisión («revisión sistemática y meta-análisis», «revisión exploratoria»).', 'Identify the type of review (“systematic review and meta-analysis”, “scoping review”).'], [8, 25]),
       S('abstract', ['Resumen', 'Abstract'], ['Antecedentes, objetivo, métodos (fuentes y fechas, criterios, riesgo de sesgo, síntesis), resultados (número de estudios, efecto con IC, certeza) y conclusión; registro.', 'Background, objective, methods (sources and dates, criteria, risk of bias, synthesis), results (number of studies, effect with CI, certainty) and conclusion; registration.'], [200, 300]),
       S('intro', ['Introducción', 'Introduction'], ['Por qué importa la pregunta, qué dicen las revisiones previas y qué dejan sin resolver; termina con el objetivo.', 'Why the question matters, what previous reviews say and what they leave unresolved; end with the objective.'], [400, 800]),
       S('methods', ['Métodos', 'Methods'], ['', ''], [0, 0], { heading: true }),
       S('m_protocol', ['Protocolo y registro', 'Protocol and registration'], ['Dónde se registró y con qué número; enmiendas.', 'Where it was registered and with which number; amendments.'], [30, 120], { parent: 'methods' }),
       S('m_elig', ['Criterios de elegibilidad', 'Eligibility criteria'], ['Los criterios del protocolo, con años, idiomas y tipos de publicación.', 'The protocol criteria, with years, languages and publication types.'], [80, 250], { parent: 'methods' }),
-      S('m_search', ['Fuentes y búsqueda', 'Information sources and search'], ['Bases, fechas de búsqueda, literatura gris y otras vías; la cadena completa va en un material suplementario.', 'Databases, search dates, grey literature and other routes; the full string goes in a supplement.'], [80, 250], { parent: 'methods' }),
+      S('m_search', ['Fuentes y búsqueda', 'Information sources and search'], ['Bases, fechas de búsqueda, literatura gris y otras vías; la cadena completa va en un material suplementario.', 'Databases, search dates, gray literature and other routes; the full string goes in a supplement.'], [80, 250], { parent: 'methods' }),
       S('m_select', [scr ? 'Selección de las fuentes de evidencia' : 'Selección de estudios', scr ? 'Selection of sources of evidence' : 'Study selection'], ['Revisores, piloto, acuerdo, priorización y regla de paro, desacuerdos.', 'Reviewers, pilot, agreement, prioritization and stopping rule, disagreements.'], [60, 200], { parent: 'methods' }),
       S('m_extract', [scr ? 'Caracterización de los datos' : 'Extracción de datos', scr ? 'Data charting' : 'Data extraction'], ['Formulario, extracción doble, variables, conversiones y datos imputados.', 'Form, double extraction, items, conversions and imputed data.'], [60, 250], { parent: 'methods' }),
     ];
-    if (sys) secs.push(S('m_rob', ['Riesgo de sesgo', 'Risk of bias'], ['Herramienta, dominios, quién evaluó y cómo se usaron los juicios.', 'Tool, domains, who assessed and how the judgements were used.'], [50, 200], { parent: 'methods' }));
+    if (sys) secs.push(S('m_rob', ['Riesgo de sesgo', 'Risk of bias'], ['Herramienta, dominios, quién evaluó y cómo se usaron los juicios.', 'Tool, domains, who assessed and how the judgments were used.'], [50, 200], { parent: 'methods' }));
     secs.push(S('m_synth', ['Síntesis', 'Synthesis'], [type === 'meta' ? 'Medida del efecto, modelo, efectos múltiples, heterogeneidad, moderadores, sensibilidad y sesgo de publicación.' : 'Cómo se agruparon y resumieron los estudios.', type === 'meta' ? 'Effect measure, model, multiple effects, heterogeneity, moderators, sensitivity and publication bias.' : 'How studies were grouped and summarized.'], [80, 350], { parent: 'methods' }));
     if (sys) secs.push(S('m_cert', ['Certeza de la evidencia', 'Certainty of the evidence'], ['GRADE: punto de partida y razones para bajar o subir.', 'GRADE: starting point and reasons to rate down or up.'], [30, 120], { parent: 'methods' }));
     secs.push(
@@ -78,25 +78,28 @@ const Writing = {};
   /* ---------- live references ---------- */
   const CITE = /\[@([^\]]+)\]/g, TOKEN = /\{\{\s*([a-z0-9_.]+)(?::([^}]*))?\s*\}\}/gi;
   function surname(a) { const s = String(a || '').trim(); return s.includes(',') ? s.split(',')[0].trim() : s.split(/\s+/).slice(-1)[0]; }
-  function authorYear(r) {
-    const as = (r.authors || []).map(surname).filter(Boolean), y = r.year || 's.f.';
-    if (!as.length) return `Anónimo ${y}`;
+  /* L: language of the text being written ('es' | 'en'); without it, that of the interface */
+  const langOf = L => (L === 'en' || L === 'es') ? L : ((typeof I18N !== 'undefined' && I18N.lang === 'en') ? 'en' : 'es');
+  const ND = L => (langOf(L) === 'en' ? 'n.d.' : 's.f.'), ANON = L => (langOf(L) === 'en' ? 'Anonymous' : 'Anónimo');
+  function authorYear(r, L) {
+    const as = (r.authors || []).map(surname).filter(Boolean), y = r.year || ND(L);
+    if (!as.length) return `${ANON(L)} ${y}`;
     if (as.length === 1) return `${as[0]} ${y}`;
     if (as.length === 2) return `${as[0]} & ${as[1]} ${y}`;
     return `${as[0]} et al. ${y}`;
   }
-  function refEntry(r) {
+  function refEntry(r, L) {
     const au = (r.authors || []).map(a => { const s = surname(a); const g = String(a).includes(',') ? String(a).split(',')[1].trim().split(/[\s.-]+/).filter(Boolean).map(x => x[0] + '.').join(' ') : ''; return g ? `${s}, ${g}` : s; });
-    const auTxt = au.length > 1 ? au.slice(0, -1).join(', ') + ', & ' + au[au.length - 1] : au[0] || 'Anónimo';
+    const auTxt = au.length > 1 ? au.slice(0, -1).join(', ') + ', & ' + au[au.length - 1] : au[0] || ANON(L);
     const src = [r.journal, r.volume ? r.volume + (r.issue ? `(${r.issue})` : '') : '', r.pages].filter(Boolean).join(', ');
-    return `${auTxt} (${r.year || 's.f.'}). ${String(r.title || '').replace(/\.$/, '')}. ${src}${src ? '.' : ''}${r.doi ? ` https://doi.org/${r.doi}` : ''}`.replace(/\s+/g, ' ').trim();
+    return `${auTxt} (${r.year || ND(L)}). ${String(r.title || '').replace(/\.$/, '')}. ${src}${src ? '.' : ''}${r.doi ? ` https://doi.org/${r.doi}` : ''}`.replace(/\s+/g, ' ').trim();
   }
   /* ctx = {study(key) → record | null, datum(name, arg, L) → string | null, table(name, arg, L) → {head, rows} | null} */
   function render(text, ctx, L) {
     const cites = new Set(), unknown = [], badTok = [];
     let plain = String(text || '').replace(CITE, (m, inner) => {
       const ks = inner.split(/\s*;\s*/).map(k => k.replace(/^@/, '').trim()).filter(Boolean);
-      const out = ks.map(k => { const r = ctx.study(k); if (!r) { unknown.push(k); return `?${k}`; } cites.add(k); return authorYear(r); });
+      const out = ks.map(k => { const r = ctx.study(k); if (!r) { unknown.push(k); return `?${k}`; } cites.add(k); return authorYear(r, L); });
       return `(${out.join('; ')})`;
     });
     const tables = [];

@@ -135,7 +135,7 @@
       const ks = studyKeys(); if (!ks.length) return null;
       const fs = ((state.extraction || {}).fields || []).filter(f => f.type !== 'long').slice(0, 5);
       const val = (sid, f) => { const v = Block6.finalValue(sid, f).v; return Array.isArray(v) ? v.join('; ') : v && typeof v === 'object' ? `${v.lat}, ${v.lon}` : v == null ? '?' : String(v); };
-      return { head: [t('Estudio', 'Study')].concat(fs.map(f => f.label)), rows: ks.map(k => [Writing.authorYear(k.rec)].concat(fs.map(f => val(k.study.id, f)))), caption: t(`Tabla. Características de los ${ks.length} estudios incluidos.`, `Table. Characteristics of the ${ks.length} included studies.`) };
+      return { head: [t('Estudio', 'Study')].concat(fs.map(f => f.label)), rows: ks.map(k => [Writing.authorYear(k.rec, L)].concat(fs.map(f => val(k.study.id, f)))), caption: t(`Tabla. Características de los ${ks.length} estudios incluidos.`, `Table. Characteristics of the ${ks.length} included studies.`) };
     }
     if (n === 'prisma') {
       const f = flow(); if (!f) return null;
@@ -325,7 +325,7 @@
       r.cites.forEach(k => cited.add(k.toLowerCase())); rawAll.push(r.plain);
       r.plain.split(/\n+/).map(x => x.trim()).filter(Boolean).forEach(p => p.split(/\u0000T(\d+)\u0000/).forEach((part, i) => { if (i % 2) blocks.push({ table: r.tables[+part] }); else if (part.trim()) blocks.push({ p: part.trim() }); }));
     });
-    const refs = c.keys.filter(k => cited.has(k.key.toLowerCase())).map(k => Writing.refEntry(k.rec)).concat(Writing.methodRefs(rawAll.join('\n'))).sort((a, b) => a.localeCompare(b, L));
+    const refs = c.keys.filter(k => cited.has(k.key.toLowerCase())).map(k => Writing.refEntry(k.rec, L)).concat(Writing.methodRefs(rawAll.join('\n'))).sort((a, b) => a.localeCompare(b, L));
     if (refs.length) { blocks.push({ h: 1, text: t('Referencias', 'References') }); refs.forEach(r => blocks.push({ p: r, style: 'Reference' })); }
     return { blocks, refs, title };
   }

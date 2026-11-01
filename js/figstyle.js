@@ -26,11 +26,11 @@ const FigStyle = {};
     { id: 'review', name: ['ReviewPro', 'ReviewPro'],
       note: ['La del programa: tinta índigo, resaltador ámbar, verde de incluido y rosa de excluido.', 'The program\'s own: indigo ink, highlighter amber, included green and excluded rose.'],
       c: ['#33539e', '#d97a2b', '#3a8c5c', '#c2415e', '#7b5ea7', '#2e9aa0', '#b5892a', '#5f6b86', '#8a6a4a', '#3b9ccf'] },
-    { id: 'okabe', name: ['Okabe–Ito (segura al daltonismo)', 'Okabe–Ito (colour-blind safe)'],
+    { id: 'okabe', name: ['Okabe–Ito (segura al daltonismo)', 'Okabe–Ito (color-blind safe)'],
       note: ['Diseñada para distinguirse con deuteranopía y protanopía. La opción prudente para publicar.', 'Designed to stay distinguishable under deuteranopia and protanopia. The prudent choice for publishing.'],
       c: ['#0072B2', '#E69F00', '#009E73', '#CC79A7', '#D55E00', '#56B4E9', '#F0E442', '#000000', '#7F7F7F', '#B2DF8A'] },
     { id: 'viridis', name: ['Viridis', 'Viridis'],
-      note: ['Perceptualmente uniforme y monótona en luminancia: ordena bien y sobrevive al blanco y negro.', 'Perceptually uniform and monotonic in lightness: it orders well and survives greyscale.'],
+      note: ['Perceptualmente uniforme y monótona en luminancia: ordena bien y sobrevive al blanco y negro.', 'Perceptually uniform and monotonic in lightness: it orders well and survives grayscale.'],
       c: ['#440154', '#472D7B', '#3B518B', '#2C718E', '#21908C', '#27AD81', '#5CC863', '#AADC32', '#D8E219', '#FDE725'] },
     { id: 'season', name: ['Estaciones', 'Seasons'],
       note: ['Del frío del invierno al calor del verano: para figuras que recorren el año.', 'From winter cold to summer heat: for figures that run through the year.'],
@@ -45,10 +45,10 @@ const FigStyle = {};
       note: ['Rojos, naranjas y dorados. Llama la atención; úsala cuando la figura sea el argumento.', 'Reds, oranges and golds. It shouts; use it when the figure is the argument.'],
       c: ['#8C2F1F', '#C1441E', '#E07B24', '#D9A521', '#A85C2E', '#7A3B52', '#B5563F', '#E0A96D', '#96421F', '#C97B2E'] },
     { id: 'contrast', name: ['Alto contraste', 'High contrast'],
-      note: ['Máxima separación entre colores contiguos. Para proyectar o imprimir en papel pobre.', 'Maximum separation between neighbouring colours. For projecting or printing on poor paper.'],
+      note: ['Máxima separación entre colores contiguos. Para proyectar o imprimir en papel pobre.', 'Maximum separation between neighboring colors. For projecting or printing on poor paper.'],
       c: ['#000000', '#E6194B', '#3CB44B', '#4363D8', '#F58231', '#911EB4', '#008080', '#9A6324', '#800000', '#808000'] },
-    { id: 'grey', name: ['Escala de grises', 'Greyscale'],
-      note: ['Para revistas que cobran el color. Comprueba aquí si tu figura se entiende sin él.', 'For journals that charge for colour. Check here whether your figure survives without it.'],
+    { id: 'grey', name: ['Escala de grises', 'Grayscale'],
+      note: ['Para revistas que cobran el color. Comprueba aquí si tu figura se entiende sin él.', 'For journals that charge for color. Check here whether your figure survives without it.'],
       c: ['#111111', '#3D3D3D', '#5C5C5C', '#777777', '#919191', '#A8A8A8', '#BDBDBD', '#D0D0D0', '#E0E0E0', '#EFEFEF'] },
   ];
 
@@ -173,7 +173,7 @@ const FigStyle = {};
       <h4>${two(['Paleta', 'Palette'])}</h4>
       <div class="fs-pals">${PALETTES.map(pl => `<button class="fs-pal${pl.id === S.palette ? ' on' : ''}" data-pal="${pl.id}" title="${esc(T(pl.note))}"><span class="fs-strip">${pl.c.map(c => `<i style="background:${c}"></i>`).join('')}</span><span>${two(pl.name)}</span></button>`).join('')}</div>
       <p class="hint" style="margin:6px 0 4px">${two([paletteOf().note[0], paletteOf().note[1]])}</p>
-      <h4>${two(['Ajustar un color', 'Adjust one colour'])}</h4>
+      <h4>${two(['Ajustar un color', 'Adjust one color'])}</h4>
       <div class="fs-swatches">${cols.map((c, i) => `<label class="fs-swl"><span class="fs-sw" style="background:${c}"></span><input type="color" value="${c}" data-cust="c${i + 1}"><small>c${i + 1}</small></label>`).join('')}</div>
       <div class="fs-grid">
         <label class="inline-label">${two(['Tipografía', 'Font'])}<select id="fsFont">${FONTS.map(f => `<option value="${f.id}"${f.id === S.font ? ' selected' : ''}>${T(f.name)}</option>`).join('')}</select></label>

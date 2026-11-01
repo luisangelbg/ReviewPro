@@ -4,7 +4,7 @@
 
    One tool for the whole review (chosen in the protocol, changeable here).
    Each reviewer assesses each included study; with two reviewers the
-   domains that differ are reconciled. The final judgements feed the
+   domains that differ are reconciled. The final judgments feed the
    traffic-light and summary plots and the GRADE rating of every outcome,
    whose pooled effect comes from the effects table of Block 6. */
 
@@ -31,7 +31,7 @@
   const studies = () => (window.Block6 ? Block6.studies() : []);
   const jPill = j => (j ? `<span class="b7-j" style="--jc:${Appraisal.J[j].c}">${Appraisal.J[j].s} ${two(Appraisal.J[j].t)}</span>` : `<span class="b7-j none">${L2('pendiente', 'pending')}</span>`);
 
-  /* ---------------- final judgement of a study ---------------- */
+  /* ---------------- final judgment of a study ---------------- */
   function finalOf(sid) {
     const t = tool(), ids = rids().filter(r => (AP().by[r] || {})[sid]);
     const fin = AP().final[sid] || {};
@@ -83,21 +83,21 @@
         const dr = res.domains[i];
         const qs = t.mode === 'questions' ? d.qs.map(qq => `<div class="b7-q"><div class="b7-qt">${esc(qq.id)} · ${two(qq.t)}${qq.key ? ` <span class="b7-key" title="${esc(T('Pregunta clave: una respuesta negativa lleva el dominio a riesgo alto', 'Key question: a negative answer takes the domain to high risk'))}">●</span>` : ''}</div><div class="b7-ans">${Object.keys(Appraisal.ANS).map(k => `<button class="chip${(a.answers || {})[qq.id] === k ? ' on' : ''}" data-ans="${qq.id}" data-v="${k}">${two(Appraisal.ANS[k])}</button>`).join('')}</div></div>`).join('') : '';
         return `<div class="b7-dom"><div class="b7-dh"><b>${esc(d.id)} · ${two(d.t)}</b>${jPill(dr.j)}${dr.overridden ? `<span class="b2-pill">${L2('ajustado', 'adjusted')}</span>` : ''}</div>${qs}
-          <div class="b7-ov"><label class="inline-label">${t.mode === 'questions' ? L2('Ajustar el juicio', 'Adjust the judgement') : L2('Juicio', 'Judgement')} ${scaleOpts((a.override[d.id] || {}).j || '', `data-ov="${d.id}"`)}</label>
+          <div class="b7-ov"><label class="inline-label">${t.mode === 'questions' ? L2('Ajustar el juicio', 'Adjust the judgment') : L2('Juicio', 'Judgment')} ${scaleOpts((a.override[d.id] || {}).j || '', `data-ov="${d.id}"`)}</label>
           <input type="text" data-why="${d.id}" aria-label="${esc(T(`Justificación del ajuste, dominio ${d.id}`, `Justification of the adjustment, domain ${d.id}`))}" value="${esc((a.override[d.id] || {}).why || '')}" placeholder="${esc(T('justificación (obligatoria si ajustas)', 'justification (required if you adjust)'))}"></div>
-          <textarea class="prose" rows="1" data-sup="${d.id}" aria-label="${esc(T(`Evidencia del juicio, dominio ${d.id}`, `Evidence for the judgement, domain ${d.id}`))}" placeholder="${esc(T('Cita o evidencia del artículo que respalda el juicio', 'Quote or evidence from the paper supporting the judgement'))}">${esc((a.support || {})[d.id] || '')}</textarea></div>`;
+          <textarea class="prose" rows="1" data-sup="${d.id}" aria-label="${esc(T(`Evidencia del juicio, dominio ${d.id}`, `Evidence for the judgment, domain ${d.id}`))}" placeholder="${esc(T('Cita o evidencia del artículo que respalda el juicio', 'Quote or evidence from the paper supporting the judgment'))}">${esc((a.support || {})[d.id] || '')}</textarea></div>`;
       }).join('');
     }
     const missingWhy = t.mode !== 'stars' && t.domains.some(d => (a.override[d.id] || {}).j && t.mode === 'questions' && !String((a.override[d.id] || {}).why || '').trim());
     box.innerHTML = `<h3 class="b4-title">${esc(s.rec.title)}</h3><div class="b4-meta">${esc(s.label)} · ${esc(s.rec.journal || '')}</div>${body}
-      <div class="b7-overall">${L2('Juicio global', 'Overall judgement')}: ${jPill(res.overall)}${t.mode !== 'stars' ? ` <label class="inline-label">${L2('ajustar', 'adjust')} ${scaleOpts((a.override.overall || {}).j || '', 'data-ov="overall"')}</label>` : ''}</div>
-      ${missingWhy ? `<div class="msg msg-warning">${L2('Escribe la justificación de cada juicio ajustado.', 'Write the justification of every adjusted judgement.')}</div>` : ''}`;
+      <div class="b7-overall">${L2('Juicio global', 'Overall judgment')}: ${jPill(res.overall)}${t.mode !== 'stars' ? ` <label class="inline-label">${L2('ajustar', 'adjust')} ${scaleOpts((a.override.overall || {}).j || '', 'data-ov="overall"')}</label>` : ''}</div>
+      ${missingWhy ? `<div class="msg msg-warning">${L2('Escribe la justificación de cada juicio ajustado.', 'Write the justification of every adjusted judgment.')}</div>` : ''}`;
   }
 
   /* ---------------- reconciliation ---------------- */
   function renderRecon() {
     const box = el('b7Recon'); if (!box) return;
-    if (rids().length < 2) { box.innerHTML = `<p class="hint">${L2('Con un solo revisor no hay juicios que conciliar.', 'With a single reviewer there are no judgements to reconcile.')}</p>`; return; }
+    if (rids().length < 2) { box.innerHTML = `<p class="hint">${L2('Con un solo revisor no hay juicios que conciliar.', 'With a single reviewer there are no judgments to reconcile.')}</p>`; return; }
     const t = tool(), scale = (t.scale || ['low', 'some', 'high']).concat(['ni']);
     const rows = studies().map(s => ({ s, f: finalOf(s.id) })).filter(x => x.f.conflicts.length);
     const agr = (() => {
@@ -105,9 +105,9 @@
       studies().forEach(s => { const A = (AP().by[a] || {})[s.id], B = (AP().by[b] || {})[s.id]; if (!A || !B) return; const ra = Appraisal.assess(AP().tool, A), rb = Appraisal.assess(AP().tool, B); ra.domains.forEach((d, i) => { if (d.j && rb.domains[i].j) { xs.push(d.j); ys.push(rb.domains[i].j); } }); });
       return xs.length ? Screening.cohen(xs, ys) : null;
     })();
-    box.innerHTML = (agr ? `<p class="hint">${L2(`Acuerdo por dominio entre ${esc(nameOf(rids()[0]))} y ${esc(nameOf(rids()[1]))}: ${fmtPct(agr.po, 0)}, κ = ${fmtFixed(agr.kappa, 2)} (${Screening.landis(agr.kappa)[0]}) sobre ${agr.n} juicios.`, `Agreement per domain between ${esc(nameOf(rids()[0]))} and ${esc(nameOf(rids()[1]))}: ${fmtPct(agr.po, 0)}, κ = ${fmtFixed(agr.kappa, 2)} (${Screening.landis(agr.kappa)[1]}) over ${agr.n} judgements.`)}</p>` : '') +
+    box.innerHTML = (agr ? `<p class="hint">${L2(`Acuerdo por dominio entre ${esc(nameOf(rids()[0]))} y ${esc(nameOf(rids()[1]))}: ${fmtPct(agr.po, 0)}, κ = ${fmtFixed(agr.kappa, 2)} (${Screening.landis(agr.kappa)[0]}) sobre ${agr.n} juicios.`, `Agreement per domain between ${esc(nameOf(rids()[0]))} and ${esc(nameOf(rids()[1]))}: ${fmtPct(agr.po, 0)}, κ = ${fmtFixed(agr.kappa, 2)} (${Screening.landis(agr.kappa)[1]}) over ${agr.n} judgments.`)}</p>` : '') +
       (rows.length ? rows.map(({ s, f }) => `<div class="b3-pair"><b>${esc(s.label)}</b>${f.conflicts.map(d => `<div class="b6-cf"><span>${d === 'overall' ? L2('Global', 'Overall') : esc(d)}</span>${f.by.map(r => { const x = Appraisal.assess(AP().tool, AP().by[r][s.id]); const j = d === 'overall' ? x.overall : (x.domains.find(y => y.id === d) || {}).j; return `<span class="b4-d">${esc(nameOf(r))}: ${j ? two(Appraisal.J[j].t) : '—'}</span>`; }).join('')}
-        <select data-fin="${esc(s.id)}|${d}" aria-label="${esc(T('Decisión final', 'Final decision') + ': ' + s.label + ' · ' + (d === 'overall' ? T('global', 'overall') : d))}"><option value="">${esc(T('decisión final…', 'final decision…'))}</option>${scale.map(j => `<option value="${j}">${esc(T(Appraisal.J[j].t[0], Appraisal.J[j].t[1]))}</option>`).join('')}</select></div>`).join('')}</div>`).join('') : `<div class="msg msg-success">${L2('No hay juicios en desacuerdo.', 'No judgements in disagreement.')}</div>`);
+        <select data-fin="${esc(s.id)}|${d}" aria-label="${esc(T('Decisión final', 'Final decision') + ': ' + s.label + ' · ' + (d === 'overall' ? T('global', 'overall') : d))}"><option value="">${esc(T('decisión final…', 'final decision…'))}</option>${scale.map(j => `<option value="${j}">${esc(T(Appraisal.J[j].t[0], Appraisal.J[j].t[1]))}</option>`).join('')}</select></div>`).join('')}</div>`).join('') : `<div class="msg msg-success">${L2('No hay juicios en desacuerdo.', 'No judgments in disagreement.')}</div>`);
   }
 
   /* ---------------- figures ---------------- */
@@ -120,7 +120,7 @@
     const rowH = 22, left = 170, colW = 44, top = 40;
     const W = left + cols.length * colW + 20, H = top + st.length * rowH + 60;
     Plot.clear(svg); svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-    /* the grid of judgements is the plot area, for the figure studio */
+    /* the grid of judgments is the plot area, for the figure studio */
     svg.setAttribute('data-plot', `${left} ${top} ${cols.length * colW} ${st.length * rowH}`);
     cols.forEach((c, i) => svg.appendChild(svgEl('text', { x: left + i * colW + colW / 2, y: top - 12, 'font-size': 10, 'font-weight': 700, 'text-anchor': 'middle', class: 'art-txt' }, c === 'overall' ? T('Global', 'Overall') : c)));
     st.forEach((s, r) => {
@@ -221,7 +221,7 @@
         <div class="b7-gg"><label>${L2('Punto de partida', 'Starting point')} <select data-gr="${esc(d.name)}|start"><option value="rct"${eff.start === 'rct' ? ' selected' : ''}>${esc(T('experimentos aleatorizados (alta)', 'randomized experiments (high)'))}</option><option value="obs"${eff.start === 'obs' ? ' selected' : ''}>${esc(T('estudios observacionales (baja)', 'observational studies (low)'))}</option></select></label>
         ${KEYS.map(k => `<label>${two(KN[k])} ${sel(d.name, k, eff[k], d.sug[k], downOpts)}${d.sug[k + 'Why'] ? `<small>${two(d.sug[k + 'Why'])}</small>` : ''}</label>`).join('')}
         ${eff.start === 'obs' ? UPS.map(k => `<label>${two(KN[k])} ${sel(d.name, k, eff[k], null, upOpts)}</label>`).join('') : ''}
-        <label class="wide">${L2('Notas y explicación de los juicios', 'Notes and explanation of the judgements')} <input type="text" data-grn="${esc(d.name)}" value="${esc(g.notes || '')}"></label></div></div>`;
+        <label class="wide">${L2('Notas y explicación de los juicios', 'Notes and explanation of the judgments')} <input type="text" data-grn="${esc(d.name)}" value="${esc(g.notes || '')}"></label></div></div>`;
     }).join('') + `<p class="hint">✱ ${L2('sugerencia calculada con los datos; puedes cambiarla, y conviene explicar por qué en las notas.', 'suggestion computed from the data; you can change it, and it is advisable to explain why in the notes.')}</p>`;
     renderSoF(ds);
   }

@@ -7,13 +7,13 @@
       Gomez & Gomez 1984) and of the domain-based bias tools: randomization and
       local control, true replication (Hurlbert 1984, on pseudoreplication),
       an adequate control, complete data, comparable measurement, selective
-      reporting and conflicts of interest. Each domain has signalling
-      questions; an algorithm proposes the domain judgement and the reviewer
+      reporting and conflicts of interest. Each domain has signaling
+      questions; an algorithm proposes the domain judgment and the reviewer
       may override it with a written reason. Alternatives: RoB 2 (Sterne et
       al. 2019) and ROBINS-I (Sterne et al. 2016) judged by domain, the
       Newcastle–Ottawa scale (Wells et al.) by stars, and a ten-question
       checklist for qualitative studies.
-   2. The overall judgement follows the rule of the domain tools: the worst
+   2. The overall judgment follows the rule of the domain tools: the worst
       domain, and "high" also when several domains raise some concerns.
    3. Summaries for the traffic-light and the bar plots (McGuinness &
       Higgins 2021), unweighted or weighted by each study's inverse-variance
@@ -30,7 +30,7 @@ const Appraisal = {};
 (function () {
   const has = v => v !== '' && v != null;
 
-  /* ---------- answers and judgements ---------- */
+  /* ---------- answers and judgments ---------- */
   const ANS = { Y: ['Sí', 'Yes'], PY: ['Probablemente sí', 'Probably yes'], PN: ['Probablemente no', 'Probably no'], N: ['No', 'No'], NI: ['Sin información', 'No information'], NA: ['No aplica', 'Not applicable'] };
   const J = {
     low: { t: ['Bajo', 'Low'], c: 'var(--success)', s: '+', rank: 0 },
@@ -71,7 +71,7 @@ const Appraisal = {};
       ],
     },
     rob2: {
-      name: ['RoB 2 — ensayos aleatorizados (juicio por dominio)', 'RoB 2 — randomized trials (judgement by domain)'], scale: ['low', 'some', 'high'], mode: 'judge', ref: 'Sterne et al. 2019',
+      name: ['RoB 2 — ensayos aleatorizados (juicio por dominio)', 'RoB 2 — randomized trials (judgment by domain)'], scale: ['low', 'some', 'high'], mode: 'judge', ref: 'Sterne et al. 2019',
       domains: [
         { id: 'D1', t: ['Proceso de aleatorización', 'Randomization process'] },
         { id: 'D2', t: ['Desviaciones de las intervenciones previstas', 'Deviations from intended interventions'] },
@@ -81,7 +81,7 @@ const Appraisal = {};
       ],
     },
     robinsi: {
-      name: ['ROBINS-I — estudios no aleatorizados (juicio por dominio)', 'ROBINS-I — non-randomized studies (judgement by domain)'], scale: ['low', 'moderate', 'serious', 'critical'], mode: 'judge', ref: 'Sterne et al. 2016',
+      name: ['ROBINS-I — estudios no aleatorizados (juicio por dominio)', 'ROBINS-I — non-randomized studies (judgment by domain)'], scale: ['low', 'moderate', 'serious', 'critical'], mode: 'judge', ref: 'Sterne et al. 2016',
       domains: [
         { id: 'D1', t: ['Confusión', 'Confounding'] },
         { id: 'D2', t: ['Selección de los participantes', 'Selection of participants'] },
@@ -103,7 +103,7 @@ const Appraisal = {};
     casp: {
       name: ['Lista para estudios cualitativos (10 preguntas)', 'Checklist for qualitative studies (10 questions)'], mode: 'questions', scale: ['low', 'some', 'high'],
       domains: [
-        { id: 'Q', t: ['Rigor del estudio cualitativo', 'Rigour of the qualitative study'], qs: [
+        { id: 'Q', t: ['Rigor del estudio cualitativo', 'Rigor of the qualitative study'], qs: [
           ['¿Objetivos claros?', 'Clear aims?'], ['¿Metodología cualitativa apropiada?', 'Appropriate qualitative methodology?'], ['¿Diseño adecuado a los objetivos?', 'Design appropriate to the aims?'],
           ['¿Selección de participantes adecuada?', 'Appropriate recruitment?'], ['¿Recolección de datos adecuada?', 'Appropriate data collection?'], ['¿Se consideró la relación investigador–participante?', 'Researcher–participant relationship considered?'],
           ['¿Se atendieron los aspectos éticos?', 'Ethical issues addressed?'], ['¿Análisis riguroso?', 'Rigorous analysis?'], ['¿Hallazgos claros?', 'Clear findings?'], ['¿Valor de la investigación?', 'Value of the research?']].map((t, i) => q('Q' + (i + 1), t, { key: i >= 7 })) },
@@ -111,7 +111,7 @@ const Appraisal = {};
     },
   };
 
-  /* ---------- judgement of one domain from its answers ---------- */
+  /* ---------- judgment of one domain from its answers ---------- */
   function badness(qq, a) {
     if (!a || a === 'NA') return 0;
     if (a === 'NI') return 1;
@@ -131,8 +131,8 @@ const Appraisal = {};
     return high ? 'high' : some ? 'some' : 'low';
   }
   /* overall: the worst domain; several domains with concerns count as high (as in RoB 2) */
-  function overall(judgements, scale) {
-    const js = judgements.filter(Boolean);
+  function overall(judgments, scale) {
+    const js = judgments.filter(Boolean);
     if (!js.length) return null;
     if (scale && scale.includes('critical')) {
       const worst = js.reduce((a, b) => (J[b].rank > J[a].rank ? b : a), 'low');
@@ -166,7 +166,7 @@ const Appraisal = {};
   }
 
   /* ---------- summaries for the plots ----------
-     rows: [{w, domains: {D1: j, …}, overall: j}] → per domain the share of each judgement */
+     rows: [{w, domains: {D1: j, …}, overall: j}] → per domain the share of each judgment */
   function summary(rows, domIds, weighted) {
     const out = {};
     domIds.concat(['overall']).forEach(d => {
@@ -218,7 +218,7 @@ const Appraisal = {};
     }
     /* publication bias: Egger's test only with at least ten studies */
     if (d.k >= 10 && d.egger) { s.pub = d.egger.p < 0.1 ? -1 : 0; s.pubWhy = [`Egger p = ${d.egger.p.toFixed(3)} con ${d.k} estudios.`, `Egger p = ${d.egger.p.toFixed(3)} with ${d.k} studies.`]; }
-    else { s.pub = 0; s.pubWhy = ['Con menos de 10 estudios la asimetría del embudo no se puede evaluar; se deja sin bajar y se anota.', 'With fewer than 10 studies funnel asymmetry cannot be assessed; it is left unrated down and noted.']; }
+    else { s.pub = 0; s.pubWhy = ['Con menos de 10 estudios la asimetría del embudo no se puede evaluar; se deja sin bajar y se anota.', 'With fewer than 10 studies funnel asymmetry cannot be assessed; it is not rated down and is noted.']; }
     return s;
   }
 

@@ -96,20 +96,20 @@ const Search = {};
     if (!blocks.length) out.push({ level: 'bad', msg: ['No hay bloques de conceptos.', 'There are no concept blocks.'] });
     blocks.forEach((b, i) => {
       const ts = activeTerms(b), name = b.name || `#${i + 1}`;
-      if (!ts.length) out.push({ level: 'bad', msg: [`El bloque «${name}» no tiene términos activos.`, `Block "${name}" has no active terms.`] });
-      if (ts.length === 1) out.push({ level: 'warn', msg: [`El bloque «${name}» tiene un solo término: agrega sinónimos, variantes ortográficas y nombres científicos.`, `Block "${name}" has a single term: add synonyms, spelling variants and scientific names.`] });
+      if (!ts.length) out.push({ level: 'bad', msg: [`El bloque «${name}» no tiene términos activos.`, `Block “${name}” has no active terms.`] });
+      if (ts.length === 1) out.push({ level: 'warn', msg: [`El bloque «${name}» tiene un solo término: agrega sinónimos, variantes ortográficas y nombres científicos.`, `Block “${name}” has a single term: add synonyms, spelling variants and scientific names.`] });
       ts.forEach(t => {
         const m = /^([^*?]*)\*/.exec(t);
-        if (m && m[1].replace(/\s/g, '').length < 4) out.push({ level: 'warn', msg: [`«${t}» trunca con menos de 4 letras: traerá miles de palabras que no quieres.`, `"${t}" truncates with fewer than 4 letters: it will bring thousands of words you do not want.`] });
-        if (/\b(AND|OR|NOT)\b/.test(t)) out.push({ level: 'bad', msg: [`«${t}» contiene un operador; cada término va en su propia casilla.`, `"${t}" contains an operator; each term goes in its own box.`] });
-        if (/[()"]/.test(t)) out.push({ level: 'warn', msg: [`«${t}» lleva paréntesis o comillas: la app los pone sola.`, `"${t}" carries brackets or quotes: the app adds them itself.`] });
+        if (m && m[1].replace(/\s/g, '').length < 4) out.push({ level: 'warn', msg: [`«${t}» trunca con menos de 4 letras: traerá miles de palabras que no quieres.`, `“${t}” truncates with fewer than 4 letters: it will bring thousands of words you do not want.`] });
+        if (/\b(AND|OR|NOT)\b/.test(t)) out.push({ level: 'bad', msg: [`«${t}» contiene un operador; cada término va en su propia casilla.`, `“${t}” contains an operator; each term goes in its own box.`] });
+        if (/[()"]/.test(t)) out.push({ level: 'warn', msg: [`«${t}» lleva paréntesis o comillas: la app los pone sola.`, `“${t}” carries brackets or quotes: the app adds them itself.`] });
       });
       /* redundancy: a term already covered by a truncated sibling */
       ts.forEach(t => ts.forEach(u => {
-        if (t !== u && /\*$/.test(u) && !/\*/.test(t) && t.toLowerCase().startsWith(u.slice(0, -1).toLowerCase())) out.push({ level: 'info', msg: [`«${t}» ya queda cubierto por «${u}».`, `"${t}" is already covered by "${u}".`] });
+        if (t !== u && /\*$/.test(u) && !/\*/.test(t) && t.toLowerCase().startsWith(u.slice(0, -1).toLowerCase())) out.push({ level: 'info', msg: [`«${t}» ya queda cubierto por «${u}».`, `“${t}” is already covered by “${u}”.`] });
       }));
       const seen = new Set();
-      ts.forEach(t => { const k = t.toLowerCase(); if (seen.has(k)) out.push({ level: 'info', msg: [`«${t}» está repetido en «${name}».`, `"${t}" is repeated in "${name}".`] }); seen.add(k); });
+      ts.forEach(t => { const k = t.toLowerCase(); if (seen.has(k)) out.push({ level: 'info', msg: [`«${t}» está repetido en «${name}».`, `“${t}” is repeated in “${name}”.`] }); seen.add(k); });
     });
     if (dialect === 'plain') {
       if (blocks.some(b => activeTerms(b).some(t => /[*?]/.test(t)))) out.push({ level: 'warn', msg: ['Los buscadores académicos generales no truncan: se quitó el asterisco. Escribe a mano las variantes que importen (singular y plural).', 'General academic search engines do not truncate: the asterisk was removed. Write out the variants that matter (singular and plural).'] });

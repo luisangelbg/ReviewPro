@@ -50,7 +50,7 @@
       art: 'typeMeta', name: ['Meta-análisis', 'Meta-analysis'],
       q: ['¿Cuál es el tamaño del efecto combinado y qué explica que varíe?', 'What is the size of the pooled effect and what explains its variation?'],
       when: ['Una revisión sistemática cuyos estudios reportan efectos comparables (medias, DE y n; conteos; correlaciones).', 'A systematic review whose studies report comparable effects (means, SDs and n; counts; correlations).'],
-      search: ['Exhaustiva; además, búsqueda de literatura gris contra el sesgo de publicación.', 'Exhaustive; plus a search of grey literature against publication bias.'],
+      search: ['Exhaustiva; además, búsqueda de literatura gris contra el sesgo de publicación.', 'Exhaustive; plus a search of gray literature against publication bias.'],
       appraisal: ['Obligatoria, con análisis de sensibilidad.', 'Required, with sensitivity analyses.'],
       synthesis: ['Modelo de efectos aleatorios, heterogeneidad, moderadores, sesgo de publicación.', 'Random-effects model, heterogeneity, moderators, publication bias.'],
       guide: ['PRISMA 2020 + certeza GRADE', 'PRISMA 2020 + GRADE certainty'],
@@ -103,7 +103,7 @@
   /* ---------------- principles ---------------- */
   const BRING = [
     { ic: '<rect x="4" y="4" width="16" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>', t: ['Todo en tu computadora', 'Everything on your computer'], s: ['Ni los registros ni tus decisiones salen del navegador; se trabaja sin conexión.', 'Neither the records nor your decisions leave the browser; it works offline.'] },
-    { ic: '<path d="M4 20h4l10-10-4-4L4 16v4z"/><path d="M13 7l4 4"/>', t: ['Orienta, no redacta', 'It guides, it does not write'], s: ['La autoría y el juicio son tuyos; la app ordena la evidencia y señala lo que falta.', 'Authorship and judgement are yours; the app orders the evidence and flags what is missing.'] },
+    { ic: '<path d="M4 20h4l10-10-4-4L4 16v4z"/><path d="M13 7l4 4"/>', t: ['Orienta, no redacta', 'It guides, it does not write'], s: ['La autoría y el juicio son tuyos; la app ordena la evidencia y señala lo que falta.', 'Authorship and judgment are yours; the app orders the evidence and flags what is missing.'] },
     { ic: '<path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/>', t: ['Cada decisión queda registrada', 'Every decision is recorded'], s: ['Quién incluyó o excluyó qué, cuándo y por qué: una revisión auditable.', 'Who included or excluded what, when and why: an auditable review.'] },
     { ic: '<path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/>', t: ['Reproducible', 'Reproducible'], s: ['El proyecto guardado rehace cada conteo, cada cifra y cada figura.', 'The saved project redoes every count, every number and every figure.'] },
     { ic: '<path d="M3 5h18M3 12h18M3 19h12"/>', t: ['Cuatro tipos, una ruta', 'Four types, one route'], s: ['Narrativa, exploratoria, sistemática y meta-análisis: la app activa lo que cada una exige.', 'Narrative, scoping, systematic and meta-analysis: the app turns on what each one requires.'] },
@@ -171,7 +171,7 @@
         ['discuss', ['Discutir e interpretar un tema, construir un marco', 'Discuss and interpret a topic, build a framework']]] },
     { id: 'focus', q: ['¿Qué tan acotada es tu pregunta?', 'How narrow is your question?'],
       a: [['focused', ['Acotada: población, intervención o exposición y desenlace definidos', 'Narrow: defined population, intervention or exposure, and outcome']],
-        ['broad', ['Amplia: «¿qué se sabe sobre…?»', 'Broad: "what is known about…?"']]] },
+        ['broad', ['Amplia: «¿qué se sabe sobre…?»', 'Broad: “what is known about…?”']]] },
     { id: 'quant', q: ['¿Los estudios reportan resultados numéricos comparables?', 'Do the studies report comparable numerical results?'],
       a: [['yes', ['Sí: medias con DE y n, conteos o correlaciones', 'Yes: means with SD and n, counts or correlations']],
         ['mixed', ['Algunos sí, otros no, o no lo sé aún', 'Some do, some do not, or I do not know yet']],

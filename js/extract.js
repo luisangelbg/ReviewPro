@@ -186,7 +186,7 @@ const Extract = {};
         const s = row.stat || {};
         let d;
         if (row.input === 't') { if (!has(s.t)) return fail(['Falta t.', 't is missing.']); d = dFromT(num(s.t), n1, n2); out.steps.push(`d = t·√(1/n1 + 1/n2) = ${d.toFixed(4)}`); }
-        if (row.input === 'F') { if (!has(s.F)) return fail(['Falta F.', 'F is missing.']); d = (num(s.sign) < 0 ? -1 : 1) * dFromT(Math.sqrt(num(s.F)), n1, n2); out.steps.push(`t = √F; d = ${d.toFixed(4)}`); out.warn.push(['F no tiene signo: la dirección del efecto se toma del campo «dirección».', 'F has no sign: the direction of the effect comes from the "direction" field.']); }
+        if (row.input === 'F') { if (!has(s.F)) return fail(['Falta F.', 'F is missing.']); d = (num(s.sign) < 0 ? -1 : 1) * dFromT(Math.sqrt(num(s.F)), n1, n2); out.steps.push(`t = √F; d = ${d.toFixed(4)}`); out.warn.push(['F no tiene signo: la dirección del efecto se toma del campo «dirección».', 'F has no sign: the direction of the effect comes from the “direction” field.']); }
         if (row.input === 'p') { if (!(num(s.p) > 0 && num(s.p) < 1)) return fail(['Falta p entre 0 y 1.', 'p between 0 and 1 is missing.']); d = dFromP(num(s.p), n1, n2, num(s.sign)); out.steps.push(`t = qt(1 − p/2, n1 + n2 − 2); d = ${d.toFixed(4)}`); out.warn.push(['Un valor p reportado como «p < 0.05» subestima el efecto; usa el p exacto cuando exista.', 'A p value reported as "p < 0.05" underestimates the effect; use the exact p when available.']); }
         if (row.input === 'diffci') {
           if (!has(s.lo) || !has(s.hi)) return fail(['Faltan los límites del IC.', 'The CI limits are missing.']);
