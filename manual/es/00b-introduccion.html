@@ -12,6 +12,7 @@
 <script src="../paginar.js"></script>
 <style>
   figure.reducida { width: 80%; margin-left: auto; margin-right: auto; }
+  .indice .toc ul li { line-height: 1.22; margin-bottom: 0.015in; }
 </style>
 </head>
 <body>
@@ -24,16 +25,16 @@
   <dl>
     <dt>Autor</dt><dd><b>Luis Ángel Barrera-Guzmán</b><br><span class="small">ORCID 0000-0001-8057-2583</span></dd>
     <dt>Programa</dt><dd>ReviewPro, versión 1.0.0 (septiembre de 2026)</dd>
-    <dt>Manual</dt><dd>Primera edición en español, 2026. Describe la versión 1.0 del programa.</dd>
+    <dt>Manual</dt><dd>Primera edición en español, 2026. Describe la versión 1.0.0 del programa.</dd>
     <dt>Licencia del programa</dt><dd>Licencia Pública General de GNU, versión 3 o posterior (GPL-3.0-or-later).</dd>
     <dt>Derechos del manual</dt><dd>© 2026 Luis Ángel Barrera-Guzmán. Todos los derechos reservados.</dd>
     <dt>Idioma de la interfaz</dt><dd>Español o inglés, con el botón <span class="ui">ES</span> · <span class="ui">EN</span> de la barra superior. En este manual los nombres de botones, campos y menús se escriben como aparecen en pantalla en español, por ejemplo <span class="ui">Empezar mi revisión →</span>.</dd>
   </dl>
 
   <h4>Cómo citar el programa</h4>
-  <div class="cita">Barrera-Guzmán, L. Á. (2026). <i>ReviewPro: plataforma en el navegador para artículos de revisión narrativos, exploratorios y sistemáticos y meta-análisis</i> (versión 1.0) [Programa de cómputo].</div>
+  <div class="cita">Barrera-Guzmán, L.Á. (2026). <i>ReviewPro: plataforma en el navegador para artículos de revisión narrativos, exploratorios y sistemáticos y meta-análisis</i> (versión 1.0.0) [software].</div>
   <h4>Cómo citar este manual</h4>
-  <div class="cita">Barrera-Guzmán, L. Á. (2026). <i>ReviewPro. Manual de usuario</i> (1.ª ed.). Distribuido con ReviewPro, versión 1.0.</div>
+  <div class="cita">Barrera-Guzmán, L.Á. (2026). <i>ReviewPro. Manual de usuario</i> (1.ª ed.). Distribuido con ReviewPro, versión 1.0.0.</div>
   <p class="small">El identificador de objeto digital (DOI) se añadirá a ambas citas cuando la versión 1.0 se archive. Mientras tanto, la cita del programa aparece en la sección <span class="ui">Cómo citar</span> de la portada de la app.</p>
 
   <div class="caja nota">
@@ -198,7 +199,7 @@
 <!-- ====================================================================== CÓMO LEER -->
 <section class="preliminares" id="como-leer" data-nueva-hoja style="--acento: var(--b0)">
   <h2 style="margin-top:0.2in">Cómo leer este manual</h2>
-  <p class="lead">El manual sigue el mismo orden que la app: diez bloques numerados que se recorren de izquierda a derecha en la barra de arriba. Cada capítulo explica un bloque y lleva su mismo número —el capítulo 5 es el Bloque 5, y sus secciones, figuras y tablas se numeran 5.1, 5.2…—. Cada uno empieza con la idea metodológica que el bloque necesita, sigue con lo que la pantalla hace y cómo se lee, y termina con los avisos que el bloque puede mostrar y qué hacer con ellos. Esta introducción no lleva número: sus secciones van como I.1, I.2…</p>
+  <p class="lead">El manual sigue el mismo orden que la app: diez bloques numerados que aparecen de arriba abajo en la lista de bloques, a la izquierda de la pantalla. Cada capítulo explica un bloque y lleva su mismo número —el capítulo 5 es el Bloque 5, y sus secciones, figuras y tablas se numeran 5.1, 5.2…—. Cada uno empieza con la idea metodológica que el bloque necesita, sigue con lo que la pantalla hace y cómo se lee, y termina con los avisos que el bloque puede mostrar y qué hacer con ellos. Esta introducción no lleva número: sus secciones van como I.1, I.2…</p>
 
   <h3>Un color para cada bloque</h3>
   <p>El color del bloque aparece en la apertura de su capítulo, en el número de cada sección, en la pestaña del borde de la hoja y en el índice, y es el mismo de la franja de la portada. Así sabes de un vistazo en qué parte de la app estás.</p>
@@ -278,8 +279,8 @@
   <p class="lead">ReviewPro es una plataforma para hacer un artículo de revisión <b>de la pregunta al manuscrito</b>: fija la pregunta y el protocolo antes de buscar, escribe las cadenas de búsqueda en la sintaxis de cada base, junta y depura los registros, ordena el cribado para que lo relevante aparezca primero, lleva la cuenta de cada exclusión hasta el diagrama PRISMA, extrae los datos y calcula los tamaños de efecto, evalúa el riesgo de sesgo y la certeza, combina los estudios —con o sin meta-análisis— y acompaña la escritura hasta un documento de Word con sus citas y sus referencias.</p>
   <p>Todo ocurre dentro del navegador. No hay que instalar nada, no se necesita saber programar y los datos no salen de la computadora. Está escrito para investigadores, profesores y tesistas de las ciencias agrícolas y biológicas, pero sirve para cualquier campo: sabe que la mayoría de las revisiones agronómicas combinan experimentos de campo con varios sitios o ciclos por estudio, que las medias vienen con la DMS o el error estándar en vez de la desviación estándar, que el riesgo de sesgo de un ensayo de campo no se evalúa con la misma lista que un ensayo clínico, y que lo que el lector necesita saber no es solo si un tratamiento funciona en promedio, sino qué pasaría en un sitio nuevo.</p>
   <figure>
-    <div class="marco"><img src="../img/in-portada.png" alt="La portada de ReviewPro: la barra superior con los diez bloques, el título «Del montón de artículos a una revisión que se sostiene», los botones de inicio y la ilustración de los registros que se reducen por un embudo hasta un diagrama de bosque"></div>
-    <figcaption><b>Figura I.1.</b> La portada de la app (Bloque 1). Arriba, la barra con los diez bloques; en el centro, los botones para empezar una revisión, elegir el tipo, probar los laboratorios, abrir el ejemplo completo y ver cómo citar.</figcaption>
+    <div class="marco"><img src="../img/in-portada.png" alt="La portada de ReviewPro: la barra superior con las herramientas, la lista de los diez bloques a la izquierda y el índice del bloque a la derecha; en el centro, el título «Del montón de artículos a una revisión que se sostiene», los botones de inicio y la ilustración de los registros que se reducen por un embudo hasta un diagrama de bosque"></div>
+    <figcaption><b>Figura I.1.</b> La portada de la app (Bloque 1). A la izquierda, la lista de los diez bloques; en el centro, los botones para empezar una revisión, elegir el tipo, probar los laboratorios, abrir el ejemplo completo y ver cómo citar.</figcaption>
   </figure>
 
   <!-- I.2 -->
@@ -354,7 +355,7 @@
   <!-- I.6 -->
   <h2 id="si-6"><span class="num">I.6</span>Recorrido por la interfaz</h2>
   <figure>
-    <div class="marco"><img src="../img/in-interfaz.png" alt="La parte de arriba del Bloque 2 con el proyecto de ejemplo abierto: la barra superior con el logotipo, los botones del estudio de figuras, del idioma y del tema, los diez bloques; y debajo la apertura del bloque y la tarjeta del proyecto"></div>
+    <div class="marco"><img src="../img/in-interfaz.png" alt="La parte de arriba del Bloque 2 con el proyecto de ejemplo abierto: la barra superior con el logotipo y los botones de las herramientas; a la izquierda, la lista de los diez bloques con los terminados palomeados; a la derecha, el índice del bloque; en el centro, la ruta ReviewPro › 2 Protocolo › Proyecto, la apertura del bloque y la tarjeta del proyecto con su barra de avance y sus botones"></div>
     <figcaption><b>Figura I.2.</b> La interfaz con el proyecto de ejemplo abierto en el Bloque 2. La barra superior se queda fija al desplazarte; cada bloque abre con su número, su título y una línea que dice para qué sirve, y se organiza en tarjetas numeradas.</figcaption>
   </figure>
   <table class="compacta">
@@ -364,7 +365,7 @@
       <tr><td><b>Paleta</b> (primer botón redondo)</td><td>Abre el <b>estudio de figuras</b>: paleta de colores, tipografía, grosores y fondo de todas las gráficas de la app a la vez, en pantalla y en lo que se exporta.</td></tr>
       <tr><td><span class="ui">ES</span> · <span class="ui">EN</span></td><td>El idioma de toda la interfaz. El texto que tú escribes no se traduce; las exportaciones (informe, manuscrito) salen en el idioma activo.</td></tr>
       <tr><td><b>Sol / luna</b></td><td>Tema claro u oscuro. Las figuras exportadas usan el tema que elijas en su menú, no el de la pantalla.</td></tr>
-      <tr><td><b>Barra de bloques</b></td><td>Los diez bloques. Todos están disponibles siempre: puedes volver atrás a corregir y los bloques siguientes se recalculan al abrirlos.</td></tr>
+      <tr><td><b>Lista de bloques</b></td><td>Los diez bloques, en la columna de la izquierda. Todos están disponibles siempre: puedes volver atrás a corregir y los bloques siguientes se recalculan al abrirlos.</td></tr>
       <tr><td><b>Botón ⤓ de cada figura</b></td><td>Aparece al pasar el cursor por la esquina de una gráfica: exporta esa figura en PNG, JPG o SVG, con su título y su nota.</td></tr>
     </tbody>
   </table>
