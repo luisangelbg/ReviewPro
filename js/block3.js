@@ -118,7 +118,7 @@
     const d = dedup();
     statTiles('b3DupTiles', [
       [T('Registros importados', 'Records imported'), fmtNum(recs.length), T(`${S().files.length} archivos`, `${S().files.length} files`)],
-      [T('Registros fusionados', 'Records merged'), fmtNum(d.removed), T(`${d.pairs.filter(p => p.kind === 'certain').length} coincidencias seguras, ${d.pairs.filter(p => S().decisions[p.key] === 'dup').length} confirmadas por ti`, `${d.pairs.filter(p => p.kind === 'certain').length} certain matches, ${d.pairs.filter(p => S().decisions[p.key] === 'dup').length} confirmed by you`)],
+      [T('Registros fusionados', 'Records merged'), fmtNum(d.removed), (() => { const nc = d.pairs.filter(p => p.kind === 'certain').length, nd = d.pairs.filter(p => S().decisions[p.key] === 'dup').length; return T(`${nc} ${nc === 1 ? 'coincidencia segura' : 'coincidencias seguras'}, ${nd} ${nd === 1 ? 'confirmada' : 'confirmadas'} por ti`, `${nc} certain ${nc === 1 ? 'match' : 'matches'}, ${nd} confirmed by you`); })()],
       [T('Pares por decidir', 'Pairs to decide'), fmtNum(d.pending), T('duplicados probables', 'probable duplicates'), d.pending ? 'warn' : 'ok'],
       [T('Registros únicos', 'Unique records'), fmtNum(d.unique.length), T(`se quitaron ${d.removed}`, `${d.removed} removed`), 'ok'],
     ]);
