@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · User’s Manual · Chapter 10</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b10" data-pestana="B10" data-orden="10" style="--acento: var(--b10)">
+  <div class="cap-apertura">
+    <div class="cap-num">10</div>
+    <div class="cap-etiqueta">Block 10 · Report</div>
+    <h1>Figures, report and package</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">Everything you have done, ready to leave the app: where the project stands against what its review type needs; the figures of every block in one place, numbered and with their caption; a single-file report that opens in any browser and prints to PDF; and a .zip with the project file that reproduces the whole review, plus the manuscript, the tables, the references and the figures.</p>
+    <ul class="cap-contenido">
+      <li><b>10.1</b>The project status</li>
+      <li><b>10.2</b>The figures</li>
+      <li><b>10.3</b>The report</li>
+      <li><b>10.4</b>The project package</li>
+      <li><b>10.5</b>Before submitting</li>
+    </ul>
+  </div>
+
+  <!-- 10.1 -->
+  <h2 id="s10-1"><span class="num">10.1</span>The project status</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b10-estado.png" alt="Card 1 of Block 10: the review type Meta-analysis with its guideline, 86% progress of what is required, blocks pending 7 and 9; eight cards for Blocks 2 to 9 with their need, status and progress; and the warning that the report and the package will be marked as a draft"></div>
+    <figcaption><b>Figure 10.1.</b> The status of the example: 86% of what is required; three risk-of-bias judgments remain to be reconciled (Block 7) and the manuscript to be finished (Block 9).</figcaption>
+  </figure>
+  <p class="lead">Block 10 starts with an inventory. Each working block (2 to 9) appears as <b>required</b>, <b>optional</b> or <b>not applicable</b> according to the review type—the same ones as in the route on the home page—, with its status (<i>complete</i>, <i>in progress</i> or <i>not started</i>) and its progress. A click on a card takes you to its block.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.7in">Block</th><th>How its progress is measured</th></tr></thead>
+    <tbody>
+      <tr><td>2 Protocol</td><td>The complete sections of the protocol review (Section 2.8).</td></tr>
+      <tr><td>3 Search</td><td>There is a strategy and there are imported records.</td></tr>
+      <tr><td>4 Screening</td><td>The records with a final decision (or unread after the stopping rule).</td></tr>
+      <tr><td>5 Full text</td><td>The reports resolved; complete when nothing is pending.</td></tr>
+      <tr><td>6 Extraction</td><td>The studies with effects (in a meta-analysis) or with some extracted datum.</td></tr>
+      <tr><td>7 Quality and bias</td><td>The studies with a final overall judgment.</td></tr>
+      <tr><td>8 Synthesis</td><td>The outcomes the model was able to pool.</td></tr>
+      <tr><td>9 Writing</td><td>The sections that reach the minimum of their word target.</td></tr>
+    </tbody>
+  </table>
+  <p>While something required is missing, the app says so and the report and the package come out marked as <b>DRAFT</b>; you can generate them anyway, to share your progress.</p>
+
+  <!-- 10.2 -->
+  <h2 id="s10-2"><span class="num">10.2</span>The figures</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b10-figuras.png" alt="Card 2 of Block 10: the gallery of figures numbered 1 to 9—the PRISMA diagram, the records by year, the screening curve, the traffic-light plot and the risk-of-bias summary, the forest plot, the funnel, the sensitivity plot and the bubbles—each with its checkbox, its block, its Export button and its editable caption"></div>
+    <figcaption><b>Figure 10.2.</b> The figures of the example, numbered in the order they would appear in the article.</figcaption>
+  </figure>
+  <p>Here are the figures of every block: the PRISMA diagram, the records by year, the screening curve, the traffic-light plot and the risk-of-bias summary, the forest plot, the funnel, the sensitivity plot, the bubbles, the gap map and the timeline. The ones that already have content appear, are numbered in order and enter the report and the package with their caption.</p>
+  <ul>
+    <li>The <b>checkbox</b> includes or excludes each figure; the protocol timeline starts excluded, because it rarely goes into the article. The numbering shifts on its own.</li>
+    <li>The <b>caption</b> is the one it will carry in the manuscript; if empty, the title is used.</li>
+    <li><span class="ui">⤓ Export</span> opens the figure’s export menu: PNG, JPG or SVG, from 150 to 900 dpi, light or dark theme, background, title and footnote.</li>
+  </ul>
+  <p>The style is that of the <b>figure studio</b> in the top bar: palette, typeface, line widths and background change all the figures at once. Those of Block 8 belong to the outcome chosen there; to export those of another, change it in Block 8 and come back. If you changed something in another block, <span class="ui">↻ Refresh from the blocks</span> redraws the gallery.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Decision rule · format and resolution</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>If</b> the journal accepts vector figures, or you are going to retouch it</td><td><b>then</b> SVG: it does not pixelate and can be edited in any vector drawing program.</td></tr>
+      <tr><td><b>If</b> it asks for raster images</td><td><b>then</b> PNG at 300 dpi (600 if requested); the resolution is written into the file, which is what the journal reads.</td></tr>
+      <tr><td><b>If</b> the forest plot has many effects</td><td><b>then</b> export at full page size and check that the labels are legible in print.</td></tr>
+    </tbody></table>
+  </div>
+
+  <!-- 10.3 -->
+  <h2 id="s10-3"><span class="num">10.3</span>The report</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b10-informe.png" alt="Card 3 of Block 10: the checkboxes to include the manuscript and annex the protocol, and the preview of the report with its draft heading, the title, the authors, the date, the version, the registration, and the question and scope section with the status of the blocks"></div>
+    <figcaption><b>Figure 10.3.</b> The preview of the example’s report, marked as a draft.</figcaption>
+  </figure>
+  <p>The report is a single <code>.html</code> file, with no dependencies, that reads in any browser and prints to PDF with <span class="ui">🖶 Print or save as PDF</span>. It serves to share the state of the review with co-authors, with a committee or with whoever asks for the supplementary material. Its sections:</p>
+  <table class="compacta">
+    <thead><tr><th style="width:2in">Section</th><th>What it contains</th></tr></thead>
+    <tbody>
+      <tr><td><b>Heading</b></td><td>Review type (and “DRAFT” if something required is missing), title, authors, date, software version and registration.</td></tr>
+      <tr><td><b>1 · Question and scope</b></td><td>The question, the objectives, the status of each block and the reporting guideline.</td></tr>
+      <tr><td><b>2 · Search</b></td><td>The search report from Block 3 and the figure of records by year.</td></tr>
+      <tr><td><b>3 · Study selection</b></td><td>The flow in one sentence, the agreement between reviewers, the PRISMA diagram and the screening curve.</td></tr>
+      <tr><td><b>4 · Included studies</b></td><td>The characteristics table.</td></tr>
+      <tr><td><b>5 · Risk of bias</b></td><td>The tool and the two plots.</td></tr>
+      <tr><td><b>6 · Synthesis</b></td><td>The results per outcome, the methods paragraph and the figures of Block 8.</td></tr>
+      <tr><td><b>7 · Certainty of the evidence</b></td><td>The summary of findings with GRADE.</td></tr>
+      <tr><td><b>8 · Manuscript</b></td><td>The text of Block 9 with citations and references (<span class="ui">Include the manuscript</span> checkbox).</td></tr>
+      <tr><td><b>Annex A · Protocol</b></td><td>The protocol document (<span class="ui">Annex the protocol</span> checkbox).</td></tr>
+    </tbody>
+  </table>
+  <p>All the numbers come from the project at the moment it is generated. If you change something afterwards, generate the report again.</p>
+
+  <!-- 10.4 -->
+  <h2 id="s10-4"><span class="num">10.4</span>The project package</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b10-paquete.png" alt="Card 4 of Block 10: the checkbox to add the figures as PNG, the buttons for the package and for the included studies in RIS and BibTeX, the package-ready message with 28 files and 118 kB, and the list of files with their description"></div>
+    <figcaption><b>Figure 10.4.</b> The package of the example: 28 files in 118 kB, each with its description.</figcaption>
+  </figure>
+  <p><span class="ui">⤓ Package (.zip)</span> gathers into a single file everything the review produced, in folders:</p>
+  <table class="compacta">
+    <thead><tr><th style="width:2.4in">File</th><th>What it is</th></tr></thead>
+    <tbody>
+      <tr><td><code>README.txt</code></td><td>What is in the package and how to reopen the project.</td></tr>
+      <tr><td><code>proyecto/….reviewpro.json</code></td><td>The full project: it opens in Block 2 of any copy of ReviewPro and reproduces every number.</td></tr>
+      <tr><td><code>informe.html</code></td><td>The report of Section 10.3.</td></tr>
+      <tr><td><code>protocolo/</code></td><td>The protocol and the fields for the PROSPERO and OSF registrations.</td></tr>
+      <tr><td><code>busqueda/</code>, <code>cribado/</code>, <code>seleccion/</code></td><td>The strategy and its log, all the screening decisions and the counts of the flow diagram.</td></tr>
+      <tr><td><code>extraccion/</code>, <code>calidad/</code>, <code>sintesis/</code></td><td>The characteristics and effects tables, the summary of findings, the results per outcome and the methods paragraph.</td></tr>
+      <tr><td><code>referencias/</code></td><td>The included studies in RIS and BibTeX, with the manuscript’s citation keys.</td></tr>
+      <tr><td><code>manuscrito/</code></td><td>The manuscript in Word, HTML and Markdown.</td></tr>
+      <tr><td><code>figuras/</code></td><td>The included figures in SVG, numbered and with their caption as the title; with the checkbox, also as PNG at 300 dpi.</td></tr>
+    </tbody>
+  </table>
+  <p>The PDFs of the studies do <b>not</b> go into the package: the project only stores where each one is. The <span class="ui">⤓ Included studies (.ris)</span> and <span class="ui">(.bib)</span> buttons download only the references, for your reference manager.</p>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Theory in brief · what makes a review reproducible</div>
+    <p>That someone else can see every decision and repeat every calculation: the search as it was run, why each record was excluded, which value was extracted from each article and from where, how each study was judged and with which model they were pooled. The project file stores all of that, and the calculations are deterministic: the same project gives the same numbers on any computer and offline. The package was assembled by the app itself, byte by byte, following the public specification of the .zip format, without third-party libraries.</p>
+  </div>
+
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>The messages of this block</div>
+    <p><i>“There are no figures yet”</i>, the draft warning and, when the package is assembled, how many files came out or the error if something failed.</p>
+  </div>
+
+  <!-- 10.5 -->
+  <h2 id="s10-5"><span class="num">10.5</span>Before submitting</h2>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Decision rule · the final check</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>If</b> the status says DRAFT</td><td><b>then</b> finish the pending blocks, or explain in the manuscript why they do not apply.</td></tr>
+      <tr><td><b>If</b> the checker of Block 9 flags claims</td><td><b>then</b> support them or rewrite them before submitting.</td></tr>
+      <tr><td><b>If</b> the PRISMA checklist has items marked “missing”</td><td><b>then</b> add them: they are the ones referees check first.</td></tr>
+      <tr><td><b>If</b> you changed data after exporting</td><td><b>then</b> export the manuscript, the figures, the report and the package again: each exported file is a snapshot of the project at that moment.</td></tr>
+      <tr><td><b>If</b> the journal asks for data and code</td><td><b>then</b> attach the package: the project file and the tables are the data, and ReviewPro with its version is the code.</td></tr>
+    </tbody></table>
+    <p class="regla-pie">This closes the ten blocks. The appendices follow: the files the app reads and writes, the decision rules gathered together, the glossary, what to do when something goes wrong, the references and the license.</p>
+  </div>
+</section>
+
+</body>
+</html>

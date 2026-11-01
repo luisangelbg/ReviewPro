@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · User’s Manual · Chapter 8</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+<style>
+  .formula { font-family: var(--mono); font-size: 8.8pt; background: var(--marino-suave); border-radius: 5px; padding: 0.07in 0.12in; margin: 0.08in 0; }
+</style>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b8" data-pestana="B8" data-orden="8" style="--acento: var(--b8)">
+  <div class="cap-apertura">
+    <div class="cap-num">8</div>
+    <div class="cap-etiqueta">Block 8 · Synthesis</div>
+    <h1>Synthesis and meta-analysis</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">The meta-analysis of each outcome from the effects table of Block 6: a multilevel model for studies that contribute several effects (or the average per study), heterogeneity with its prediction interval, moderators in subgroups and meta-regression, sensitivity analyses and publication bias. For reviews that do not pool effects: vote counting by direction, the concept matrix and the evidence gap map. And a methods paragraph written from what was actually run.</p>
+    <ul class="cap-contenido">
+      <li><b>8.1</b>Data and model</li>
+      <li><b>8.2</b>The result and the forest plot</li>
+      <li><b>8.3</b>Heterogeneity and moderators</li>
+      <li><b>8.4</b>Sensitivity analyses</li>
+      <li><b>8.5</b>Publication bias</li>
+      <li><b>8.6</b>Synthesis without meta-analysis</li>
+      <li><b>8.7</b>Methods and export</li>
+    </ul>
+  </div>
+
+  <!-- 8.1 -->
+  <h2 id="s8-1"><span class="num">8.1</span>Data and model</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b8-modelo.png" alt="Card 1 of Block 8: the outcome Rendimiento de grano, the multilevel model selected instead of the average per study, and the recommended t test"></div>
+    <figcaption><b>Figure 8.1.</b> Choose the outcome, the model and the test.</figcaption>
+  </figure>
+  <p class="lead">You work with one <b>outcome</b> at a time: the menu lists those that have effects in Block 6. In agronomic experiments a study almost always contributes several effects—sites, seasons, rates—that resemble each other more than they resemble those of other studies. There are two ways of handling them:</p>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:2in"><span class="ui">Multilevel (effects in studies)</span> <i>(default)</i></td><td>A three-level random-effects model—the sampling error of each effect, the variation between effects of the same study and the variation between studies—fitted by restricted maximum likelihood (Konstantopoulos 2011; Cheung 2014). It uses every effect and tells you how much heterogeneity there is at each level.</td></tr>
+      <tr><td><span class="ui">Average per study</span></td><td>Averages the effects of each study assuming a correlation ρ between them (Borenstein et al. 2009) and pools the averages with the classic random-effects model, with the τ² estimator of your choice (REML, DerSimonian–Laird, Paule–Mandel, Hedges or ML). The ρ slider appears.</td></tr>
+    </tbody>
+  </table>
+  <p>The <b>t</b> <span class="ui">Test</span> (recommended) uses degrees of freedom equal to the number of studies minus the number of coefficients, like the Knapp and Hartung (2003) adjustment: with few studies its intervals are honest; the <b>z</b> test makes them too narrow.</p>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Theory in brief · why effects should not be treated as independent</div>
+    <p>If the three sites of a study enter as three independent studies, that study weighs three times as much and the confidence interval narrows as if there were more evidence than there is. The multilevel model shares the study’s weight among its effects. The average also avoids the problem, but it loses the within-study variation and depends on a ρ that is almost never reported; that is why the app always runs it in the sensitivity analysis with ρ = 0.2, 0.5 and 0.8.</p>
+  </div>
+
+  <!-- 8.2 -->
+  <h2 id="s8-2"><span class="num">8.2</span>The result and the forest plot</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b8-resultado.png" alt="Card 2 of Block 8: five figures—pooled effect of +16.9% with its CI, 41 effects from 20 studies, prediction interval from −12.7% to +56.5%, between- and within-study variances with an I² of 79%, and p below 0.001—and the reading of the result in three paragraphs"></div>
+    <figcaption><b>Figure 8.2.</b> The result of the example and its reading: the mean effect is clear, but the prediction interval includes losses.</figcaption>
+  </figure>
+  <table class="compacta">
+    <thead><tr><th style="width:1.8in">Figure</th><th>What it says</th></tr></thead>
+    <tbody>
+      <tr><td><b>Pooled effect</b></td><td>The mean effect with its 95% CI; with the response ratio, as a percentage change.</td></tr>
+      <tr><td><b>Data</b></td><td>Effects / studies.</td></tr>
+      <tr><td><b>Prediction interval</b></td><td>Where the true effect of a new site or study would fall (Higgins et al. 2009).</td></tr>
+      <tr><td><b>σ² between · within</b></td><td>The between-study variance and the variance between effects of the same study, with the total I² and its split by level.</td></tr>
+      <tr><td><b>Test of the effect</b></td><td>The p value, with the statistic and its degrees of freedom.</td></tr>
+    </tbody>
+  </table>
+  <p>Below, the app reads the result in words: the effect with its interval, what the prediction interval says (<i>“it includes losses, so the effect is not guaranteed everywhere”</i>), and how the heterogeneity is split, with the likelihood-ratio test that the within-study level is needed.</p>
+  <figure class="media">
+    <div class="marco"><img src="../img/en/b8-bosque.png" alt="The forest plot of the example: 41 effects by study and site, each with its square proportional to its weight and its interval, its value as a percentage and its weight; at the bottom, the diamond of the pooled effect of +16.9% and the dashed line of the prediction interval, over a percentage axis"></div>
+    <figcaption><b>Figure 8.3.</b> The forest plot: each effect with its interval and its multilevel weight; at the bottom, the diamond of the pooled effect and the wider prediction interval.</figcaption>
+  </figure>
+  <p>In the forest plot, the size of each square is its <b>weight</b> in the multilevel model: the effects of a study with many sites weigh less each than a lone effect of the same precision, because they share their study’s weight. The axis is on the scale of the analysis (logarithmic for lnRR) with labels in percent.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Decision rule · how to read the result</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>If</b> the CI excludes zero and so does the prediction interval</td><td><b>then</b> the effect is consistent: it is expected at almost any site.</td></tr>
+      <tr><td><b>If</b> the CI excludes zero but the prediction interval includes it</td><td><b>then</b> it works on average, but not everywhere: look for the moderators that explain where it does (this is the case in the example).</td></tr>
+      <tr><td><b>If</b> the CI includes zero</td><td><b>then</b> there is no evidence of a mean effect; that is not the same as evidence that there is no effect.</td></tr>
+      <tr><td><b>If</b> almost all the heterogeneity lies within studies</td><td><b>then</b> the effect changes from one site or season to another more than from one study to another: local conditions rule.</td></tr>
+    </tbody></table>
+  </div>
+
+  <!-- 8.3 -->
+  <h2 id="s8-3"><span class="num">8.3</span>Heterogeneity and moderators</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b8-moderadores.png" alt="Card 3 of Block 8: the subgroups by inoculant type with their effect and I², the test of subgroup differences with p = 0.328; the meta-regression with soil available phosphorus checked, its coefficients with a slope of −0.0062 and p = 0.015, the omnibus test and a pseudo-R² of 18%; and the bubble plot of the effect against soil phosphorus with the fitted line"></div>
+    <figcaption><b>Figure 8.4.</b> The moderators of the example: the inoculant type does not explain the variation (p = 0.328), soil phosphorus does (p = 0.015): the response falls as available phosphorus rises.</figcaption>
+  </figure>
+  <p>The moderators are the fields of the extraction form. Declaring them in the protocol before seeing the data is what separates an exploration from a fishing expedition.</p>
+  <ul>
+    <li><b>Subgroups</b>: one categorical moderator. For each level, its effects and studies, its pooled effect and its I²; and the test of subgroup differences (F with the t test, Q<sub>M</sub> with the z test).</li>
+    <li><b>Meta-regression</b>: one or several numeric or categorical moderators, in a mixed-effects model with the same multilevel structure. It gives each coefficient with its SE, CI and p, the omnibus test and the heterogeneity explained (pseudo-R²). With a single numeric moderator, the <b>bubble plot</b> shows each effect (sized by its weight) and the fitted line.</li>
+  </ul>
+  <div class="caja ejemplo">
+    <div class="caja-t"><span class="ico">▸</span>Example · soil phosphorus</div>
+    <p>The slope is −0.0062 per mg/kg of available phosphorus (95% CI −0.0111 to −0.0014; p = 0.015): at 5 mg/kg the estimated response is about +27%, and at 35 mg/kg, +5%. Phosphorus explains 18% of the heterogeneity. This is what the protocol’s hypothesis predicted, and that is why it counts as a confirmatory result and not as a fishing find.</p>
+  </div>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>Moderators associate; they do not prove</div>
+    <p>A moderator compares studies, not randomly assigned plots: soil phosphorus may go hand in hand with climate, cultivar or management. An association between studies is a hypothesis for an experiment, not the demonstration of a cause. With few studies per level or many moderators at once, the results become unstable.</p>
+  </div>
+
+  <!-- 8.4 -->
+  <h2 id="s8-4"><span class="num">8.4</span>Sensitivity analyses</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b8-sensibilidad.png" alt="Card 4 of Block 8: the table with the main analysis and four alternatives—average per study with ρ of 0.5, 0.2 and 0.8 and without high risk-of-bias studies—all marked as holds; and the leave-one-study-out plot, with the effect and its interval without each of the 20 studies, and the note that the effect ranges from +15.2% to +18.8%"></div>
+    <figcaption><b>Figure 8.5.</b> The result of the example holds with the other model, with any ρ, without the high-risk studies and without each one of the studies.</figcaption>
+  </figure>
+  <p>The table repeats the analysis with different decisions and says, against the main one, whether the result <b>holds</b>, <b>significance changes</b> or it <b>changes sign</b>: the other handling of multiple effects (the average per study with ρ = 0.2, 0.5 and 0.8, or the multilevel model if the main one is the average), without the high risk-of-bias studies of Block 7, without the imputed standard deviations of Block 6 and, with the average, with the DerSimonian–Laird estimator. The <b>leave-one-study-out</b> plot repeats the analysis without each study and names the most influential one.</p>
+
+  <!-- 8.5 -->
+  <h2 id="s8-5"><span class="num">8.5</span>Publication bias</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b8-sesgo.png" alt="Card 5 of Block 8: Egger’s test on the study averages with p = 0.423, the multilevel Egger test with p = 0.824 and trim-and-fill with no missing studies; and the symmetric funnel plot of the 20 studies"></div>
+    <figcaption><b>Figure 8.6.</b> The funnel of the example is symmetric, neither Egger test detects asymmetry and trim-and-fill adds no studies.</figcaption>
+  </figure>
+  <p>Three tools, on the study averages or on all the effects: <b>Egger’s test</b> (Egger et al. 1997) with the averages; its <b>multilevel version</b>, with the standard error as a moderator (Nakagawa et al. 2022); and <b>trim-and-fill</b> (Duval and Tweedie 2000), which estimates how many studies would be missing for the funnel to be symmetric, draws them in the funnel and gives the adjusted effect. The latter is a sensitivity analysis, not a correction.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Decision rule · the funnel</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>If</b> there are fewer than 10 studies</td><td><b>then</b> the tests have very little power: the app shows them as a reference, not as a conclusion.</td></tr>
+      <tr><td><b>If</b> the standard errors barely vary</td><td><b>then</b> the app warns that the tests are not informative; with lnRR, the variance depends on the effect and can create a spurious slope.</td></tr>
+      <tr><td><b>If</b> there is asymmetry</td><td><b>then</b> it may be publication bias, but also real heterogeneity (small studies are run under other conditions); check whether a moderator explains it.</td></tr>
+    </tbody></table>
+  </div>
+
+  <!-- 8.6 -->
+  <h2 id="s8-6"><span class="num">8.6</span>Synthesis without meta-analysis</h2>
+  <p>When the effects cannot be pooled—incomparable measures, incomplete data, a scoping or narrative review—card 6 offers three tools from the SWiM guideline (Campbell et al. 2020).</p>
+  <ul>
+    <li><b>Vote counting by direction of effect</b>: one vote per study according to the sign of its effect (the average of its effects), with the proportion in favor, its interval and an exact sign test. It is the synthesis allowed when the effects cannot be pooled; never count “significant / non-significant” votes, which confuse the size of the effect with the size of the study.</li>
+    <li><b>Concept matrix</b>: the studies against the values of a list field of the form—practices, outcomes measured, inoculant type—with their totals. It is the central table of a scoping review.</li>
+    <li><b>Evidence gap map</b>: two crossed fields, with the number of studies in each cell; the empty ones are research gaps.</li>
+  </ul>
+  <div class="dos">
+  <figure style="margin:0">
+    <div class="marco"><img src="../img/en/b8-sinma.png" alt="Card 6 of Block 8: vote counting with 18 studies favorable and 2 unfavorable, 90% favorable with its interval and p below 0.001; and the concept matrix of the 20 studies by inoculant type, with its totals"></div>
+    <figcaption><b>Figure 8.7.</b> Vote counting and the concept matrix of the example.</figcaption>
+  </figure>
+  <figure style="margin:0">
+    <div class="marco"><img src="../img/en/b8-vacios.png" alt="The gap map of the example: the 15 countries in rows and the three inoculant types in columns, with circles for the number of studies and the empty cells marked gap in red"></div>
+    <figcaption><b>Figure 8.8.</b> The gap map by country and inoculant type: native inoculants have been tested in few countries, and in none of the European ones.</figcaption>
+  </figure>
+  </div>
+
+  <!-- 8.7 -->
+  <h2 id="s8-7"><span class="num">8.7</span>Methods and export</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b8-metodos.png" alt="Card 7 of Block 8: the methods paragraph written with the effect measure, the multilevel model, heterogeneity, moderators, sensitivity analyses, publication bias and the software version, with its Copy button and the button to download the results per outcome"></div>
+    <figcaption><b>Figure 8.9.</b> The methods paragraph of the example, written from what was actually run and with its references.</figcaption>
+  </figure>
+  <p>The methods paragraph says which effect measure was used, which model and why, which test, how heterogeneity was described, which moderators were explored, which sensitivity analyses were run and how publication bias was explored, with the references of each method and the software version. It changes if you change the model or the moderators. It is a starting point for your manuscript: in Block 9 it is inserted with one click into the synthesis section, and its references enter the list on their own. <span class="ui">⤓ Results per outcome (.csv)</span> downloads the effect, its SE, CI, p, prediction interval, variances and I² for each outcome.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>The messages of this block</div>
+    <p><i>“There are not enough data for this outcome. Extract the effects in Block 6”</i>; <i>“At least two subgroups with data are needed”</i>; <i>“There are not enough effects with data for those moderators”</i>; those about few studies or similar precisions in publication bias; and those of the matrix and the map when the chosen field has no values.</p>
+  </div>
+</section>
+
+</body>
+</html>

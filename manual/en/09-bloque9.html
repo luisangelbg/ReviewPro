@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · User’s Manual · Chapter 9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b9" data-pestana="B9" data-orden="9" style="--acento: var(--b9)">
+  <div class="cap-apertura">
+    <div class="cap-num">9</div>
+    <div class="cap-etiqueta">Block 9 · Writing</div>
+    <h1>Guided writing</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">The manuscript is written here, section by section, on the skeleton of the review type. The app does not write: it says what each section needs, offers the citations of the included studies and the numbers of the analysis as live data that follow the project, checks that every claim is supported, keeps the checklist of the reporting guideline and exports to Word, HTML or Markdown with citations and references resolved.</p>
+    <ul class="cap-contenido">
+      <li><b>9.1</b>The skeleton of the manuscript</li>
+      <li><b>9.2</b>Citations and live data</li>
+      <li><b>9.3</b>Sentences with data to start from</li>
+      <li><b>9.4</b>The claim checker</li>
+      <li><b>9.5</b>The reporting checklist</li>
+      <li><b>9.6</b>Exporting the manuscript</li>
+    </ul>
+  </div>
+
+  <!-- 9.1 -->
+  <h2 id="s9-1"><span class="num">9.1</span>The skeleton of the manuscript</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b9-editor.png" alt="Card 1 of Block 9: on the left, the sections of the manuscript grouped into methods and results, each with its words, its target and a progress bar; on the right, the Results of syntheses section with its guidance, the menus to cite and to insert a live datum, a suggested sentence, the text with live data and the preview with the numbers resolved"></div>
+    <figcaption><b>Figure 9.1.</b> The editor. On the left, the sections of the meta-analysis with their progress; on the right, the results of the synthesis written with live data and, below, how they read with the numbers from Block 8.</figcaption>
+  </figure>
+  <p class="lead">The sections depend on the review type. A systematic review and a meta-analysis follow the introduction, methods, results and discussion format with the subsections required by PRISMA 2020—the meta-analysis adds publication bias—; the scoping review replaces extraction with <i>data charting</i> and has no risk of bias or GRADE; the narrative review has free <b>themes</b>, which you rename by typing in their title and multiply with <span class="ui">＋ Another theme</span>.</p>
+  <p>Each section shows <b>guidance</b> on what it should contain—the one for the results of syntheses says <i>“Per outcome: effect with CI, prediction interval, heterogeneity, moderators and sensitivity”</i>—and an indicative <b>word target</b>. The bar on the left turns amber while the section is below the target, green within it and red if it goes far beyond it. The text is saved as you type.</p>
+
+  <!-- 9.2 -->
+  <h2 id="s9-2"><span class="num">9.2</span>Citations and live data</h2>
+  <p>Two marks turn a text into one that never falls out of step with the analysis:</p>
+  <table class="compacta">
+    <thead><tr><th style="width:2.2in">You write</th><th>It comes out as</th></tr></thead>
+    <tbody>
+      <tr><td><code>[@Cruz2021]</code></td><td>(Cruz &amp; Mendoza 2021), and the full entry in the reference list.</td></tr>
+      <tr><td><code>[@Rossi2013; @Oliveira2018]</code></td><td>Several citations in a single parenthesis, separated by semicolons.</td></tr>
+      <tr><td><code>{{n.included}}</code></td><td>20: a number from the PRISMA diagram.</td></tr>
+      <tr><td><code>{{effect:Rendimiento de grano}}</code></td><td>+16.9 % (95 % CI +9.7 % to +24.6 %).</td></tr>
+      <tr><td><code>{{table:characteristics}}</code></td><td>The full characteristics table.</td></tr>
+    </tbody>
+  </table>
+  <p>You do not need to remember them: the <span class="ui">Cite</span> menu lists the included studies with author, year and title, and the <span class="ui">Live datum</span> menu lists each datum with its current value; choosing one inserts it at the cursor. The key of each study is the first author’s surname and the year, with a, b… when they repeat; <span class="ui">⤓ Citation keys (.csv)</span> downloads them. In the preview, a key that matches no study or a datum without a value is highlighted in red.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:2.4in">Live data</th><th>What they give</th></tr></thead>
+    <tbody>
+      <tr><td><code>n.identified</code>, <code>n.duplicates</code>, <code>n.screened</code>, <code>n.excludedTA</code>, <code>n.fulltext</code>, <code>n.excludedFT</code>, <code>n.notRetrieved</code>, <code>n.included</code>, <code>n.reports</code></td><td>The counts of the flow diagram.</td></tr>
+      <tr><td><code>search.sources</code>, <code>search.date</code></td><td>The sources searched and the date of the last search (Block 3).</td></tr>
+      <tr><td><code>reg</code>, <code>funding</code>, <code>coi</code></td><td>The registration, the funding and the conflicts of interest (Block 2).</td></tr>
+      <tr><td><code>effect</code>, <code>k</code>, <code>m</code>, <code>i2</code>, <code>pi</code>, <code>p</code>, <code>grade</code> followed by <code>:outcome</code></td><td>The effect with its CI, the studies, the effects, I², the prediction interval, the p value and the GRADE certainty of that outcome.</td></tr>
+      <tr><td><code>table:characteristics</code>, <code>table:prisma</code>, <code>table:sof</code></td><td>The tables of characteristics, of the PRISMA flow and of the summary of findings.</td></tr>
+    </tbody>
+  </table>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Theory in brief · why live data</div>
+    <p>A review is reanalyzed many times: a late study is added, a datum is corrected, a referee asks for another model. Every number copied by hand is a chance for the abstract to say one thing and the table another. With live data, the text takes its numbers from the same computation as the figures and tables, and everything changes at once.</p>
+  </div>
+
+  <!-- 9.3 -->
+  <h2 id="s9-3"><span class="num">9.3</span>Sentences with data to start from</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/en/b9-datos.png" alt="The study selection section: the menus to cite and insert data, two suggested sentences, the text with the live data of the diagram and the flow table, and the preview with the numbers and the table resolved"></div>
+    <figcaption><b>Figure 9.2.</b> The study selection written with a suggested sentence and the PRISMA flow table: every number comes from Blocks 3 to 5.</figcaption>
+  </figure>
+  <p>In the sections that report facts, the app offers <b>sentences with data to start from</b>: the flow of the selection, the effect of each outcome, the certainty, the sources and the registration; and in the synthesis section of the methods, the paragraph from Block 8. One click inserts them. They are facts, not interpretation: they say what was found, never what it means. The introduction, the discussion and the conclusion have no suggested sentences.</p>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>The app guides; it does not write</div>
+    <p>ReviewPro does not generate the interpretation. What an effect of +16.9% with a prediction interval that includes losses means, how it compares with the previous literature and what a grower should do are the author’s judgments. The suggested sentences only save the work of copying numbers.</p>
+  </div>
+
+  <!-- 9.4 -->
+  <h2 id="s9-4"><span class="num">9.4</span>The claim checker</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b9-verificador.png" alt="Card 2 of Block 9: 946 words in 19 of 20 sections, 8 of 20 studies cited, 1 claim to review and 0 broken references; the claim in the discussion about the profitability of inoculants with no citation or datum; and the keys of the 12 studies the text does not cite yet"></div>
+    <figcaption><b>Figure 9.3.</b> The checker in the example: an unsupported claim in the discussion—that inoculants “are a profitable investment for any grower”—and twelve included studies the text does not cite yet.</figcaption>
+  </figure>
+  <p>The checker reads every sentence of the introduction, the results, the discussion and the conclusion, and flags:</p>
+  <ul>
+    <li>sentences with <b>figures</b> or with <b>conclusion</b> verbs—increases, reduces, improves, is associated, suggests, is profitable, is recommended—that carry no citation, no live datum and no reference to a figure or table of the review;</li>
+    <li><b>p values without the effect size</b> or its interval;</li>
+    <li><b>keys that do not exist</b> and <b>data without a value</b>;</li>
+    <li><b>included studies the text does not cite</b>: in a review, every included study should appear at least in the characteristics table or in the text.</li>
+  </ul>
+  <p>Years do not count as figures, and the methods are not checked this way: there you cite methods, not studies. A click on the section name takes you to it. The checker is deliberately strict: a flagged sentence may be fine—a generalization by the author, for example—but it is worth reading again.</p>
+
+  <!-- 9.5 -->
+  <h2 id="s9-5"><span class="num">9.5</span>The reporting checklist</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b9-lista.png" alt="Card 3 of Block 9: the menu with the PRISMA 2020 checklist, the number of items covered and the table of items with their number, what they ask for, the section where they go, their status and the Reported box"></div>
+    <figcaption><b>Figure 9.4.</b> PRISMA 2020 for the example: each item, where it goes in the manuscript and its status.</figcaption>
+  </figure>
+  <p>The checklist that matches the type appears on its own, and you can change it: <b>PRISMA 2020</b> (Page et al. 2021) for systematic reviews and meta-analyses, with its 27 items (42 with sub-items); <b>PRISMA-ScR</b> (Tricco et al. 2018), with 22, for scoping reviews; and <b>SANRA</b> (Baethge et al. 2019), with 6, for narrative reviews. Each item says what it asks for and in which section it goes—a click takes you there—and combines two checks:</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.8in">Status</th><th>What it means</th></tr></thead>
+    <tbody>
+      <tr><td><b>✓ text and data</b></td><td>The section has text and the blocks hold the data the item asks for (for example, the search date for item 6).</td></tr>
+      <tr><td><b>data ready; text missing</b></td><td>The datum exists in the project, but the section does not report it yet.</td></tr>
+      <tr><td><b>text; review</b></td><td>There is text, but the item cannot be checked against data or the data are missing: review it by hand.</td></tr>
+      <tr><td><b>missing</b></td><td>Neither text nor data.</td></tr>
+      <tr><td><b>✓ marked</b></td><td>You marked it as reported in the box on the right, after checking it.</td></tr>
+    </tbody>
+  </table>
+  <p>In <b>SANRA</b>, each item is scored from 0 to 2, and the app adds up the score out of 12. You assign it yourself or, better, a colleague who reads the draft does.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>The checklist is for submission</div>
+    <p>Most journals ask for the completed PRISMA checklist, with the page where each item is reported. The app’s column says in which section; pages only exist in the final document.</p>
+  </div>
+
+  <!-- 9.6 -->
+  <h2 id="s9-6"><span class="num">9.6</span>Exporting the manuscript</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b9-exportar.png" alt="Card 4 of Block 9: the authors field, the explanation of how citations and references come out, and the Word, HTML, Markdown and citation-key buttons"></div>
+    <figcaption><b>Figure 9.5.</b> The export: the authors as they will appear in the manuscript and the four formats.</figcaption>
+  </figure>
+  <p>The <b>authors</b> are written as they will appear in the manuscript (if left empty, those of the protocol are used). Three formats:</p>
+  <ul>
+    <li><span class="ui">⤓ Word (.docx)</span>: a document with title styles, two levels of headings, tables with their caption and a reference list with hanging indent, ready to be given the journal’s format.</li>
+    <li><span class="ui">⤓ HTML</span>: to read in the browser or print.</li>
+    <li><span class="ui">⤓ Markdown</span>: plain text with marks, for those who write with text tools.</li>
+  </ul>
+  <p>In all three, citations come out as author and year, live data as their values and tables in full. The <b>reference list</b> includes only the cited studies and, in addition, the references of the methods the text mentions by author and year—“Page et al. 2021”, “Konstantopoulos 2011”, “Duval and Tweedie 2000”…: the app recognizes the works behind the methods it implements and adds their entry. The export uses the language of the interface.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>The messages of this block</div>
+    <p>In the editor, below the preview, the same messages as the checker for the open section: claims with no citation or live datum, p values without an effect, keys that do not exist and data without a value. A datum in the menu appears as <i>(no data)</i> when its block does not compute it yet.</p>
+  </div>
+</section>
+
+</body>
+</html>
