@@ -14,6 +14,7 @@
 <script src="../paginar.js"></script>
 <style>
   figure.reducida { width: 80%; margin-left: auto; margin-right: auto; }
+  .indice .toc ul li { line-height: 1.22; margin-bottom: 0.015in; }
   .formula { font-family: var(--mono); font-size: 8.8pt; background: var(--marino-suave); border-radius: 5px; padding: 0.07in 0.12in; margin: 0.08in 0; }
   .hoja[data-pestana="B1"] .formula { font-family: var(--mono); font-size: 9pt; background: var(--marino-suave); border-radius: 5px; padding: 0.07in 0.12in; margin: 0.08in 0; }
   .hoja[data-pestana="B3"] .formula { font-family: var(--mono); font-size: 8.6pt; background: var(--marino-suave); border-radius: 5px; padding: 0.07in 0.12in; margin: 0.08in 0; }
@@ -223,16 +224,16 @@
   <dl>
     <dt>Autor</dt><dd><b>Luis Ángel Barrera-Guzmán</b><br><span class="small">ORCID 0000-0001-8057-2583</span></dd>
     <dt>Programa</dt><dd>ReviewPro, versión 1.0.0 (septiembre de 2026)</dd>
-    <dt>Manual</dt><dd>Primera edición en español, 2026. Describe la versión 1.0 del programa.</dd>
+    <dt>Manual</dt><dd>Primera edición en español, 2026. Describe la versión 1.0.0 del programa.</dd>
     <dt>Licencia del programa</dt><dd>Licencia Pública General de GNU, versión 3 o posterior (GPL-3.0-or-later).</dd>
     <dt>Derechos del manual</dt><dd>© 2026 Luis Ángel Barrera-Guzmán. Todos los derechos reservados.</dd>
     <dt>Idioma de la interfaz</dt><dd>Español o inglés, con el botón <span class="ui">ES</span> · <span class="ui">EN</span> de la barra superior. En este manual los nombres de botones, campos y menús se escriben como aparecen en pantalla en español, por ejemplo <span class="ui">Empezar mi revisión →</span>.</dd>
   </dl>
 
   <h4>Cómo citar el programa</h4>
-  <div class="cita">Barrera-Guzmán, L. Á. (2026). <i>ReviewPro: plataforma en el navegador para artículos de revisión narrativos, exploratorios y sistemáticos y meta-análisis</i> (versión 1.0) [Programa de cómputo].</div>
+  <div class="cita">Barrera-Guzmán, L.Á. (2026). <i>ReviewPro: plataforma en el navegador para artículos de revisión narrativos, exploratorios y sistemáticos y meta-análisis</i> (versión 1.0.0) [software].</div>
   <h4>Cómo citar este manual</h4>
-  <div class="cita">Barrera-Guzmán, L. Á. (2026). <i>ReviewPro. Manual de usuario</i> (1.ª ed.). Distribuido con ReviewPro, versión 1.0.</div>
+  <div class="cita">Barrera-Guzmán, L.Á. (2026). <i>ReviewPro. Manual de usuario</i> (1.ª ed.). Distribuido con ReviewPro, versión 1.0.0.</div>
   <p class="small">El identificador de objeto digital (DOI) se añadirá a ambas citas cuando la versión 1.0 se archive. Mientras tanto, la cita del programa aparece en la sección <span class="ui">Cómo citar</span> de la portada de la app.</p>
 
   <div class="caja nota">
@@ -397,7 +398,7 @@
 <!-- ====================================================================== CÓMO LEER -->
 <section class="preliminares" id="como-leer" data-nueva-hoja style="--acento: var(--b0)">
   <h2 style="margin-top:0.2in">Cómo leer este manual</h2>
-  <p class="lead">El manual sigue el mismo orden que la app: diez bloques numerados que se recorren de izquierda a derecha en la barra de arriba. Cada capítulo explica un bloque y lleva su mismo número —el capítulo 5 es el Bloque 5, y sus secciones, figuras y tablas se numeran 5.1, 5.2…—. Cada uno empieza con la idea metodológica que el bloque necesita, sigue con lo que la pantalla hace y cómo se lee, y termina con los avisos que el bloque puede mostrar y qué hacer con ellos. Esta introducción no lleva número: sus secciones van como I.1, I.2…</p>
+  <p class="lead">El manual sigue el mismo orden que la app: diez bloques numerados que aparecen de arriba abajo en la lista de bloques, a la izquierda de la pantalla. Cada capítulo explica un bloque y lleva su mismo número —el capítulo 5 es el Bloque 5, y sus secciones, figuras y tablas se numeran 5.1, 5.2…—. Cada uno empieza con la idea metodológica que el bloque necesita, sigue con lo que la pantalla hace y cómo se lee, y termina con los avisos que el bloque puede mostrar y qué hacer con ellos. Esta introducción no lleva número: sus secciones van como I.1, I.2…</p>
 
   <h3>Un color para cada bloque</h3>
   <p>El color del bloque aparece en la apertura de su capítulo, en el número de cada sección, en la pestaña del borde de la hoja y en el índice, y es el mismo de la franja de la portada. Así sabes de un vistazo en qué parte de la app estás.</p>
@@ -477,8 +478,8 @@
   <p class="lead">ReviewPro es una plataforma para hacer un artículo de revisión <b>de la pregunta al manuscrito</b>: fija la pregunta y el protocolo antes de buscar, escribe las cadenas de búsqueda en la sintaxis de cada base, junta y depura los registros, ordena el cribado para que lo relevante aparezca primero, lleva la cuenta de cada exclusión hasta el diagrama PRISMA, extrae los datos y calcula los tamaños de efecto, evalúa el riesgo de sesgo y la certeza, combina los estudios —con o sin meta-análisis— y acompaña la escritura hasta un documento de Word con sus citas y sus referencias.</p>
   <p>Todo ocurre dentro del navegador. No hay que instalar nada, no se necesita saber programar y los datos no salen de la computadora. Está escrito para investigadores, profesores y tesistas de las ciencias agrícolas y biológicas, pero sirve para cualquier campo: sabe que la mayoría de las revisiones agronómicas combinan experimentos de campo con varios sitios o ciclos por estudio, que las medias vienen con la DMS o el error estándar en vez de la desviación estándar, que el riesgo de sesgo de un ensayo de campo no se evalúa con la misma lista que un ensayo clínico, y que lo que el lector necesita saber no es solo si un tratamiento funciona en promedio, sino qué pasaría en un sitio nuevo.</p>
   <figure>
-    <div class="marco"><img src="../img/in-portada.png" alt="La portada de ReviewPro: la barra superior con los diez bloques, el título «Del montón de artículos a una revisión que se sostiene», los botones de inicio y la ilustración de los registros que se reducen por un embudo hasta un diagrama de bosque"></div>
-    <figcaption><b>Figura I.1.</b> La portada de la app (Bloque 1). Arriba, la barra con los diez bloques; en el centro, los botones para empezar una revisión, elegir el tipo, probar los laboratorios, abrir el ejemplo completo y ver cómo citar.</figcaption>
+    <div class="marco"><img src="../img/in-portada.png" alt="La portada de ReviewPro: la barra superior con las herramientas, la lista de los diez bloques a la izquierda y el índice del bloque a la derecha; en el centro, el título «Del montón de artículos a una revisión que se sostiene», los botones de inicio y la ilustración de los registros que se reducen por un embudo hasta un diagrama de bosque"></div>
+    <figcaption><b>Figura I.1.</b> La portada de la app (Bloque 1). A la izquierda, la lista de los diez bloques; en el centro, los botones para empezar una revisión, elegir el tipo, probar los laboratorios, abrir el ejemplo completo y ver cómo citar.</figcaption>
   </figure>
 
   <!-- I.2 -->
@@ -553,7 +554,7 @@
   <!-- I.6 -->
   <h2 id="si-6"><span class="num">I.6</span>Recorrido por la interfaz</h2>
   <figure>
-    <div class="marco"><img src="../img/in-interfaz.png" alt="La parte de arriba del Bloque 2 con el proyecto de ejemplo abierto: la barra superior con el logotipo, los botones del estudio de figuras, del idioma y del tema, los diez bloques; y debajo la apertura del bloque y la tarjeta del proyecto"></div>
+    <div class="marco"><img src="../img/in-interfaz.png" alt="La parte de arriba del Bloque 2 con el proyecto de ejemplo abierto: la barra superior con el logotipo y los botones de las herramientas; a la izquierda, la lista de los diez bloques con los terminados palomeados; a la derecha, el índice del bloque; en el centro, la ruta ReviewPro › 2 Protocolo › Proyecto, la apertura del bloque y la tarjeta del proyecto con su barra de avance y sus botones"></div>
     <figcaption><b>Figura I.2.</b> La interfaz con el proyecto de ejemplo abierto en el Bloque 2. La barra superior se queda fija al desplazarte; cada bloque abre con su número, su título y una línea que dice para qué sirve, y se organiza en tarjetas numeradas.</figcaption>
   </figure>
   <table class="compacta">
@@ -563,7 +564,7 @@
       <tr><td><b>Paleta</b> (primer botón redondo)</td><td>Abre el <b>estudio de figuras</b>: paleta de colores, tipografía, grosores y fondo de todas las gráficas de la app a la vez, en pantalla y en lo que se exporta.</td></tr>
       <tr><td><span class="ui">ES</span> · <span class="ui">EN</span></td><td>El idioma de toda la interfaz. El texto que tú escribes no se traduce; las exportaciones (informe, manuscrito) salen en el idioma activo.</td></tr>
       <tr><td><b>Sol / luna</b></td><td>Tema claro u oscuro. Las figuras exportadas usan el tema que elijas en su menú, no el de la pantalla.</td></tr>
-      <tr><td><b>Barra de bloques</b></td><td>Los diez bloques. Todos están disponibles siempre: puedes volver atrás a corregir y los bloques siguientes se recalculan al abrirlos.</td></tr>
+      <tr><td><b>Lista de bloques</b></td><td>Los diez bloques, en la columna de la izquierda. Todos están disponibles siempre: puedes volver atrás a corregir y los bloques siguientes se recalculan al abrirlos.</td></tr>
       <tr><td><b>Botón ⤓ de cada figura</b></td><td>Aparece al pasar el cursor por la esquina de una gráfica: exporta esa figura en PNG, JPG o SVG, con su título y su nota.</td></tr>
     </tbody>
   </table>
@@ -853,7 +854,7 @@
   <!-- 2.4 -->
   <h2 id="s2-4"><span class="num">2.4</span>Criterios de elegibilidad</h2>
   <figure>
-    <div class="marco"><img src="../img/b2-criterios.png" alt="La tarjeta 3 del Bloque 2: cinco criterios de inclusión (I1 a I5) y cinco de exclusión (E1 a E5), cada uno con su tipo, su faceta y su texto; debajo, el año desde el que se publicaron, el año hasta, los idiomas y los tipos de publicación marcados"></div>
+    <div class="marco"><img src="../img/b2-criterios.png" alt="La tarjeta 3 del Bloque 2: cinco criterios de inclusión (I1 a I5) y seis de exclusión (E1 a E6), cada uno con su tipo, su faceta y su texto; debajo, el año desde el que se publicaron, el año hasta, los idiomas y los tipos de publicación marcados"></div>
     <figcaption><b>Figura 2.3.</b> Los criterios del ejemplo. Cada uno lleva una clave —I1… para inclusión, E1… para exclusión— y la faceta de la pregunta a la que responde.</figcaption>
   </figure>
   <p>La clave no es un adorno: en el cribado y en el texto completo, cada exclusión se registra con la clave del criterio que la motiva, y el diagrama PRISMA cuenta los motivos solo. Por eso conviene que cada criterio de exclusión sea <b>uno solo</b> y <b>verificable</b>: «experimentos en maceta, invernadero o cámara de crecimiento» se decide leyendo; «estudios de baja calidad» no.</p>
@@ -878,7 +879,7 @@
   </figure>
   <p>Cada <b>desenlace</b> lleva su nombre, su papel —primario o secundario— y cómo se mide. El primario decide la conclusión y se fija antes de ver los datos; cambiarlo después es la forma más común de reporte selectivo. Los nombres que escribas aquí vuelven en el Bloque 6 (a qué desenlace pertenece cada efecto) y en el Bloque 7 (una fila de GRADE por desenlace). Los <b>moderadores</b> son las variables con las que piensas explicar la heterogeneidad; declararlos aquí es lo que separa una exploración de una pesca de resultados (sección 8.3).</p>
   <figure>
-    <div class="marco"><img src="../img/b2-fuentes.png" alt="La tarjeta 5 del Bloque 2: cinco fuentes —dos bases de citas multidisciplinarias, una base bibliográfica agrícola, repositorios de tesis y búsqueda manual— con su tipo y su cobertura, y los campos de literatura gris y otras estrategias"></div>
+    <div class="marco"><img src="../img/b2-fuentes.png" alt="La tarjeta 5 del Bloque 2: seis fuentes —dos bases de citas multidisciplinarias, una base bibliográfica biomédica, un repositorio de tesis, un repositorio institucional y la búsqueda manual en listas de referencias— con su tipo y su cobertura, y los campos de literatura gris y otras estrategias"></div>
     <figcaption><b>Figura 2.5.</b> Las fuentes del ejemplo, cada una con su tipo —base de datos, literatura gris u otra— y su cobertura.</figcaption>
   </figure>
   <p>Las <b>fuentes</b> se listan por nombre, con su tipo y los años que cubrirás; el tipo decide en qué columna del diagrama PRISMA caen sus registros (bases de datos y registros, u otros métodos). Para eso, el nombre que le des a cada archivo importado en el Bloque 3 debe ser <b>el mismo</b> que el de su fuente aquí; un archivo cuya fuente no aparece en esta lista se cuenta como base de datos. Los campos de <b>literatura gris</b> y de <b>otras estrategias</b> (listas de referencias, citas hacia adelante, consulta a expertos) completan el punto 7 de PRISMA-P. Las cadenas se construyen en el Bloque 3.</p>
@@ -928,7 +929,7 @@
     <div class="marco"><img src="../img/b2-revision.png" alt="La tarjeta 8 del Bloque 2: las trece secciones del protocolo marcadas como completas y el inicio de la tabla PRISMA-P 2015, con 25 de 26 ítems aplicables cumplidos y el ítem 2 (registro) marcado para un bloque posterior"></div>
     <figcaption><b>Figura 2.9.</b> La revisión del protocolo del ejemplo: las trece secciones completas y, en PRISMA-P 2015, 25 de 26 ítems cumplidos; el del registro queda para después de registrar.</figcaption>
   </figure>
-  <p>La tarjeta junta dos revisiones. Arriba, cada <b>sección</b> que el tipo de revisión pide, con su estado —<i>completo</i>, <i>por revisar</i> o <i>falta</i>— y, cuando algo falta, qué hacer (<i>«Declara ambos, aunque sea "ninguno"»</i>, <i>«Explica por qué hace falta esta revisión»</i>). Abajo, la lista <b>PRISMA-P 2015</b> (Moher et al. 2015; Shamseer et al. 2015), punto por punto: qué pide, en qué lugar del protocolo se cumple y su estado. Algunos puntos se cumplen en bloques posteriores —el número de registro, por ejemplo, solo existe después de registrar— y se marcan así, no como faltantes.</p>
+  <p>La tarjeta junta dos revisiones. Arriba, cada <b>sección</b> que el tipo de revisión pide, con su estado —<i>completo</i>, <i>por revisar</i> o <i>falta</i>— y, cuando algo falta, qué hacer (<i>«Declara ambos, aunque sea “ninguno”»</i>, <i>«Explica por qué hace falta esta revisión»</i>). Abajo, la lista <b>PRISMA-P 2015</b> (Moher et al. 2015; Shamseer et al. 2015), punto por punto: qué pide, en qué lugar del protocolo se cumple y su estado. Algunos puntos se cumplen en bloques posteriores —el número de registro, por ejemplo, solo existe después de registrar— y se marcan así, no como faltantes.</p>
 
   <!-- 2.9 -->
   <h2 id="s2-9"><span class="num">2.9</span>El registro y el documento del protocolo</h2>
@@ -950,7 +951,7 @@
   <p>Al registrar, anota el <b>número de registro</b> (por ejemplo, <code>CRD42026…</code> u <code>osf.io/…</code>): con él se cumple el punto 2 de PRISMA-P, el 24a de PRISMA 2020 y el dato vivo <code>{{reg}}</code> del manuscrito. Las <b>enmiendas</b> dicen cómo se documentarán los cambios; la <b>difusión</b>, dónde se publicará. <span class="ui">⤓ Documento del protocolo (.html)</span> descarga el protocolo completo, listo para imprimir o adjuntar; <span class="ui">⤓ Campos del registro (.md)</span>, los campos en texto.</p>
   <div class="caja nota">
     <div class="caja-t"><span class="ico">i</span>Los avisos de este bloque</div>
-    <p>Los del marco de la pregunta (sección 2.3), los de cada sección incompleta (2.8) y los del registro (2.9). Ninguno te impide avanzar: el protocolo se puede enmendar, y una revisión real lo hace. Lo que importa es que cada cambio quede fechado y justificado en <span class="ui">Enmiendas</span> y se reporte en el artículo (punto 24c de PRISMA 2020).</p>
+    <p>Los del marco de la pregunta (sección 2.3), los de cada sección incompleta (2.8) y los del registro (2.9). Ninguno te impide avanzar: el protocolo se puede enmendar, y una revisión real lo hace. Lo que importa es que cada cambio quede fechado y justificado en el campo de las enmiendas (<span class="ui">Cómo se documentarán las enmiendas</span>) y se reporte en el artículo (punto 24c de PRISMA 2020).</p>
   </div>
 </section>
 
@@ -1155,7 +1156,7 @@
       <tr><td><kbd>N</kbd></td><td>Escribir una nota para este registro.</td></tr>
     </tbody>
   </table>
-  <p>La etiqueta de arriba dice en qué fase estás: <b>piloto</b> mientras no se complete el número de registros del piloto del protocolo, en el que conviene medir el acuerdo antes de seguir. Un registro sin resumen lo advierte: <i>«Sin resumen: decide por el título o márcalo "tal vez"»</i>.</p>
+  <p>La etiqueta de arriba dice en qué fase estás: <b>piloto</b> mientras no se complete el número de registros del piloto del protocolo, en el que conviene medir el acuerdo antes de seguir. Un registro sin resumen lo advierte: <i>«Sin resumen: decide por el título o márcalo «tal vez».»</i>.</p>
   <div class="caja regla">
     <div class="caja-t"><span class="ico">✓</span>Regla de decisión · incluir, tal vez o excluir</div>
     <table class="compacta"><tbody>
@@ -1182,7 +1183,7 @@
 
   <!-- 4.4 -->
   <h2 id="s4-4"><span class="num">4.4</span>Dos revisores en dos computadoras</h2>
-  <p>En el modo <span class="ui">Cada quien en su computadora</span>, el desplegable <span class="ui">Intercambiar decisiones</span> tiene dos botones. <span class="ui">⤓ Exportar mis decisiones</span> guarda las del revisor activo en un archivo pequeño; quien concilia las recibe y usa <span class="ui">Importar decisiones de otro revisor…</span>. Si el revisor no existía, se crea con su nombre. También se puede importar el archivo de proyecto completo de otro revisor: la app toma de él solo sus decisiones.</p>
+  <p>En el modo <span class="ui">Cada quien en su computadora</span>, el apartado <span class="ui">Intercambiar decisiones</span> tiene dos botones. <span class="ui">⤓ Exportar mis decisiones</span> guarda las del revisor activo en un archivo pequeño; quien concilia las recibe y usa <span class="ui">Importar decisiones de otro revisor…</span>. Si el revisor no existía, se crea con su nombre. También se puede importar el archivo de proyecto completo de otro revisor: la app toma de él solo sus decisiones.</p>
   <div class="caja importante">
     <div class="caja-t"><span class="ico">!</span>Los registros deben ser los mismos</div>
     <p>Las decisiones se ligan a cada registro por su DOI o, sin DOI, por su título y año. Para que las decisiones de dos computadoras coincidan, ambos revisores deben haber importado los mismos archivos en el Bloque 3 —lo más seguro es que uno importe, guarde el proyecto y el otro abra esa copia—.</p>
@@ -1206,7 +1207,7 @@
       <tr><td>0.81–1.00</td><td>casi perfecto</td></tr>
     </tbody>
   </table>
-  <p>Si el kappa del piloto queda debajo del objetivo del protocolo, la app lo avisa: <i>«El kappa del piloto está bajo el objetivo del protocolo. Discutan los desacuerdos del piloto y afinen los criterios antes de seguir.»</i> Como «incluir» y «tal vez» mandan ambos el registro a texto completo, no cuentan como conflicto entre sí.</p>
+  <p>Si el kappa del piloto queda debajo del objetivo del protocolo, la app lo avisa: <i>«El kappa del piloto (…) está bajo el objetivo del protocolo (…). Discutan los desacuerdos del piloto y afinen los criterios antes de seguir.»</i> Como «incluir» y «tal vez» mandan ambos el registro a texto completo, no cuentan como conflicto entre sí.</p>
   <p>Cada <b>conflicto por resolver</b> muestra lo que decidió cada revisor, con su motivo y su nota. La decisión final se toma con <span class="ui">Incluir</span>, <span class="ui">Tal vez</span> o <span class="ui">excluir por…</span> un criterio, y se anota quién la tomó: <i>por consenso</i> o por uno de los revisores (el tercero, si el protocolo lo prevé). Los resueltos quedan en <span class="ui">Resueltos</span>, donde se pueden reabrir.</p>
   <div class="caja ejemplo">
     <div class="caja-t"><span class="ico">▸</span>Ejemplo · dos desacuerdos</div>
@@ -1333,7 +1334,7 @@
   </div>
   <div class="caja nota">
     <div class="caja-t"><span class="ico">i</span>Los avisos de este bloque</div>
-    <p><i>«Todavía ningún registro pasó el cribado (Bloque 4)»</i>; <i>«Sin ruta del PDF: anótala arriba para abrirlo desde aquí»</i>; <i>«Elige el motivo de exclusión»</i>; <i>«Evaluaste todos los informes obtenidos»</i>; y los de la revisión del diagrama: vías que no cuadran, registros sin decisión final, informes sin conseguir ni dar por perdidos, evaluaciones pendientes o con conflicto, y exclusiones sin motivo.</p>
+    <p><i>«Todavía ningún registro pasó el cribado (Bloque 4)»</i>; <i>«Sin ruta del PDF: anótala arriba para abrirlo desde aquí»</i>; <i>«Elige el motivo de exclusión: PRISMA 2020 pide reportar por qué se excluyó cada informe de texto completo.»</i>; <i>«Evaluaste todos los informes obtenidos»</i>; y los de la revisión del diagrama: vías que no cuadran, registros sin decisión final, informes sin conseguir ni dar por perdidos, evaluaciones pendientes o con conflicto, y exclusiones sin motivo.</p>
   </div>
 </section>
 
@@ -1678,7 +1679,7 @@
 
   <!-- 8.4 -->
   <h2 id="s8-4"><span class="num">8.4</span>Análisis de sensibilidad</h2>
-  <figure class="media">
+  <figure>
     <div class="marco"><img src="../img/b8-sensibilidad.png" alt="La tarjeta 4 del Bloque 8: la tabla del análisis principal y cuatro alternativas —promedio por estudio con ρ de 0.5, 0.2 y 0.8 y sin estudios con riesgo de sesgo alto— todas marcadas como se sostiene; y el gráfico dejando un estudio fuera, con el efecto y su intervalo sin cada uno de los 20 estudios, y la nota de que el efecto va de +15.2 % a +18.8 %"></div>
     <figcaption><b>Figura 8.5.</b> El resultado del ejemplo se sostiene con el otro modelo, con cualquier ρ, sin los estudios de riesgo alto y sin cada uno de los estudios.</figcaption>
   </figure>
@@ -1952,7 +1953,7 @@
 
   <!-- 10.4 -->
   <h2 id="s10-4"><span class="num">10.4</span>El paquete del proyecto</h2>
-  <figure>
+  <figure class="media">
     <div class="marco"><img src="../img/b10-paquete.png" alt="La tarjeta 4 del Bloque 10: la casilla de agregar las figuras en PNG, los botones del paquete y de los estudios incluidos en RIS y BibTeX, el aviso de paquete listo con 28 archivos y 118 kB, y la lista de los archivos con su descripción"></div>
     <figcaption><b>Figura 10.4.</b> El paquete del ejemplo: 28 archivos en 118 kB, cada uno con su descripción.</figcaption>
   </figure>
@@ -2199,9 +2200,10 @@
   <h3>F.2 · Licencia</h3>
   <p>El programa se distribuye bajo la <b>Licencia Pública General de GNU, versión 3 o posterior</b> (GPL-3.0-or-later): se puede usar, copiar, estudiar y modificar libremente, con la condición de que las versiones modificadas se distribuyan bajo la misma licencia y conserven la atribución. El texto completo está en el archivo <span class="ruta">LICENSE</span>. Este manual es © 2026 Luis Ángel Barrera-Guzmán; todos los derechos reservados.</p>
   <h3>F.3 · Cómo citarla</h3>
-  <div class="cita">Barrera-Guzmán, L. Á. (2026). <i>ReviewPro: plataforma en el navegador para artículos de revisión narrativos, exploratorios y sistemáticos y meta-análisis</i> (versión 1.0) [Programa de cómputo].</div>
-  <div class="cita">Barrera-Guzmán, L. Á. (2026). <i>ReviewPro. Manual de usuario</i> (1.ª ed.). Distribuido con ReviewPro, versión 1.0.</div>
-  <p class="small">El identificador de objeto digital (DOI) se añadirá a ambas citas cuando la versión 1.0 se archive. Cita también las obras originales de los métodos que usaste: el párrafo de métodos del Bloque 8 y el manuscrito del Bloque 9 las nombran por autor y año.</p>
+  <div class="cita">Barrera-Guzmán, L.Á. (2026). <i>ReviewPro: plataforma en el navegador para artículos de revisión narrativos, exploratorios y sistemáticos y meta-análisis</i> (versión 1.0.0) [software].</div>
+  <div class="cita">Barrera-Guzmán, L.Á. (2026). <i>ReviewPro. Manual de usuario</i> (1.ª ed.). Distribuido con ReviewPro, versión 1.0.0.</div>
+  <div class="cita">Barrera-Guzmán, L.Á. (2026). <i>ReviewPro: User’s Manual</i> (1.ª ed. en inglés). Distribuido con ReviewPro, versión 1.0.0.</div>
+  <p class="small">La cita del programa es la que da la sección <span class="ui">Cómo citar</span> de la portada de la app. El identificador de objeto digital (DOI) se añadirá a estas citas cuando la versión 1.0 se archive. Cita también las obras originales de los métodos que usaste: el párrafo de métodos del Bloque 8 y el manuscrito del Bloque 9 las nombran por autor y año.</p>
 </section>
 
 
