@@ -10,7 +10,7 @@ param(
   [Parameter(Mandatory = $true)][string]$Receta,
   [int]$Ancho = 1400, [int]$Alto = 900,
   [string]$Tema = 'light', [string]$Idioma = 'es',
-  [string]$Recorte = '', [string]$Salida = ''
+  [string]$Recorte = '', [string]$Salida = '', [int]$Puerto = 9555
 )
 $ErrorActionPreference = 'Stop'
 $man = Split-Path $PSScriptRoot -Parent
@@ -18,13 +18,13 @@ $app = Split-Path $man -Parent
 $dir = Join-Path $PSScriptRoot 'recetas'
 if (-not $Salida) { $Salida = $Receta }
 $png = Join-Path $man "img\$Salida.png"
-$ret = Join-Path $env:TEMP 'reviewpro-receta.txt'
-$tmp = Join-Path $env:TEMP 'reviewpro-receta.js'
+$ret = Join-Path $env:TEMP "reviewpro-receta-$Puerto.txt"
+$tmp = Join-Path $env:TEMP "reviewpro-receta-$Puerto.js"
 if (Test-Path $ret) { Remove-Item $ret }
 $comun = [IO.File]::ReadAllText((Join-Path $dir '_comun.js'), [Text.Encoding]::UTF8)
 $cuerpo = [IO.File]::ReadAllText((Join-Path $dir "$Receta.js"), [Text.Encoding]::UTF8)
 [IO.File]::WriteAllText($tmp, "(async () => {`n$comun`n$cuerpo`n})()", (New-Object Text.UTF8Encoding $false))
-& powershell -ExecutionPolicy Bypass -File (Join-Path $app 'tools\local\shot.ps1') -Out $png -SetupFile $tmp -SetupOut $ret -Theme $Tema -Lang $Idioma -Width $Ancho -Height $Alto -Scale 2 -Wait 2500 -SetupWait 700 | Out-Null
+& powershell -ExecutionPolicy Bypass -File (Join-Path $app 'tools\local\shot.ps1') -Out $png -SetupFile $tmp -SetupOut $ret -Theme $Tema -Lang $Idioma -Width $Ancho -Height $Alto -Scale 2 -Wait 2500 -SetupWait 700 -Port $Puerto | Out-Null
 if (-not $Recorte -and (Test-Path $ret)) { $v = [string](Get-Content $ret -Raw); if ($v -and $v.Trim() -match '^\d+,\d+,\d+,\d+$') { $Recorte = $v.Trim() } else { Write-Output "receta devolvió: $v" } }
 if ($Recorte) {
   Add-Type -AssemblyName System.Drawing
