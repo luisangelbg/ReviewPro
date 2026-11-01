@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · User’s Manual · Chapter 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b2" data-pestana="B2" data-orden="2" style="--acento: var(--b2)">
+  <div class="cap-apertura">
+    <div class="cap-num">2</div>
+    <div class="cap-etiqueta">Block 2 · Protocol</div>
+    <h1>The protocol: what is decided before searching</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">The protocol fixes the question, the criteria, the outcomes, the sources, the methods and who does what, before seeing a single result. It is what keeps the review from bending to what it finds. The block also saves and opens the project, checks the protocol against the PRISMA-P checklist, drafts the registration fields for PROSPERO or OSF and downloads the protocol document.</p>
+    <ul class="cap-contenido">
+      <li><b>2.1</b>The project: new, open, save and examples</li>
+      <li><b>2.2</b>The type of review</li>
+      <li><b>2.3</b>Title and question</li>
+      <li><b>2.4</b>Eligibility criteria</li>
+      <li><b>2.5</b>Outcomes, moderators and sources</li>
+      <li><b>2.6</b>Methods</li>
+      <li><b>2.7</b>Team, funding and schedule</li>
+      <li><b>2.8</b>The protocol check and PRISMA-P</li>
+      <li><b>2.9</b>Registration and the protocol document</li>
+    </ul>
+  </div>
+
+  <!-- 2.1 -->
+  <h2 id="s2-1"><span class="num">2.1</span>The project: new, open, save and examples</h2>
+  <p class="lead">The first card of the block, <span class="ui">Project</span> (Figure I.2), handles the whole project, not just the protocol. Its colored bar measures how complete the protocol is—in the example, <i>“100% of the protocol · 13 sections complete, 0 to review, 0 missing”</i>—and on the right it says when it was last saved in the browser.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.8in">Button</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ui">New</span></td><td>Starts an empty project of the same type as the open one. It asks for confirmation, because everything open is replaced: save it first.</td></tr>
+      <tr><td><span class="ui">Open file…</span></td><td>Opens a <code>.reviewpro.json</code>: yours from another session or a co-author’s.</td></tr>
+      <tr><td><span class="ui">⤓ Save file</span></td><td>Downloads the complete project with the title as the file name.</td></tr>
+      <tr><td><span class="ui">Example</span> · <span class="ui">Load example</span></td><td>Fills only the protocol with one of three examples: <i>Meta-analysis: mycorrhizae and maize</i>, <i>Scoping: agroecology in coffee</i> or <i>Narrative: mycorrhizae and phosphorus</i>. They let you see a complete protocol of each type before writing yours.</td></tr>
+    </tbody>
+  </table>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Two co-authors, one project</div>
+    <p>The project file is the way to work as a team: whoever writes the protocol saves it and shares it; whoever screens opens that copy. Each reviewer’s screening decisions, on the other hand, are exchanged with a file of their own from Block 4, so that each person screens blind on their own computer (Section 4.5).</p>
+  </div>
+
+  <!-- 2.2 -->
+  <h2 id="s2-2"><span class="num">2.2</span>The type of review</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b2-tipo.png" alt="Card 1 of Block 2 with the four types of review—narrative review, scoping review, systematic review and meta-analysis—with their reporting guideline; the meta-analysis is selected and its route is shown below"></div>
+    <figcaption><b>Figure 2.1.</b> The chosen type of review sets the route: for a meta-analysis, Blocks 2 to 10 are required and the reporting guideline is PRISMA 2020 with GRADE certainty.</figcaption>
+  </figure>
+  <p>This is the type that rules the whole project (Section 1.2). Changing it later is possible, but it has consequences: it changes the recommended question framework, the default bias tool, the synthesis approach, the manuscript skeleton and the reporting checklist. The data you have already entered are not lost.</p>
+
+  <!-- 2.3 -->
+  <h2 id="s2-3"><span class="num">2.3</span>Title and question</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b2-pregunta.png" alt="Card 2 of Block 2: the review title, the six question frameworks with PICOS recommended, the five PICOS elements filled in, the question written from those elements, the message that the question has all its elements, and the fields for rationale, objectives, hypotheses and keywords"></div>
+    <figcaption><b>Figure 2.2.</b> The example question with the PICOS framework: the app writes it from the five elements and checks that none is missing.</figcaption>
+  </figure>
+  <p>The <b>title</b> should say what type of review it is (“systematic review and meta-analysis”, “scoping review”): PRISMA 2020 asks for it in its first item, and Block 9 checks it. Then you choose the <b>question framework</b>; the app marks the one that corresponds to the type as <i>recommended</i>.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.1in">Framework</th><th>Elements</th><th style="width:2.3in">What for</th></tr></thead>
+    <tbody>
+      <tr><td><b>PICO</b></td><td>Population or system · Intervention · Comparator · Outcome</td><td>Interventions and treatments: does it work, how much?</td></tr>
+      <tr><td><b>PICOS</b></td><td>PICO + Study design</td><td>PICO with the study design fixed in advance (recommended for meta-analysis)</td></tr>
+      <tr><td><b>PECO</b></td><td>Population or system · Exposure · Comparator · Outcome</td><td>Exposures that are not assigned: climate, pollution, observed management</td></tr>
+      <tr><td><b>PCC</b></td><td>Population · Concept · Context</td><td>Scoping reviews: mapping concepts in a context</td></tr>
+      <tr><td><b>SPIDER</b></td><td>Sample · Phenomenon of interest · Design · Evaluation · Research type</td><td>Qualitative or mixed-methods evidence</td></tr>
+      <tr><td><b>Free question</b></td><td>A single question written by hand</td><td>Narrative reviews</td></tr>
+    </tbody>
+  </table>
+  <p>Each element carries a reminder of what goes there. With them, the app writes <b>the question</b> in a box; if you prefer to write it yourself, open <span class="ui">I prefer to word it myself</span> and what you write replaces the drafted one. Below, a message checks the question: <i>“The question has all its elements.”</i>, or else what is missing or what does not fit the type.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Decision rule · the messages about the question</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>If</b> a systematic review or a meta-analysis uses a free question or PCC</td><td><b>then</b> the app asks for a focused question: PICO, PICOS, PECO or SPIDER.</td></tr>
+      <tr><td><b>If</b> a meta-analysis has no comparator</td><td><b>then</b> there is no effect to pool: define what it is measured against.</td></tr>
+      <tr><td><b>If</b> a meta-analysis uses SPIDER</td><td><b>then</b> the app warns that SPIDER is for qualitative evidence.</td></tr>
+      <tr><td><b>If</b> a scoping review uses PICO</td><td><b>then</b> it works if you already know which intervention to map; the usual choice is PCC.</td></tr>
+    </tbody></table>
+  </div>
+  <p>The <b>rationale</b> answers what existing reviews do not settle; the <b>objectives</b>, what will be estimated or mapped; the <b>hypothesis</b> is optional; the <b>keywords</b> are separated by semicolons. The elements of the question—not the keywords—seed the concept blocks of the search (Section 3.1).</p>
+
+  <!-- 2.4 -->
+  <h2 id="s2-4"><span class="num">2.4</span>Eligibility criteria</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b2-criterios.png" alt="Card 3 of Block 2: five inclusion criteria (I1 to I5) and six exclusion criteria (E1 to E6), each with its kind, its facet and its text; below, the year from which they were published, the year to, the languages and the publication types checked"></div>
+    <figcaption><b>Figure 2.3.</b> The criteria of the example. Each one carries an ID—I1… for inclusion, E1… for exclusion—and the facet of the question it answers.</figcaption>
+  </figure>
+  <p>The ID is not decoration: in screening and in full text, every exclusion is recorded with the ID of the criterion behind it, and the PRISMA diagram counts the reasons by itself. That is why each exclusion criterion should be <b>a single one</b> and <b>verifiable</b>: “experiments in pots, greenhouses or growth chambers” is decided by reading; “low-quality studies” is not.</p>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:2.1in"><span class="ui">Propose from the question</span></td><td>Writes an inclusion criterion for each element of the question, plus the usual exclusions. It is a starting point: edit them.</td></tr>
+      <tr><td><span class="ui">+ inclusion</span> · <span class="ui">+ exclusion</span></td><td>Add a criterion; the ✕ removes it and the IDs are renumbered.</td></tr>
+      <tr><td><b>Facet</b></td><td>The element of the question (P, I, C, O, S…) or a general category: publication, data, duplicates.</td></tr>
+      <tr><td><b>Years, languages, publication types</b></td><td>The period (an empty final year means “to the present”), the accepted languages and which types count: peer-reviewed articles, theses, technical reports, preprints, books and chapters, conference proceedings.</td></tr>
+    </tbody>
+  </table>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>Restricting by language or by publication type is a decision with a cost</div>
+    <p>Leaving out theses, technical reports and conference abstracts excludes precisely the literature where null results hide, and increases the risk of publication bias that Block 8 will try to measure. If you decide to exclude them, write it down and justify it; if you include them, the search in Block 3 will have to go looking for them.</p>
+  </div>
+
+  <!-- 2.5 -->
+  <h2 id="s2-5"><span class="num">2.5</span>Outcomes, moderators and sources</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b2-desenlaces.png" alt="Card 4 of Block 2: three outcomes—grain yield, mycorrhizal root colonization and phosphorus uptake—with their role and how they are measured, and the field of planned moderators and covariates"></div>
+    <figcaption><b>Figure 2.4.</b> One primary outcome (yield, in t/ha at 14% moisture) and two secondary ones, and the moderators declared in advance.</figcaption>
+  </figure>
+  <p>Each <b>outcome</b> carries its name, its role—primary or secondary—and how it is measured. The primary outcome decides the conclusion and is fixed before seeing the data; changing it afterward is the most common form of selective reporting. The names you write here come back in Block 6 (which outcome each effect belongs to) and in Block 7 (one GRADE row per outcome). The <b>moderators</b> are the variables with which you plan to explain the heterogeneity; declaring them here is what separates an exploration from a fishing expedition (Section 8.3).</p>
+  <figure>
+    <div class="marco"><img src="../img/en/b2-fuentes.png" alt="Card 5 of Block 2: six sources—two multidisciplinary citation databases, a biomedical bibliographic database, a thesis repository, an institutional repository and a hand search of reference lists—with their kind and their coverage, and the fields for grey literature and other strategies"></div>
+    <figcaption><b>Figure 2.5.</b> The sources of the example, each with its kind—database, grey literature or other—and its coverage.</figcaption>
+  </figure>
+  <p>The <b>sources</b> are listed by name, with their kind and the years you will cover; the kind decides in which column of the PRISMA diagram their records fall (databases and registers, or other methods). For that, the name you give each file imported in Block 3 must be <b>the same</b> as that of its source here; a file whose source is not on this list is counted as a database. The fields for <b>grey literature</b> and <b>other strategies</b> (reference lists, forward citations, consulting experts) complete item 7 of PRISMA-P. The strings are built in Block 3.</p>
+
+  <!-- 2.6 -->
+  <h2 id="s2-6"><span class="num">2.6</span>Methods</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/b2-metodos.png" alt="Card 6 of Block 2 with the methods: study selection (two reviewers, a pilot of 50, kappa 0.6, disagreements by a third reviewer, prioritized screening, a rule of 100 irrelevant in a row, verification), extraction in duplicate, the agronomic checklist and GRADE, and the synthesis with random-effects meta-analysis, response ratio, REML, Knapp–Hartung, publication bias, subgroups, sensitivity and notes"></div>
+    <figcaption><b>Figure 2.6.</b> The methods of the example. What is chosen here becomes the starting value of Blocks 4 to 8.</figcaption>
+  </figure>
+  <table class="compacta">
+    <thead><tr><th style="width:1.45in">Section</th><th>What is declared</th><th style="width:1.2in">Used by</th></tr></thead>
+    <tbody>
+      <tr><td><b>Study selection</b></td><td>Reviewers per record, pilot size, minimum agreement (kappa), how disagreements are resolved (by discussion or by a third reviewer), whether screening is prioritized and with which stopping rule, whether it is verified with a sample of the unread records, and whether the full text is assessed in duplicate.</td><td>Blocks 4 and 5</td></tr>
+      <tr><td><b>Data extraction</b></td><td>Whether it is done in duplicate and independently, whether authors will be contacted when data are missing, and the items to extract.</td><td>Block 6</td></tr>
+      <tr><td><b>Quality and certainty</b></td><td>The risk-of-bias tool—the quality checklist for agronomic experiments, RoB 2, ROBINS-I, Newcastle–Ottawa, a checklist for qualitative studies or none—and whether certainty will be rated with GRADE.</td><td>Block 7</td></tr>
+      <tr><td><b>Synthesis</b></td><td>The approach (thematic, charting tables, SWiM or meta-analysis), the effect measure, the τ² estimator, Knapp–Hartung, whether publication bias is explored, the subgroups, the sensitivity analyses and notes.</td><td>Blocks 6 and 8</td></tr>
+    </tbody>
+  </table>
+  <table class="compacta">
+    <thead><tr><th style="width:2.3in">Effect measure</th><th>When</th></tr></thead>
+    <tbody>
+      <tr><td><b>Response ratio, ln(RR)</b></td><td>Proportional change between means of the same positive variable (yield, biomass): the most commonly used in agronomy and ecology (Hedges et al. 1999).</td></tr>
+      <tr><td><b>Standardized mean difference (Hedges’ g)</b></td><td>Means on different scales across studies.</td></tr>
+      <tr><td><b>Mean difference</b></td><td>All studies in the same unit.</td></tr>
+      <tr><td><b>Risk ratio</b>, <b>odds ratio</b>, <b>risk difference</b></td><td>Counts: diseased and healthy plants, plots with and without damage.</td></tr>
+      <tr><td><b>Correlation (Fisher’s z)</b></td><td>Associations between two continuous variables.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 2.7 -->
+  <h2 id="s2-7"><span class="num">2.7</span>Team, funding and schedule</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/en/b2-equipo.png" alt="Card 7 of Block 2: three authors with their name, affiliation, e-mail, validated ORCID and their roles, the contact author; the funding, the conflicts of interest and the start and planned end dates"></div>
+    <figcaption><b>Figure 2.7.</b> The team of the example, with each author’s roles, the contact author and the validated ORCID (✓), and the dates of the review.</figcaption>
+  </figure>
+  <p>Each <b>author</b> carries a name, affiliation, e-mail and ORCID; the app validates the ORCID check digit and puts a ✓ when it is correct. The <b>roles</b>—conceptualization, methodology, search, screening, extraction, analysis, writing, supervision and guarantor—are marked with a click, and one of the authors is the <b>contact</b> author. <b>Funding</b> and <b>conflicts of interest</b> are always declared, even if “none”: PRISMA 2020 asks for them and the live data <code>{{funding}}</code> and <code>{{coi}}</code> of Block 9 copy them into the manuscript.</p>
+  <p>With the <b>start</b> and <b>end</b> dates, <span class="ui">Propose schedule</span> divides the time into phases with the typical proportions for the type of review—in a systematic review, for example, title and abstract screening takes about one sixth—and draws the bar chart. The phases and their dates can be edited by hand.</p>
+  <figure class="media">
+    <div class="marco"><img src="../img/en/b2-cronograma.png" alt="The review schedule: eight phases, from protocol and registration to writing, as colored bars between October 2026 and October 2027, with a dashed line marking today"></div>
+    <figcaption><b>Figure 2.8.</b> The proposed schedule for a one-year meta-analysis; it is exported like any other figure.</figcaption>
+  </figure>
+
+  <!-- 2.8 -->
+  <h2 id="s2-8"><span class="num">2.8</span>The protocol check and PRISMA-P</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/en/b2-revision.png" alt="Card 8 of Block 2: the thirteen sections of the protocol marked as complete and the start of the PRISMA-P 2015 table, with 25 of 26 applicable items met and item 2 (registration) marked for a later block"></div>
+    <figcaption><b>Figure 2.9.</b> The protocol check of the example: the thirteen sections complete and, in PRISMA-P 2015, 25 of 26 items met; the registration item is left for after registering.</figcaption>
+  </figure>
+  <p>The card brings together two checks. At the top, each <b>section</b> the type of review asks for, with its status—<i>complete</i>, <i>to review</i> or <i>missing</i>—and, when something is missing, what to do (<i>“Declare both, even if "none".”</i>, <i>“Explain why this review is needed (what existing ones do not settle).”</i>). Below, the <b>PRISMA-P 2015</b> checklist (Moher et al. 2015; Shamseer et al. 2015), item by item: what it asks, where in the protocol it is met and its status. Some items are met in later blocks—the registration number, for example, only exists after registering—and are marked as such, not as missing.</p>
+
+  <!-- 2.9 -->
+  <h2 id="s2-9"><span class="num">2.9</span>Registration and the protocol document</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/en/b2-registro.png" alt="Card 9 of Block 2: the PROSPERO or OSF and EN or ES buttons, the messages about what PROSPERO registers and about the language, the registration fields drafted with their status and their Copy button, the registration number, the amendments, the dissemination and the download buttons"></div>
+    <figcaption><b>Figure 2.10.</b> The PROSPERO fields drafted in English from the protocol, with the scope and language messages. Below, the registration number still to be filled in and the downloads.</figcaption>
+  </figure>
+  <p>Each registration field is drafted from what you wrote above, with a <span class="ui">Copy</span> button to paste it into the registry’s form. You choose the registry—<b>PROSPERO</b> or <b>OSF</b>—and the language of the fields. The app warns about two things: the scope of each registry and whether your texts are in a language other than the registry’s.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Decision rule · which registry</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>If</b> the review is scoping or narrative</td><td><b>then</b> OSF: PROSPERO does not register them.</td></tr>
+      <tr><td><b>If</b> it is systematic with an outcome relevant to health (human or animal, including food)</td><td><b>then</b> PROSPERO is an option; check that your question qualifies.</td></tr>
+      <tr><td><b>If</b> it is systematic on an agronomic or environmental topic without a health outcome</td><td><b>then</b> OSF, which registers any type of review on any topic.</td></tr>
+      <tr><td><b>If</b> the registry asks for English and your protocol is in Spanish</td><td><b>then</b> translate the title, the question and the criteria before copying them; the app does not translate your texts.</td></tr>
+    </tbody></table>
+    <p class="regla-pie">Registry forms change: check the current fields at the time of submission.</p>
+  </div>
+  <p>When you register, note the <b>registration number</b> (for example, <code>CRD42026…</code> or <code>osf.io/…</code>): with it you meet item 2 of PRISMA-P, item 24a of PRISMA 2020 and the live datum <code>{{reg}}</code> of the manuscript. The <b>amendments</b> field says how changes will be documented; the <b>dissemination</b> field, where it will be published. <span class="ui">⤓ Protocol document (.html)</span> downloads the complete protocol, ready to print or attach; <span class="ui">⤓ Registration fields (.md)</span>, the fields as text.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>The messages of this block</div>
+    <p>Those about the question framework (Section 2.3), those for each incomplete section (2.8) and those about registration (2.9). None of them stops you from moving on: the protocol can be amended, and a real review does so. What matters is that each change is dated and justified in the amendments field (<span class="ui">How amendments will be documented</span>) and reported in the article (item 24c of PRISMA 2020).</p>
+  </div>
+</section>
+
+</body>
+</html>

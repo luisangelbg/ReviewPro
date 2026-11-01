@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · User’s Manual · Chapter 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<script src="../paginar.js"></script>
+<style>
+  .formula { font-family: var(--mono); font-size: 9pt; background: var(--marino-suave); border-radius: 5px; padding: 0.07in 0.12in; margin: 0.08in 0; }
+</style>
+</head>
+<body>
+
+<section class="capitulo" id="cap-b1" data-pestana="B1" data-orden="1" style="--acento: var(--b1)">
+  <div class="cap-apertura">
+    <div class="cap-num">1</div>
+    <div class="cap-etiqueta">Block 1 · Home</div>
+    <h1>Home: the types, the labs and the theory</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">The home page is not decoration: it helps you choose the type of review, shows which blocks each one asks for and carries two labs that use the same engines as Blocks 4 and 8 on fictitious literatures whose truth they know. They serve to understand, before risking your own review, what prioritized screening saves and what stopping costs, and how far a meta-analysis can land from the truth.</p>
+    <ul class="cap-contenido">
+      <li><b>1.1</b>The home page and its buttons</li>
+      <li><b>1.2</b>Four types of review, four routes</li>
+      <li><b>1.3</b>The five-question assistant</li>
+      <li><b>1.4</b>The prioritized screening lab</li>
+      <li><b>1.5</b>The meta-analysis lab</li>
+      <li><b>1.6</b>What is inside, how it is made and the theory</li>
+      <li><b>1.7</b>How to cite and the references</li>
+    </ul>
+  </div>
+
+  <!-- 1.1 -->
+  <h2 id="s1-1"><span class="num">1.1</span>The home page and its buttons</h2>
+  <p class="lead">The app always opens on the home page (Figure I.1 of the introduction). Below the title there are five buttons that lead where you almost always want to go first.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:2.2in">Button</th><th>Where it leads</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ui">Start my review →</span></td><td>To Block 2, to the protocol that is open (or to a new one of the type chosen on the home page).</td></tr>
+      <tr><td><span class="ui">Which type of review suits me?</span></td><td>To the cards of the four types and the five-question assistant (Sections 1.2 and 1.3).</td></tr>
+      <tr><td><span class="ui">Try the labs</span></td><td>To the two labs (Sections 1.4 and 1.5).</td></tr>
+      <tr><td><span class="ui">Open the complete example</span></td><td>Loads the manual’s example project and goes to Block 2 (Section I.7).</td></tr>
+      <tr><td><span class="ui">How to cite</span></td><td>To the citation of the program (Section 1.7).</td></tr>
+    </tbody>
+  </table>
+  <p>The four tags below sum up the program’s commitments: it runs entirely in the browser, the records never leave the computer, it is in Spanish and English, and it follows PRISMA 2020 and PRISMA-ScR. The fifth says that the meta-analysis engine was checked against published examples: the BCG vaccine data set (Colditz et al. 1994) reproduces τ² = 0.3132 and μ̂ = −0.7145 with REML, the reference values in the literature.</p>
+
+  <!-- 1.2 -->
+  <h2 id="s1-2"><span class="num">1.2</span>Four types of review, four routes</h2>
+  <figure class="media">
+    <div class="marco"><img src="../img/en/b1-tipos.png" alt="The four review-type cards—narrative review, scoping review, systematic review and meta-analysis—with their typical question, when, search, quality, synthesis, guideline and typical time; the meta-analysis card is selected and below it appears its route, with Blocks 2 to 10 marked as required"></div>
+    <figcaption><b>Figure 1.1.</b> The four cards and the route of the chosen type. Here, the meta-analysis: all nine working blocks are required.</figcaption>
+  </figure>
+  <p>Each card sums up the type in seven lines: its typical question, when it suits, what the search is like, what happens with the quality of the studies, how it is synthesized, which reporting guideline it follows and how long it usually takes. When you pick a card, the band below shows its <b>route</b>: each block marked as <i>required</i>, <i>optional</i> or <i>not applicable</i>.</p>
+  <p>The card chosen on the home page is only a preference: it is used as the type of a new protocol. The type that rules is the one set in <span class="ruta">Block 2<span class="sep">›</span>1 · Type of review</span>, and on it depend the question framework, the manuscript skeleton, the checklist of Block 9 and the project status of Block 10. All blocks stay open whatever the type: a narrative review can use the screening of Block 4 if it suits it.</p>
+
+  <!-- 1.3 -->
+  <h2 id="s1-3"><span class="num">1.3</span>The five-question assistant</h2>
+  <p>The five questions are: what you want the review to achieve, how narrow the question is, whether the studies report comparable numerical results, whether the journal or committee requires an exhaustive, reproducible search, and how much time you have. With all five answered, the assistant proposes a type and lists its reasons, so that you can disagree knowing why. The <span class="ui">See its route through the blocks</span> button picks that card and scrolls down to its route.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Decision rule · the logic of the assistant</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>If</b> you want to map what evidence exists</td><td><b>then</b> scoping: mapping is not estimating an effect.</td></tr>
+      <tr><td><b>If</b> you want to discuss and interpret a topic</td><td><b>then</b> narrative; scoping if you are also required to do a reproducible search.</td></tr>
+      <tr><td><b>If</b> you want to answer whether something works, but the question is broad</td><td><b>then</b> scoping first: a broad question is not answered with a number.</td></tr>
+      <tr><td><b>If</b> the question is narrow and the effects are comparable</td><td><b>then</b> meta-analysis.</td></tr>
+      <tr><td><b>If</b> the question is narrow and you do not yet know whether the data will be comparable, or they are not</td><td><b>then</b> systematic, which can grow into a meta-analysis at extraction or stay as a structured narrative synthesis.</td></tr>
+      <tr><td><b>If</b> you have less than three months for a systematic review</td><td><b>then</b> the assistant warns you: narrow the question or the sources and declare it as a limitation.</td></tr>
+    </tbody></table>
+  </div>
+  <figure style="width:66%;margin-left:auto;margin-right:auto">
+    <div class="marco"><img src="../img/en/b1-asistente.png" alt="The assistant with its five questions answered—answer whether something works, a narrow question, some studies with comparable numbers, exhaustive search required, 3 to 9 months—and its recommendation: systematic review, with the reason and the button to see its route"></div>
+    <figcaption><b>Figure 1.2.</b> The assistant recommends a systematic review for a narrow question where it is not yet known whether the data will be comparable, and says why.</figcaption>
+  </figure>
+
+  <!-- 1.4 -->
+  <h2 id="s1-4"><span class="num">1.4</span>The prioritized screening lab</h2>
+  <p>The lab writes a pile of fictitious records on one question—does inoculation with mycorrhizae increase maize yield in the field?—and knows which ones are relevant. It mixes the relevant ones with <i>neighbors</i> that resemble them (mycorrhizae in the greenhouse, maize fertilization, fungal diseases) and with distant topics. The simulated reviewer knows one relevant and one irrelevant record beforehand; from there, the same model that Block 4 uses re-ranks the pile after each batch of decisions, and the lab also screens the same pile in random order for comparison.</p>
+  <figure>
+    <div class="marco"><img src="../img/en/b1-lab-cribado.png" alt="The screening lab with 1,000 records, batches of 5, a stopping rule of 100 irrelevant in a row and seed 7; the six indicators—30 relevant, 53 read for 95%, WSS@95 of 89.7%, RRF@10 of 100%, stopped at 154 and recall at stop of 100%—; the recall curve and the PRISMA diagram of the simulated review"></div>
+    <figcaption><b>Figure 1.3.</b> The lab with its starting values. The blue curve (prioritized) rises almost vertically; the gray one (random) advances diagonally. The red line marks where the rule stopped, and on the right is the flow diagram of the simulated review.</figcaption>
+  </figure>
+  <table class="compacta">
+    <thead><tr><th style="width:1.7in">Control</th><th>What it changes</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ui">Records</span></td><td>The size of the pile: 500, 1,000 or 2,000.</td></tr>
+      <tr><td><span class="ui">Batch</span></td><td>How many decisions are made before the model re-ranks (1, 5, 10 or 25). Small batches learn faster.</td></tr>
+      <tr><td><span class="ui">Stopping rule</span></td><td>50, 100 or 200 irrelevant in a row; the <b>knee</b> of the curve with ρ ≥ 6; or the adjusted knee, with ρ ≥ 156 − relevant found (Cormack and Grossman 2016).</td></tr>
+      <tr><td><span class="ui">Prevalence of relevant</span></td><td>What fraction of the pile is relevant (3% at the start). Real reviews usually run between 1 and 5%.</td></tr>
+      <tr><td><span class="ui">Difficulty of the pile</span></td><td>How much the neighbors resemble the relevant records: easy, medium or hard.</td></tr>
+      <tr><td><span class="ui">Seed</span> · <span class="ui">↻ Another pile</span></td><td>The same seed gives the same pile; the button draws another.</td></tr>
+    </tbody>
+  </table>
+  <h3>How to read the indicators</h3>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:1.7in"><b>Read for 95 %</b></td><td>How many records had to be read, in prioritized order, to find 95% of the relevant ones.</td></tr>
+      <tr><td><b>WSS@95</b></td><td>The work saved: the fraction of the pile that is not read to reach 95% of the relevant records, minus the 5% that chance would save (Cohen et al. 2006).</td></tr>
+      <tr><td><b>RRF@10</b></td><td>The fraction of the relevant records already found after reading the first 10% of the pile.</td></tr>
+      <tr><td><b>Stopping rule</b> and <b>Recall at stop</b></td><td>Where the chosen rule would have stopped and what fraction of the relevant records had been found there. The box turns red if relevant records were missed.</td></tr>
+    </tbody>
+  </table>
+  <div class="formula">WSS@95 = (N − n₉₅) / N − 0.05 &nbsp;&nbsp;·&nbsp;&nbsp; with N = 1,000 and n₉₅ = 53: 0.947 − 0.05 = 0.897</div>
+  <figure>
+    <div class="marco"><img src="../img/en/b1-lab-palabras.png" alt="The words the model learned push toward relevant (component, grown, evidence, inoculant, farm, flowering…) and toward irrelevant (drought, nitrogen, greenhouse, seedling, biochar, fertilizer…), and the first two records the model put in front of the reviewer, both relevant, with the words that weighed most highlighted"></div>
+    <figcaption><b>Figure 1.4.</b> What the model learned: the words that push toward “relevant” and toward “irrelevant”, and the first records it presented, with the words that weighed most highlighted.</figcaption>
+  </figure>
+  <div class="caja ejemplo">
+    <div class="caja-t"><span class="ico">▸</span>Example · the starting pile (seed 7)</div>
+    <p>Of 1,000 records, 30 are relevant (3.0%). In prioritized order, <b>53 readings</b> are enough to find 95% of them (5.3% of the pile): WSS@95 = <b>89.7%</b>. After reading 10% of the pile all of them had been found (RRF@10 = 100%). The rule of 100 irrelevant in a row stopped at record <b>154</b> without missing any. Raise the difficulty or lower the prevalence and repeat: you will see that the rule that was safe with this pile starts leaving relevant records behind.</p>
+  </div>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Theory in brief · why prioritized screening does not decide for you</div>
+    <p>The model is a naive Bayes classifier on words weighted by TF-IDF (Salton and Buckley 1988; Rennie et al. 2003), retrained with each batch: active learning in the line of the work of Yu et al. (2018) and van de Schoot et al. (2021). It excludes nothing; it only changes the order in which you see the records. Because the relevant records appear early, there comes a point where only irrelevant ones turn up, and that is where a stopping rule declared in the protocol comes in. The cost is explicit: stopping before the end can leave some relevant record out. That is why the lab shows the recall at stop, and why Block 4 recommends checking with a random sample of the unread records.</p>
+  </div>
+
+  <!-- 1.5 -->
+  <h2 id="s1-5"><span class="num">1.5</span>The meta-analysis lab</h2>
+  <p>The second lab generates fictitious field trials of an input on yield. Each trial has its own true effect, drawn from a distribution with mean <span class="ui">True effect</span> and spread <span class="ui">Heterogeneity τ</span>; its plots add sampling error. The effect is measured as a response ratio (the log of the treated mean over the control mean) and read as a percentage change. The lab then combines the trials with the same engine as Block 8 and shows you the distance between the truth and the estimate.</p>
+  <figure class="media">
+    <div class="marco"><img src="../img/en/b1-lab-meta.png" alt="The meta-analysis lab with REML, 14 trials, a true effect of +10%, τ of 0.08 and 3 to 10 plots per treatment; the indicators—pooled effect +5.1%, the laboratory’s truth +10.0%, common effect +5.4%, τ² 0.0145 and I² 70%, prediction interval from −20.3% to +38.6% and Egger p = 0.867—; the forest plot, the funnel plot and the reading in words"></div>
+    <figcaption><b>Figure 1.5.</b> Fourteen trials of an input with a true mean effect of +10%. The estimate, +5.1%, lands far from the truth and its interval includes zero: with few heterogeneous trials, chance weighs heavily.</figcaption>
+  </figure>
+  <table class="compacta">
+    <thead><tr><th style="width:1.9in">Control</th><th>What it changes</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ui">τ² estimator</span></td><td>REML (restricted maximum likelihood), DerSimonian–Laird, Paule–Mandel, Hedges or maximum likelihood: how the between-trial variance is estimated.</td></tr>
+      <tr><td><span class="ui">Knapp–Hartung</span></td><td>Intervals with the t distribution and an adjustment of the variance; more honest with few studies.</td></tr>
+      <tr><td><span class="ui">Publication bias</span></td><td>Hides the small trials that “did not work out”: the funnel loses a corner and the average inflates.</td></tr>
+      <tr><td><span class="ui">Number of trials</span>, <span class="ui">True effect</span>, <span class="ui">Heterogeneity τ</span>, <span class="ui">Plots per treatment</span></td><td>The literature that is generated. Next to τ its equivalent as a percentage change is shown (0.08 ≈ ±17%).</td></tr>
+    </tbody>
+  </table>
+  <p>The six indicators are the pooled effect with its 95% CI, the laboratory’s truth, the common (fixed) effect, τ² with I² and the Q test, the prediction interval and Egger’s asymmetry test. Below, a paragraph reads the result in words: with how many trials, how large the heterogeneity is and what the prediction interval says.</p>
+  <div class="caja regla">
+    <div class="caja-t"><span class="ico">✓</span>Decision rule · four experiments worth doing</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:44%"><b>If</b> you raise τ with the same number of trials</td><td><b>then</b> the CI widens a little, but the prediction interval a lot: the average stays, what changes is what will happen at a new site.</td></tr>
+      <tr><td><b>If</b> you turn on publication bias</td><td><b>then</b> the pooled effect rises above the truth and the funnel loses the corner of small trials with low effects.</td></tr>
+      <tr><td><b>If</b> you go down to 5 trials and toggle Knapp–Hartung</td><td><b>then</b> you will see how much too narrow the CI becomes with the z test: with few studies, use t.</td></tr>
+      <tr><td><b>If</b> you set τ to zero</td><td><b>then</b> the common effect and the random effects coincide, and I² drops toward zero.</td></tr>
+    </tbody></table>
+  </div>
+
+  <!-- 1.6 -->
+  <h2 id="s1-6"><span class="num">1.6</span>What is inside, how it is made and the theory</h2>
+  <p><b>What’s inside</b> describes the nine working blocks in one card each; <b>How it is made</b>, the six principles of the program: everything on your computer, it guides and does not write, every decision is recorded, reproducible, four types with one route, and verified engines. <b>The theory, in plain language</b> gathers five explanations with their illustration, meant to be read before opening the first database:</p>
+  <ul>
+    <li><b>What makes a review “systematic”</b>—reproducibility, not the number of articles—and how scoping reviews and meta-analysis differ.</li>
+    <li><b>Why prioritized screening does not decide for you</b>, with the definition of WSS@95.</li>
+    <li><b>Common effect or random effects</b>: a single true effect or a distribution of effects, one per study, with the formula of the weights.</li>
+    <li><b>Heterogeneity: τ², I² and the prediction interval</b>, and why I² = 80% does not mean “a lot of variation” but “little sampling error by comparison”.</li>
+    <li><b>Publication bias and the funnel</b>, with the limits of Egger’s test.</li>
+  </ul>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Theory in brief · the three formulas of the home page</div>
+    <div class="formula">μ̂ = Σ wᵢ yᵢ / Σ wᵢ, &nbsp; wᵢ = 1 / (vᵢ + τ̂²) &nbsp;&nbsp;·&nbsp;&nbsp; I² = τ̂² / (τ̂² + s²) &nbsp;&nbsp;·&nbsp;&nbsp; PI = μ̂ ± t<sub>k−2</sub> √(τ̂² + SE(μ̂)²)</div>
+    <p>Each study weighs by its precision, reduced by τ²; I² compares τ² with the typical sampling variance s², and the prediction interval (Higgins et al. 2009) adds the uncertainty of the average and that of the sites.</p>
+  </div>
+
+  <!-- 1.7 -->
+  <h2 id="s1-7"><span class="num">1.7</span>How to cite and the references</h2>
+  <p>The <span class="ui">How to cite</span> section carries the citation of the program in Spanish or English, depending on the active language, with its version number, and the <span class="ui">Copy the citation</span> button. If ReviewPro helped you with an article or a thesis, cite the program <i>and</i> the original works of the methods you used: the methods paragraph of Block 8 names them by author and year, and Block 9 adds their entries to the reference list when you cite them.</p>
+  <p><span class="ui">References behind the calculations</span> gathers, by topic, the works each method comes from; Appendix E repeats them.</p>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>The messages of this block</div>
+    <p>Block 1 hardly warns: the assistant says <i>“N answer(s) missing to recommend a type.”</i> until you answer all five, and the screening lab says <i>“the rule never fired: everything was read”</i> when the chosen stopping rule never triggers with that pile. Nothing you do here touches your project: the labs work with their own fictitious literatures.</p>
+  </div>
+</section>
+
+</body>
+</html>

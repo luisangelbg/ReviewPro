@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ReviewPro · User’s Manual · Front matter and introduction</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../interior.css">
+<!-- reparte el contenido en hojas tamaño carta, con encabezados, números de página e índice -->
+<script src="../paginar.js"></script>
+<style>
+  figure.reducida { width: 80%; margin-left: auto; margin-right: auto; }
+</style>
+</head>
+<body>
+
+<!-- ====================================================================== CRÉDITOS -->
+<section class="preliminares creditos" id="creditos">
+  <div class="cred-titulo">ReviewPro</div>
+  <div class="cred-sub">User’s Manual · Review articles and meta-analysis</div>
+
+  <dl>
+    <dt>Author</dt><dd><b>Luis Ángel Barrera-Guzmán</b><br><span class="small">ORCID 0000-0001-8057-2583</span></dd>
+    <dt>Program</dt><dd>ReviewPro, version 1.0.0 (September 2026)</dd>
+    <dt>Manual</dt><dd>First English edition, 2026, translated from the first Spanish edition. Describes version 1.0 of the program.</dd>
+    <dt>Program license</dt><dd>GNU General Public License, version 3 or later (GPL-3.0-or-later).</dd>
+    <dt>Manual rights</dt><dd>© 2026 Luis Ángel Barrera-Guzmán. All rights reserved.</dd>
+    <dt>Interface language</dt><dd>Spanish or English, with the <span class="ui">ES</span> · <span class="ui">EN</span> switch on the top bar. In this manual the names of buttons, fields and menus are written as they appear on screen in English, for example <span class="ui">Start my review →</span>.</dd>
+  </dl>
+
+  <h4>How to cite the program</h4>
+  <div class="cita">Barrera-Guzmán, L.Á. (2026). <i>ReviewPro: a browser-based platform for narrative, scoping and systematic review articles and meta-analysis</i> (Version 1.0) [Computer software].</div>
+  <h4>How to cite this manual</h4>
+  <div class="cita">Barrera-Guzmán, L.Á. (2026). <i>ReviewPro: User’s Manual</i> (1st English ed.). Distributed with ReviewPro, version 1.0.</div>
+  <p class="small">The digital object identifier (DOI) will be added to both citations when version 1.0 is archived. Meanwhile, the citation of the program appears in the <span class="ui">How to cite</span> section of the app’s home page.</p>
+
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>Privacy</div>
+    <p>ReviewPro runs entirely inside your browser. The bibliographic records you import, your screening decisions, the data you extract and the text you write are kept on your computer and <b>are never sent to any server</b>. The only things that leave the program are what you download: the project file, the tables, the figures, the manuscript and the package. Nor does the program need the internet: once copied, it works with the machine offline.</p>
+  </div>
+
+  <p class="small" style="margin-top:0.4in;color:var(--gris)">The illustrations, diagrams and screenshots in this manual are original: they were generated with the program itself or with code written for the manual. The example project used throughout—a meta-analysis of the effect of inoculation with arbuscular mycorrhizal fungi on maize grain yield—is <b>fictitious</b>: the records, studies, journals, data and reviewers were generated to teach how to use the program and do not describe real research. The only named person in it, Josiah Carberry, is the public test identity of the ORCID documentation; the DOIs in the example use the prefix 10.5555, reserved for testing.</p>
+</section>
+
+<!-- ====================================================================== ÍNDICE -->
+<section class="preliminares indice" id="indice" data-nueva-hoja>
+  <h1>Contents</h1>
+  <div class="indice-sub">General contents of the manual</div>
+
+  <ol class="toc">
+    <li>
+      <div class="toc-cap"><span class="chip k0">P</span><a href="#como-leer">How to read this manual</a><a class="pag" href="#como-leer"></a></div>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k0">In</span><a href="#cap-intro">Introduction to ReviewPro</a><a class="pag" href="#cap-intro"></a></div>
+      <ul>
+        <li><span class="n">I.1</span><a href="#si-1"><span class="t">What is ReviewPro?</span></a></li>
+        <li><span class="n">I.2</span><a href="#si-2"><span class="t">Four types of review</span></a></li>
+        <li><span class="n">I.3</span><a href="#si-3"><span class="t">Five ideas behind the manual</span></a></li>
+        <li><span class="n">I.4</span><a href="#si-4"><span class="t">What goes in and what comes out</span></a></li>
+        <li><span class="n">I.5</span><a href="#si-5"><span class="t">What you need and how to open it</span></a></li>
+        <li><span class="n">I.6</span><a href="#si-6"><span class="t">A tour of the interface</span></a></li>
+        <li><span class="n">I.7</span><a href="#si-7"><span class="t">The example project of the manual</span></a></li>
+        <li><span class="n">I.8</span><a href="#si-8"><span class="t">How a review is carried out</span></a></li>
+        <li><span class="n">I.9</span><a href="#si-9"><span class="t">What the program does not do</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k1">1</span><a href="#cap-b1">Home: the types, the labs and the theory</a><a class="pag" href="#cap-b1"></a></div>
+      <ul>
+        <li><span class="n">1.1</span><a href="#s1-1"><span class="t">The home page and its buttons</span></a></li>
+        <li><span class="n">1.2</span><a href="#s1-2"><span class="t">Four types of review, four routes</span></a></li>
+        <li><span class="n">1.3</span><a href="#s1-3"><span class="t">The five-question assistant</span></a></li>
+        <li><span class="n">1.4</span><a href="#s1-4"><span class="t">The prioritized screening lab</span></a></li>
+        <li><span class="n">1.5</span><a href="#s1-5"><span class="t">The meta-analysis lab</span></a></li>
+        <li><span class="n">1.6</span><a href="#s1-6"><span class="t">What is inside, how it is made and the theory</span></a></li>
+        <li><span class="n">1.7</span><a href="#s1-7"><span class="t">How to cite and the references</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k2">2</span><a href="#cap-b2">The protocol: what is decided before searching</a><a class="pag" href="#cap-b2"></a></div>
+      <ul>
+        <li><span class="n">2.1</span><a href="#s2-1"><span class="t">The project: new, open, save and examples</span></a></li>
+        <li><span class="n">2.2</span><a href="#s2-2"><span class="t">The type of review</span></a></li>
+        <li><span class="n">2.3</span><a href="#s2-3"><span class="t">Title and question</span></a></li>
+        <li><span class="n">2.4</span><a href="#s2-4"><span class="t">Eligibility criteria</span></a></li>
+        <li><span class="n">2.5</span><a href="#s2-5"><span class="t">Outcomes, moderators and sources</span></a></li>
+        <li><span class="n">2.6</span><a href="#s2-6"><span class="t">Methods</span></a></li>
+        <li><span class="n">2.7</span><a href="#s2-7"><span class="t">Team, funding and schedule</span></a></li>
+        <li><span class="n">2.8</span><a href="#s2-8"><span class="t">The protocol check and PRISMA-P</span></a></li>
+        <li><span class="n">2.9</span><a href="#s2-9"><span class="t">Registration and the protocol document</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k3">3</span><a href="#cap-b3">Search and records</a><a class="pag" href="#cap-b3"></a></div>
+      <ul>
+        <li><span class="n">3.1</span><a href="#s3-1"><span class="t">The strategy by concept blocks</span></a></li>
+        <li><span class="n">3.2</span><a href="#s3-2"><span class="t">The string in five syntaxes</span></a></li>
+        <li><span class="n">3.3</span><a href="#s3-3"><span class="t">The search log</span></a></li>
+        <li><span class="n">3.4</span><a href="#s3-4"><span class="t">Importing the records</span></a></li>
+        <li><span class="n">3.5</span><a href="#s3-5"><span class="t">Duplicates</span></a></li>
+        <li><span class="n">3.6</span><a href="#s3-6"><span class="t">Testing the strategy</span></a></li>
+        <li><span class="n">3.7</span><a href="#s3-7"><span class="t">Summary and export</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k4">4</span><a href="#cap-b4">Title and abstract screening</a><a class="pag" href="#cap-b4"></a></div>
+      <ul>
+        <li><span class="n">4.1</span><a href="#s4-1"><span class="t">Reviewers and way of working</span></a></li>
+        <li><span class="n">4.2</span><a href="#s4-2"><span class="t">The screening screen</span></a></li>
+        <li><span class="n">4.3</span><a href="#s4-3"><span class="t">The prioritized order and the stopping rule</span></a></li>
+        <li><span class="n">4.4</span><a href="#s4-4"><span class="t">Two reviewers on two computers</span></a></li>
+        <li><span class="n">4.5</span><a href="#s4-5"><span class="t">Agreement and reconciliation</span></a></li>
+        <li><span class="n">4.6</span><a href="#s4-6"><span class="t">The summary and the downloads</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k5">5</span><a href="#cap-b5">Full text and PRISMA diagram</a><a class="pag" href="#cap-b5"></a></div>
+      <ul>
+        <li><span class="n">5.1</span><a href="#s5-1"><span class="t">Retrieving the full texts</span></a></li>
+        <li><span class="n">5.2</span><a href="#s5-2"><span class="t">Studies found by other methods</span></a></li>
+        <li><span class="n">5.3</span><a href="#s5-3"><span class="t">Full-text eligibility</span></a></li>
+        <li><span class="n">5.4</span><a href="#s5-4"><span class="t">Reports and studies</span></a></li>
+        <li><span class="n">5.5</span><a href="#s5-5"><span class="t">The PRISMA 2020 flow diagram</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k6">6</span><a href="#cap-b6">Data extraction and effect sizes</a><a class="pag" href="#cap-b6"></a></div>
+      <ul>
+        <li><span class="n">6.1</span><a href="#s6-1"><span class="t">The extraction form</span></a></li>
+        <li><span class="n">6.2</span><a href="#s6-2"><span class="t">Extracting a study</span></a></li>
+        <li><span class="n">6.3</span><a href="#s6-3"><span class="t">The effect-size calculator</span></a></li>
+        <li><span class="n">6.4</span><a href="#s6-4"><span class="t">When the standard deviation is missing</span></a></li>
+        <li><span class="n">6.5</span><a href="#s6-5"><span class="t">Double extraction</span></a></li>
+        <li><span class="n">6.6</span><a href="#s6-6"><span class="t">The final tables</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k7">7</span><a href="#cap-b7">Risk of bias and certainty of the evidence</a><a class="pag" href="#cap-b7"></a></div>
+      <ul>
+        <li><span class="n">7.1</span><a href="#s7-1"><span class="t">The tools</span></a></li>
+        <li><span class="n">7.2</span><a href="#s7-2"><span class="t">Assessing each study</span></a></li>
+        <li><span class="n">7.3</span><a href="#s7-3"><span class="t">Reconciling the judgments</span></a></li>
+        <li><span class="n">7.4</span><a href="#s7-4"><span class="t">The risk-of-bias plots</span></a></li>
+        <li><span class="n">7.5</span><a href="#s7-5"><span class="t">Certainty of the evidence with GRADE</span></a></li>
+        <li><span class="n">7.6</span><a href="#s7-6"><span class="t">The summary of findings</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k8">8</span><a href="#cap-b8">Synthesis and meta-analysis</a><a class="pag" href="#cap-b8"></a></div>
+      <ul>
+        <li><span class="n">8.1</span><a href="#s8-1"><span class="t">Data and model</span></a></li>
+        <li><span class="n">8.2</span><a href="#s8-2"><span class="t">The result and the forest plot</span></a></li>
+        <li><span class="n">8.3</span><a href="#s8-3"><span class="t">Heterogeneity and moderators</span></a></li>
+        <li><span class="n">8.4</span><a href="#s8-4"><span class="t">Sensitivity analysis</span></a></li>
+        <li><span class="n">8.5</span><a href="#s8-5"><span class="t">Publication bias</span></a></li>
+        <li><span class="n">8.6</span><a href="#s8-6"><span class="t">Synthesis without meta-analysis</span></a></li>
+        <li><span class="n">8.7</span><a href="#s8-7"><span class="t">Methods and export</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k9">9</span><a href="#cap-b9">Guided writing</a><a class="pag" href="#cap-b9"></a></div>
+      <ul>
+        <li><span class="n">9.1</span><a href="#s9-1"><span class="t">The manuscript skeleton</span></a></li>
+        <li><span class="n">9.2</span><a href="#s9-2"><span class="t">Citations and live data</span></a></li>
+        <li><span class="n">9.3</span><a href="#s9-3"><span class="t">Data-based sentences to get started</span></a></li>
+        <li><span class="n">9.4</span><a href="#s9-4"><span class="t">The claim checker</span></a></li>
+        <li><span class="n">9.5</span><a href="#s9-5"><span class="t">The reporting checklist</span></a></li>
+        <li><span class="n">9.6</span><a href="#s9-6"><span class="t">Exporting the manuscript</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip k10">10</span><a href="#cap-b10">Figures, report and package</a><a class="pag" href="#cap-b10"></a></div>
+      <ul>
+        <li><span class="n">10.1</span><a href="#s10-1"><span class="t">The project status</span></a></li>
+        <li><span class="n">10.2</span><a href="#s10-2"><span class="t">The figures</span></a></li>
+        <li><span class="n">10.3</span><a href="#s10-3"><span class="t">The report</span></a></li>
+        <li><span class="n">10.4</span><a href="#s10-4"><span class="t">The project package</span></a></li>
+        <li><span class="n">10.5</span><a href="#s10-5"><span class="t">Before submitting</span></a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="toc-cap"><span class="chip kx">Ap</span><a href="#cap-ap">Appendices</a><a class="pag" href="#cap-ap"></a></div>
+      <ul>
+        <li><span class="n">A</span><a href="#ap-a"><span class="t">The files the app reads and writes</span></a></li>
+        <li><span class="n">B</span><a href="#ap-b"><span class="t">The decision rules, gathered</span></a></li>
+        <li><span class="n">C</span><a href="#ap-c"><span class="t">Glossary</span></a></li>
+        <li><span class="n">D</span><a href="#ap-d"><span class="t">When something goes wrong</span></a></li>
+        <li><span class="n">E</span><a href="#ap-e"><span class="t">References</span></a></li>
+        <li><span class="n">F</span><a href="#ap-f"><span class="t">The tool: license and how to cite it</span></a></li>
+      </ul>
+    </li>
+  </ol>
+</section>
+
+<!-- ====================================================================== CÓMO LEER -->
+<section class="preliminares" id="como-leer" data-nueva-hoja style="--acento: var(--b0)">
+  <h2 style="margin-top:0.2in">How to read this manual</h2>
+  <p class="lead">The manual follows the same order as the app: ten numbered blocks, listed from top to bottom in the block list on the left of the screen. Each chapter explains one block and carries its number—Chapter 5 is Block 5, and its sections, figures and tables are numbered 5.1, 5.2…. Each one begins with the methodological idea the block needs, continues with what the screen does and how to read it, and ends with the messages the block can show and what to do about them. This introduction has no number: its sections run I.1, I.2….</p>
+
+  <h3>A color for each block</h3>
+  <p>The block’s color appears in the opening of its chapter, in the number of each section, in the tab on the edge of the page and in the contents, and it is the same as in the band on the cover. That way you can tell at a glance which part of the app you are in.</p>
+  <table class="compacta">
+    <thead><tr><th style="width:0.6in">Block</th><th style="width:1.45in">Name in the app</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><span class="chip k1">1</span></td><td><span class="ui">Home</span></td><td>Home page, the four types of review with their route, a five-question assistant, two labs that really compute, the theory in plain language and the references</td></tr>
+      <tr><td><span class="chip k2">2</span></td><td><span class="ui">Protocol</span></td><td>The project, the question with its framework (PICO, PECO, PCC, SPIDER), the criteria, the outcomes, the sources, the methods, the team and the schedule; the check against PRISMA-P and registration in PROSPERO or OSF</td></tr>
+      <tr><td><span class="chip k3">3</span></td><td><span class="ui">Search</span></td><td>The string by concept blocks, written in five syntaxes; the log of each source; import from six formats; duplicates; the test with known articles</td></tr>
+      <tr><td><span class="chip k4">4</span></td><td><span class="ui">Screening</span></td><td>Title and abstract with keyboard shortcuts, prioritization by active learning, stopping rules, blind double screening, kappa and reconciliation</td></tr>
+      <tr><td><span class="chip k5">5</span></td><td><span class="ui">Full text</span></td><td>Where each PDF is, what was found by other routes, eligibility with its reason for exclusion and the PRISMA 2020 flow diagram built from the real counts</td></tr>
+      <tr><td><span class="chip k6">6</span></td><td><span class="ui">Extraction</span></td><td>The form you design, extraction by reviewer, the effect-size calculator, the comparison of double extraction and the final tables</td></tr>
+      <tr><td><span class="chip k7">7</span></td><td><span class="ui">Quality and bias</span></td><td>Risk of bias by domains with the agronomic checklist (or other tools), reconciliation, traffic-light plots, GRADE certainty and the summary of findings</td></tr>
+      <tr><td><span class="chip k8">8</span></td><td><span class="ui">Synthesis</span></td><td>The multilevel meta-analysis (or the average per study), heterogeneity, moderators, sensitivity and publication bias; and synthesis without meta-analysis</td></tr>
+      <tr><td><span class="chip k9">9</span></td><td><span class="ui">Writing</span></td><td>The manuscript by sections, with live citations and data, the claim checker, the PRISMA or SANRA checklist and export to Word, HTML and Markdown</td></tr>
+      <tr><td><span class="chip k10">10</span></td><td><span class="ui">Report</span></td><td>The project status, the numbered figures, the self-contained report and the .zip package that reproduces the whole review</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Types of boxes</h3>
+  <div class="dos">
+    <div class="caja nota" style="margin:0"><div class="caja-t"><span class="ico">i</span>Note</div><p>Clarifications and practical tips that save time.</p></div>
+    <div class="caja importante" style="margin:0"><div class="caja-t"><span class="ico">!</span>Important</div><p>What can change your conclusions if overlooked.</p></div>
+    <div class="caja teoria" style="margin:0"><div class="caja-t"><span class="ico">θ</span>Theory in brief</div><p>The idea behind a step or a computation, without unnecessary formulas.</p></div>
+    <div class="caja ejemplo" style="margin:0"><div class="caja-t"><span class="ico">▸</span>Example</div><p>A case worked step by step with the program’s example project.</p></div>
+  </div>
+  <div class="caja regla" style="margin-top:0.18in">
+    <div class="caja-t"><span class="ico">✓</span>Decision rule</div>
+    <table class="compacta"><tbody>
+      <tr><td style="width:40%"><b>If</b> the result falls in this case…</td><td><b>then</b> this is the recommended reading.</td></tr>
+    </tbody></table>
+    <p class="regla-pie">They are guides for deciding and interpreting, not laws: what you know about the topic, the studies and your question always comes first.</p>
+  </div>
+  <h3>Writing conventions</h3>
+  <table class="compacta">
+    <thead><tr><th style="width:38%">Written like this</th><th>Means</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ui">Start my review →</span></td><td>A button, checkbox or menu of the app, with its text exactly as it appears on screen in English.</td></tr>
+      <tr><td><span class="ruta">Block 8<span class="sep">›</span>Publication bias</span></td><td>A path: open the first and look for the second inside it.</td></tr>
+      <tr><td><code>[@Cruz2021]</code>, <code>{{n.included}}</code>, <code>.reviewpro.json</code></td><td>Something typed exactly as shown: a citation, a live datum, a file or field name.</td></tr>
+      <tr><td>lnRR · 95% CI · PI · I² · τ²</td><td>The log response ratio, the 95% confidence interval, the prediction interval, the relative heterogeneity and the between-study variance.</td></tr>
+      <tr><td>+16.9% · 0.156 · 1,480</td><td>Effects in lnRR are read as a percentage change; decimals use a point and thousands a comma, as in the app.</td></tr>
+      <tr><td>record · report · study</td><td>A <b>record</b> is a bibliographic entry; a <b>report</b>, a document (article, thesis, conference abstract); a <b>study</b>, a piece of research, which may have several reports. PRISMA 2020 distinguishes them and so does the app.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>The numbers in this manual</div>
+    <p>All the results in the text were obtained by opening the <b>complete example project</b> in the app—the <span class="ui">Open the complete example</span> button on the home page—and were copied from the screen. If you open it yourself, you should see the same numbers: the example is a fixed file and every computation is deterministic. Where a chapter uses something else—the example protocol of a scoping review, the labs of Block 1—it says so before giving the number.</p>
+  </div>
+</section>
+
+<!-- ====================================================================== INTRODUCCIÓN -->
+<section class="capitulo" id="cap-intro" data-pestana="In" data-orden="0" style="--acento: var(--b0)">
+  <div class="cap-apertura">
+    <div class="cap-num">In</div>
+    <div class="cap-etiqueta">Introduction · Before the blocks</div>
+    <h1 data-corto="Introduction">Introduction to ReviewPro</h1>
+    <div class="cap-regla"></div>
+    <p class="cap-resumen">What the program is, which types of review it covers, what it takes in and what it delivers, and how it is followed from beginning to end. It includes the five ideas that hold everything else up—decide before searching, everything is recorded, the model ranks but does not decide, the average is not enough, and the app guides but does not write—and an honest list of what the program does not do.</p>
+    <div class="cap-franja"><span class="k1"></span><span class="k2"></span><span class="k3"></span><span class="k4"></span><span class="k5"></span><span class="k6"></span><span class="k7"></span><span class="k8"></span><span class="k9"></span><span class="k10"></span></div>
+    <ul class="cap-contenido">
+      <li><b>I.1</b>What is ReviewPro?</li>
+      <li><b>I.2</b>Four types of review</li>
+      <li><b>I.3</b>Five ideas behind the manual</li>
+      <li><b>I.4</b>What goes in and what comes out</li>
+      <li><b>I.5</b>What you need and how to open it</li>
+      <li><b>I.6</b>A tour of the interface</li>
+      <li><b>I.7</b>The example project of the manual</li>
+      <li><b>I.8</b>How a review is carried out</li>
+      <li><b>I.9</b>What the program does not do</li>
+    </ul>
+  </div>
+
+  <!-- I.1 -->
+  <h2 id="si-1"><span class="num">I.1</span>What is ReviewPro?</h2>
+  <p class="lead">ReviewPro is a platform for doing a review article <b>from the question to the manuscript</b>: it fixes the question and the protocol before searching, writes the search strings in the syntax of each database, gathers and cleans the records, orders screening so that the relevant ones come first, keeps count of every exclusion up to the PRISMA diagram, extracts the data and computes the effect sizes, assesses risk of bias and certainty, combines the studies—with or without meta-analysis—and accompanies the writing up to a Word document with its citations and references.</p>
+  <p>Everything happens inside the browser. There is nothing to install, no programming is needed and the data never leave the computer. It is written for researchers, teachers and graduate students in the agricultural and biological sciences, but it works for any field: it knows that most agronomic reviews combine field experiments with several sites or seasons per study, that means come with the LSD or the standard error instead of the standard deviation, that the risk of bias of a field trial is not assessed with the same checklist as a clinical trial, and that what readers need to know is not only whether a treatment works on average, but what would happen at a new site.</p>
+  <figure>
+    <div class="marco"><img src="../img/en/in-portada.png" alt="The ReviewPro home page: the top bar with the tools, the list of the ten blocks on the left and the block index on the right; in the center, the title “From a pile of papers to a review that holds up”, the start buttons and the illustration of the records narrowing through a funnel into a forest plot"></div>
+    <figcaption><b>Figure I.1.</b> The app’s home page (Block 1). On the left, the list of the ten blocks; in the center, the buttons to start a review, choose the type, try the labs, open the complete example and see how to cite.</figcaption>
+  </figure>
+
+  <!-- I.2 -->
+  <h2 id="si-2"><span class="num">I.2</span>Four types of review</h2>
+  <p>Not every review asks for the same things. The app distinguishes four, and the type you choose in the protocol decides which question framework is recommended, which reporting guideline is followed, which blocks are required and what the manuscript skeleton looks like (Grant and Booth 2009).</p>
+  <table class="compacta">
+    <thead><tr><th style="width:1.15in">Type</th><th>When it suits</th><th style="width:1.2in">Reporting guideline</th><th style="width:0.9in">Blocks required</th><th style="width:0.75in">Typical time</th></tr></thead>
+    <tbody>
+      <tr><td><b>Narrative</b></td><td>State of the art, conceptual framework of a project, an emerging or very broad topic, a debate between schools.</td><td>SANRA (Baethge et al. 2019)</td><td>2, 3, 6, 8, 9, 10<br><span class="small">optional 4, 5, 7</span></td><td>1 to 3 months</td></tr>
+      <tr><td><b>Scoping</b></td><td>Mapping a field before a systematic review, identifying concepts and methods, detecting research gaps.</td><td>PRISMA-ScR (Tricco et al. 2018)</td><td>2 to 6, 8, 9, 10<br><span class="small">optional 7</span></td><td>3 to 9 months</td></tr>
+      <tr><td><b>Systematic</b></td><td>A focused question (PICO or PECO) that asks for a defensible, auditable answer.</td><td>PRISMA 2020 (Page et al. 2021)</td><td>2 to 10</td><td>6 to 18 months</td></tr>
+      <tr><td><b>Meta-analysis</b></td><td>A systematic review whose studies report comparable effects (means, SDs and n; counts; correlations).</td><td>PRISMA 2020 + GRADE certainty</td><td>2 to 10</td><td>6 to 18 months</td></tr>
+    </tbody>
+  </table>
+  <div class="caja teoria">
+    <div class="caja-t"><span class="ico">θ</span>Theory in brief · what makes a review “systematic”</div>
+    <p>It is not the number of articles nor the tone. A review is systematic when another person, with your protocol, would arrive at the same studies: the question and the criteria are fixed before searching, the search is documented to the character, every exclusion has a recorded reason and the quality of each study is assessed with a declared tool. A scoping review shares that rigor in the search, but its product is a map, not an answer. Meta-analysis is a statistical technique applied <i>within</i> a systematic review when the effects are comparable; without the systematic review underneath, it only averages a biased sample with precision.</p>
+  </div>
+
+  <!-- I.3 -->
+  <h2 id="si-3"><span class="num">I.3</span>Five ideas behind the manual</h2>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:1.9in"><b>1 · Decide before searching</b></td><td>The question, the criteria, the outcomes, the moderators and the synthesis plan are written in the protocol (Block 2) before seeing a single result. This is what keeps the review from bending to what it finds, and it is the first thing a skeptical reviewer looks for.</td></tr>
+      <tr><td><b>2 · Everything is recorded</b></td><td>Every string with its date, every merged duplicate, every decision of every reviewer with its reason, every extracted value and where it came from, every bias judgment. From there come the numbers in the PRISMA diagram and the package that reproduces the review.</td></tr>
+      <tr><td><b>3 · The model ranks, it does not decide</b></td><td>Prioritized screening learns from your decisions and brings to the top what resembles what you included, but it excludes nothing. Stopping before reading everything is your decision, with a declared rule and a check.</td></tr>
+      <tr><td><b>4 · The average is not enough</b></td><td>A positive, significant mean effect can coexist with sites where the treatment loses. That is why the app always reports the heterogeneity and the prediction interval, and the GRADE certainty for each outcome.</td></tr>
+      <tr><td><b>5 · The app guides, it does not write</b></td><td>It says what each section needs, offers the citations and the numbers from the analysis and flags unsupported claims, but the interpretive text is yours. Nothing in ReviewPro generates prose for you.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- I.4 -->
+  <h2 id="si-4"><span class="num">I.4</span>What goes in and what comes out</h2>
+  <div class="dos">
+    <div>
+      <h3>What the app reads</h3>
+      <ul>
+        <li>Exports from citation databases in <b>RIS</b>, <b>BibTeX</b>, two-letter <b>tagged</b> format, <b>MEDLINE</b>, plain-text <b>EndNote</b> and <b>delimited text</b> (CSV or tab-separated) with columns you assign.</li>
+        <li>Screening decisions from another reviewer (exchange file).</li>
+        <li>A <code>.reviewpro.json</code> project saved earlier, yours or a co-author’s.</li>
+        <li>Data you type or paste: means, standard deviations, replicates, test statistics, p values.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>What the app delivers</h3>
+      <ul>
+        <li>The protocol in HTML and the registration fields for PROSPERO or OSF.</li>
+        <li>The search strings and their log; unique records in RIS or CSV.</li>
+        <li>The screening decisions, the PRISMA 2020 flow diagram and its counts.</li>
+        <li>The tables of characteristics and of effects (CSV), the summary of findings and the meta-analysis results.</li>
+        <li>The manuscript in Word, HTML and Markdown; the included studies in RIS and BibTeX.</li>
+        <li>Figures in PNG, JPG or SVG, the report and the <code>.zip</code> package.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- I.5 -->
+  <h2 id="si-5"><span class="num">I.5</span>What you need and how to open it</h2>
+  <p>A modern browser—any Chromium-based browser or Firefox, from 2023 onward—and the program folder. There are two ways to open it:</p>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:2.1in"><b>Double-click <code>index.html</code></b></td><td>The normal way. The app opens from the disk and works in full, offline.</td></tr>
+      <tr><td><b>Double-click <code>Open ReviewPro.bat</code></b></td><td>On Windows, it starts a small local server and opens <code>http://localhost:9550</code>. It is only needed if your browser blocks something when opening local files, or to run the program’s test page.</td></tr>
+    </tbody>
+  </table>
+  <p>The project saves itself to the browser’s storage every time you change something; the bar of <span class="ruta">Block 2<span class="sep">›</span>Project</span> says when that last happened. But that storage lives in <i>that</i> browser on <i>that</i> computer: if you clear your browsing data, switch browsers or open the app on another machine, it will not be there.</p>
+  <div class="caja importante">
+    <div class="caja-t"><span class="ico">!</span>Save the project file</div>
+    <p>Download the project with <span class="ui">⤓ Save file</span> at the end of each working session and keep it next to your manuscript. It is a single <code>.reviewpro.json</code> file with everything: the protocol, the search, every decision, the extraction, the appraisal, the synthesis and the text. With it you pick up the work on another computer, share it with a co-author or attach it as supplementary material.</p>
+  </div>
+
+  <!-- I.6 -->
+  <h2 id="si-6"><span class="num">I.6</span>A tour of the interface</h2>
+  <figure>
+    <div class="marco"><img src="../img/en/in-interfaz.png" alt="The top of Block 2 with the example project open: the top bar with the logo and the tool buttons; on the left, the list of the ten blocks with the finished ones checked; in the center, the path ReviewPro › 2 Protocol › Project, the opening of the block and the Project card with its completeness bar and its buttons"></div>
+    <figcaption><b>Figure I.2.</b> The interface with the example project open in Block 2. The top bar stays fixed as you scroll; each block opens with its number, its title and a line that says what it is for, and is organized in numbered cards.</figcaption>
+  </figure>
+  <table class="compacta">
+    <thead><tr><th style="width:1.8in">Element</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><b>Logo</b></td><td>Returns to the home page (Block 1).</td></tr>
+      <tr><td><b>Palette</b> (first round button)</td><td>Opens the <b>figure studio</b>: palette, font, line widths and background of every chart in the app at once, on screen and in what is exported.</td></tr>
+      <tr><td><span class="ui">ES</span> · <span class="ui">EN</span></td><td>The language of the whole interface. The text you write is not translated; exports (report, manuscript) come out in the active language.</td></tr>
+      <tr><td><b>Sun / moon</b></td><td>Light or dark theme. Exported figures use the theme you choose in their menu, not the one on screen.</td></tr>
+      <tr><td><b>Block list</b></td><td>The ten blocks, in the column on the left. All are always available: you can go back to correct something, and the following blocks are recomputed when you open them.</td></tr>
+      <tr><td><b>⤓ button of each figure</b></td><td>Appears when you hover over the corner of a chart: it exports that figure as PNG, JPG or SVG, with its title and its note.</td></tr>
+    </tbody>
+  </table>
+  <p>If you open the file with the address ending in <code>#b5</code> (or any other number), the app goes straight to that block; that way you can save a bookmark to carry on where you left off.</p>
+
+  <!-- I.7 -->
+  <h2 id="si-7"><span class="num">I.7</span>The example project of the manual</h2>
+  <p>The <span class="ui">Open the complete example</span> button on the home page loads a review already carried out from start to finish, the same one in every figure of this manual. If you have a project open, the app asks before replacing it: save it first if you want to keep it.</p>
+  <div class="caja ejemplo">
+    <div class="caja-t"><span class="ico">▸</span>Example · mycorrhizae and maize yield</div>
+    <p><b>Question:</b> in field-grown maize, what effect does inoculation with arbuscular mycorrhizal fungi have on grain yield, compared with the same management without inoculation? It is a <b>meta-analysis</b> with the PICOS framework. <b>Search:</b> the six test files of Block 3—three databases, a thesis repository, an institutional repository and a hand search—44 records identified and 13 duplicates. <b>Screening:</b> two reviewers with independent, reconciled decisions. <b>Included:</b> 20 studies in 21 reports, with 41 comparisons (sites or seasons) of yield. <b>Result:</b> yield increased by +16.9% (95% CI +9.7% to +24.6%), with I² = 79% and a prediction interval from −12.7% to +56.5%; the certainty of the evidence is <i>very low</i>. Three studies still have unreconciled bias judgments and the manuscript is a draft: this way the example also shows what pending work looks like.</p>
+  </div>
+  <div class="caja nota">
+    <div class="caja-t"><span class="ico">i</span>The other examples</div>
+    <p>Block 2 also has example protocols for each type of review (the <span class="ui">Example</span> menu and the <span class="ui">Load example</span> button), which fill only the protocol; Block 3 loads the six test files with <span class="ui">Load the test files</span>; and the labs of Block 1 generate fictitious literatures from a seed. Everything is invented and the app says so every time.</p>
+  </div>
+
+  <!-- I.8 -->
+  <h2 id="si-8"><span class="num">I.8</span>How a review is carried out</h2>
+  <ol>
+    <li><b>Choose the type and write the protocol</b> (Block 2). Check it with the PRISMA-P checklist the app carries and register it before searching.</li>
+    <li><b>Build the search</b> (Block 3): the concept blocks, the string in the syntax of each database, the date of each search. Run the string in each database, export the results and import them. Review the duplicates.</li>
+    <li><b>Screen titles and abstracts</b> (Block 4) with two reviewers; measure agreement in a pilot, continue with prioritization and stop with the declared rule.</li>
+    <li><b>Retrieve and assess the full texts</b> (Block 5), with the reason for each exclusion. The PRISMA diagram builds itself.</li>
+    <li><b>Extract the data</b> (Block 6) with the form, compute the effects and compare the double extraction.</li>
+    <li><b>Assess risk of bias and certainty</b> (Block 7).</li>
+    <li><b>Synthesize</b> (Block 8): meta-analysis, moderators, sensitivity and publication bias, or synthesis without meta-analysis.</li>
+    <li><b>Write</b> (Block 9) on the skeleton, with live citations and data, until the checker and the reporting checklist come out clean.</li>
+    <li><b>Deliver</b> (Block 10): figures, report and package.</li>
+  </ol>
+  <p>The order is not a prison: a real review goes back and forth. If while extracting you discover that a criterion was ambiguous, you document it as an amendment in the protocol and carry on; if you add a study from a hand search, it enters through Block 5 and the diagram counts it separately.</p>
+
+  <!-- I.9 -->
+  <h2 id="si-9"><span class="num">I.9</span>What the program does not do</h2>
+  <table class="compacta">
+    <tbody>
+      <tr><td style="width:2.2in"><b>It does not search the databases for you</b></td><td>It writes the string in the syntax of each database, but the search is run on each database’s site, with your access, and the results are imported. That way the search is documented exactly as it was done.</td></tr>
+      <tr><td><b>It does not read the PDFs</b></td><td>It keeps where each one is on your computer and opens it, but the data are extracted by reading, not guessed from the file.</td></tr>
+      <tr><td><b>It does not decide what is included</b></td><td>It orders screening and suggests GRADE judgments from the data; the decision and its justification always belong to the reviewers.</td></tr>
+      <tr><td><b>It does not write</b></td><td>Neither the introduction nor the discussion. It gives the skeleton, the citations, the numbers and the review of claims.</td></tr>
+      <tr><td><b>It does not do every meta-analysis</b></td><td>It covers two- and three-level random-effects models with moderators. It does not do network, diagnostic-accuracy, Bayesian or individual-participant-data meta-analysis; if your question calls for them, export the effects table and continue with specialized statistical software.</td></tr>
+      <tr><td><b>It does not replace expert judgment</b></td><td>A high I², an asymmetric funnel or low certainty are signals to think about, not verdicts. The manual gives decision rules; what you know about your topic comes first.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+</body>
+</html>
